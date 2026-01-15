@@ -1,0 +1,146 @@
+{
+  "profile_name": "Soft-Tech Landing KIT",
+  "purpose": "Give Cursor an abstract, reusable style + structure profile to regenerate responsive SaaS/freelancer landing pages without copying any specific content.",
+  "design_language": {
+    "tone": ["friendly", "confident", "modern", "approachable"],
+    "visual_keywords": [
+      "soft gradients",
+      "rounded cards",
+      "clean grid",
+      "ample white space",
+      "subtle abstract shapes",
+      "illustration/device mockups",
+      "human portraits in circles"
+    ],
+    "contrast_strategy": "dark-on-light body with colorful callouts; occasional dark hero variant with light text"
+  },
+  "foundations": {
+    "breakpoints": {
+      "mobile": 0,
+      "tablet": 768,
+      "desktop": 1200,
+      "max_width_desktop_px": 1200,
+      "container_padding_px": { "mobile": 16, "tablet": 24, "desktop": 32 }
+    },
+    "grid": {
+      "columns": { "mobile": 4, "tablet": 8, "desktop": 12 },
+      "gutter_px": { "mobile": 12, "tablet": 16, "desktop": 24 }
+    },
+    "spacing_scale_px": [4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96],
+    "radii_px": { "sm": 8, "md": 12, "lg": 16, "xl": 24, "pill": 999 },
+    "elevation": {
+      "card": "0 6px 20px rgba(10, 20, 40, 0.06)",
+      "popover": "0 10px 30px rgba(10, 20, 40, 0.10)",
+      "button_focus": "0 0 0 4px rgba(0, 150, 255, 0.20)"
+    },
+    "borders": { "thin": "1px solid rgba(20, 30, 60, 0.08)", "hairline": "1px solid rgba(20, 30, 60, 0.05)" },
+    "palette": {
+      "primary": { "50": "#e6f7ff", "100": "#cceeff", "400": "#4db8ff", "500": "#2ea0ff", "600": "#1a86f0" },
+      "accent_teal": { "400": "#22d3b6", "500": "#10bfa3", "600": "#0ea08a" },
+      "accent_purple": { "400": "#9b8aff", "500": "#7c6df0", "700": "#4e45b8" },
+      "success": { "500": "#16a34a" },
+      "warning": { "500": "#f59e0b" },
+      "danger": { "500": "#ef4444" },
+      "neutral": {
+        "0": "#FFFFFF",
+        "50": "#FAFBFC",
+        "100": "#F4F6F8",
+        "200": "#E9EDF2",
+        "300": "#D9DEE5",
+        "600": "#4B5563",
+        "800": "#1F2937",
+        "900": "#0F172A"
+      },
+      "gradient_tokens": {
+        "brand_1": "linear-gradient(135deg, rgba(46,160,255,1) 0%, rgba(124,109,240,1) 100%)",
+        "brand_2": "linear-gradient(135deg, rgba(16,191,163,1) 0%, rgba(78,69,184,1) 100%)",
+        "card_accent": "linear-gradient(180deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,1) 100%)"
+      },
+      "surface_tint": "rgba(46,160,255,0.04)"
+    },
+    "typography": {
+      "font_family_head": ["Poppins", "Inter", "system-ui", "sans-serif"],
+      "font_family_body": ["Inter", "system-ui", "sans-serif"],
+      "scale": {
+        "h1": { "desktop": 56, "tablet": 44, "mobile": 36, "weight": 700, "line_height": 1.1, "tracking": -0.02 },
+        "h2": { "desktop": 40, "tablet": 32, "mobile": 28, "weight": 700, "line_height": 1.15 },
+        "h3": { "desktop": 28, "tablet": 24, "mobile": 22, "weight": 600, "line_height": 1.2 },
+        "lead": { "desktop": 20, "tablet": 18, "mobile": 16, "weight": 400, "line_height": 1.6 },
+        "body": { "desktop": 16, "tablet": 16, "mobile": 15, "weight": 400, "line_height": 1.65 },
+        "caption": { "desktop": 13, "tablet": 13, "mobile": 12, "weight": 500, "line_height": 1.4 },
+        "eyebrow": { "size": 12, "weight": 700, "transform": "uppercase", "tracking": 0.12 }
+      }
+    },
+    "iconography": { "style": "simple line icons with rounded joins; 24px grid; 2px stroke; filled variants for emphasis" },
+    "imagery": {
+      "people": "waist-up portraits, friendly expression, circular crops or soft-rounded rectangles",
+      "devices": "floating mockups; cards overlapping devices; subtle parallax allowed",
+      "decor": "thin orbit lines, dotted curves, abstract blobs using brand gradients; never distract from content"
+    },
+    "motion": {
+      "page_enter_ms": 400,
+      "card_hover": { "translateY_px": -4, "shadow": "elevation.card * 1.3" },
+      "button_hover": { "scale": 1.02 },
+      "ease": "cubic-bezier(0.22, 1, 0.36, 1)"
+    },
+    "accessibility": {
+      "min_text_contrast": "WCAG AA",
+      "focus_visible": true,
+      "button_touch_target_px": 44,
+      "do_not_use_color_alone": true
+    }
+  },
+  "components": {
+    "Button": {
+      "base": { "radii": "pill", "font_weight": 600, "padding_px": [12, 20], "gap_px": 8 },
+      "variants": {
+        "primary": { "bg": "{palette.primary.600}", "text": "{palette.neutral.0}" },
+        "accent": { "bg": "{palette.accent_teal.600}", "text": "{palette.neutral.0}" },
+        "secondary": { "bg": "{palette.neutral.0}", "border": "{borders.thin}", "text": "{palette.primary.600}" },
+        "ghost": { "bg": "transparent", "text": "{palette.primary.600}" }
+      },
+      "sizes": { "sm": [8, 14], "md": [12, 16], "lg": [16, 18] }
+    },
+    "Badge": { "shape": "pill", "size_px": [8, 12], "tone": ["neutral", "success", "warning", "brand"] },
+    "Card": {
+      "base": {
+        "bg": "{palette.neutral.0}",
+        "border": "{borders.thin}",
+        "radius": "{radii_px.lg}",
+        "shadow": "{elevation.card}",
+        "padding_px": 24
+      },
+      "variants": { "elevated": true, "outlined": true, "gradient_header": true }
+    },
+    "Navbar": {
+      "height_px": 72,
+      "style": "transparent over hero; becomes solid on scroll",
+      "items": "text links + primary CTA at right",
+      "mobile": "hamburger sheet"
+    },
+    "SectionHeader": {
+      "eyebrow": true,
+      "title_hierarchy": "h2",
+      "description": "lead",
+      "align": ["left", "center"]
+    },
+    "FeatureItem": {
+      "icon_placement": "top",
+      "title": "h4/h5",
+      "desc": "body",
+      "style": "small card or simple media-object"
+    },
+    "LogoStrip": { "layout": "6–10 grayscale logos in a row; 2 rows on small screens; reduced opacity" },
+    "Testimonial": {
+      "avatar_shape": "circle",
+      "rating": "stars row",
+      "content_style": "quote in card",
+      "meta": "name + small subtitle"
+    },
+    "StatCluster": { "metric_style": "big number + label", "layout": "ring or row of nodes with connectors" },
+    "Form": {
+      "style": "rounded inputs, 48px height, shadow on focus",
+      "elements": ["email field", "name", "select", "textarea", "submit button"],
+      "captcha_slot": true
+    },
+    "Steps": { "count": 3, "style": "horizontal with numbers in circles; stack vertically on mobile" },
