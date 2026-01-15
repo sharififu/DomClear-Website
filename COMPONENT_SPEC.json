@@ -1,0 +1,316 @@
+{
+  "sitemap": {
+    "pages": [
+      {
+        "path": "/",
+        "title": "Home",
+        "sections": [
+          {
+            "component": "Hero",
+            "design_tokens": {
+              "background": "gradient.brand_1 (primary.600 to accent_purple.500)",
+              "title": "typography.h1",
+              "subtitle": "typography.lead",
+              "spacing": "spacing_scale_px[80]",
+              "buttons": ["Button.primary", "Button.secondary"]
+            }
+          },
+          {
+            "component": "ValuePillars",
+            "design_tokens": {
+              "background": "neutral.50",
+              "layout": "grid.columns.desktop (3 columns)",
+              "cards": "Card.base with elevation.card",
+              "spacing": "spacing_scale_px[80]"
+            }
+          },
+          {
+            "component": "FeatureHighlights",
+            "design_tokens": {
+              "background": "neutral.0",
+              "layout": "grid 3 columns",
+              "cards": "FeatureCard with hover elevation",
+              "spacing": "spacing_scale_px[80]"
+            }
+          },
+          {
+            "component": "OutcomesStats",
+            "design_tokens": {
+              "background": "gradient from primary.50 to neutral.50",
+              "layout": "grid 4 columns",
+              "metrics": "StatCluster.metric_style",
+              "spacing": "spacing_scale_px[80]"
+            }
+          },
+          {
+            "component": "Testimonials",
+            "design_tokens": {
+              "background": "neutral.0",
+              "layout": "grid 3 columns",
+              "cards": "Testimonial with avatar_shape circle",
+              "spacing": "spacing_scale_px[80]"
+            }
+          },
+          {
+            "component": "FinalCTA",
+            "design_tokens": {
+              "background": "gradient.brand_1 with decorative blobs",
+              "radius": "radii_px.xl",
+              "padding": "spacing_scale_px[96]",
+              "buttons": ["Button.accent (white bg)", "Button.secondary (transparent)"]
+            }
+          }
+        ]
+      },
+      {
+        "path": "/platform",
+        "title": "Platform Overview",
+        "sections": [
+          {
+            "component": "PlatformHero",
+            "design_tokens": {
+              "background": "gradient.brand_1",
+              "title": "typography.h1",
+              "spacing": "spacing_scale_px[80]"
+            }
+          },
+          {
+            "component": "PlatformFeatureDetail",
+            "anchor_ids": [
+              "care-planning",
+              "scheduling",
+              "carer-app",
+              "compliance",
+              "team",
+              "finance",
+              "family",
+              "analytics",
+              "security"
+            ],
+            "design_tokens": {
+              "layout": "alternating flex-row / flex-row-reverse",
+              "title": "typography.h2",
+              "description": "typography.body (lg variant)",
+              "spacing": "spacing_scale_px[96] between sections"
+            }
+          }
+        ]
+      },
+      {
+        "path": "/pricing",
+        "title": "Pricing",
+        "sections": [
+          {
+            "component": "PricingHero",
+            "design_tokens": {
+              "background": "gradient.brand_1",
+              "title": "typography.h1",
+              "spacing": "spacing_scale_px[80]"
+            }
+          },
+          {
+            "component": "PricingTiers",
+            "design_tokens": {
+              "layout": "grid 3 columns",
+              "cards": "PricingCard with highlighted variant",
+              "highlighted": "border primary.600, scale 1.05",
+              "spacing": "spacing_scale_px[80]"
+            }
+          },
+          {
+            "component": "PricingInclusions",
+            "design_tokens": {
+              "background": "neutral.50",
+              "layout": "grid 3 columns",
+              "checkmarks": "primary.50 bg with primary.600 icon"
+            }
+          },
+          {
+            "component": "FAQ",
+            "design_tokens": {
+              "background": "neutral.50",
+              "accordion": "FAQAccordion with chevron rotation",
+              "cards": "Card.base with borders.thin",
+              "spacing": "spacing_scale_px[80]"
+            }
+          }
+        ]
+      },
+      {
+        "path": "/demo",
+        "title": "Book a Demo",
+        "sections": [
+          {
+            "component": "DemoHeader",
+            "design_tokens": {
+              "background": "neutral.50",
+              "title": "typography.h1",
+              "spacing": "spacing_scale_px[48]"
+            }
+          },
+          {
+            "component": "DemoForm",
+            "design_tokens": {
+              "layout": "grid 2 columns (form + sidebar)",
+              "form_style": "Form.style with 48px inputs",
+              "inputs": "rounded-xl with focus.ring",
+              "button": "Button.primary full-width",
+              "spacing": "spacing_scale_px[16] between fields"
+            }
+          },
+          {
+            "component": "ThankYouState",
+            "design_tokens": {
+              "background": "neutral.50",
+              "icon": "CheckCircle in primary.50 circle",
+              "title": "typography.h1",
+              "card": "Card.base with download CTA"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "component_mapping": {
+    "Navbar": {
+      "design_spec": "Navbar component from design.json",
+      "tokens": {
+        "height": "72px (Navbar.height_px)",
+        "background": "transparent → white on scroll",
+        "logo": "gradient.brand_1 in 32px square",
+        "links": "neutral.600 (scrolled) / white (transparent)",
+        "dropdown": "Card.base with elevation.popover"
+      },
+      "file": "src/components/Navbar.tsx"
+    },
+    "Footer": {
+      "design_spec": "Multi-column footer",
+      "tokens": {
+        "background": "neutral.900",
+        "text": "neutral.0 with opacity variants",
+        "layout": "5 columns on desktop",
+        "social_icons": "white/10 bg circles with white/20 hover"
+      },
+      "file": "src/components/Footer.tsx"
+    },
+    "Button": {
+      "design_spec": "Button component from design.json",
+      "tokens": {
+        "base": "pill radius, font-weight 600, focus.ring",
+        "primary": "primary.600 bg, neutral.0 text",
+        "accent": "accent_teal.600 bg, neutral.0 text",
+        "secondary": "neutral.0 bg, borders.thin, primary.600 text",
+        "ghost": "transparent bg, primary.600 text",
+        "sizes": "sm (px-4 py-2), md (px-5 py-3), lg (px-6 py-4)"
+      },
+      "file": "src/components/Button.tsx"
+    },
+    "Hero": {
+      "design_spec": "Hero section with gradient background",
+      "tokens": {
+        "background": "gradient from primary.600 to accent_purple.500",
+        "decorative_blobs": "white circles with blur-3xl, opacity-10",
+        "eyebrow": "white/20 bg pill with uppercase text",
+        "title": "typography.h1 (56px desktop) in white",
+        "subtitle": "typography.lead (20px desktop) in white/90",
+        "buttons": "accent variant (white bg) + secondary (white/10 bg)",
+        "trust_badges": "white/80 text with checkmark icons"
+      },
+      "file": "src/components/Hero.tsx"
+    },
+    "FeatureCard": {
+      "design_spec": "FeatureItem from design.json",
+      "tokens": {
+        "card": "Card.base (white bg, 16px radius, elevation.card)",
+        "icon": "gradient.brand_1 in 48px rounded-xl",
+        "title": "typography.h3 (24px) in neutral.900",
+        "description": "typography.body in neutral.600",
+        "hover": "translateY -4px, elevation.popover"
+      },
+      "file": "src/components/FeatureCard.tsx"
+    },
+    "TestimonialCard": {
+      "design_spec": "Testimonial component from design.json",
+      "tokens": {
+        "card": "Card.base with borders.thin",
+        "rating": "5 stars in warning.500 (gold)",
+        "quote": "typography.body (lg) in neutral.900",
+        "avatar": "gradient.brand_1 circle with initials",
+        "meta": "font-semibold name, caption role/org"
+      },
+      "file": "src/components/TestimonialCard.tsx"
+    },
+    "StatCard": {
+      "design_spec": "StatCluster component from design.json",
+      "tokens": {
+        "icon": "64px circle with surface_tint bg, primary.600 icon",
+        "metric": "typography (4xl, 36px) font-bold in neutral.900",
+        "label": "typography.body in neutral.600"
+      },
+      "file": "src/components/StatCard.tsx"
+    },
+    "PricingCard": {
+      "design_spec": "Card with feature list and CTA",
+      "tokens": {
+        "card": "Card.base with borders.thin",
+        "highlighted": "border primary.600, scale 1.05, elevation.popover",
+        "badge": "gradient.brand_1 pill at top",
+        "title": "typography.h3 in neutral.900",
+        "price": "typography (3xl) font-bold",
+        "features": "checkmark in primary.50 circle, body text",
+        "button": "primary variant if highlighted, else secondary"
+      },
+      "file": "src/components/PricingCard.tsx"
+    },
+    "FAQAccordion": {
+      "design_spec": "Expandable accordion component",
+      "tokens": {
+        "item": "Card.base with borders.thin",
+        "button": "hover bg neutral.50",
+        "question": "font-semibold in neutral.900",
+        "chevron": "rotate-180 transition when open",
+        "answer": "typography.body in neutral.600, border-top on expand"
+      },
+      "file": "src/components/FAQAccordion.tsx"
+    }
+  },
+  "page_seo": {
+    "home": {
+      "title": "DomiClear | Homecare Management Software for UK Agencies",
+      "description": "The connected homecare platform for UK domiciliary care agencies. Manage rotas, care planning, compliance, and family updates in one CQC-ready platform.",
+      "keywords": ["homecare management software UK", "domiciliary care software", "CQC compliance software"],
+      "schema": "Organization"
+    },
+    "platform": {
+      "title": "Platform Features | DomiClear",
+      "description": "Explore DomiClear's comprehensive platform: care planning, scheduling, carer app, compliance, and more—all in one place.",
+      "keywords": ["care planning software", "homecare scheduling", "carer app", "compliance management"],
+      "schema": "Product"
+    },
+    "pricing": {
+      "title": "Pricing | DomiClear",
+      "description": "Transparent, usage-based pricing for UK homecare agencies. Pay only for hours delivered. View our Starter, Professional, and Enterprise plans.",
+      "keywords": ["homecare software pricing", "care management pricing UK"],
+      "schema": "FAQPage"
+    },
+    "demo": {
+      "title": "Book a Demo | DomiClear",
+      "description": "Schedule a personalised demo of DomiClear. See how our platform can transform your care agency's operations.",
+      "keywords": ["homecare software demo", "book demo care management"],
+      "schema": "ContactPage"
+    }
+  },
+  "content_guidelines": {
+    "tone": ["credible", "outcomes-led", "concise", "empathetic"],
+    "locale": "en-GB",
+    "date_format": "DD-MM-YYYY",
+    "spelling": "UK English (e.g., 'organisation', 'centre', 'colour')",
+    "avoid": ["jargon without context", "generic software claims", "US spelling"],
+    "highlight": ["CQC compliance", "UK data residency", "time savings", "error reduction"]
+  },
+  "responsive_breakpoints": {
+    "mobile": "0-767px (1 column layouts)",
+    "tablet": "768-1199px (2-3 column layouts)",
+    "desktop": "1200px+ (3-4 column layouts, max-width 1200px container)"
+  }
+}
