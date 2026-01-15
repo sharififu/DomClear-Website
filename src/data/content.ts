@@ -390,7 +390,7 @@ export const featureOverviewContent = {
     {
       icon: 'Calendar',
       title: 'Intelligent Scheduling',
-      description: 'Staff clock in and out with GPS location verification for accurate attendance tracking. Automatically generate timesheets with verified start and end times, eliminating manual entry errors. Real-time visibility of who's on shift gives managers instant oversight of your care team.',
+      description: 'Staff clock in and out with GPS location verification for accurate attendance tracking. Automatically generate timesheets with verified start and end times, eliminating manual entry errors. Real-time visibility of who\'s on shift gives managers instant oversight of your care team.',
     },
     {
       icon: 'Smartphone',
