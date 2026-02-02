@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { DemoContainer } from '../components/demos/DemoContainer';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 import { SchedulingDemo } from '../components/demos/SchedulingDemo';
-import { CarePlanningDemo } from '../components/demos/CarePlanningDemo';
+// CarePlanningDemo is deprecated - care-planning now uses CarePlanDemo
 import { CarePlanDemo } from '../components/demos/CarePlanDemo';
 import { FinanceDemo } from '../components/demos/FinanceDemo';
 import { PayrollDemo } from '../components/demos/PayrollDemo';
@@ -53,7 +53,7 @@ export const DemoPage: React.FC = () => {
     switch (activeDemo) {
       case 'dashboard': return <DashboardDemo />;
       case 'scheduling': return <SchedulingDemo />;
-      case 'care-planning': return <CarePlanningDemo />;
+      case 'care-planning': return <CarePlanDemo onReset={() => handleDemoChange('care-planning')} />;
       case 'care-plan': return <CarePlanDemo onReset={() => handleDemoChange('care-plan')} />;
       case 'care-plan-demo': return <CarePlanDemo onReset={() => handleDemoChange('care-plan-demo')} />;
       case 'finance': return <FinanceDemo />;

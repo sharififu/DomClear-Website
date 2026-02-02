@@ -272,32 +272,8 @@ const baseSteps: StepMap = {
 
 baseSteps['care-plan-demo'] = baseSteps['care-plan'];
 
-baseSteps['care-planning'] = [
-  baseStep({
-    target: target('care-planning-header'),
-    title: 'Care planning tools',
-    content: 'Switch between build and preview to experience the exact workflow care teams use.',
-    placement: 'bottom',
-  }),
-  baseStep({
-    target: target('care-planning-template-picker'),
-    title: 'Template picker',
-    content: 'Choose from ready-made assessments or start new ones in seconds.',
-    placement: 'bottom',
-  }),
-  baseStep({
-    target: target('care-planning-components'),
-    title: 'Component library',
-    content: 'Add common question types with consistent styling and validation.',
-    placement: 'right',
-  }),
-  baseStep({
-    target: target('care-planning-canvas'),
-    title: 'Live form canvas',
-    content: 'Configure labels, placeholders and required rules in-line.',
-    placement: 'top',
-  }),
-];
+// care-planning now uses the same CarePlanDemo as care-plan
+baseSteps['care-planning'] = baseSteps['care-plan'];
 
 export const tourSteps = baseSteps;
 

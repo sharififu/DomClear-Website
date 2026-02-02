@@ -9,7 +9,12 @@ const featureDemoMap: { [key: string]: { image: string; deepLink: string; deepLi
   'care-planning': {
     image: '/demo-media/demo-patient-profile-care-planning.png',
     deepLink: '/demos#care-planning',
-    deepLinkText: 'Try care plan builder →'
+    deepLinkText: 'View care planning →'
+  },
+  'form-templates': {
+    image: '/demo-media/demo-form-templates.png',
+    deepLink: '/demos#form-templates',
+    deepLinkText: 'Try form builder →'
   },
   'scheduling': {
     image: '/demo-media/demo-schedule-rota-planning.png',
@@ -42,9 +47,9 @@ const featureDemoMap: { [key: string]: { image: string; deepLink: string; deepLi
     deepLinkText: 'View family portal →'
   },
   'analytics': {
-    image: '/demo-media/demo-dashboard-overview.png',
-    deepLink: '/demos#dashboard',
-    deepLinkText: 'See analytics dashboard →'
+    image: '/demo-media/demo-reports-analytics.png',
+    deepLink: '/demos#compliance',
+    deepLinkText: 'See reports & analytics →'
   },
   'security': {
     image: '/demo-media/demo-dashboard-overview.png',
