@@ -17,7 +17,7 @@ export const ComprehensiveFeatures: React.FC = () => {
               Intelligent Scheduling & Rota Planning
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Plan rotas with confidence using intelligent conflict detection. The system alerts you to double-bookings, missing qualifications, or travel-time issues before you publish. Carers can request shift swaps subject to manager approval.
+              Plan rotas with confidence using intelligent conflict detection. The system alerts you to double-bookings, missing qualifications, or travel-time issues before you publish. Staff can submit absence requests for manager approval.
             </p>
           </div>
 

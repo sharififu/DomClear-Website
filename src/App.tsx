@@ -76,6 +76,8 @@ function App() {
         return <ContactPage />;
       case '/login':
         return <LoginPage />;
+      case '/signup':
+        return <LoginPage initialMode="signup" />;
       default:
         return (
           <div className="min-h-screen pt-32 pb-20 flex items-center justify-center">

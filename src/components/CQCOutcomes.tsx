@@ -55,7 +55,7 @@ const cqcOutcomes: CQCOutcome[] = [
     evidence: [
       'Intelligent scheduling prevents missed visits',
       'Real-time updates keep families informed',
-      'Shift swap functionality ensures continuity of care',
+      'Absence management ensures continuity of care',
       'Flexible care plan adjustments respond to changing needs',
     ],
     exportDetails: 'Export scheduling reports, visit completion rates, and response time metrics. Generate Responsive domain reports showing visit punctuality, missed visit rates, and how quickly care plans are adjusted to changing needs.',

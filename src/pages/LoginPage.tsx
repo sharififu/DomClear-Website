@@ -4,8 +4,12 @@ import { PricingCard } from '../components/PricingCard';
 import { pricingTiers } from '../data/content';
 import { Mail, Lock, ArrowRight, Check, CreditCard, Shield, Smartphone } from 'lucide-react';
 
-export const LoginPage: React.FC = () => {
-  const [isLoginMode, setIsLoginMode] = useState(true);
+interface LoginPageProps {
+  initialMode?: 'login' | 'signup';
+}
+
+export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
+  const [isLoginMode, setIsLoginMode] = useState(initialMode !== 'signup');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [selectedTier, setSelectedTier] = useState<string | null>(null);

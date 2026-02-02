@@ -35,8 +35,8 @@ export const DemoContainer: React.FC<DemoContainerProps> = ({ activeDemo, onDemo
   const [isFinanceOpen, setIsFinanceOpen] = useState(false);
 
   // Helper to check if a section is active based on the active demo
-  const isManagementActive = ['scheduling', 'care-planning', 'emar', 'template-builder', 'templates-page'].includes(activeDemo);
-  const isPatientActive = ['patient-medications', 'care-plan'].includes(activeDemo);
+  const isManagementActive = ['scheduling', 'emar', 'template-builder', 'templates-page', 'form-templates'].includes(activeDemo);
+  const isPatientActive = ['patient-medications', 'care-plan', 'care-planning', 'care-plan-demo'].includes(activeDemo);
   const isComplianceActive = activeDemo === 'compliance';
   const isFinanceActive = activeDemo === 'finance' || activeDemo === 'payroll';
   const isDashboardActive = activeDemo === 'dashboard';
