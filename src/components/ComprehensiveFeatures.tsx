@@ -14,10 +14,10 @@ export const ComprehensiveFeatures: React.FC = () => {
               <Icons.Search className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              Intelligent Scheduling & Rota Planning
+              Smart Scheduling & Rota Planning
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Plan rotas with confidence using intelligent conflict detection. The system alerts you to double-bookings, missing qualifications, or travel-time issues before you publish. Staff can submit absence requests for manager approval.
+              Plan rotas in minutes, match carers to clients, and avoid clashes, missed visits and double bookings.
             </p>
           </div>
 
@@ -249,10 +249,10 @@ export const ComprehensiveFeatures: React.FC = () => {
               <Icons.Users className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              Comprehensive Team Management
+              Complete Care Team Management
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Onboard new carers with structured workflows that track progress through induction stages. Manage training records, qualifications, and mandatory refreshers with automatic expiry alerts. Performance insights highlight top performers and flag areas needing support.
+              Keep your whole team organised, supported and accountable — from onboarding to day-to-day care delivery.
             </p>
           </div>
         </div>
