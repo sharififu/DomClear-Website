@@ -116,28 +116,33 @@ export const Footer: React.FC = () => {
             <h3 className="font-semibold mb-4">Legal</h3>
             <ul className="space-y-3">
               <li>
-                <a href="/privacy" className="text-white/70 hover:text-white transition-colors">
+                <a href="/legal" className="text-white/70 hover:text-white transition-colors">
+                  Legal &amp; compliance
+                </a>
+              </li>
+              <li>
+                <a href="/legal/privacy" className="text-white/70 hover:text-white transition-colors">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/terms" className="text-white/70 hover:text-white transition-colors">
+                <a href="/legal/terms" className="text-white/70 hover:text-white transition-colors">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="/dpa" className="text-white/70 hover:text-white transition-colors">
-                  Data Processing Addendum
-                </a>
-              </li>
-              <li>
-                <a href="/sub-processors" className="text-white/70 hover:text-white transition-colors">
-                  Sub-processors
-                </a>
-              </li>
-              <li>
-                <a href="/cookies" className="text-white/70 hover:text-white transition-colors">
+                <a href="/legal/cookies" className="text-white/70 hover:text-white transition-colors">
                   Cookie Policy
+                </a>
+              </li>
+              <li>
+                <a href="/legal/acceptable-use" className="text-white/70 hover:text-white transition-colors">
+                  Acceptable Use
+                </a>
+              </li>
+              <li>
+                <a href="/legal/service-level" className="text-white/70 hover:text-white transition-colors">
+                  Service Level
                 </a>
               </li>
             </ul>
