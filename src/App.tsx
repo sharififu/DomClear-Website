@@ -10,6 +10,7 @@ import { FullScreenDemoPage } from './pages/FullScreenDemoPage';
 import { ContactPage } from './pages/ContactPage';
 import { SolutionsPage } from './pages/SolutionsPage';
 import { LoginPage } from './pages/LoginPage';
+import { LegalPage } from './pages/LegalPage';
 import { analytics } from './utils/analytics';
 
 function App() {
@@ -78,7 +79,13 @@ function App() {
         return <LoginPage />;
       case '/signup':
         return <LoginPage initialMode="signup" />;
+      case '/legal':
+        return <LegalPage slug={null} />;
       default:
+        if (path.startsWith('/legal/')) {
+          const slug = path.slice('/legal/'.length).replace(/\/$/, '') || null;
+          return <LegalPage slug={slug} />;
+        }
         return (
           <div className="min-h-screen pt-32 pb-20 flex items-center justify-center">
             <div className="text-center">
