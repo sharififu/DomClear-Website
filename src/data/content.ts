@@ -39,12 +39,12 @@ export const navigation: NavItem[] = [
 ];
 
 export const heroContent = {
-  eyebrow: 'HOMECARE PLATFORM',
-  title: 'All‑in‑one Home Care Management for Agencies',
+  eyebrow: 'HOME CARE APP',
+  title: 'Home Care Management App for UK Care Agencies',
   subtitle:
-    'Plan rotas, log EMAR, capture incidents, and export CQC evidence—on web, iOS & Android.',
+    'Reduce admin, manage visits and staff, record care safely, and stay CQC-ready — all in one simple home care app built for UK domiciliary care agencies.',
   primaryCta: 'Start free trial',
-  secondaryCta: 'Book live demo',
+  secondaryCta: 'Book a live demo',
 };
 
 export const valuePillars: Feature[] = [
@@ -117,10 +117,10 @@ export const featureHighlights: Feature[] = [
 ];
 
 export const outcomes: Stat[] = [
-  { metric: 'Up to 42%', label: 'Reduction in late/missed visits*', icon: 'TrendingDown' },
-  { metric: '3+ hrs', label: 'Admin time saved per manager/week*', icon: 'Clock' },
-  { metric: '98%+', label: 'Medication adherence achievable*', icon: 'TrendingUp' },
-  { metric: '100%', label: 'UK/EU cloud infrastructure', icon: 'MapPin' },
+  { metric: 'Up to 42%', label: 'less admin time', icon: 'TrendingDown' },
+  { metric: '3+ hrs', label: 'Save 3+ hours per manager per week', icon: 'Clock' },
+  { metric: '98%+', label: 'visit & care record accuracy', icon: 'TrendingUp' },
+  { metric: '100%', label: 'UK CQC-aligned structure', icon: 'MapPin' },
 ];
 
 export const testimonials: Testimonial[] = [
@@ -397,9 +397,9 @@ export const pricingTiers: PricingTier[] = [
 
 export const featureOverviewContent = {
   stats: [
-    { metric: 'Up to 42%', label: 'Reduction in late/missed visits*' },
-    { metric: '3+ hrs', label: 'Admin time saved per manager/week*' },
-    { metric: '98%+', label: 'Medication adherence achievable*' },
+    { metric: 'Up to 42%', label: 'less admin time' },
+    { metric: '3+ hrs', label: 'Save 3+ hours per manager per week' },
+    { metric: '98%+', label: 'visit & care record accuracy' },
   ],
   features: [
     {

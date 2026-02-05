@@ -24,7 +24,7 @@ export const HomePage: React.FC = () => {
               Proven Outcomes
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Results that matter
+              Results That Matter to Care Managers
             </h2>
           </div>
 
@@ -43,8 +43,11 @@ export const HomePage: React.FC = () => {
               Testimonials
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Trusted by care agencies across the UK
+              Trusted by Care Agencies Across the UK
             </h2>
+            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
+              Care providers use DomiClear every day to stay organised, compliant and inspection-ready.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -78,10 +81,10 @@ export const HomePage: React.FC = () => {
               {/* Right side - CTA content */}
               <div className="text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Ready? Let's Start with DomiClear and Get Awesome Experience
+                  Ready to Simplify Your Home Care Management?
                 </h2>
                 <p className="text-xl text-white/90 mb-10 leading-relaxed">
-                  Join forward-thinking care agencies using DomiClear to deliver better outcomes, streamline operations, and stay CQC-ready.
+                  Join UK care agencies using DomiClear to reduce admin, improve care quality and stay CQC-ready.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button

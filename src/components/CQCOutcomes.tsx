@@ -91,10 +91,13 @@ export const CQCOutcomes: React.FC = () => {
               CQC Compliance
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Evidence CQC outcomes with confidence
+              Be CQC-Ready With Confidence
             </h2>
-            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
-              DomiClear helps you demonstrate compliance across all five CQC key lines of enquiry
+            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto mb-2">
+              DomiClear helps you evidence compliance across all five CQC key lines of enquiry.
+            </p>
+            <p className="text-base text-[#4B5563] max-w-2xl mx-auto">
+              Be confident you can evidence compliance at any time — not just during inspections.
             </p>
           </div>
 

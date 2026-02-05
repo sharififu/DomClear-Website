@@ -17,17 +17,16 @@ export const Hero: React.FC = () => {
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center">
           {/* Images on the left */}
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start items-end relative z-0">
-            {/* Starting Price Badge - Circle on Desktop Image Corner */}
+            {/* Starting Price Badge - Pill (matches pricing: £39/mo Starter plan) */}
             <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 z-50">
-              <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 bg-gradient-to-br from-[#FFD700] to-[#FFA500] rounded-full shadow-2xl border-4 border-white/40 backdrop-blur-sm flex items-center justify-center">
-                <div className="flex flex-col items-center justify-center text-center px-2">
-                  <span className="text-[8px] sm:text-[9px] md:text-[10px] lg:text-xs font-bold text-[#0F172A] uppercase tracking-tight leading-tight mb-0.5">
-                    From
+              <div className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 rounded-[2rem] bg-gradient-to-r from-[#67e8f9] via-[#5eead4] to-[#4ade80] shadow-lg backdrop-blur-sm">
+                <div className="flex flex-col items-center justify-center text-center">
+                  <span className="text-white font-bold text-lg sm:text-xl md:text-2xl leading-tight">
+                    From £39
                   </span>
-                  <div className="flex items-baseline gap-0.5">
-                    <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#0F172A] leading-none">£39</span>
-                    <span className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#0F172A] leading-none">/carer/mo</span>
-                  </div>
+                  <span className="text-white/95 text-xs sm:text-sm leading-tight">
+                    per month
+                  </span>
                 </div>
               </div>
             </div>
@@ -99,6 +98,9 @@ export const Hero: React.FC = () => {
                     {heroContent.secondaryCta}
                   </Button>
                 </div>
+                <p className="mt-3 text-white/80 text-sm">
+                  No card required • UK support • Cancel anytime
+                </p>
 
                 {/* CTA row text */}
                 <div className="mt-4 flex justify-center lg:justify-start">
@@ -109,13 +111,11 @@ export const Hero: React.FC = () => {
 
                 {/* Trust badges directly below CTAs */}
                 <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2 text-white/90 text-sm">
-                  <span>No credit card</span>
+                  <span>Web, iOS & Android</span>
                   <span className="text-white/60">•</span>
-                  <span>UK/EU data residency</span>
+                  <span>CQC-ready</span>
                   <span className="text-white/60">•</span>
-                  <span>GDPR-aligned</span>
-                  <span className="text-white/60">•</span>
-                  <span>Unlimited staff seats</span>
+                  <span>UK-focused</span>
                 </div>
               </div>
             </div>
