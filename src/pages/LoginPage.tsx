@@ -3,7 +3,15 @@ import { TextField, Label, Input, Checkbox } from '@heroui/react';
 import { Button } from '../components/Button';
 import { PricingCard } from '../components/PricingCard';
 import { pricingTiers } from '../data/content';
-import { Mail, Lock, ArrowRight, Check, CreditCard, Shield, Smartphone } from 'lucide-react';
+import {
+  EnvelopeIcon,
+  LockClosedIcon,
+  ArrowRightIcon,
+  CheckIcon,
+  CreditCardIcon,
+  ShieldCheckIcon,
+  DevicePhoneMobileIcon,
+} from '@heroicons/react/24/outline';
 
 interface LoginPageProps {
   initialMode?: 'login' | 'signup';
@@ -111,7 +119,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                   analyticsEvent="login_submit"
                 >
                   Sign in
-                  <ArrowRight className="w-5 h-5" />
+                  <ArrowRightIcon className="w-5 h-5" />
                 </Button>
               </form>
 
@@ -133,15 +141,15 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
               <h3 className="text-sm font-semibold text-[#0F172A] mb-4">Secure login</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-[#4370B7]" />
+                  <ShieldCheckIcon className="w-5 h-5 text-[#4370B7]" />
                   <span className="text-sm text-[#4B5563]">UK/EU data residency</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Lock className="w-5 h-5 text-[#4370B7]" />
+                  <LockClosedIcon className="w-5 h-5 text-[#4370B7]" />
                   <span className="text-sm text-[#4B5563]">Encrypted connections</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Check className="w-5 h-5 text-[#14B8A6]" />
+                  <CheckIcon className="w-5 h-5 text-[#14B8A6]" />
                   <span className="text-sm text-[#4B5563]">GDPR compliant</span>
                 </div>
               </div>
@@ -165,13 +173,13 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                     >
                       {selectedTier === tier.name ? (
                         <>
-                          <Check className="w-5 h-5" />
+                          <CheckIcon className="w-5 h-5" />
                           Selected
                         </>
                       ) : (
                         <>
                           Select {tier.name}
-                          <ArrowRight className="w-5 h-5" />
+                          <ArrowRightIcon className="w-5 h-5" />
                         </>
                       )}
                     </button>
@@ -217,7 +225,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                           Card number
                         </label>
                         <div className="relative">
-                          <CreditCard className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#9CA3AF]" />
+                          <CreditCardIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#9CA3AF]" />
                           <input
                             type="text"
                             placeholder="1234 5678 9012 3456"
@@ -277,7 +285,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                   </div>
 
                   <div className="flex items-start gap-3 p-4 bg-[#e6f7ff] rounded-lg">
-                    <Check className="w-5 h-5 text-[#4370B7] mt-0.5 flex-shrink-0" />
+                    <CheckIcon className="w-5 h-5 text-[#4370B7] mt-0.5 flex-shrink-0" />
                     <div className="text-sm text-[#4B5563]">
                       <p className="font-semibold text-[#0F172A] mb-1">Secure payment processing</p>
                       <p>Your payment is processed securely. You can cancel your subscription at any time.</p>
@@ -292,7 +300,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                     analyticsProperties={{ tier: selectedTier }}
                   >
                     Complete subscription
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRightIcon className="w-5 h-5" />
                   </Button>
 
                   <p className="text-center text-xs text-[#4B5563]">
@@ -311,12 +319,12 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
-                    { icon: Smartphone, text: 'iOS & Android carer apps' },
-                    { icon: Shield, text: 'UK/EU data residency' },
-                    { icon: Check, text: 'CQC-ready compliance' },
-                    { icon: CreditCard, text: 'No credit card required for trial' },
-                    { icon: Lock, text: 'Enterprise-grade security' },
-                    { icon: Mail, text: 'Priority support' },
+                    { icon: DevicePhoneMobileIcon, text: 'iOS & Android carer apps' },
+                    { icon: ShieldCheckIcon, text: 'UK/EU data residency' },
+                    { icon: CheckIcon, text: 'CQC-ready compliance' },
+                    { icon: CreditCardIcon, text: 'No credit card required for trial' },
+                    { icon: LockClosedIcon, text: 'Enterprise-grade security' },
+                    { icon: EnvelopeIcon, text: 'Priority support' },
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <item.icon className="w-5 h-5 flex-shrink-0" />

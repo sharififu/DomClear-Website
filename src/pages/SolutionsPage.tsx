@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Check, Users, Building2, Heart, ArrowRight } from 'lucide-react';
+import { CheckIcon, UsersIcon, BuildingOffice2Icon, HeartIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { Button } from '../components/Button';
 import { solutionsContent } from '../data/content';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
@@ -59,12 +59,12 @@ export const SolutionsPage: React.FC = () => {
           {solutions.map((solution, index) => {
             // Different icons for each solution type
             const icons = {
-              'care-managers': <Users className="w-12 h-12 text-[#4370B7]" />,
-              'owners': <Building2 className="w-12 h-12 text-[#7c6df0]" />,
-              'families': <Heart className="w-12 h-12 text-[#14B8A6]" />,
+              'care-managers': <UsersIcon className="w-12 h-12 text-[#4370B7]" />,
+              'owners': <BuildingOffice2Icon className="w-12 h-12 text-[#7c6df0]" />,
+              'families': <HeartIcon className="w-12 h-12 text-[#14B8A6]" />,
             };
 
-            const IconComponent = icons[solution.id as keyof typeof icons] || <Users className="w-12 h-12 text-[#4370B7]" />;
+            const IconComponent = icons[solution.id as keyof typeof icons] || <UsersIcon className="w-12 h-12 text-[#4370B7]" />;
 
             return (
               <div
@@ -86,7 +86,7 @@ export const SolutionsPage: React.FC = () => {
                     {solution.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
-                          <Check className="w-4 h-4 text-[#4370B7]" />
+                          <CheckIcon className="w-4 h-4 text-[#4370B7]" />
                         </div>
                         <span className="text-[#4B5563]">{benefit}</span>
                       </li>
@@ -100,7 +100,7 @@ export const SolutionsPage: React.FC = () => {
                     rel="noreferrer"
                   >
                     Start free trial
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRightIcon className="w-4 h-4" />
                   </Button>
                 </div>
                 <div className="flex-1">
@@ -150,7 +150,7 @@ export const SolutionsPage: React.FC = () => {
                     className="text-[#4370B7] hover:underline text-sm font-medium inline-flex items-center gap-1"
                   >
                     Learn more
-                    <ArrowRight className="w-3 h-3" />
+                    <ArrowRightIcon className="w-3 h-3" />
                   </a>
                 </div>
               ))}

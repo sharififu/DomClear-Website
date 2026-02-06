@@ -1,8 +1,9 @@
 import React from 'react';
-import * as Icons from 'lucide-react';
+import { getContentIcon } from './icons';
 import { featureOverviewContent } from '../data/content';
 
 export const FeatureOverview: React.FC = () => {
+  const ClipboardIcon = getContentIcon('Clipboard');
   return (
     <section className="py-20 bg-gradient-to-br from-[#f8fafc] to-[#e2e8f0]">
       <div className="max-w-[1200px] mx-auto px-8">
@@ -18,7 +19,7 @@ export const FeatureOverview: React.FC = () => {
           {/* Left side - Decorative icon */}
           <div className="lg:col-span-2 flex justify-center lg:justify-start relative z-10">
             <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#4370B7] to-[#7c6df0] flex items-center justify-center shadow-lg">
-              <Icons.Clipboard className="w-12 h-12 text-white" />
+              {ClipboardIcon && <ClipboardIcon className="w-12 h-12 text-white" />}
             </div>
           </div>
 
@@ -41,7 +42,7 @@ export const FeatureOverview: React.FC = () => {
             {/* Feature descriptions */}
             <div className="space-y-6">
               {featureOverviewContent.features.map((feature, index) => {
-                const IconComponent = Icons[feature.icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
+                const IconComponent = getContentIcon(feature.icon);
                 return (
                   <div key={index}>
                     <h3 className="text-lg font-semibold text-[#0F172A] mb-2 flex items-center gap-2">

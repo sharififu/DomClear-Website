@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Pill, Calendar, Search, Clock, Shield, Trash2, Eye, X, AlertCircle, Plus, Users, AlertTriangle, ChevronDown, ChevronUp } from 'lucide-react';
+import { Pill, Calendar, Search, Clock, Shield, Trash2, Eye, X, AlertTriangle, Plus, Users, ChevronDown, ChevronUp } from 'lucide-react';
 import { DemoHeader } from './DemoHeader';
 import { DemoTour, useDemoTour } from './DemoTour';
 import { TourButton } from './TourButton';

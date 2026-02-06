@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Icons from 'lucide-react';
+import { getContentIcon } from './icons';
 import { Stat } from '../types';
 
 interface StatCardProps {
@@ -7,7 +7,7 @@ interface StatCardProps {
 }
 
 export const StatCard: React.FC<StatCardProps> = ({ stat }) => {
-  const IconComponent = Icons[stat.icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
+  const IconComponent = getContentIcon(stat.icon);
 
   return (
     <div className="text-center">

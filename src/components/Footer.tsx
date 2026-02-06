@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin, Twitter, Mail } from 'lucide-react';
+import { LinkIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
 import { EXTERNAL_SIGNUP_URL, EXTERNAL_LOGIN_URL } from '../constants/links';
 
 export const Footer: React.FC = () => {
@@ -29,7 +29,7 @@ export const Footer: React.FC = () => {
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
-                <Linkedin className="w-5 h-5" />
+                <LinkIcon className="w-5 h-5" />
               </a>
               <a
                 href="https://twitter.com"
@@ -38,14 +38,14 @@ export const Footer: React.FC = () => {
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Twitter"
               >
-                <Twitter className="w-5 h-5" />
+                <LinkIcon className="w-5 h-5" />
               </a>
               <a
                 href="mailto:hello@homecaremana.co.uk"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Email"
               >
-                <Mail className="w-5 h-5" />
+                <EnvelopeIcon className="w-5 h-5" />
               </a>
             </div>
           </div>

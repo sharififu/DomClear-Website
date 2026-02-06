@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Bars3Icon, XMarkIcon, ChevronDownIcon } from '@heroicons/react/24/outline';
 import { Button } from './Button';
 import { navigation } from '../data/content';
 import { EXTERNAL_SIGNUP_URL, EXTERNAL_LOGIN_URL } from '../constants/links';
@@ -99,7 +99,7 @@ export const Navbar: React.FC = () => {
                   aria-haspopup={item.children ? 'menu' : undefined}
                 >
                   {item.label}
-                  {item.children && <ChevronDown className="w-4 h-4" />}
+                  {item.children && <ChevronDownIcon className="w-4 h-4" />}
                 </a>
 
                 {item.children && openDropdown === item.label && (
@@ -169,9 +169,9 @@ export const Navbar: React.FC = () => {
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? (
-            <X className={shouldShowWhite ? 'text-[#0F172A]' : 'text-white'} />
+            <XMarkIcon className={shouldShowWhite ? 'text-[#0F172A]' : 'text-white'} />
           ) : (
-            <Menu className={shouldShowWhite ? 'text-[#0F172A]' : 'text-white'} />
+            <Bars3Icon className={shouldShowWhite ? 'text-[#0F172A]' : 'text-white'} />
           )}
         </button>
       </div>
