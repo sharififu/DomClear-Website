@@ -68,7 +68,7 @@ export const CarePlanningDemo: React.FC = () => {
 
       <div className="p-6 space-y-6 flex-1 flex flex-col min-h-0">
         {/* Toolbar */}
-        <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-sm flex justify-between items-center">
+        <div className="bg-white p-4 rounded-lg border border-slate-200 shadow-xs flex justify-between items-center">
           <div className="flex items-center gap-4">
             <button className="p-2 hover:bg-slate-100 rounded-full text-slate-500">
               <ChevronLeft className="w-5 h-5" />
@@ -82,22 +82,22 @@ export const CarePlanningDemo: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <div className="flex bg-slate-100 rounded p-1">
+            <div className="flex bg-slate-100 rounded-sm p-1">
               <button 
                 onClick={() => setViewMode('build')}
-                className={`px-4 py-1.5 rounded text-sm font-medium flex items-center gap-2 transition-all ${viewMode === 'build' ? 'bg-white text-[#1a86f0] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                className={`px-4 py-1.5 rounded-sm text-sm font-medium flex items-center gap-2 transition-all ${viewMode === 'build' ? 'bg-white text-[#4370B7] shadow-xs' : 'text-slate-500 hover:text-slate-700'}`}
               >
                 <LayoutTemplate className="w-4 h-4" /> Build
               </button>
               <button 
                 onClick={() => setViewMode('preview')}
-                className={`px-4 py-1.5 rounded text-sm font-medium flex items-center gap-2 transition-all ${viewMode === 'preview' ? 'bg-white text-[#1a86f0] shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+                className={`px-4 py-1.5 rounded-sm text-sm font-medium flex items-center gap-2 transition-all ${viewMode === 'preview' ? 'bg-white text-[#4370B7] shadow-xs' : 'text-slate-500 hover:text-slate-700'}`}
               >
                 <Eye className="w-4 h-4" /> Preview
               </button>
             </div>
             <div className="h-6 w-px bg-slate-200 mx-1"></div>
-            <button className="px-4 py-2 bg-[#1a86f0] text-white rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-blue-600 shadow-sm">
+            <button className="px-4 py-2 bg-[#4370B7] text-white rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-blue-600 shadow-xs">
               <Save className="w-4 h-4" /> Save Changes
             </button>
           </div>
@@ -107,7 +107,7 @@ export const CarePlanningDemo: React.FC = () => {
           {/* Sidebar / Toolbox */}
           {viewMode === 'build' && (
             <div className="w-64 flex-shrink-0 space-y-6">
-              <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-4" data-tour="care-planning-template-picker">
+              <div className="bg-white rounded-lg border border-slate-200 shadow-xs p-4" data-tour="care-planning-template-picker">
                 <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">
                   Templates
                 </h3>
@@ -122,7 +122,7 @@ export const CarePlanningDemo: React.FC = () => {
                 </select>
               </div>
 
-              <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-4" data-tour="care-planning-components">
+              <div className="bg-white rounded-lg border border-slate-200 shadow-xs p-4" data-tour="care-planning-components">
                 <h3 className="text-xs font-bold text-slate-500 uppercase tracking-wider mb-4">
                   Form Components
                 </h3>
@@ -131,7 +131,7 @@ export const CarePlanningDemo: React.FC = () => {
                     onClick={() => addField('text')}
                     className="w-full flex items-center gap-3 p-3 rounded-lg border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition-all text-left group bg-slate-50"
                   >
-                    <div className="bg-white p-1.5 rounded border border-slate-200 group-hover:border-blue-200 text-slate-500 group-hover:text-blue-500">
+                    <div className="bg-white p-1.5 rounded-sm border border-slate-200 group-hover:border-blue-200 text-slate-500 group-hover:text-blue-500">
                       <Type className="w-4 h-4" />
                     </div>
                     <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700">Text Input</span>
@@ -142,7 +142,7 @@ export const CarePlanningDemo: React.FC = () => {
                     onClick={() => addField('select')}
                     className="w-full flex items-center gap-3 p-3 rounded-lg border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition-all text-left group bg-slate-50"
                   >
-                    <div className="bg-white p-1.5 rounded border border-slate-200 group-hover:border-blue-200 text-slate-500 group-hover:text-blue-500">
+                    <div className="bg-white p-1.5 rounded-sm border border-slate-200 group-hover:border-blue-200 text-slate-500 group-hover:text-blue-500">
                       <CheckSquare className="w-4 h-4" />
                     </div>
                     <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700">Dropdown / Check</span>
@@ -153,7 +153,7 @@ export const CarePlanningDemo: React.FC = () => {
                     onClick={() => addField('date')}
                     className="w-full flex items-center gap-3 p-3 rounded-lg border border-slate-100 hover:border-blue-200 hover:bg-blue-50 transition-all text-left group bg-slate-50"
                   >
-                    <div className="bg-white p-1.5 rounded border border-slate-200 group-hover:border-blue-200 text-slate-500 group-hover:text-blue-500">
+                    <div className="bg-white p-1.5 rounded-sm border border-slate-200 group-hover:border-blue-200 text-slate-500 group-hover:text-blue-500">
                       <Calendar className="w-4 h-4" />
                     </div>
                     <span className="text-sm font-medium text-slate-700 group-hover:text-blue-700">Date Picker</span>
@@ -165,7 +165,7 @@ export const CarePlanningDemo: React.FC = () => {
           )}
 
           {/* Canvas */}
-          <div className="flex-1 bg-white rounded-lg border border-slate-200 shadow-sm overflow-y-auto" data-tour="care-planning-canvas">
+          <div className="flex-1 bg-white rounded-lg border border-slate-200 shadow-xs overflow-y-auto" data-tour="care-planning-canvas">
             <div className="max-w-3xl mx-auto p-8 min-h-[600px]">
               <div className="mb-8 pb-6 border-b border-slate-100">
                 <h1 className="text-2xl font-bold text-slate-800 mb-2">
@@ -189,12 +189,12 @@ export const CarePlanningDemo: React.FC = () => {
                       <div className="absolute right-4 top-4 opacity-0 group-hover:opacity-100 flex gap-2 transition-opacity z-10">
                         <button 
                           onClick={() => removeField(field.id)}
-                          className="p-2 text-red-500 bg-white border border-red-100 hover:bg-red-50 rounded-lg shadow-sm"
+                          className="p-2 text-red-500 bg-white border border-red-100 hover:bg-red-50 rounded-lg shadow-xs"
                           title="Remove field"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
-                        <div className="cursor-move p-2 text-slate-400 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg shadow-sm">
+                        <div className="cursor-move p-2 text-slate-400 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg shadow-xs">
                           <GripVertical className="w-4 h-4" />
                         </div>
                       </div>

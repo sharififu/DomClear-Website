@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { Disclosure, DisclosureGroup } from '@heroui/react';
 
 interface FAQItem {
   question: string;
@@ -11,41 +11,34 @@ interface FAQAccordionProps {
 }
 
 export const FAQAccordion: React.FC<FAQAccordionProps> = ({ items }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [expandedKeys, setExpandedKeys] = useState<Set<string>>(new Set());
 
   return (
-    <div className="space-y-4">
+    <DisclosureGroup
+      className="space-y-4"
+      expandedKeys={expandedKeys}
+      onExpandedChange={setExpandedKeys}
+      allowsMultipleExpanded={false}
+    >
       {items.map((item, index) => (
-        <div
+        <Disclosure
           key={index}
+          id={String(index)}
           className="bg-white rounded-2xl border border-[rgba(20,30,60,0.08)] overflow-hidden"
         >
-          <button
-            onClick={() => setOpenIndex(openIndex === index ? null : index)}
-            className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#FAFBFC] transition-colors focus:outline-none focus:ring-2 focus:ring-[#1a86f0] focus:ring-inset"
-            aria-expanded={openIndex === index}
-            aria-controls={`faq-answer-${index}`}
-          >
-            <span id={`faq-question-${index}`} className="font-semibold text-[#0F172A] pr-4">{item.question}</span>
-            <ChevronDown
-              className={`w-5 h-5 text-[#4B5563] flex-shrink-0 transition-transform duration-300 ${
-                openIndex === index ? 'rotate-180' : ''
-              }`}
-              aria-hidden="true"
-            />
-          </button>
-          {openIndex === index && (
-            <div 
-              id={`faq-answer-${index}`}
-              className="px-6 pb-5 text-[#4B5563] leading-relaxed border-t border-[rgba(20,30,60,0.05)] pt-4"
-              role="region"
-              aria-labelledby={`faq-question-${index}`}
-            >
+          <Disclosure.Heading>
+            <Disclosure.Trigger className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-[#FAFBFC] transition-colors font-semibold text-[#0F172A]">
+              {item.question}
+              <Disclosure.Indicator className="w-5 h-5 text-[#4B5563] flex-shrink-0 transition-transform duration-300" />
+            </Disclosure.Trigger>
+          </Disclosure.Heading>
+          <Disclosure.Content>
+            <Disclosure.Body className="px-6 pb-5 text-[#4B5563] leading-relaxed border-t border-[rgba(20,30,60,0.05)] pt-4">
               {item.answer}
-            </div>
-          )}
-        </div>
+            </Disclosure.Body>
+          </Disclosure.Content>
+        </Disclosure>
       ))}
-    </div>
+    </DisclosureGroup>
   );
 };

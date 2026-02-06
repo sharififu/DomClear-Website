@@ -17,7 +17,7 @@ export const FeatureOverview: React.FC = () => {
           
           {/* Left side - Decorative icon */}
           <div className="lg:col-span-2 flex justify-center lg:justify-start relative z-10">
-            <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#1a86f0] to-[#7c6df0] flex items-center justify-center shadow-lg">
+            <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#4370B7] to-[#7c6df0] flex items-center justify-center shadow-lg">
               <Icons.Clipboard className="w-12 h-12 text-white" />
             </div>
           </div>
@@ -45,7 +45,7 @@ export const FeatureOverview: React.FC = () => {
                 return (
                   <div key={index}>
                     <h3 className="text-lg font-semibold text-[#0F172A] mb-2 flex items-center gap-2">
-                      {IconComponent && <IconComponent className="w-5 h-5 text-[#1a86f0]" />}
+                      {IconComponent && <IconComponent className="w-5 h-5 text-[#4370B7]" />}
                       {feature.title}
                     </h3>
                     <p className="text-[#6b7280] text-sm leading-relaxed">{feature.description}</p>

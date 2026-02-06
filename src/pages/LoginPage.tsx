@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { TextField, Label, Input, Checkbox } from '@heroui/react';
 import { Button } from '../components/Button';
 import { PricingCard } from '../components/PricingCard';
 import { pricingTiers } from '../data/content';
@@ -51,13 +52,13 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
 
         {/* Toggle between Login and Subscription */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex bg-white rounded-full p-1 border border-[rgba(20,30,60,0.08)] shadow-sm">
+          <div className="inline-flex bg-white rounded-full p-1 border border-[rgba(20,30,60,0.08)] shadow-xs">
             <button
               onClick={() => setIsLoginMode(true)}
               className={`px-6 py-2 rounded-full font-semibold transition-all ${
                 isLoginMode
-                  ? 'bg-[#1a86f0] text-white shadow-sm'
-                  : 'text-[#4B5563] hover:text-[#1a86f0]'
+                  ? 'bg-[#4370B7] text-white shadow-xs'
+                  : 'text-[#4B5563] hover:text-[#4370B7]'
               }`}
             >
               Log in
@@ -66,8 +67,8 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
               onClick={() => setIsLoginMode(false)}
               className={`px-6 py-2 rounded-full font-semibold transition-all ${
                 !isLoginMode
-                  ? 'bg-[#1a86f0] text-white shadow-sm'
-                  : 'text-[#4B5563] hover:text-[#1a86f0]'
+                  ? 'bg-[#4370B7] text-white shadow-xs'
+                  : 'text-[#4B5563] hover:text-[#4370B7]'
               }`}
             >
               Subscribe
@@ -80,53 +81,23 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
           <div className="max-w-md mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-[rgba(20,30,60,0.08)]">
               <form onSubmit={handleLogin} className="space-y-6">
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-[#0F172A] mb-2">
-                    Email address
-                  </label>
-                  <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#9CA3AF]" />
-                    <input
-                      id="email"
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                      className="w-full pl-10 pr-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0] focus:border-transparent"
-                      placeholder="you@example.com"
-                    />
-                  </div>
-                </div>
+                <TextField name="email" type="email" value={email} onChange={setEmail} isRequired fullWidth>
+                  <Label>Email address</Label>
+                  <Input type="email" placeholder="you@example.com" />
+                </TextField>
 
-                <div>
-                  <label htmlFor="password" className="block text-sm font-semibold text-[#0F172A] mb-2">
-                    Password
-                  </label>
-                  <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#9CA3AF]" />
-                    <input
-                      id="password"
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                      className="w-full pl-10 pr-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0] focus:border-transparent"
-                      placeholder="Enter your password"
-                    />
-                  </div>
-                </div>
+                <TextField name="password" value={password} onChange={setPassword} isRequired fullWidth>
+                  <Label>Password</Label>
+                  <Input type="password" placeholder="Enter your password" />
+                </TextField>
 
                 <div className="flex items-center justify-between">
-                  <label className="flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      className="w-4 h-4 text-[#1a86f0] border-[rgba(20,30,60,0.08)] rounded focus:ring-[#1a86f0]"
-                    />
-                    <span className="text-sm text-[#4B5563]">Remember me</span>
-                  </label>
+                  <Checkbox defaultSelected className="text-[#4B5563]">
+                    Remember me
+                  </Checkbox>
                   <a
                     href="#forgot-password"
-                    className="text-sm font-semibold text-[#1a86f0] hover:text-[#1570d1]"
+                    className="text-sm font-semibold text-[#4370B7] hover:text-[#365a9a]"
                   >
                     Forgot password?
                   </a>
@@ -150,7 +121,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                 </p>
                 <button
                   onClick={() => setIsLoginMode(false)}
-                  className="w-full inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-200 px-5 py-3 text-base gap-2 bg-white text-[#1a86f0] border border-[rgba(20,30,60,0.08)] hover:bg-[#FAFBFC] hover:scale-[1.02]"
+                  className="w-full inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 focus:outline-hidden focus:ring-4 focus:ring-blue-200 px-5 py-3 text-base gap-2 bg-white text-[#4370B7] border border-[rgba(20,30,60,0.08)] hover:bg-[#FAFBFC] hover:scale-[1.02]"
                 >
                   View subscription plans
                 </button>
@@ -162,11 +133,11 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
               <h3 className="text-sm font-semibold text-[#0F172A] mb-4">Secure login</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="flex items-center gap-3">
-                  <Shield className="w-5 h-5 text-[#1a86f0]" />
+                  <Shield className="w-5 h-5 text-[#4370B7]" />
                   <span className="text-sm text-[#4B5563]">UK/EU data residency</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <Lock className="w-5 h-5 text-[#1a86f0]" />
+                  <Lock className="w-5 h-5 text-[#4370B7]" />
                   <span className="text-sm text-[#4B5563]">Encrypted connections</span>
                 </div>
                 <div className="flex items-center gap-3">
@@ -186,10 +157,10 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                   <div className="mt-4">
                     <button
                       onClick={() => handleSubscriptionSelect(tier.name)}
-                      className={`w-full inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-200 px-6 py-4 text-lg gap-2 ${
+                      className={`w-full inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 focus:outline-hidden focus:ring-4 focus:ring-blue-200 px-6 py-4 text-lg gap-2 ${
                         tier.highlighted
-                          ? 'bg-[#1a86f0] text-white hover:bg-[#1570d1] hover:scale-[1.02]'
-                          : 'bg-white text-[#1a86f0] border border-[rgba(20,30,60,0.08)] hover:bg-[#FAFBFC] hover:scale-[1.02]'
+                          ? 'bg-[#4370B7] text-white hover:bg-[#365a9a] hover:scale-[1.02]'
+                          : 'bg-white text-[#4370B7] border border-[rgba(20,30,60,0.08)] hover:bg-[#FAFBFC] hover:scale-[1.02]'
                       }`}
                     >
                       {selectedTier === tier.name ? (
@@ -219,7 +190,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                       Complete your subscription
                     </h2>
                     <p className="text-[#4B5563] mb-4">
-                      You've selected the <span className="font-semibold text-[#1a86f0]">{selectedTier}</span> plan
+                      You've selected the <span className="font-semibold text-[#4370B7]">{selectedTier}</span> plan
                     </p>
                     {selectedTierData?.price !== undefined && (
                       <div className="bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC] rounded-lg p-4 mb-4">
@@ -250,7 +221,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                           <input
                             type="text"
                             placeholder="1234 5678 9012 3456"
-                            className="w-full pl-10 pr-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0] focus:border-transparent"
+                            className="w-full pl-10 pr-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                           />
                         </div>
                       </div>
@@ -262,7 +233,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                           <input
                             type="text"
                             placeholder="MM/YY"
-                            className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0] focus:border-transparent"
+                            className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                           />
                         </div>
                         <div>
@@ -272,7 +243,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                           <input
                             type="text"
                             placeholder="123"
-                            className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0] focus:border-transparent"
+                            className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                           />
                         </div>
                       </div>
@@ -289,7 +260,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                         <input
                           type="text"
                           placeholder="Your agency name"
-                          className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0] focus:border-transparent"
+                          className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                         />
                       </div>
                       <div>
@@ -299,14 +270,14 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                         <input
                           type="email"
                           placeholder="you@example.com"
-                          className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0] focus:border-transparent"
+                          className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                         />
                       </div>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-3 p-4 bg-[#e6f7ff] rounded-lg">
-                    <Check className="w-5 h-5 text-[#1a86f0] mt-0.5 flex-shrink-0" />
+                    <Check className="w-5 h-5 text-[#4370B7] mt-0.5 flex-shrink-0" />
                     <div className="text-sm text-[#4B5563]">
                       <p className="font-semibold text-[#0F172A] mb-1">Secure payment processing</p>
                       <p>Your payment is processed securely. You can cancel your subscription at any time.</p>
@@ -333,7 +304,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
             })()}
 
             {/* Benefits section */}
-            <div className="mt-12 bg-gradient-to-br from-[#1a86f0] to-[#7c6df0] rounded-3xl p-12 text-white">
+            <div className="mt-12 bg-gradient-to-br from-[#4370B7] to-[#7c6df0] rounded-3xl p-12 text-white">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold mb-8 text-center">
                   All subscriptions include

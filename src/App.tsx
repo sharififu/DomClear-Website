@@ -11,6 +11,7 @@ import { ContactPage } from './pages/ContactPage';
 import { SolutionsPage } from './pages/SolutionsPage';
 import { LoginPage } from './pages/LoginPage';
 import { LegalPage } from './pages/LegalPage';
+import { AboutPage } from './pages/AboutPage';
 import { analytics } from './utils/analytics';
 
 function App() {
@@ -75,6 +76,8 @@ function App() {
         return <FullScreenDemoPage />;
       case '/contact':
         return <ContactPage />;
+      case '/about':
+        return <AboutPage />;
       case '/login':
         return <LoginPage />;
       case '/signup':
@@ -93,7 +96,7 @@ function App() {
               <p className="text-[#4B5563] mb-8">This page is under construction.</p>
               <a
                 href="/"
-                className="inline-flex items-center justify-center px-6 py-3 bg-[#1a86f0] text-white font-semibold rounded-full hover:bg-[#1570d1] transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#4370B7] text-white font-semibold rounded-full hover:bg-[#365a9a] transition-colors"
               >
                 Return to homepage
               </a>
@@ -111,7 +114,7 @@ function App() {
         <>
           <a 
             href="#main-content" 
-            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#1a86f0] text-white px-4 py-2 rounded-lg z-50"
+            className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#4370B7] text-white px-4 py-2 rounded-lg z-50"
           >
             Skip to main content
           </a>

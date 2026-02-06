@@ -27,7 +27,7 @@ export const DemoHeader: React.FC<DemoHeaderProps> = ({ title, subtitle, onReset
 
   return (
     <div
-      className="bg-white border-b border-slate-200 px-6 py-3 flex items-center justify-between shadow-sm flex-shrink-0"
+      className="bg-white border-b border-slate-200 px-6 py-3 flex items-center justify-between shadow-xs flex-shrink-0"
       data-tour={tourAnchorId}
     >
       {/* Left: Breadcrumbs/Title */}
@@ -36,7 +36,7 @@ export const DemoHeader: React.FC<DemoHeaderProps> = ({ title, subtitle, onReset
           <span className="font-bold text-slate-700">CMS Dashboard</span>
           {subtitle && (
             <>
-              <span className="bg-slate-100 px-1.5 rounded text-[10px]">/</span>
+              <span className="bg-slate-100 px-1.5 rounded-sm text-[10px]">/</span>
               <span>{subtitle}</span>
             </>
           )}
@@ -50,10 +50,10 @@ export const DemoHeader: React.FC<DemoHeaderProps> = ({ title, subtitle, onReset
           <input 
             type="text" 
             placeholder="Search patients, staff, files..." 
-            className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-full text-sm text-slate-600 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:bg-white transition-all"
+            className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-full text-sm text-slate-600 placeholder:text-slate-400 focus:outline-hidden focus:ring-2 focus:ring-blue-100 focus:bg-white transition-all"
           />
           <Search className="absolute left-3.5 top-2.5 w-4 h-4 text-slate-400 group-focus-within:text-blue-500 transition-colors" />
-          <span className="absolute right-3 top-2.5 text-[10px] text-slate-400 font-mono border border-slate-200 rounded px-1">/</span>
+          <span className="absolute right-3 top-2.5 text-[10px] text-slate-400 font-mono border border-slate-200 rounded-sm px-1">/</span>
         </div>
       </div>
 
@@ -62,7 +62,7 @@ export const DemoHeader: React.FC<DemoHeaderProps> = ({ title, subtitle, onReset
         {extraActions}
         <button 
           onClick={onReset}
-          className="p-2 text-slate-400 hover:bg-slate-50 hover:text-[#1a86f0] rounded-lg transition-colors" 
+          className="p-2 text-slate-400 hover:bg-slate-50 hover:text-[#4370B7] rounded-lg transition-colors" 
           title="Reset Demo"
         >
           <RotateCcw className="w-5 h-5" />
@@ -84,7 +84,7 @@ export const DemoHeader: React.FC<DemoHeaderProps> = ({ title, subtitle, onReset
         </button>
         
         <div className="ml-2 pl-4 border-l border-slate-200 flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-slate-700 text-white flex items-center justify-center text-sm font-medium shadow-sm">
+          <div className="w-9 h-9 rounded-full bg-slate-700 text-white flex items-center justify-center text-sm font-medium shadow-xs">
             J
           </div>
           <div className="hidden lg:block">

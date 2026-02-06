@@ -14,7 +14,7 @@ export const AppStoreBadges: React.FC = () => {
           </svg>
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white text-[10px] font-bold bg-black/80 px-1 rounded">Coming soon</span>
+          <span className="text-white text-[10px] font-bold bg-black/80 px-1 rounded-sm">Coming soon</span>
         </div>
       </div>
 
@@ -26,7 +26,7 @@ export const AppStoreBadges: React.FC = () => {
           </svg>
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-white text-[10px] font-bold bg-black/80 px-1 rounded">Coming soon</span>
+          <span className="text-white text-[10px] font-bold bg-black/80 px-1 rounded-sm">Coming soon</span>
         </div>
       </div>
 

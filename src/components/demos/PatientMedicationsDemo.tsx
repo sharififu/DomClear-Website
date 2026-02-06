@@ -373,7 +373,7 @@ export const PatientMedicationsDemo: React.FC = () => {
         {/* Patient Header */}
         <div className="bg-white rounded-lg border border-[rgba(20,30,60,0.08)] p-4">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 rounded-full bg-[#1a86f0] flex items-center justify-center text-white font-semibold">
+            <div className="w-12 h-12 rounded-full bg-[#4370B7] flex items-center justify-center text-white font-semibold">
               YY
             </div>
             <div>
@@ -390,7 +390,7 @@ export const PatientMedicationsDemo: React.FC = () => {
                 onClick={() => setPatientTab(tab)}
                 className={`px-3 py-2 text-sm font-medium whitespace-nowrap border-b-2 ${
                   patientTab === tab
-                    ? 'border-[#1a86f0] text-[#1a86f0]'
+                    ? 'border-[#4370B7] text-[#4370B7]'
                     : 'border-transparent text-[#6b7280] hover:text-[#0F172A]'
                 }`}
               >
@@ -411,7 +411,7 @@ export const PatientMedicationsDemo: React.FC = () => {
                   onClick={() => setVisitView('calendar')}
                   className={`px-4 py-2 text-sm font-medium rounded-lg ${
                     visitView === 'calendar'
-                      ? 'bg-[#1a86f0] text-white'
+                      ? 'bg-[#4370B7] text-white'
                       : 'bg-[#f8fafc] text-[#6b7280] hover:bg-[#e5e7eb]'
                   }`}
                 >
@@ -421,7 +421,7 @@ export const PatientMedicationsDemo: React.FC = () => {
                   onClick={() => setVisitView('list')}
                   className={`px-4 py-2 text-sm font-medium rounded-lg ${
                     visitView === 'list'
-                      ? 'bg-[#1a86f0] text-white'
+                      ? 'bg-[#4370B7] text-white'
                       : 'bg-[#f8fafc] text-[#6b7280] hover:bg-[#e5e7eb]'
                   }`}
                 >
@@ -468,17 +468,17 @@ export const PatientMedicationsDemo: React.FC = () => {
                             !dateInfo.isCurrentMonth
                               ? 'text-[#9ca3af] border-transparent'
                               : selectedDate === dateInfo.day
-                              ? 'bg-blue-50 border-[#1a86f0] text-[#1a86f0]'
+                              ? 'bg-blue-50 border-[#4370B7] text-[#4370B7]'
                               : 'border-transparent hover:bg-[#f8fafc] text-[#0F172A]'
                           }`}
                         >
                           <div className="flex flex-col items-center h-full">
-                            <span className={`text-sm font-medium ${selectedDate === dateInfo.day ? 'text-[#1a86f0]' : ''}`}>
+                            <span className={`text-sm font-medium ${selectedDate === dateInfo.day ? 'text-[#4370B7]' : ''}`}>
                               {dateInfo.day}
                             </span>
                             {dateInfo.isCurrentMonth && dateInfo.visits > 0 && (
                               <>
-                                <div className="w-1.5 h-1.5 rounded-full bg-[#1a86f0] mt-1"></div>
+                                <div className="w-1.5 h-1.5 rounded-full bg-[#4370B7] mt-1"></div>
                                 <span className="text-xs text-[#6b7280] mt-1">{dateInfo.visits} visit</span>
                               </>
                             )}
@@ -525,7 +525,7 @@ export const PatientMedicationsDemo: React.FC = () => {
                   </div>
                   <button
                     onClick={() => setIsSchedulerOpen(true)}
-                    className="w-full mt-4 px-4 py-2 bg-[#1a86f0] text-white rounded-lg text-sm font-medium hover:bg-[#1570d1]"
+                    className="w-full mt-4 px-4 py-2 bg-[#4370B7] text-white rounded-lg text-sm font-medium hover:bg-[#365a9a]"
                   >
                     Schedule Another Visit
                   </button>
@@ -536,7 +536,7 @@ export const PatientMedicationsDemo: React.FC = () => {
                   <p className="text-sm text-[#6b7280] mb-6">No visits scheduled for Nov 27, 2025</p>
                   <button
                     onClick={() => setIsSchedulerOpen(true)}
-                    className="px-4 py-2 bg-[#1a86f0] text-white rounded-lg text-sm font-medium hover:bg-[#1570d1]"
+                    className="px-4 py-2 bg-[#4370B7] text-white rounded-lg text-sm font-medium hover:bg-[#365a9a]"
                   >
                     Schedule Visit
                   </button>
@@ -576,7 +576,7 @@ export const PatientMedicationsDemo: React.FC = () => {
                   onClick={() => setMarRange(range)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium ${
                     marRange === range
-                      ? 'bg-[#1a86f0] text-white'
+                      ? 'bg-[#4370B7] text-white'
                       : 'bg-[#f8fafc] text-[#6b7280] hover:bg-[#e5e7eb]'
                   }`}
                 >
@@ -632,11 +632,11 @@ export const PatientMedicationsDemo: React.FC = () => {
                 type="date"
                 value={marJumpToDate}
                 onChange={(e) => setMarJumpToDate(e.target.value)}
-                className="px-3 py-2 bg-white border border-[rgba(20,30,60,0.08)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                className="px-3 py-2 bg-white border border-[rgba(20,30,60,0.08)] rounded-lg text-sm focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
               />
               <button
                 onClick={handleJumpToDate}
-                className="px-4 py-2 bg-[#1a86f0] text-white rounded-lg text-sm font-medium hover:bg-[#1570d1]"
+                className="px-4 py-2 bg-[#4370B7] text-white rounded-lg text-sm font-medium hover:bg-[#365a9a]"
               >
                 Go
               </button>
@@ -672,14 +672,14 @@ export const PatientMedicationsDemo: React.FC = () => {
                 <div className="min-w-full">
                   {/* Header Row */}
                   <div className="grid grid-cols-8 gap-2 mb-2">
-                    <div className="px-3 py-2 bg-[#f8fafc] border border-[rgba(20,30,60,0.08)] rounded text-xs font-semibold text-[#6b7280]">
+                    <div className="px-3 py-2 bg-[#f8fafc] border border-[rgba(20,30,60,0.08)] rounded-sm text-xs font-semibold text-[#6b7280]">
                       Medication
                     </div>
                     {mockMARData.weekDays.map((day, i) => {
                       const dayName = day.toLocaleDateString('en-US', { weekday: 'short' });
                       const dayNum = day.getDate().toString().padStart(2, '0');
                       return (
-                        <div key={i} className="px-3 py-2 bg-[#f8fafc] border border-[rgba(20,30,60,0.08)] rounded text-xs font-semibold text-[#6b7280] text-center">
+                        <div key={i} className="px-3 py-2 bg-[#f8fafc] border border-[rgba(20,30,60,0.08)] rounded-sm text-xs font-semibold text-[#6b7280] text-center">
                           {dayName} {dayNum}
                         </div>
                       );
@@ -690,7 +690,7 @@ export const PatientMedicationsDemo: React.FC = () => {
                   {mockMARData.schedules.map((schedule) => (
                     schedule.times.map((time, timeIdx) => (
                       <div key={`${schedule.id}-${timeIdx}`} className="grid grid-cols-8 gap-2 mb-2">
-                        <div className="px-3 py-3 bg-white border border-[rgba(20,30,60,0.08)] rounded">
+                        <div className="px-3 py-3 bg-white border border-[rgba(20,30,60,0.08)] rounded-sm">
                           <p className="text-sm font-medium text-[#0F172A]">{schedule.medicationName}</p>
                           <p className="text-xs text-[#6b7280] mt-1">
                             {schedule.dose} • {schedule.route} • {time}
@@ -704,7 +704,7 @@ export const PatientMedicationsDemo: React.FC = () => {
                           return (
                             <div
                               key={dayIdx}
-                              className="px-3 py-3 bg-white border border-[rgba(20,30,60,0.08)] rounded flex flex-col items-center justify-center"
+                              className="px-3 py-3 bg-white border border-[rgba(20,30,60,0.08)] rounded-sm flex flex-col items-center justify-center"
                               style={{ backgroundColor: statusInfo.bgColor }}
                             >
                               {StatusIcon ? (
@@ -818,7 +818,7 @@ export const PatientMedicationsDemo: React.FC = () => {
                                   return (
                                     <div
                                       key={`empty-${dayIndex}`}
-                                      className="aspect-square p-1 border border-transparent rounded"
+                                      className="aspect-square p-1 border border-transparent rounded-sm"
                                     />
                                   );
                                 }
@@ -832,18 +832,18 @@ export const PatientMedicationsDemo: React.FC = () => {
                                 return (
                                   <div
                                     key={dayIndex}
-                                    className={`aspect-square p-1 border rounded flex flex-col items-center justify-center ${
+                                    className={`aspect-square p-1 border rounded-sm flex flex-col items-center justify-center ${
                                       isCurrentMonth
                                         ? admin
                                           ? 'border-[rgba(20,30,60,0.08)]'
                                           : 'border-[rgba(20,30,60,0.08)] bg-[#f9fafb]'
                                         : 'border-transparent'
-                                    } ${isToday ? 'ring-2 ring-[#1a86f0]' : ''}`}
+                                    } ${isToday ? 'ring-2 ring-[#4370B7]' : ''}`}
                                     style={admin ? { backgroundColor: statusInfo.bgColor } : {}}
                                   >
                                     {isCurrentMonth && (
                                       <>
-                                        <span className={`text-xs ${isToday ? 'font-bold text-[#1a86f0]' : 'text-[#6b7280]'}`}>
+                                        <span className={`text-xs ${isToday ? 'font-bold text-[#4370B7]' : 'text-[#6b7280]'}`}>
                                           {day.getDate()}
                                         </span>
                                         {admin && (
@@ -880,12 +880,12 @@ export const PatientMedicationsDemo: React.FC = () => {
           <div className="bg-white rounded-lg border border-[rgba(20,30,60,0.08)] p-4" data-tour="patient-medications-table">
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-2">
-              <Pill className="w-5 h-5 text-[#1a86f0]" />
+              <Pill className="w-5 h-5 text-[#4370B7]" />
               <h3 className="text-base font-semibold text-[#0F172A]">Medication Management</h3>
               <span className="text-sm text-[#6b7280]">yannick yaba</span>
             </div>
             <div className="flex gap-2">
-              <button className="px-4 py-2 bg-[#1a86f0] text-white rounded-lg text-sm font-medium flex items-center gap-2">
+              <button className="px-4 py-2 bg-[#4370B7] text-white rounded-lg text-sm font-medium flex items-center gap-2">
                 <Plus className="w-4 h-4" />
                 Add Medication
               </button>
@@ -902,7 +902,7 @@ export const PatientMedicationsDemo: React.FC = () => {
               onClick={() => setActiveTab('prescribed')}
               className={`px-4 py-2 text-sm font-medium border-b-2 ${
                 activeTab === 'prescribed'
-                  ? 'border-[#1a86f0] text-[#1a86f0]'
+                  ? 'border-[#4370B7] text-[#4370B7]'
                   : 'border-transparent text-[#6b7280] hover:text-[#0F172A]'
               }`}
             >
@@ -912,7 +912,7 @@ export const PatientMedicationsDemo: React.FC = () => {
               onClick={() => setActiveTab('prn')}
               className={`px-4 py-2 text-sm font-medium border-b-2 ${
                 activeTab === 'prn'
-                  ? 'border-[#1a86f0] text-[#1a86f0]'
+                  ? 'border-[#4370B7] text-[#4370B7]'
                   : 'border-transparent text-[#6b7280] hover:text-[#0F172A]'
               }`}
             >
@@ -927,17 +927,17 @@ export const PatientMedicationsDemo: React.FC = () => {
               <input
                 type="text"
                 placeholder="Search medications..."
-                className="w-full pl-9 pr-4 py-2 bg-[#f8fafc] border border-[rgba(20,30,60,0.08)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                className="w-full pl-9 pr-4 py-2 bg-[#f8fafc] border border-[rgba(20,30,60,0.08)] rounded-lg text-sm focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
               />
             </div>
-            <select className="px-3 py-2 bg-[#f8fafc] border border-[rgba(20,30,60,0.08)] rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#1a86f0]">
+            <select className="px-3 py-2 bg-[#f8fafc] border border-[rgba(20,30,60,0.08)] rounded-lg text-sm focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]">
               <option>All medications</option>
               <option>High Risk</option>
               <option>Regular</option>
             </select>
             <button 
               onClick={() => setShowScheduleModal(true)}
-              className="px-4 py-2 bg-[#e6f7ff] text-[#1a86f0] rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-blue-100"
+              className="px-4 py-2 bg-[#e6f7ff] text-[#4370B7] rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-blue-100"
             >
               <Pill className="w-4 h-4" />
               Schedule Existing
@@ -965,7 +965,7 @@ export const PatientMedicationsDemo: React.FC = () => {
                         <span className="text-sm font-medium text-[#0F172A]">{med.name}</span>
                         {med.type === 'high-risk' && (
                           <div className="mt-1">
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-700">
+                            <span className="inline-flex items-center px-2 py-0.5 rounded-sm text-xs font-medium bg-red-100 text-red-700">
                               A HIGH RISK
                             </span>
                           </div>
@@ -978,13 +978,13 @@ export const PatientMedicationsDemo: React.FC = () => {
                     <td className="px-4 py-3 text-sm text-[#6b7280]">{med.indication}</td>
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-2">
-                        <button className="p-1.5 text-[#1a86f0] hover:bg-blue-50 rounded">
+                        <button className="p-1.5 text-[#4370B7] hover:bg-blue-50 rounded-sm">
                           <Eye className="w-4 h-4" />
                         </button>
-                        <button className="p-1.5 text-[#6b7280] hover:bg-gray-50 rounded">
+                        <button className="p-1.5 text-[#6b7280] hover:bg-gray-50 rounded-sm">
                           <Pencil className="w-4 h-4" />
                         </button>
-                        <button className="p-1.5 text-[#ef4444] hover:bg-red-50 rounded">
+                        <button className="p-1.5 text-[#ef4444] hover:bg-red-50 rounded-sm">
                           <X className="w-4 h-4" />
                         </button>
                       </div>
@@ -1002,19 +1002,19 @@ export const PatientMedicationsDemo: React.FC = () => {
           <div className="bg-white rounded-lg border border-[rgba(20,30,60,0.08)] p-4">
             <div className="flex items-center justify-between mb-4">
               <h4 className="text-sm font-semibold text-[#0F172A]">MAR Quick View</h4>
-              <button className="text-xs text-[#1a86f0] hover:underline">View Full MAR</button>
+              <button className="text-xs text-[#4370B7] hover:underline">View Full MAR</button>
             </div>
             
             <div className="space-y-4">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <Pill className="w-4 h-4 text-[#1a86f0]" />
+                  <Pill className="w-4 h-4 text-[#4370B7]" />
                   <span className="text-sm font-medium text-[#0F172A]">yannick yaba - Nov 27, 2025</span>
                 </div>
                 <div className="flex gap-2 mb-3">
-                  <button className="px-3 py-1 text-xs bg-[#f8fafc] text-[#6b7280] rounded">Today</button>
-                  <button className="px-3 py-1 text-xs bg-[#1a86f0] text-white rounded">Week</button>
-                  <button className="px-3 py-1 text-xs bg-[#f8fafc] text-[#6b7280] rounded">Month</button>
+                  <button className="px-3 py-1 text-xs bg-[#f8fafc] text-[#6b7280] rounded-sm">Today</button>
+                  <button className="px-3 py-1 text-xs bg-[#4370B7] text-white rounded-sm">Week</button>
+                  <button className="px-3 py-1 text-xs bg-[#f8fafc] text-[#6b7280] rounded-sm">Month</button>
                 </div>
               </div>
 
@@ -1047,13 +1047,13 @@ export const PatientMedicationsDemo: React.FC = () => {
                       <p className="text-sm font-medium text-[#0F172A]">Lithium</p>
                       <p className="text-xs text-[#6b7280]">As prescribed</p>
                     </div>
-                    <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded text-xs font-medium">Scheduled</span>
+                    <span className="px-2 py-0.5 bg-amber-100 text-amber-700 rounded-sm text-xs font-medium">Scheduled</span>
                   </div>
                   <div className="space-y-1 text-xs text-[#6b7280] mb-3">
                     <p>Times: 09:00</p>
                     <p>Route: Oral</p>
                   </div>
-                  <button className="w-full px-3 py-1.5 bg-red-50 text-red-700 rounded text-xs font-medium hover:bg-red-100">
+                  <button className="w-full px-3 py-1.5 bg-red-50 text-red-700 rounded-sm text-xs font-medium hover:bg-red-100">
                     Unschedule
                   </button>
                 </div>
@@ -1093,7 +1093,7 @@ export const PatientMedicationsDemo: React.FC = () => {
               </div>
               <button 
                 onClick={() => setShowScheduleModal(false)}
-                className="p-1 hover:bg-slate-100 rounded"
+                className="p-1 hover:bg-slate-100 rounded-sm"
               >
                 <X className="w-5 h-5 text-slate-500" />
               </button>

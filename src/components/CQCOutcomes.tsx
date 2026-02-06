@@ -87,7 +87,7 @@ export const CQCOutcomes: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-[#FAFBFC] rounded-full text-xs font-bold text-[#1a86f0] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
+            <span className="inline-block px-4 py-2 bg-[#FAFBFC] rounded-full text-xs font-bold text-[#4370B7] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
               CQC Compliance
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
@@ -103,13 +103,14 @@ export const CQCOutcomes: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {cqcOutcomes.map((outcome, index) => (
-              <div
+              <button
                 key={index}
-                className="bg-[#FAFBFC] rounded-2xl p-6 border border-[rgba(20,30,60,0.08)] hover:shadow-lg transition-shadow cursor-pointer"
+                type="button"
                 onClick={() => handleOutcomeClick(outcome)}
+                className="text-left w-full bg-[#FAFBFC] rounded-2xl p-6 border border-[rgba(20,30,60,0.08)] hover:shadow-lg transition-shadow cursor-pointer"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-[#e6f7ff] flex items-center justify-center text-[#1a86f0] hover:bg-[#b3d9ff] transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-[#e6f7ff] flex items-center justify-center text-[#4370B7] hover:bg-[#b3d9ff] transition-colors">
                     {outcome.icon}
                   </div>
                   <h3 className="text-xl font-bold text-[#0F172A]">{outcome.domain}</h3>
@@ -120,12 +121,12 @@ export const CQCOutcomes: React.FC = () => {
                 <ul className="space-y-2">
                   {outcome.evidence.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#1a86f0] mt-2"></div>
+                      <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#4370B7] mt-2"></div>
                       <span className="text-xs text-[#4B5563] leading-relaxed">{item}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -145,7 +146,7 @@ export const CQCOutcomes: React.FC = () => {
               <ul className="space-y-2">
                 {selectedOutcome.evidence.map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2">
-                    <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#1a86f0] mt-2"></div>
+                    <div className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#4370B7] mt-2"></div>
                     <span className="text-[#4B5563] text-sm">{item}</span>
                   </li>
                 ))}

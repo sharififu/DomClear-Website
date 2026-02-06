@@ -36,13 +36,13 @@ export const PricingPage: React.FC = () => {
         <div className="max-w-[1200px] mx-auto px-8">
           {/* Annual toggle */}
           <div className="flex justify-center mb-12">
-            <div className="inline-flex items-center gap-2 bg-[#FAFBFC] rounded-full p-1 border border-[rgba(20,30,60,0.08)] shadow-sm">
+            <div className="inline-flex items-center gap-2 bg-[#FAFBFC] rounded-full p-1 border border-[rgba(20,30,60,0.08)] shadow-xs">
               <button
                 onClick={() => handleBillingToggle('monthly')}
                 className={`px-6 py-2 rounded-full font-semibold text-sm transition-all ${
                   billingPeriod === 'monthly'
-                    ? 'bg-[#1a86f0] text-white shadow-sm'
-                    : 'text-[#4B5563] hover:text-[#1a86f0]'
+                    ? 'bg-[#4370B7] text-white shadow-xs'
+                    : 'text-[#4B5563] hover:text-[#4370B7]'
                 }`}
               >
                 Monthly
@@ -51,8 +51,8 @@ export const PricingPage: React.FC = () => {
                 onClick={() => handleBillingToggle('annual')}
                 className={`px-6 py-2 rounded-full font-semibold text-sm transition-all ${
                   billingPeriod === 'annual'
-                    ? 'bg-[#1a86f0] text-white shadow-sm'
-                    : 'text-[#4B5563] hover:text-[#1a86f0]'
+                    ? 'bg-[#4370B7] text-white shadow-xs'
+                    : 'text-[#4B5563] hover:text-[#4370B7]'
                 }`}
               >
                 Annual (save 15%)
@@ -91,7 +91,7 @@ export const PricingPage: React.FC = () => {
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
-                    <Check className="w-3 h-3 text-[#1a86f0]" />
+                    <Check className="w-3 h-3 text-[#4370B7]" />
                   </div>
                   <span className="text-[#4B5563]">{item}</span>
                 </div>

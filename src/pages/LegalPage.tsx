@@ -25,7 +25,7 @@ export const LegalPage: React.FC<LegalPageProps> = ({ slug }) => {
           <p className="text-[#4B5563] mb-8">The legal document you requested does not exist.</p>
           <a
             href="/legal"
-            className="inline-flex items-center justify-center px-6 py-3 bg-[#1a86f0] text-white font-semibold rounded-full hover:bg-[#1570d1] transition-colors"
+            className="inline-flex items-center justify-center px-6 py-3 bg-[#4370B7] text-white font-semibold rounded-full hover:bg-[#365a9a] transition-colors"
           >
             View all legal documents
           </a>

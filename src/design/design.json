@@ -35,7 +35,7 @@
     },
     "borders": { "thin": "1px solid rgba(20, 30, 60, 0.08)", "hairline": "1px solid rgba(20, 30, 60, 0.05)" },
     "palette": {
-      "primary": { "50": "#e6f7ff", "100": "#cceeff", "400": "#4db8ff", "500": "#2ea0ff", "600": "#1a86f0" },
+      "primary": { "50": "#e6f7ff", "100": "#cceeff", "400": "#4db8ff", "500": "#2ea0ff", "600": "#4370B7" },
       "accent_teal": { "400": "#22d3b6", "500": "#10bfa3", "600": "#0ea08a" },
       "accent_purple": { "400": "#9b8aff", "500": "#7c6df0", "700": "#4e45b8" },
       "success": { "500": "#16a34a" },

@@ -364,7 +364,7 @@ export const EMARDemo: React.FC = () => {
                   <button
                     key={type}
                     onClick={() => setFilterType(type as any)}
-                    className={`px-3 py-1.5 rounded text-xs font-medium ${
+                    className={`px-3 py-1.5 rounded-sm text-xs font-medium ${
                       filterType === type
                         ? 'bg-blue-500 text-white'
                         : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
@@ -384,7 +384,7 @@ export const EMARDemo: React.FC = () => {
                 placeholder="Search..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
           </div>
@@ -393,7 +393,7 @@ export const EMARDemo: React.FC = () => {
         {/* Content Area */}
         <div className="flex-1 overflow-y-auto p-6">
           {activeTab === 'medications' ? (
-            <div className="bg-white rounded-lg border border-slate-200 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 shadow-xs">
               {/* Table Header */}
               <div className="bg-blue-50 border-b border-slate-200 grid grid-cols-12 gap-4 px-4 py-3">
                 <div className="col-span-2">
@@ -420,7 +420,7 @@ export const EMARDemo: React.FC = () => {
                     {/* Main Row */}
                     <div className="grid grid-cols-12 gap-4 px-4 py-3 hover:bg-slate-50 transition-colors">
                       <div className="col-span-2 flex items-center">
-                        <span className={`inline-flex items-center px-2 py-1 rounded text-xs font-medium ${
+                        <span className={`inline-flex items-center px-2 py-1 rounded-sm text-xs font-medium ${
                           med.type === 'high-risk'
                             ? 'bg-red-100 text-red-700'
                             : 'bg-blue-100 text-blue-700'
@@ -452,17 +452,17 @@ export const EMARDemo: React.FC = () => {
                       <div className="col-span-1 flex items-center gap-1">
                         <button
                           onClick={() => toggleExpand(med.id)}
-                          className="px-3 py-1.5 bg-blue-50 text-blue-600 rounded text-xs font-medium hover:bg-blue-100"
+                          className="px-3 py-1.5 bg-blue-50 text-blue-600 rounded-sm text-xs font-medium hover:bg-blue-100"
                         >
                           {expandedMedication === med.id ? 'Hide' : 'Details'}
                         </button>
-                        <button className="p-1.5 text-teal-600 hover:bg-teal-50 rounded" title="Schedule">
+                        <button className="p-1.5 text-teal-600 hover:bg-teal-50 rounded-sm" title="Schedule">
                           <Calendar className="w-4 h-4" />
                         </button>
-                        <button className="p-1.5 text-amber-600 hover:bg-amber-50 rounded" title="Risk">
+                        <button className="p-1.5 text-amber-600 hover:bg-amber-50 rounded-sm" title="Risk">
                           <Shield className="w-4 h-4" />
                         </button>
-                        <button className="p-1.5 text-red-600 hover:bg-red-50 rounded" title="Delete">
+                        <button className="p-1.5 text-red-600 hover:bg-red-50 rounded-sm" title="Delete">
                           <Trash2 className="w-4 h-4" />
                         </button>
                       </div>
@@ -548,10 +548,10 @@ export const EMARDemo: React.FC = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {categories.map((category) => (
-                  <div key={category.id} className="bg-white rounded-lg border border-slate-200 p-4 shadow-sm">
+                  <div key={category.id} className="bg-white rounded-lg border border-slate-200 p-4 shadow-xs">
                     <div className="flex items-start justify-between mb-2">
                       <h4 className="text-sm font-semibold text-slate-900">{category.category_name}</h4>
-                      <span className={`px-2 py-1 ${getRiskLevelColor(category.risk_level)} text-white rounded text-xs font-bold`}>
+                      <span className={`px-2 py-1 ${getRiskLevelColor(category.risk_level)} text-white rounded-sm text-xs font-bold`}>
                         {getRiskLevelLabel(category.risk_level)}
                       </span>
                     </div>
@@ -598,7 +598,7 @@ export const EMARDemo: React.FC = () => {
               <h3 className="text-lg font-semibold text-slate-900">Add New Medication</h3>
               <button 
                 onClick={() => setShowAddModal(false)}
-                className="p-1 hover:bg-slate-100 rounded"
+                className="p-1 hover:bg-slate-100 rounded-sm"
               >
                 <X className="w-5 h-5 text-slate-500" />
               </button>
@@ -711,7 +711,7 @@ export const EMARDemo: React.FC = () => {
                       id="witness-required"
                       checked={newMedication.witnessRequired}
                       onChange={(e) => setNewMedication({ ...newMedication, witnessRequired: e.target.checked })}
-                      className="w-4 h-4 text-red-600 border-red-300 rounded focus:ring-red-500"
+                      className="w-4 h-4 text-red-600 border-red-300 rounded-sm focus:ring-red-500"
                     />
                     <label htmlFor="witness-required" className="text-sm text-red-900 flex items-center gap-2">
                       <Users className="w-4 h-4" />

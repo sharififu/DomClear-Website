@@ -12,7 +12,7 @@ export const StatCard: React.FC<StatCardProps> = ({ stat }) => {
   return (
     <div className="text-center">
       <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[rgba(46,160,255,0.04)] mb-4">
-        {IconComponent && <IconComponent className="w-8 h-8 text-[#1a86f0]" />}
+        {IconComponent && <IconComponent className="w-8 h-8 text-[#4370B7]" />}
       </div>
       <div className="text-4xl font-bold text-[#0F172A] mb-2">{stat.metric}</div>
       <p className="text-[#4B5563]">{stat.label}</p>

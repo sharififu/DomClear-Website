@@ -75,12 +75,12 @@ export const PlatformPage: React.FC = () => {
             Every tool your agency needs to plan care, schedule visits, ensure compliance, and keep families informed—unified in one powerful platform.
           </p>
         <Button 
-          variant="accent" 
+          variant="secondary" 
           size="lg" 
           href={EXTERNAL_SIGNUP_URL} 
           target="_blank" 
           rel="noreferrer" 
-          className="bg-white text-[#1a86f0] hover:bg-white/90"
+          className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
         >
             Start free trial
           </Button>
@@ -104,7 +104,7 @@ export const PlatformPage: React.FC = () => {
                   {feature.features.slice(0, 3).map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
-                        <Check className="w-4 h-4 text-[#1a86f0]" />
+                        <Check className="w-4 h-4 text-[#4370B7]" />
                       </div>
                       <span className="text-[#4B5563]">{item}</span>
                     </li>
@@ -114,7 +114,7 @@ export const PlatformPage: React.FC = () => {
                 {featureDemoMap[feature.id] && (
                   <a
                     href={featureDemoMap[feature.id].deepLink}
-                    className="inline-flex items-center gap-2 text-[#1a86f0] font-semibold hover:underline text-sm"
+                    className="inline-flex items-center gap-2 text-[#4370B7] font-semibold hover:underline text-sm"
                   >
                     {featureDemoMap[feature.id].deepLinkText}
                     <ArrowRight className="w-4 h-4" />
@@ -135,7 +135,7 @@ export const PlatformPage: React.FC = () => {
                   <div className="w-full aspect-video bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC] rounded-2xl border border-[rgba(20,30,60,0.08)] flex items-center justify-center">
                     <div className="text-center">
                       <span className="block text-[#0F172A] font-semibold mb-2">{feature.title}</span>
-                      <a href={`/demos#${feature.id}`} className="text-[#1a86f0] hover:underline text-sm">
+                      <a href={`/demos#${feature.id}`} className="text-[#4370B7] hover:underline text-sm">
                         View guided demo
                       </a>
                     </div>

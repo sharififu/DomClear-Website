@@ -117,8 +117,8 @@ export const BodyMapSelector: React.FC<BodyMapSelectorProps> = ({ selectedSites 
                 key={part.id}
                 id={part.id}
                 d={part.path}
-                fill={isSelected ? '#1a86f0' : '#bababa'}
-                stroke={isSelected ? '#1570d1' : 'transparent'}
+                fill={isSelected ? '#4370B7' : '#bababa'}
+                stroke={isSelected ? '#365a9a' : 'transparent'}
                 strokeWidth="2"
                 className="hover:opacity-80 transition-opacity"
                 onClick={() => handlePartClick(part.id)}
