@@ -1,8 +1,12 @@
 import React from 'react';
-import * as Icons from 'lucide-react';
-import { comprehensiveFeaturesContent } from '../data/content';
+import { getContentIcon } from './icons';
 
 export const ComprehensiveFeatures: React.FC = () => {
+  const SearchIcon = getContentIcon('Search');
+  const PlayIcon = getContentIcon('Play');
+  const PlusIcon = getContentIcon('Plus');
+  const UserIcon = getContentIcon('User');
+  const UsersIcon = getContentIcon('Users');
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-[1400px] mx-auto px-8">
@@ -11,7 +15,7 @@ export const ComprehensiveFeatures: React.FC = () => {
           {/* Left side - Text content */}
           <div className="order-2 lg:order-1">
             <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center mb-6">
-              <Icons.Search className="w-8 h-8 text-white" />
+              {SearchIcon && <SearchIcon className="w-8 h-8 text-white" />}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
               Smart Scheduling & Rota Planning
@@ -112,10 +116,10 @@ export const ComprehensiveFeatures: React.FC = () => {
 
             {/* Floating elements */}
             <div className="absolute -top-4 -right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg z-20">
-              <Icons.Play className="w-6 h-6 text-white" />
+              {PlayIcon && <PlayIcon className="w-6 h-6 text-white" />}
             </div>
             <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg z-20">
-              <Icons.Plus className="w-5 h-5 text-white" />
+              {PlusIcon && <PlusIcon className="w-5 h-5 text-white" />}
             </div>
           </div>
         </div>
@@ -236,17 +240,17 @@ export const ComprehensiveFeatures: React.FC = () => {
 
             {/* Floating elements */}
             <div className="absolute -top-4 -right-4 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg z-20">
-              <Icons.Play className="w-5 h-5 text-white" />
+              {PlayIcon && <PlayIcon className="w-5 h-5 text-white" />}
             </div>
             <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center shadow-lg z-20">
-              <Icons.User className="w-4 h-4 text-white" />
+              {UserIcon && <UserIcon className="w-4 h-4 text-white" />}
             </div>
           </div>
 
           {/* Right side - Text content */}
           <div>
             <div className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center mb-6">
-              <Icons.Users className="w-8 h-8 text-white" />
+              {UsersIcon && <UsersIcon className="w-8 h-8 text-white" />}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
               Complete Care Team Management

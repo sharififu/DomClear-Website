@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, Label, Input, Select, ListBox } from '@heroui/react';
 import { Button } from '../components/Button';
-import { Calendar, CheckCircle } from 'lucide-react';
+import { CalendarDaysIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 
 export const BookDemoPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -31,7 +31,7 @@ export const BookDemoPage: React.FC = () => {
       <div className="min-h-screen pt-32 pb-20 bg-[#FAFBFC] flex items-center justify-center">
         <div className="max-w-2xl mx-auto px-8 text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#e6f7ff] mb-6">
-            <CheckCircle className="w-10 h-10 text-[#4370B7]" />
+            <CheckCircleIcon className="w-10 h-10 text-[#4370B7]" />
           </div>
           <h1 className="text-4xl font-bold text-[#0F172A] mb-6">Thank you for your interest!</h1>
           <p className="text-xl text-[#4B5563] mb-8">
@@ -99,7 +99,7 @@ export const BookDemoPage: React.FC = () => {
           <div className={`bg-white rounded-2xl p-8 border border-[rgba(20,30,60,0.08)] shadow-[0_6px_20px_rgba(10,20,40,0.06)] ${viewMode !== 'form' ? 'hidden' : ''}`}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2ea0ff] to-[#7c6df0] flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-white" />
+                <CalendarDaysIcon className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-[#0F172A]">Request a demo</h2>
             </div>
@@ -173,7 +173,7 @@ export const BookDemoPage: React.FC = () => {
           <div className={`bg-white rounded-2xl p-8 border border-[rgba(20,30,60,0.08)] shadow-[0_6px_20px_rgba(10,20,40,0.06)] ${viewMode !== 'calendly' ? 'hidden' : ''}`}>
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2ea0ff] to-[#7c6df0] flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-white" />
+                <CalendarDaysIcon className="w-6 h-6 text-white" />
               </div>
               <h2 className="text-2xl font-bold text-[#0F172A]">Pick a time now</h2>
             </div>

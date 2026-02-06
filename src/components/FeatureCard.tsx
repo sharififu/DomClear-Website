@@ -1,5 +1,5 @@
 import React from 'react';
-import * as Icons from 'lucide-react';
+import { getContentIcon } from './icons';
 import { Feature } from '../types';
 
 interface FeatureCardProps {
@@ -7,7 +7,7 @@ interface FeatureCardProps {
 }
 
 export const FeatureCard: React.FC<FeatureCardProps> = ({ feature }) => {
-  const IconComponent = Icons[feature.icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
+  const IconComponent = getContentIcon(feature.icon);
 
   return (
     <div className="bg-white rounded-2xl p-6 border border-[rgba(20,30,60,0.08)] shadow-[0_6px_20px_rgba(10,20,40,0.06)] hover:shadow-[0_10px_30px_rgba(10,20,40,0.10)] hover:-translate-y-1 transition-all duration-300">

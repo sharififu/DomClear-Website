@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, ArrowRight } from 'lucide-react';
+import { CheckIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { Button } from '../components/Button';
 import { platformFeatures } from '../data/content';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
@@ -104,7 +104,7 @@ export const PlatformPage: React.FC = () => {
                   {feature.features.slice(0, 3).map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
-                        <Check className="w-4 h-4 text-[#4370B7]" />
+                        <CheckIcon className="w-4 h-4 text-[#4370B7]" />
                       </div>
                       <span className="text-[#4B5563]">{item}</span>
                     </li>
@@ -117,7 +117,7 @@ export const PlatformPage: React.FC = () => {
                     className="inline-flex items-center gap-2 text-[#4370B7] font-semibold hover:underline text-sm"
                   >
                     {featureDemoMap[feature.id].deepLinkText}
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRightIcon className="w-4 h-4" />
                   </a>
                 )}
               </div>

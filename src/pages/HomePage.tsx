@@ -7,7 +7,7 @@ import { StatCard } from '../components/StatCard';
 import { Button } from '../components/Button';
 import { CQCOutcomes } from '../components/CQCOutcomes';
 import { outcomes, testimonials } from '../data/content';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
 export const HomePage: React.FC = () => {
@@ -98,7 +98,7 @@ export const HomePage: React.FC = () => {
                     analyticsProperties={{ source: 'homepage_cta' }}
                   >
                     Start free trial
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRightIcon className="w-5 h-5" />
                   </Button>
                   <Button
                     variant="secondary"

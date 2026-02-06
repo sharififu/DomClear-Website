@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { Shield, CheckCircle, Heart, Clock, TrendingUp } from 'lucide-react';
+import {
+  ShieldCheckIcon,
+  CheckCircleIcon,
+  HeartIcon,
+  ClockIcon,
+  ArrowTrendingUpIcon,
+} from '@heroicons/react/24/outline';
 import { Modal } from './Modal';
 import { analytics } from '../utils/analytics';
 
@@ -14,7 +20,7 @@ interface CQCOutcome {
 const cqcOutcomes: CQCOutcome[] = [
   {
     domain: 'Safe',
-    icon: <Shield className="w-6 h-6" />,
+    icon: <ShieldCheckIcon className="w-6 h-6" />,
     description: 'Protecting people from abuse and avoidable harm',
     evidence: [
       'GPS visit verification ensures carers arrive on time',
@@ -26,7 +32,7 @@ const cqcOutcomes: CQCOutcome[] = [
   },
   {
     domain: 'Effective',
-    icon: <CheckCircle className="w-6 h-6" />,
+    icon: <CheckCircleIcon className="w-6 h-6" />,
     description: 'Care achieves good outcomes based on best available evidence',
     evidence: [
       'Evidence-based care plan templates',
@@ -38,7 +44,7 @@ const cqcOutcomes: CQCOutcome[] = [
   },
   {
     domain: 'Caring',
-    icon: <Heart className="w-6 h-6" />,
+    icon: <HeartIcon className="w-6 h-6" />,
     description: 'People are treated with compassion, kindness, dignity and respect',
     evidence: [
       'Personalised care plans reflect individual preferences',
@@ -50,7 +56,7 @@ const cqcOutcomes: CQCOutcome[] = [
   },
   {
     domain: 'Responsive',
-    icon: <Clock className="w-6 h-6" />,
+    icon: <ClockIcon className="w-6 h-6" />,
     description: 'Services are organised to meet people\'s needs',
     evidence: [
       'Intelligent scheduling prevents missed visits',
@@ -62,7 +68,7 @@ const cqcOutcomes: CQCOutcome[] = [
   },
   {
     domain: 'Well-led',
-    icon: <TrendingUp className="w-6 h-6" />,
+    icon: <ArrowTrendingUpIcon className="w-6 h-6" />,
     description: 'Leadership ensures high-quality, person-centred care',
     evidence: [
       'Executive dashboards provide oversight and insights',

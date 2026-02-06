@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HelpCircle } from 'lucide-react';
+import { QuestionMarkCircleIcon } from '@heroicons/react/24/outline';
 
 export const AppStoreBadges: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -37,7 +37,7 @@ export const AppStoreBadges: React.FC = () => {
         onMouseLeave={() => setShowTooltip(false)}
         aria-label="App availability information"
       >
-        <HelpCircle className="w-5 h-5 text-white/80 hover:text-white transition-colors" />
+        <QuestionMarkCircleIcon className="w-5 h-5 text-white/80 hover:text-white transition-colors" />
         {showTooltip && (
           <div className="absolute left-0 top-6 w-64 p-3 bg-[#0F172A] text-white text-sm rounded-lg shadow-xl z-50 whitespace-normal">
             Invite carers from the web app

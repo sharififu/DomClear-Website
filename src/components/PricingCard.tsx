@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check } from 'lucide-react';
+import { CheckIcon } from '@heroicons/react/24/outline';
 import { Button } from './Button';
 import { PricingTier } from '../types';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
@@ -97,7 +97,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({ tier, billingPeriod = 
           {tier.features.map((feature, index) => (
             <li key={index} className="flex items-start gap-3">
               <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
-                <Check className="w-3 h-3 text-[#4370B7]" />
+                <CheckIcon className="w-3 h-3 text-[#4370B7]" />
               </div>
               <span className="text-[#4B5563]">{feature}</span>
             </li>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PricingCard } from '../components/PricingCard';
 import { FAQAccordion } from '../components/FAQAccordion';
 import { pricingTiers, faqItems } from '../data/content';
-import { Check } from 'lucide-react';
+import { CheckIcon } from '@heroicons/react/24/outline';
 import { analytics } from '../utils/analytics';
 
 export const PricingPage: React.FC = () => {
@@ -91,7 +91,7 @@ export const PricingPage: React.FC = () => {
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
-                    <Check className="w-3 h-3 text-[#4370B7]" />
+                    <CheckIcon className="w-3 h-3 text-[#4370B7]" />
                   </div>
                   <span className="text-[#4B5563]">{item}</span>
                 </div>

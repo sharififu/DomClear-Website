@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from './Button';
 import { heroContent } from '../data/content';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { analytics } from '../utils/analytics';
 
 export const Hero: React.FC = () => {
@@ -87,7 +87,7 @@ export const Hero: React.FC = () => {
                     onClick={() => analytics.trackStartTrialClicked('hero')}
                   >
                     {heroContent.primaryCta}
-                    <ArrowRight className="w-5 h-5" />
+                    <ArrowRightIcon className="w-5 h-5" />
                   </Button>
                   <Button
                     variant="secondary"

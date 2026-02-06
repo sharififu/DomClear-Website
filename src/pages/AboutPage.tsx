@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Check, Briefcase, Newspaper, ArrowRight } from 'lucide-react';
+import { CheckIcon, BriefcaseIcon, NewspaperIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { Button } from '../components/Button';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
@@ -65,7 +65,7 @@ export const AboutPage: React.FC = () => {
               ].map((value, i) => (
                 <div key={i} className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-1">
-                    <Check className="w-4 h-4 text-[#4370B7]" />
+                    <CheckIcon className="w-4 h-4 text-[#4370B7]" />
                   </div>
                   <span className="text-[#4B5563] text-left">{value}</span>
                 </div>
@@ -81,7 +81,7 @@ export const AboutPage: React.FC = () => {
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC] flex items-center justify-center border border-[rgba(20,30,60,0.08)]">
-                  <Briefcase className="w-12 h-12 text-[#4370B7]" />
+                  <BriefcaseIcon className="w-12 h-12 text-[#4370B7]" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A]">Careers</h2>
               </div>
@@ -93,13 +93,13 @@ export const AboutPage: React.FC = () => {
               </p>
               <Button variant="primary" size="md" href="/contact">
                 Get in touch
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRightIcon className="w-4 h-4" />
               </Button>
             </div>
             <div className="flex-1">
               <div className="w-full aspect-video bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC] rounded-2xl border border-[rgba(20,30,60,0.08)] flex items-center justify-center p-8">
                 <div className="text-center max-w-md">
-                  <Briefcase className="w-16 h-16 text-[#4370B7] mx-auto mb-4" />
+                  <BriefcaseIcon className="w-16 h-16 text-[#4370B7] mx-auto mb-4" />
                   <span className="block text-[#0F172A] font-semibold text-xl">Join our team</span>
                   <p className="text-sm text-[#4B5563] mt-2">
                     Help us build the future of homecare technology.
@@ -117,7 +117,7 @@ export const AboutPage: React.FC = () => {
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC] flex items-center justify-center border border-[rgba(20,30,60,0.08)]">
-                  <Newspaper className="w-12 h-12 text-[#7c6df0]" />
+                  <NewspaperIcon className="w-12 h-12 text-[#7c6df0]" />
                 </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A]">Press</h2>
               </div>
@@ -129,13 +129,13 @@ export const AboutPage: React.FC = () => {
               </p>
               <Button variant="primary" size="md" href="/contact">
                 Contact press team
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRightIcon className="w-4 h-4" />
               </Button>
             </div>
             <div className="flex-1">
               <div className="w-full aspect-video bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC] rounded-2xl border border-[rgba(20,30,60,0.08)] flex items-center justify-center p-8">
                 <div className="text-center max-w-md">
-                  <Newspaper className="w-16 h-16 text-[#7c6df0] mx-auto mb-4" />
+                  <NewspaperIcon className="w-16 h-16 text-[#7c6df0] mx-auto mb-4" />
                   <span className="block text-[#0F172A] font-semibold text-xl">Media enquiries</span>
                   <p className="text-sm text-[#4B5563] mt-2">
                     Get in touch for press and partnership opportunities.

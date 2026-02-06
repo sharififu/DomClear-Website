@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { TextField, TextArea, Select, ListBox, Label, Input } from '@heroui/react';
 import { Button } from '../components/Button';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
 export const ContactPage: React.FC = () => {
@@ -18,7 +18,7 @@ export const ContactPage: React.FC = () => {
       <div className="min-h-screen pt-32 pb-20 bg-[#FAFBFC] flex items-center justify-center">
         <div className="max-w-2xl mx-auto px-8 text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#e6f7ff] mb-6">
-            <Mail className="w-10 h-10 text-[#1F6FEB]" />
+            <EnvelopeIcon className="w-10 h-10 text-[#1F6FEB]" />
           </div>
           <h1 className="text-4xl font-bold text-[#0F172A] mb-6">Thank you for your message!</h1>
           <p className="text-xl text-[#4B5563] mb-8">
@@ -116,7 +116,7 @@ export const ContactPage: React.FC = () => {
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#e6f7ff] flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-[#1F6FEB]" />
+                    <PhoneIcon className="w-5 h-5 text-[#1F6FEB]" />
                   </div>
                   <div>
                     <p className="font-semibold text-[#0F172A]">Phone</p>
@@ -126,7 +126,7 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#e6f7ff] flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-[#1F6FEB]" />
+                    <EnvelopeIcon className="w-5 h-5 text-[#1F6FEB]" />
                   </div>
                   <div>
                     <p className="font-semibold text-[#0F172A]">Email</p>
@@ -136,7 +136,7 @@ export const ContactPage: React.FC = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#e6f7ff] flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-[#1F6FEB]" />
+                    <MapPinIcon className="w-5 h-5 text-[#1F6FEB]" />
                   </div>
                   <div>
                     <p className="font-semibold text-[#0F172A]">Office</p>
