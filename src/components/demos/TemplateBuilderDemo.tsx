@@ -875,7 +875,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
               <button
                 onClick={undo}
                 disabled={!canUndo}
-                className={`px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
+                className={`px-2.5 py-1.5 rounded-sm text-xs font-medium transition-colors ${
                   canUndo 
                     ? 'bg-slate-100 text-slate-700 hover:bg-slate-200' 
                     : 'bg-slate-50 text-slate-400 cursor-not-allowed'
@@ -887,7 +887,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
               <button
                 onClick={redo}
                 disabled={!canRedo}
-                className={`px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
+                className={`px-2.5 py-1.5 rounded-sm text-xs font-medium transition-colors ${
                   canRedo 
                     ? 'bg-slate-100 text-slate-700 hover:bg-slate-200' 
                     : 'bg-slate-50 text-slate-400 cursor-not-allowed'
@@ -899,7 +899,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
               <div className="w-3" />
               <button
                 onClick={() => setSelection({})}
-                className="px-2.5 py-1.5 rounded text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+                className="px-2.5 py-1.5 rounded-sm text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
                 title="Clear Selection (Esc)"
               >
                 Clear
@@ -907,7 +907,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
               <div className="w-3" />
               <button
                 onClick={copyElement}
-                className="px-2.5 py-1.5 rounded text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+                className="px-2.5 py-1.5 rounded-sm text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
                 title="Copy (Ctrl+C)"
               >
                 <Copy className="w-3 h-3" />
@@ -915,7 +915,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
               <button
                 onClick={pasteElement}
                 disabled={!canPaste}
-                className={`px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
+                className={`px-2.5 py-1.5 rounded-sm text-xs font-medium transition-colors ${
                   canPaste 
                     ? 'bg-slate-100 text-slate-700 hover:bg-slate-200' 
                     : 'bg-slate-50 text-slate-400 cursor-not-allowed'
@@ -928,7 +928,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
               <button
                 onClick={moveUp}
                 disabled={!canMoveUp()}
-                className={`px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
+                className={`px-2.5 py-1.5 rounded-sm text-xs font-medium transition-colors ${
                   canMoveUp() 
                     ? 'bg-slate-100 text-slate-700 hover:bg-slate-200' 
                     : 'bg-slate-50 text-slate-400 cursor-not-allowed'
@@ -940,7 +940,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
               <button
                 onClick={moveDown}
                 disabled={!canMoveDown()}
-                className={`px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
+                className={`px-2.5 py-1.5 rounded-sm text-xs font-medium transition-colors ${
                   canMoveDown() 
                     ? 'bg-slate-100 text-slate-700 hover:bg-slate-200' 
                     : 'bg-slate-50 text-slate-400 cursor-not-allowed'
@@ -958,7 +958,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
                     duplicateSection(selection.selectedSectionId);
                   }
                 }}
-                className="px-2.5 py-1.5 rounded text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
+                className="px-2.5 py-1.5 rounded-sm text-xs font-medium bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors"
                 title="Duplicate (Ctrl+D)"
               >
                 Duplicate
@@ -971,7 +971,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
                     removeSection(selection.selectedSectionId);
                   }
                 }}
-                className="px-2.5 py-1.5 rounded text-xs font-medium bg-red-50 text-red-600 hover:bg-red-100 transition-colors"
+                className="px-2.5 py-1.5 rounded-sm text-xs font-medium bg-red-50 text-red-600 hover:bg-red-100 transition-colors"
                 title="Delete (Del)"
               >
                 <Trash2 className="w-3 h-3" />
@@ -979,7 +979,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
               <div className="w-3" />
               <button
                 onClick={() => setPreviewMode(!previewMode)}
-                className={`px-2.5 py-1.5 rounded text-xs font-medium transition-colors ${
+                className={`px-2.5 py-1.5 rounded-sm text-xs font-medium transition-colors ${
                   previewMode 
                     ? 'bg-blue-500 text-white' 
                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
@@ -1028,11 +1028,11 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
                         type="text"
                         value={section.title}
                         onChange={(e) => updateSectionTitle(section.id, e.target.value)}
-                        className="text-base font-semibold text-slate-900 bg-transparent border-none outline-none focus:bg-white focus:border focus:border-blue-300 focus:px-2 focus:py-1 focus:rounded"
+                        className="text-base font-semibold text-slate-900 bg-transparent border-none outline-none focus:bg-white focus:border focus:border-blue-300 focus:px-2 focus:py-1 focus:rounded-sm"
                         onClick={(e) => e.stopPropagation()}
                       />
                       <div className="flex items-center gap-2">
-                        <button className="p-1.5 hover:bg-slate-100 rounded">
+                        <button className="p-1.5 hover:bg-slate-100 rounded-sm">
                           <GripVertical className="w-4 h-4 text-slate-400" />
                         </button>
                         <button 
@@ -1040,7 +1040,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
                             e.stopPropagation();
                             removeSection(section.id);
                           }}
-                          className="p-1.5 hover:bg-red-100 rounded text-red-500"
+                          className="p-1.5 hover:bg-red-100 rounded-sm text-red-500"
                         >
                           <Trash2 className="w-4 h-4" />
                         </button>
@@ -1089,7 +1089,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
                                           type="text"
                                           value={element.label}
                                           onChange={(e) => updateElementLabel(element.id, e.target.value)}
-                                          className="text-sm font-medium text-slate-900 bg-transparent border-none outline-none flex-1 focus:bg-white focus:border focus:border-blue-300 focus:px-2 focus:py-1 focus:rounded"
+                                          className="text-sm font-medium text-slate-900 bg-transparent border-none outline-none flex-1 focus:bg-white focus:border focus:border-blue-300 focus:px-2 focus:py-1 focus:rounded-sm"
                                           onClick={(e) => e.stopPropagation()}
                                         />
                                         {element.required && (
@@ -1175,14 +1175,14 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
                 value={schema.meta.name}
                 onChange={(e) => updateMeta({ name: e.target.value })}
                 placeholder="Template name"
-                className="w-full px-2 py-2 border border-slate-200 rounded text-xs text-slate-900 mb-2"
+                className="w-full px-2 py-2 border border-slate-200 rounded-sm text-xs text-slate-900 mb-2"
               />
               <input
                 type="text"
                 value={schema.meta.description || ''}
                 onChange={(e) => updateMeta({ description: e.target.value })}
                 placeholder="Description"
-                className="w-full px-2 py-2 border border-slate-200 rounded text-xs text-slate-900"
+                className="w-full px-2 py-2 border border-slate-200 rounded-sm text-xs text-slate-900"
               />
             </div>
 
@@ -1195,7 +1195,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
                   value={selectedSection.title}
                   onChange={(e) => updateSectionTitle(selectedSection.id, e.target.value)}
                   placeholder="Section title"
-                  className="w-full px-2 py-2 border border-slate-200 rounded text-xs text-slate-900"
+                  className="w-full px-2 py-2 border border-slate-200 rounded-sm text-xs text-slate-900"
                 />
               </div>
             )}
@@ -1209,14 +1209,14 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
                   value={selectedElement.label}
                   onChange={(e) => updateElementLabel(selectedElement.id, e.target.value)}
                   placeholder="Field label"
-                  className="w-full px-2 py-2 border border-slate-200 rounded text-xs text-slate-900 mb-2"
+                  className="w-full px-2 py-2 border border-slate-200 rounded-sm text-xs text-slate-900 mb-2"
                 />
                 <input
                   type="text"
                   value={selectedElement.placeholder || ''}
                   onChange={(e) => updateElementProps(selectedElement.id, { placeholder: e.target.value })}
                   placeholder="Placeholder"
-                  className="w-full px-2 py-2 border border-slate-200 rounded text-xs text-slate-900 mb-2"
+                  className="w-full px-2 py-2 border border-slate-200 rounded-sm text-xs text-slate-900 mb-2"
                 />
                 <div className="flex items-center gap-2 mb-2">
                   <input
@@ -1238,7 +1238,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
                         updateElementProps(selectedElement.id, { options });
                       }}
                       placeholder="Option 1, Option 2, Option 3"
-                      className="w-full px-2 py-2 border border-slate-200 rounded text-xs text-slate-900"
+                      className="w-full px-2 py-2 border border-slate-200 rounded-sm text-xs text-slate-900"
                     />
                   </div>
                 )}

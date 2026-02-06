@@ -61,22 +61,22 @@ export const ComplianceDemo: React.FC = () => {
       <div className="p-6 space-y-6 flex-1 flex flex-col min-h-0">
         {/* Header & Tabs */}
         <div className="flex items-center justify-between">
-          <div className="flex bg-slate-200 rounded p-1" data-tour="compliance-tabs">
+          <div className="flex bg-slate-200 rounded-sm p-1" data-tour="compliance-tabs">
             <button
               onClick={() => setActiveTab('dashboard')}
-              className={`px-4 py-1.5 rounded text-sm font-medium transition-all ${activeTab === 'dashboard' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+              className={`px-4 py-1.5 rounded-sm text-sm font-medium transition-all ${activeTab === 'dashboard' ? 'bg-white text-slate-800 shadow-xs' : 'text-slate-500 hover:text-slate-700'}`}
             >
               Overview
             </button>
             <button
               onClick={() => setActiveTab('audits')}
-              className={`px-4 py-1.5 rounded text-sm font-medium transition-all ${activeTab === 'audits' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+              className={`px-4 py-1.5 rounded-sm text-sm font-medium transition-all ${activeTab === 'audits' ? 'bg-white text-slate-800 shadow-xs' : 'text-slate-500 hover:text-slate-700'}`}
             >
               Audits
             </button>
             <button
               onClick={() => setActiveTab('incidents')}
-              className={`px-4 py-1.5 rounded text-sm font-medium transition-all ${activeTab === 'incidents' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'}`}
+              className={`px-4 py-1.5 rounded-sm text-sm font-medium transition-all ${activeTab === 'incidents' ? 'bg-white text-slate-800 shadow-xs' : 'text-slate-500 hover:text-slate-700'}`}
             >
               Incidents
             </button>
@@ -98,7 +98,7 @@ export const ComplianceDemo: React.FC = () => {
             <div className="space-y-6">
               {/* Stats Cards */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6" data-tour="compliance-metrics">
-                <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm relative overflow-hidden">
+                <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-xs relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -mr-4 -mt-4"></div>
                   <div className="relative">
                     <div className="flex justify-between items-start mb-4">
@@ -115,7 +115,7 @@ export const ComplianceDemo: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+                <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-xs">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="font-bold text-slate-700">Open Incidents</h3>
                     <AlertTriangle className="w-5 h-5 text-amber-500" />
@@ -127,12 +127,12 @@ export const ComplianceDemo: React.FC = () => {
                     <div className="text-xs text-slate-400">Requires attention</div>
                   </div>
                   <div className="flex gap-2 mt-4">
-                     <span className="px-2 py-1 bg-red-50 text-red-600 text-xs font-bold rounded">1 Critical</span>
-                     <span className="px-2 py-1 bg-amber-50 text-amber-600 text-xs font-bold rounded">2 High</span>
+                     <span className="px-2 py-1 bg-red-50 text-red-600 text-xs font-bold rounded-sm">1 Critical</span>
+                     <span className="px-2 py-1 bg-amber-50 text-amber-600 text-xs font-bold rounded-sm">2 High</span>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm">
+                <div className="bg-white rounded-xl p-6 border border-slate-200 shadow-xs">
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="font-bold text-slate-700">Audit Schedule</h3>
                     <FileCheck className="w-5 h-5 text-green-500" />
@@ -148,7 +148,7 @@ export const ComplianceDemo: React.FC = () => {
               </div>
 
               {/* CQC Domains */}
-              <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6" data-tour="compliance-domains">
+              <div className="bg-white rounded-xl border border-slate-200 shadow-xs p-6" data-tour="compliance-domains">
                 <h3 className="font-bold text-slate-800 mb-6">CQC Domain Performance</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                   {['Safe', 'Effective', 'Caring', 'Responsive', 'Well-led'].map((domain, i) => (
@@ -183,7 +183,7 @@ export const ComplianceDemo: React.FC = () => {
           )}
 
           {activeTab === 'audits' && (
-            <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden" data-tour="compliance-table">
+            <div className="bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden" data-tour="compliance-table">
               <table className="w-full text-left">
                 <thead className="bg-slate-50 border-b border-slate-200">
                   <tr>
@@ -200,7 +200,7 @@ export const ComplianceDemo: React.FC = () => {
                     <tr key={audit.id} className="hover:bg-slate-50 transition-colors">
                       <td className="p-4 font-medium text-slate-800">{audit.title}</td>
                       <td className="p-4">
-                        <span className="px-2 py-1 bg-slate-100 text-slate-600 rounded text-xs font-medium capitalize">
+                        <span className="px-2 py-1 bg-slate-100 text-slate-600 rounded-sm text-xs font-medium capitalize">
                           {audit.category}
                         </span>
                       </td>
@@ -224,10 +224,10 @@ export const ComplianceDemo: React.FC = () => {
           {activeTab === 'incidents' && (
             <div className="space-y-4">
               {incidents.map(incident => (
-                <div key={incident.id} className="bg-white p-4 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-all cursor-pointer group">
+                <div key={incident.id} className="bg-white p-4 rounded-xl border border-slate-200 shadow-xs hover:shadow-md transition-all cursor-pointer group">
                   <div className="flex justify-between items-start mb-2">
                     <div className="flex items-center gap-3">
-                       <span className={`px-2 py-1 rounded text-[10px] font-bold uppercase ${getSeverityColor(incident.severity)}`}>
+                       <span className={`px-2 py-1 rounded-sm text-[10px] font-bold uppercase ${getSeverityColor(incident.severity)}`}>
                           {incident.severity}
                         </span>
                         <h4 className="font-bold text-slate-800 group-hover:text-blue-600 transition-colors">{incident.type}</h4>

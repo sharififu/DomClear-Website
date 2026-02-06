@@ -15,7 +15,7 @@ import { TourButton } from './TourButton';
 
 type TemplateType = 'form_templates' | 'outcome' | 'risk' | 'service' | 'mental_capacity' | 'staff_supervision' | 'visit_templates';
 
-export const TemplatesPageDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => {
+export const TemplatesPageDemo: React.FC<{ onReset: () => void; onOpenTemplateBuilder?: () => void }> = ({ onReset, onOpenTemplateBuilder }) => {
   const [activeTab, setActiveTab] = useState<TemplateType>('form_templates');
   const tour = useDemoTour('templates-page');
 
@@ -32,7 +32,7 @@ export const TemplatesPageDemo: React.FC<{ onReset: () => void }> = ({ onReset }
   const renderContent = () => {
     switch (activeTab) {
       case 'form_templates':
-        return <FormTemplatesDemo onReset={onReset} enableTour={false} />;
+        return <FormTemplatesDemo onReset={onReset} onOpenTemplateBuilder={onOpenTemplateBuilder} enableTour={false} />;
       case 'outcome':
         return (
           <div className="flex flex-col h-full bg-[#F4F6F8]">
@@ -153,8 +153,19 @@ export const TemplatesPageDemo: React.FC<{ onReset: () => void }> = ({ onReset }
       />
 
       {/* Content */}
-      <div className="flex-1 overflow-hidden" data-tour="templates-library-grid">
+      <div className="flex-1 overflow-hidden flex flex-col" data-tour="templates-library-grid">
         {renderContent()}
+        {onOpenTemplateBuilder && (
+          <div className="flex-shrink-0 p-4 bg-white border-t border-slate-200">
+            <button
+              type="button"
+              onClick={onOpenTemplateBuilder}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#4370B7] text-white rounded-lg font-semibold text-sm hover:bg-[#365a9a] transition-colors"
+            >
+              <span>Create template or open Template Builder</span>
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

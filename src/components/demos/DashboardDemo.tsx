@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Users, Heart, CheckCircle, MapPin, Calendar, Clock, AlertCircle } from 'lucide-react';
-import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import { Users, Heart, CheckCircle, MapPin, Calendar, Clock } from 'lucide-react';
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 import { DemoHeader } from './DemoHeader';
 import { DemoTour, useDemoTour } from './DemoTour';
 import { TourButton } from './TourButton';
@@ -16,7 +16,7 @@ interface StaffMember {
   coordinates?: { lat: number; lng: number };
 }
 
-// Location coordinates for Derby, UK area
+// Location coordinates for Derby, UK area (all staff on map use these)
 const LOCATION_COORDINATES: Record<string, { lat: number; lng: number }> = {
   'Derby': { lat: 52.9225, lng: -1.4746 },
   'Spondon': { lat: 52.9333, lng: -1.4167 },
@@ -24,6 +24,10 @@ const LOCATION_COORDINATES: Record<string, { lat: number; lng: number }> = {
   'Long Eaton': { lat: 52.8500, lng: -1.2667 },
   'Mickleover': { lat: 52.9167, lng: -1.5500 },
   'Littleover': { lat: 52.9167, lng: -1.5000 },
+  'Allestree': { lat: 52.9550, lng: -1.4883 },
+  'Chaddesden': { lat: 52.9242, lng: -1.4342 },
+  'Oakwood': { lat: 52.9383, lng: -1.5017 },
+  'Chellaston': { lat: 52.8683, lng: -1.4350 },
 };
 
 const MAP_CONTAINER_STYLE = {
@@ -34,66 +38,19 @@ const MAP_CONTAINER_STYLE = {
 const MAP_CENTER = { lat: 52.92, lng: -1.47 }; // Center of Derby area
 
 const SAMPLE_STAFF: StaffMember[] = [
-  {
-    id: '1',
-    name: 'Barbara Walker',
-    status: 'active',
-    visitTime: '15:30',
-    clockedIn: '15:19',
-    location: 'Derby',
-    coordinates: LOCATION_COORDINATES['Derby']
-  },
-  {
-    id: '2',
-    name: 'Charles Evans',
-    status: 'active',
-    visitTime: '08:30',
-    clockedIn: '08:28',
-    location: 'Spondon',
-    coordinates: LOCATION_COORDINATES['Spondon']
-  },
-  {
-    id: '3',
-    name: 'Arthur Clarke',
-    status: 'active',
-    visitTime: '08:30',
-    clockedIn: '08:20',
-    location: 'Borrowash',
-    coordinates: LOCATION_COORDINATES['Borrowash']
-  },
-  {
-    id: '4',
-    name: 'Robert Wilson',
-    status: 'active',
-    visitTime: '08:00',
-    clockedIn: '08:00',
-    location: 'Long Eaton',
-    coordinates: LOCATION_COORDINATES['Long Eaton']
-  },
-  {
-    id: '5',
-    name: 'Susan Phillips',
-    status: 'completed',
-    visitTime: '18:00',
-    clockedIn: '17:50',
-    clockedOut: '18:35',
-    location: 'Mickleover',
-    coordinates: LOCATION_COORDINATES['Mickleover']
-  },
-  {
-    id: '6',
-    name: 'Patricia Brown',
-    status: 'completed',
-    visitTime: '09:00',
-    clockedIn: '08:48',
-    clockedOut: '09:39',
-    location: 'Littleover',
-    coordinates: LOCATION_COORDINATES['Littleover']
-  }
+  { id: '1', name: 'Barbara Walker', status: 'active', visitTime: '15:30', clockedIn: '15:19', location: 'Derby', coordinates: LOCATION_COORDINATES['Derby'] },
+  { id: '2', name: 'Charles Evans', status: 'active', visitTime: '08:30', clockedIn: '08:28', location: 'Spondon', coordinates: LOCATION_COORDINATES['Spondon'] },
+  { id: '3', name: 'Arthur Clarke', status: 'active', visitTime: '08:30', clockedIn: '08:20', location: 'Borrowash', coordinates: LOCATION_COORDINATES['Borrowash'] },
+  { id: '4', name: 'Robert Wilson', status: 'active', visitTime: '08:00', clockedIn: '08:00', location: 'Long Eaton', coordinates: LOCATION_COORDINATES['Long Eaton'] },
+  { id: '5', name: 'Margaret Holt', status: 'active', visitTime: '14:00', clockedIn: '13:52', location: 'Allestree', coordinates: LOCATION_COORDINATES['Allestree'] },
+  { id: '6', name: 'David Shaw', status: 'active', visitTime: '16:00', clockedIn: '15:58', location: 'Chaddesden', coordinates: LOCATION_COORDINATES['Chaddesden'] },
+  { id: '7', name: 'Susan Phillips', status: 'completed', visitTime: '18:00', clockedIn: '17:50', clockedOut: '18:35', location: 'Mickleover', coordinates: LOCATION_COORDINATES['Mickleover'] },
+  { id: '8', name: 'Patricia Brown', status: 'completed', visitTime: '09:00', clockedIn: '08:48', clockedOut: '09:39', location: 'Littleover', coordinates: LOCATION_COORDINATES['Littleover'] },
+  { id: '9', name: 'James Reid', status: 'completed', visitTime: '10:30', clockedIn: '10:22', clockedOut: '11:05', location: 'Oakwood', coordinates: LOCATION_COORDINATES['Oakwood'] },
+  { id: '10', name: 'Linda Foster', status: 'completed', visitTime: '12:00', clockedIn: '11:55', clockedOut: '12:42', location: 'Chellaston', coordinates: LOCATION_COORDINATES['Chellaston'] },
 ];
 
 export const DashboardDemo: React.FC = () => {
-  const [selectedStaff, setSelectedStaff] = useState<StaffMember | null>(null);
   const [mapType, setMapType] = useState<'roadmap' | 'satellite'>('roadmap');
   const tour = useDemoTour('dashboard');
   
@@ -136,11 +93,11 @@ export const DashboardDemo: React.FC = () => {
       />
 
       <div className="p-6 space-y-4 flex flex-col">
-        {/* Status Indicators */}
+        {/* Status Indicators - driven by same data as map and sidebar */}
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-green-500"></div>
-            <span className="text-sm font-medium text-[#0F172A]">9 Active</span>
+            <span className="text-sm font-medium text-[#0F172A]">{totalActive} Active</span>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-red-500"></div>
@@ -148,7 +105,7 @@ export const DashboardDemo: React.FC = () => {
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-green-500"></div>
-            <span className="text-sm font-medium text-[#0F172A]">4 Today</span>
+            <span className="text-sm font-medium text-[#0F172A]">{totalVisits} Today</span>
           </div>
         </div>
 
@@ -156,7 +113,7 @@ export const DashboardDemo: React.FC = () => {
         <div className="grid grid-cols-4 gap-4" data-tour="dashboard-metrics">
           <div className="bg-white rounded-lg border border-[rgba(20,30,60,0.08)] p-4">
             <div className="flex items-center gap-3 mb-2">
-              <Users className="w-5 h-5 text-[#1a86f0]" />
+              <Users className="w-5 h-5 text-[#4370B7]" />
               <span className="text-sm text-[#6b7280]">Staff Working</span>
             </div>
             <p className="text-2xl font-bold text-[#0F172A]">{totalActive}</p>
@@ -191,7 +148,7 @@ export const DashboardDemo: React.FC = () => {
             {/* Working Today Card */}
             <div className="bg-white rounded-lg border border-[rgba(20,30,60,0.08)] p-4">
               <div className="flex items-center gap-2 mb-3">
-                <Users className="w-5 h-5 text-[#1a86f0]" />
+                <Users className="w-5 h-5 text-[#4370B7]" />
                 <h3 className="text-base font-semibold text-[#0F172A]">Working Today</h3>
               </div>
               <p className="text-sm text-[#6b7280] mb-4">{totalActive} staff member{totalActive !== 1 ? 's' : ''} active</p>
@@ -231,7 +188,7 @@ export const DashboardDemo: React.FC = () => {
                               <span className="text-xs text-[#6b7280]">Clocked in: {staff.clockedIn}</span>
                             </div>
                           </div>
-                          <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium">
+                          <span className="px-2 py-1 bg-green-100 text-green-700 rounded-sm text-xs font-medium">
                             Active
                           </span>
                         </div>
@@ -261,7 +218,7 @@ export const DashboardDemo: React.FC = () => {
                               )}
                             </div>
                           </div>
-                          <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium">
+                          <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-sm text-xs font-medium">
                             Done
                           </span>
                         </div>
@@ -275,14 +232,14 @@ export const DashboardDemo: React.FC = () => {
 
           {/* Right Column - Map */}
           <div className="lg:col-span-2 bg-white rounded-lg border border-[rgba(20,30,60,0.08)] flex flex-col min-h-0" data-tour="dashboard-map">
-            <div className="p-4 border-b border-[rgba(20,30,60,0.08)]">
+            <div className="px-3 py-2 border-b border-[rgba(20,30,60,0.08)]">
               <div className="flex items-center justify-between">
-                <div className="flex gap-2">
+                <div className="flex gap-1.5">
                   <button 
                     onClick={() => setMapType('roadmap')}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium ${
+                    className={`px-2.5 py-1 rounded-sm text-xs font-medium ${
                       mapType === 'roadmap'
-                        ? 'bg-[#1a86f0] text-white'
+                        ? 'bg-[#4370B7] text-white'
                         : 'bg-[#f8fafc] text-[#6b7280] hover:bg-[#e5e7eb]'
                     }`}
                   >
@@ -290,20 +247,18 @@ export const DashboardDemo: React.FC = () => {
                   </button>
                   <button 
                     onClick={() => setMapType('satellite')}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium ${
+                    className={`px-2.5 py-1 rounded-sm text-xs font-medium ${
                       mapType === 'satellite'
-                        ? 'bg-[#1a86f0] text-white'
+                        ? 'bg-[#4370B7] text-white'
                         : 'bg-[#f8fafc] text-[#6b7280] hover:bg-[#e5e7eb]'
                     }`}
                   >
                     Satellite
                   </button>
                 </div>
-                <div className="flex items-center gap-2">
-                  <button className="p-2 hover:bg-[#f8fafc] rounded-lg">
-                    <Clock className="w-4 h-4 text-[#6b7280]" />
-                  </button>
-                </div>
+                <button className="p-1.5 hover:bg-[#f8fafc] rounded-sm">
+                  <Clock className="w-3.5 h-3.5 text-[#6b7280]" />
+                </button>
               </div>
             </div>
             <div className="flex-1 relative bg-[#f8fafc] overflow-hidden">
@@ -315,6 +270,8 @@ export const DashboardDemo: React.FC = () => {
                     zoom={11}
                     options={{
                       mapTypeId: mapType,
+                      minZoom: 10,
+                      maxZoom: 18,
                       styles: [
                         {
                           featureType: 'poi',
@@ -329,61 +286,6 @@ export const DashboardDemo: React.FC = () => {
                       fullscreenControl: true,
                     }}
                   >
-                    {SAMPLE_STAFF.map((staff) => {
-                      if (!staff.coordinates) return null;
-                      
-                      const isActive = staff.status === 'active';
-                      const iconColor = isActive ? '#1a86f0' : '#10b981';
-                      
-                      // Custom marker icon - using circle path
-                      const customIcon = {
-                        path: 'M 0, 0 m -10, 0 a 10,10 0 1,0 20,0 a 10,10 0 1,0 -20,0',
-                        fillColor: iconColor,
-                        fillOpacity: 1,
-                        strokeColor: '#ffffff',
-                        strokeWeight: 3,
-                        scale: 10,
-                      };
-                      
-                      return (
-                        <Marker
-                          key={staff.id}
-                          position={staff.coordinates}
-                          icon={customIcon}
-                          onClick={() => setSelectedStaff(staff)}
-                        />
-                      );
-                    })}
-                    
-                    {selectedStaff && selectedStaff.coordinates && (
-                      <InfoWindow
-                        position={selectedStaff.coordinates}
-                        onCloseClick={() => setSelectedStaff(null)}
-                      >
-                        <div className="p-2">
-                          <h3 className="font-semibold text-sm text-[#0F172A] mb-1">
-                            {selectedStaff.name}
-                          </h3>
-                          <p className="text-xs text-[#6b7280] mb-1">
-                            Location: {selectedStaff.location}
-                          </p>
-                          <p className="text-xs text-[#6b7280] mb-1">
-                            Visit Time: {selectedStaff.visitTime}
-                          </p>
-                          <p className="text-xs text-[#6b7280]">
-                            Clocked In: {selectedStaff.clockedIn}
-                            {selectedStaff.clockedOut && ` • Out: ${selectedStaff.clockedOut}`}
-                          </p>
-                          <span className={`inline-block mt-2 px-2 py-1 rounded text-xs font-medium ${
-                            selectedStaff.status === 'active' 
-                              ? 'bg-green-100 text-green-700' 
-                              : 'bg-blue-100 text-blue-700'
-                          }`}>
-                            {selectedStaff.status === 'active' ? 'Active' : 'Completed'}
-                          </span>
-                        </div>
-                      </InfoWindow>
-                    )}
                   </GoogleMap>
                 </LoadScript>
               ) : (

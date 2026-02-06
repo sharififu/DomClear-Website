@@ -42,12 +42,12 @@ export const SolutionsPage: React.FC = () => {
             Whether you're managing care operations, running an agency, or supporting a loved one, DomiClear is designed with your needs in mind.
           </p>
           <Button 
-            variant="accent" 
+            variant="secondary" 
             size="lg" 
             href={EXTERNAL_SIGNUP_URL} 
             target="_blank" 
             rel="noreferrer" 
-            className="bg-white text-[#1a86f0] hover:bg-white/90"
+            className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
           >
             Start free trial
           </Button>
@@ -59,12 +59,12 @@ export const SolutionsPage: React.FC = () => {
           {solutions.map((solution, index) => {
             // Different icons for each solution type
             const icons = {
-              'care-managers': <Users className="w-12 h-12 text-[#1a86f0]" />,
+              'care-managers': <Users className="w-12 h-12 text-[#4370B7]" />,
               'owners': <Building2 className="w-12 h-12 text-[#7c6df0]" />,
               'families': <Heart className="w-12 h-12 text-[#14B8A6]" />,
             };
 
-            const IconComponent = icons[solution.id as keyof typeof icons] || <Users className="w-12 h-12 text-[#1a86f0]" />;
+            const IconComponent = icons[solution.id as keyof typeof icons] || <Users className="w-12 h-12 text-[#4370B7]" />;
 
             return (
               <div
@@ -86,7 +86,7 @@ export const SolutionsPage: React.FC = () => {
                     {solution.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
-                          <Check className="w-4 h-4 text-[#1a86f0]" />
+                          <Check className="w-4 h-4 text-[#4370B7]" />
                         </div>
                         <span className="text-[#4B5563]">{benefit}</span>
                       </li>
@@ -113,7 +113,7 @@ export const SolutionsPage: React.FC = () => {
                       </div>
                       <span className="block text-[#0F172A] font-semibold mb-2 text-xl">{solution.title}</span>
                       <p className="text-sm text-[#4B5563] mb-4">{solution.description.substring(0, 120)}...</p>
-                      <a href={`/demos#${solution.id}`} className="text-[#1a86f0] hover:underline text-sm font-medium">
+                      <a href={`/demos#${solution.id}`} className="text-[#4370B7] hover:underline text-sm font-medium">
                         View demo →
                       </a>
                     </div>
@@ -147,7 +147,7 @@ export const SolutionsPage: React.FC = () => {
                   <p className="text-[#4B5563] mb-4 text-sm">{solution.description.substring(0, 100)}...</p>
                   <a
                     href={`/solutions#${solution.id}`}
-                    className="text-[#1a86f0] hover:underline text-sm font-medium inline-flex items-center gap-1"
+                    className="text-[#4370B7] hover:underline text-sm font-medium inline-flex items-center gap-1"
                   >
                     Learn more
                     <ArrowRight className="w-3 h-3" />

@@ -156,7 +156,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'scheduling-rules':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Visit Frequency & Timing</h3>
                 {isEditing && (
@@ -191,7 +191,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                               setEditingRule(rule);
                               setShowSchedulingModal(true);
                             }}
-                            className="p-1.5 hover:bg-blue-100 rounded"
+                            className="p-1.5 hover:bg-blue-100 rounded-sm"
                           >
                             <Edit className="w-4 h-4 text-blue-600" />
                           </button>
@@ -199,7 +199,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                             onClick={() => {
                               setSchedulingRules(schedulingRules.filter(r => r.id !== rule.id));
                             }}
-                            className="p-1.5 hover:bg-red-100 rounded"
+                            className="p-1.5 hover:bg-red-100 rounded-sm"
                           >
                             <Trash2 className="w-4 h-4 text-red-600" />
                           </button>
@@ -210,18 +210,18 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Special Requirements</h3>
               <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm text-slate-700 p-2 bg-green-50 rounded">
+                <div className="flex items-center gap-2 text-sm text-slate-700 p-2 bg-green-50 rounded-sm">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
                   <span>Two-person assist required for transfers</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-slate-700 p-2 bg-green-50 rounded">
+                <div className="flex items-center gap-2 text-sm text-slate-700 p-2 bg-green-50 rounded-sm">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
                   <span>Witness required for Warfarin administration</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-slate-700 p-2 bg-amber-50 rounded">
+                <div className="flex items-center gap-2 text-sm text-slate-700 p-2 bg-amber-50 rounded-sm">
                   <AlertCircle className="w-4 h-4 text-amber-600 flex-shrink-0" />
                   <span>Requires hoist for mobility</span>
                 </div>
@@ -232,7 +232,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'health-summary':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Health Measurements</h3>
               <div className="grid grid-cols-3 gap-4">
                 <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
@@ -250,16 +250,16 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                 </div>
               </div>
             </div>
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Clinical Status</h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
                   <span className="text-sm font-medium text-slate-700">Oxygen Therapy</span>
-                  <span className="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-medium">No</span>
+                  <span className="px-2 py-1 bg-red-100 text-red-700 rounded-sm text-xs font-medium">No</span>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
                   <span className="text-sm font-medium text-slate-700">Catheter</span>
-                  <span className="px-2 py-1 bg-red-100 text-red-700 rounded text-xs font-medium">No</span>
+                  <span className="px-2 py-1 bg-red-100 text-red-700 rounded-sm text-xs font-medium">No</span>
                 </div>
               </div>
             </div>
@@ -268,7 +268,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'outcomes':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Person-Centred Outcomes</h3>
                 {isEditing && (
@@ -286,7 +286,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <div className="text-sm text-blue-700">Support patient to continue managing personal care tasks independently where possible</div>
                     </div>
                     {isEditing && (
-                      <button className="p-1.5 hover:bg-blue-100 rounded">
+                      <button className="p-1.5 hover:bg-blue-100 rounded-sm">
                         <Edit className="w-4 h-4 text-blue-600" />
                       </button>
                     )}
@@ -299,7 +299,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <div className="text-sm text-blue-700">Encourage participation in community activities and maintain social connections</div>
                     </div>
                     {isEditing && (
-                      <button className="p-1.5 hover:bg-blue-100 rounded">
+                      <button className="p-1.5 hover:bg-blue-100 rounded-sm">
                         <Edit className="w-4 h-4 text-blue-600" />
                       </button>
                     )}
@@ -312,7 +312,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'needs':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Assessed Needs</h3>
                 {isEditing && (
@@ -323,10 +323,10 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                 )}
               </div>
               <div className="space-y-3">
-                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-sm transition-shadow">
+                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-xs transition-shadow">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <div className="inline-block px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium mb-2">
+                      <div className="inline-block px-2 py-1 bg-purple-100 text-purple-700 rounded-sm text-xs font-medium mb-2">
                         Personal Care
                       </div>
                       <div className="text-sm text-slate-700 mb-2">
@@ -336,20 +336,20 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     </div>
                     {isEditing && (
                       <div className="flex items-center gap-2">
-                        <button className="p-1.5 hover:bg-slate-100 rounded">
+                        <button className="p-1.5 hover:bg-slate-100 rounded-sm">
                           <Edit className="w-4 h-4 text-slate-600" />
                         </button>
-                        <button className="p-1.5 hover:bg-red-100 rounded">
+                        <button className="p-1.5 hover:bg-red-100 rounded-sm">
                           <Trash2 className="w-4 h-4 text-red-600" />
                         </button>
                       </div>
                     )}
                   </div>
                 </div>
-                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-sm transition-shadow">
+                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-xs transition-shadow">
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <div className="inline-block px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium mb-2">
+                      <div className="inline-block px-2 py-1 bg-blue-100 text-blue-700 rounded-sm text-xs font-medium mb-2">
                         Medication Management
                       </div>
                       <div className="text-sm text-slate-700 mb-2">
@@ -359,10 +359,10 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     </div>
                     {isEditing && (
                       <div className="flex items-center gap-2">
-                        <button className="p-1.5 hover:bg-slate-100 rounded">
+                        <button className="p-1.5 hover:bg-slate-100 rounded-sm">
                           <Edit className="w-4 h-4 text-slate-600" />
                         </button>
-                        <button className="p-1.5 hover:bg-red-100 rounded">
+                        <button className="p-1.5 hover:bg-red-100 rounded-sm">
                           <Trash2 className="w-4 h-4 text-red-600" />
                         </button>
                       </div>
@@ -376,7 +376,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'risks':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Risk Assessments</h3>
                 {isEditing && (
@@ -403,7 +403,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                   const config = severityConfig[risk.severity];
                   
                   return (
-                    <div key={risk.id} className={`p-5 border-l-4 ${config.border} ${config.bg} rounded-lg group hover:shadow-sm transition-shadow`}>
+                    <div key={risk.id} className={`p-5 border-l-4 ${config.border} ${config.bg} rounded-lg group hover:shadow-xs transition-shadow`}>
                       <div className="flex items-start justify-between mb-2">
                         <div className="flex items-center gap-2 flex-1">
                           <ShieldAlert className={`w-5 h-5 ${config.iconColor}`} />
@@ -418,7 +418,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                                   setEditingRisk(risk);
                                   setShowRiskModal(true);
                                 }}
-                                className="p-1.5 hover:bg-white/50 rounded"
+                                className="p-1.5 hover:bg-white/50 rounded-sm"
                               >
                                 <Edit className="w-4 h-4 text-slate-700" />
                               </button>
@@ -426,7 +426,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                                 onClick={() => {
                                   setRiskAssessments(riskAssessments.filter(r => r.id !== risk.id));
                                 }}
-                                className="p-1.5 hover:bg-white/50 rounded"
+                                className="p-1.5 hover:bg-white/50 rounded-sm"
                               >
                                 <Trash2 className="w-4 h-4 text-red-600" />
                               </button>
@@ -451,7 +451,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'goals':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Care Goals</h3>
                 {isEditing && (
@@ -462,7 +462,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                 )}
               </div>
               <div className="space-y-3">
-                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-sm transition-shadow">
+                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-xs transition-shadow">
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1">
                       <div className="font-semibold text-slate-900 mb-1">Increase mobility and independence</div>
@@ -472,7 +472,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     </div>
                     {isEditing && (
                       <div className="flex items-center gap-2">
-                        <button className="p-1.5 hover:bg-slate-100 rounded">
+                        <button className="p-1.5 hover:bg-slate-100 rounded-sm">
                           <Edit className="w-4 h-4 text-slate-600" />
                         </button>
                       </div>
@@ -483,7 +483,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     <span>Target: 30/06/2024</span>
                   </div>
                 </div>
-                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-sm transition-shadow">
+                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-xs transition-shadow">
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1">
                       <div className="font-semibold text-slate-900 mb-1">Maintain medication compliance</div>
@@ -493,7 +493,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     </div>
                     {isEditing && (
                       <div className="flex items-center gap-2">
-                        <button className="p-1.5 hover:bg-slate-100 rounded">
+                        <button className="p-1.5 hover:bg-slate-100 rounded-sm">
                           <Edit className="w-4 h-4 text-slate-600" />
                         </button>
                       </div>
@@ -511,7 +511,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'tasks':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Care Tasks</h3>
                 {isEditing && (
@@ -522,10 +522,10 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                 )}
               </div>
               <div className="space-y-3">
-                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-sm transition-shadow">
+                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-xs transition-shadow">
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1">
-                      <div className="inline-block px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs font-medium mb-2">
+                      <div className="inline-block px-2 py-1 bg-purple-100 text-purple-700 rounded-sm text-xs font-medium mb-2">
                         Morning Routine
                       </div>
                       <div className="font-medium text-slate-900 mb-1">Personal hygiene assistance</div>
@@ -535,7 +535,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     </div>
                     {isEditing && (
                       <div className="flex items-center gap-2">
-                        <button className="p-1.5 hover:bg-slate-100 rounded">
+                        <button className="p-1.5 hover:bg-slate-100 rounded-sm">
                           <Edit className="w-4 h-4 text-slate-600" />
                         </button>
                       </div>
@@ -552,10 +552,10 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     </div>
                   </div>
                 </div>
-                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-sm transition-shadow">
+                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-xs transition-shadow">
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1">
-                      <div className="inline-block px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium mb-2">
+                      <div className="inline-block px-2 py-1 bg-blue-100 text-blue-700 rounded-sm text-xs font-medium mb-2">
                         Medication
                       </div>
                       <div className="font-medium text-slate-900 mb-1">Medication administration</div>
@@ -565,7 +565,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     </div>
                     {isEditing && (
                       <div className="flex items-center gap-2">
-                        <button className="p-1.5 hover:bg-slate-100 rounded">
+                        <button className="p-1.5 hover:bg-slate-100 rounded-sm">
                           <Edit className="w-4 h-4 text-slate-600" />
                         </button>
                       </div>
@@ -582,10 +582,10 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     </div>
                   </div>
                 </div>
-                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-sm transition-shadow">
+                <div className="p-4 border border-slate-200 rounded-lg hover:shadow-xs transition-shadow">
                   <div className="flex items-start justify-between mb-2">
                     <div className="flex-1">
-                      <div className="inline-block px-2 py-1 bg-green-100 text-green-700 rounded text-xs font-medium mb-2">
+                      <div className="inline-block px-2 py-1 bg-green-100 text-green-700 rounded-sm text-xs font-medium mb-2">
                         Meal Support
                       </div>
                       <div className="font-medium text-slate-900 mb-1">Meal preparation and assistance</div>
@@ -595,7 +595,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     </div>
                     {isEditing && (
                       <div className="flex items-center gap-2">
-                        <button className="p-1.5 hover:bg-slate-100 rounded">
+                        <button className="p-1.5 hover:bg-slate-100 rounded-sm">
                           <Edit className="w-4 h-4 text-slate-600" />
                         </button>
                       </div>
@@ -619,7 +619,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'risk-actions':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Risk Mitigation Actions</h3>
                 {isEditing && (
@@ -665,7 +665,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'service-reviews':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Service Reviews</h3>
                 {isEditing && (
@@ -700,7 +700,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'positioning-handling':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Positioning & Manual Handling</h3>
               <div className="space-y-4">
                 <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
@@ -734,7 +734,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'stool-scheduling':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Bowel Management</h3>
               <div className="space-y-4">
                 <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
@@ -767,7 +767,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'muac-weight':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">MUAC & Weight Monitoring</h3>
               <div className="grid grid-cols-2 gap-4 mb-4">
                 <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
@@ -798,7 +798,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'custom-care-tasks':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Custom Care Tasks</h3>
                 {isEditing && (
@@ -818,7 +818,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       </div>
                     </div>
                     {isEditing && (
-                      <button className="p-1.5 hover:bg-purple-100 rounded">
+                      <button className="p-1.5 hover:bg-purple-100 rounded-sm">
                         <Edit className="w-4 h-4 text-purple-600" />
                       </button>
                     )}
@@ -843,7 +843,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       </div>
                     </div>
                     {isEditing && (
-                      <button className="p-1.5 hover:bg-teal-100 rounded">
+                      <button className="p-1.5 hover:bg-teal-100 rounded-sm">
                         <Edit className="w-4 h-4 text-teal-600" />
                       </button>
                     )}
@@ -866,7 +866,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'consent-signatures':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Consent & Signatures</h3>
               <div className="space-y-3">
                 <div className="p-4 border border-green-200 bg-green-50 rounded-lg">
@@ -875,7 +875,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <CheckCircle className="w-5 h-5 text-green-600" />
                       <span className="font-medium text-green-900">Care Plan Consent</span>
                     </div>
-                    <span className="px-2 py-1 bg-green-200 text-green-900 rounded text-xs font-bold">SIGNED</span>
+                    <span className="px-2 py-1 bg-green-200 text-green-900 rounded-sm text-xs font-bold">SIGNED</span>
                   </div>
                   <div className="text-sm text-green-800 space-y-1">
                     <div><strong>Signed by:</strong> John Smith (Service User)</div>
@@ -889,7 +889,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <CheckCircle className="w-5 h-5 text-green-600" />
                       <span className="font-medium text-green-900">Medication Administration Consent</span>
                     </div>
-                    <span className="px-2 py-1 bg-green-200 text-green-900 rounded text-xs font-bold">SIGNED</span>
+                    <span className="px-2 py-1 bg-green-200 text-green-900 rounded-sm text-xs font-bold">SIGNED</span>
                   </div>
                   <div className="text-sm text-green-800 space-y-1">
                     <div><strong>Signed by:</strong> John Smith (Service User)</div>
@@ -904,7 +904,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'clinical-flags':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Clinical Flags</h3>
                 {isEditing && (
@@ -923,7 +923,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <div className="text-xs text-red-700">Two-person assist mandatory</div>
                     </div>
                   </div>
-                  <span className="px-3 py-1 bg-red-200 text-red-900 rounded text-xs font-bold">CRITICAL</span>
+                  <span className="px-3 py-1 bg-red-200 text-red-900 rounded-sm text-xs font-bold">CRITICAL</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-amber-50 border border-amber-200 rounded-lg">
                   <div className="flex items-center gap-3">
@@ -933,7 +933,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <div className="text-xs text-amber-700">Warfarin - witness required</div>
                     </div>
                   </div>
-                  <span className="px-3 py-1 bg-amber-200 text-amber-900 rounded text-xs font-bold">HIGH</span>
+                  <span className="px-3 py-1 bg-amber-200 text-amber-900 rounded-sm text-xs font-bold">HIGH</span>
                 </div>
                 <div className="flex items-center justify-between p-4 bg-blue-50 border border-blue-200 rounded-lg">
                   <div className="flex items-center gap-3">
@@ -943,7 +943,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <div className="text-xs text-blue-700">Soft texture foods only</div>
                     </div>
                   </div>
-                  <span className="px-3 py-1 bg-blue-200 text-blue-900 rounded text-xs font-bold">MEDIUM</span>
+                  <span className="px-3 py-1 bg-blue-200 text-blue-900 rounded-sm text-xs font-bold">MEDIUM</span>
                 </div>
               </div>
             </div>
@@ -952,7 +952,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'monitoring-alerts':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-semibold text-slate-900">Monitoring Alerts Configuration</h3>
               </div>
@@ -963,7 +963,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <Bell className="w-4 h-4 text-red-600" />
                       <span className="font-medium text-red-900">Blood Pressure - Critical</span>
                     </div>
-                    <span className="px-2 py-1 bg-red-200 text-red-900 rounded text-xs font-bold">ACTIVE</span>
+                    <span className="px-2 py-1 bg-red-200 text-red-900 rounded-sm text-xs font-bold">ACTIVE</span>
                   </div>
                   <div className="text-sm text-red-800 space-y-1">
                     <div><strong>Trigger:</strong> Systolic &gt;160 or &lt;90, Diastolic &gt;100 or &lt;60</div>
@@ -976,7 +976,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <Bell className="w-4 h-4 text-amber-600" />
                       <span className="font-medium text-amber-900">Weight Change</span>
                     </div>
-                    <span className="px-2 py-1 bg-amber-200 text-amber-900 rounded text-xs font-bold">ACTIVE</span>
+                    <span className="px-2 py-1 bg-amber-200 text-amber-900 rounded-sm text-xs font-bold">ACTIVE</span>
                   </div>
                   <div className="text-sm text-amber-800 space-y-1">
                     <div><strong>Trigger:</strong> ±3kg change in one week or ±5% in one month</div>
@@ -989,7 +989,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <Bell className="w-4 h-4 text-blue-600" />
                       <span className="font-medium text-blue-900">Temperature</span>
                     </div>
-                    <span className="px-2 py-1 bg-blue-200 text-blue-900 rounded text-xs font-bold">ACTIVE</span>
+                    <span className="px-2 py-1 bg-blue-200 text-blue-900 rounded-sm text-xs font-bold">ACTIVE</span>
                   </div>
                   <div className="text-sm text-blue-800 space-y-1">
                     <div><strong>Trigger:</strong> &gt;38°C or &lt;36°C</div>
@@ -1003,7 +1003,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'funeral-arrangements':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">End of Life Planning</h3>
               <div className="p-4 bg-purple-50 border border-purple-200 rounded-lg mb-4">
                 <div className="flex items-center gap-2 mb-3">
@@ -1031,7 +1031,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'vital-checks':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Vital Signs Monitoring</h3>
               <div className="grid grid-cols-2 gap-4 mb-6">
                 <div className="p-4 bg-slate-50 rounded-lg border border-slate-100">
@@ -1070,7 +1070,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'waterlow':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Waterlow Pressure Ulcer Risk Assessment</h3>
               <div className="p-5 bg-amber-50 border border-amber-200 rounded-lg mb-4">
                 <div className="flex items-center justify-between mb-3">
@@ -1083,15 +1083,15 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                 </div>
               </div>
               <div className="space-y-2 text-sm">
-                <div className="flex items-center justify-between p-3 bg-slate-50 rounded">
+                <div className="flex items-center justify-between p-3 bg-slate-50 rounded-sm">
                   <span className="text-slate-700">Build/Weight for Height</span>
                   <span className="font-medium text-slate-900">Average (1 point)</span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-slate-50 rounded">
+                <div className="flex items-center justify-between p-3 bg-slate-50 rounded-sm">
                   <span className="text-slate-700">Continence</span>
                   <span className="font-medium text-slate-900">Occasionally incontinent (1 point)</span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-slate-50 rounded">
+                <div className="flex items-center justify-between p-3 bg-slate-50 rounded-sm">
                   <span className="text-slate-700">Mobility</span>
                   <span className="font-medium text-slate-900">Restless/Fidgety (3 points)</span>
                 </div>
@@ -1102,7 +1102,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'must-assessment':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">MUST (Malnutrition Universal Screening Tool)</h3>
               <div className="p-5 bg-green-50 border border-green-200 rounded-lg mb-4">
                 <div className="flex items-center justify-between mb-3">
@@ -1115,15 +1115,15 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                 </div>
               </div>
               <div className="space-y-2 text-sm">
-                <div className="flex items-center justify-between p-3 bg-slate-50 rounded">
+                <div className="flex items-center justify-between p-3 bg-slate-50 rounded-sm">
                   <span className="text-slate-700">BMI Score</span>
                   <span className="font-medium text-slate-900">0 (BMI 23.0)</span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-slate-50 rounded">
+                <div className="flex items-center justify-between p-3 bg-slate-50 rounded-sm">
                   <span className="text-slate-700">Weight Loss Score</span>
                   <span className="font-medium text-slate-900">0 (No unplanned weight loss)</span>
                 </div>
-                <div className="flex items-center justify-between p-3 bg-slate-50 rounded">
+                <div className="flex items-center justify-between p-3 bg-slate-50 rounded-sm">
                   <span className="text-slate-700">Acute Disease Effect</span>
                   <span className="font-medium text-slate-900">0 (No acute illness)</span>
                 </div>
@@ -1134,24 +1134,24 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'personal-care':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Personal Care Plan</h3>
               <div className="space-y-4">
                 <div>
                   <div className="text-sm font-medium text-slate-700 mb-2">Washing & Bathing</div>
-                  <div className="p-3 bg-slate-50 rounded text-sm text-slate-700">
+                  <div className="p-3 bg-slate-50 rounded-sm text-sm text-slate-700">
                     Prefers shower to bath. Requires assistance with back washing. Temperature check essential to prevent scalding.
                   </div>
                 </div>
                 <div>
                   <div className="text-sm font-medium text-slate-700 mb-2">Dressing</div>
-                  <div className="p-3 bg-slate-50 rounded text-sm text-slate-700">
+                  <div className="p-3 bg-slate-50 rounded-sm text-sm text-slate-700">
                     Can select own clothes. Needs help with buttons and zips due to arthritis in hands.
                   </div>
                 </div>
                 <div>
                   <div className="text-sm font-medium text-slate-700 mb-2">Continence</div>
-                  <div className="p-3 bg-slate-50 rounded text-sm text-slate-700">
+                  <div className="p-3 bg-slate-50 rounded-sm text-sm text-slate-700">
                     Continent, uses commode at night. Requires prompting to use facilities.
                   </div>
                 </div>
@@ -1162,7 +1162,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
       case 'review-history':
         return (
           <div className="space-y-4">
-            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-6 shadow-xs">
               <h3 className="text-lg font-semibold text-slate-900 mb-4">Review History</h3>
               <div className="space-y-3">
                 <div className="p-4 border-l-4 border-blue-500 bg-blue-50 rounded-lg">
@@ -1199,7 +1199,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
         );
       default:
         return (
-          <div className="bg-white rounded-lg border border-slate-200 p-8 shadow-sm text-center">
+          <div className="bg-white rounded-lg border border-slate-200 p-8 shadow-xs text-center">
             <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <FileText className="w-8 h-8 text-slate-400" />
             </div>
@@ -1327,7 +1327,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                     onClick={() => setActiveSection(section.id)}
                   className={`w-full flex items-center gap-3 px-3 py-3 rounded-lg text-sm font-medium transition-all mb-1 ${
                       isActive
-                      ? 'bg-blue-50 text-blue-700 shadow-sm'
+                      ? 'bg-blue-50 text-blue-700 shadow-xs'
                         : 'text-slate-700 hover:bg-slate-50'
                     }`}
                   >
@@ -1351,7 +1351,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
         <div className="w-80 bg-slate-50 border-l border-slate-200 overflow-y-auto flex-shrink-0 p-4">
           <div className="space-y-4">
             {/* Assessment Summary */}
-            <div className="bg-white rounded-lg border border-slate-200 p-4 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-4 shadow-xs">
               <h4 className="text-sm font-bold text-slate-900 mb-3">Assessment Summary</h4>
               <div className="space-y-2">
                 <div className="flex items-center justify-between p-3 bg-amber-50 border border-amber-200 rounded-lg">
@@ -1362,7 +1362,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <div className="text-xs text-amber-700">Score: 2</div>
                     </div>
                   </div>
-                  <span className="px-2 py-1 bg-amber-200 text-amber-900 text-xs font-bold rounded">MEDIUM</span>
+                  <span className="px-2 py-1 bg-amber-200 text-amber-900 text-xs font-bold rounded-sm">MEDIUM</span>
                 </div>
                 <div className="flex items-center justify-between p-3 bg-red-50 border border-red-200 rounded-lg">
                   <div className="flex items-center gap-2">
@@ -1372,13 +1372,13 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
                       <div className="text-xs text-red-700">Score: 12</div>
                     </div>
                   </div>
-                  <span className="px-2 py-1 bg-red-200 text-red-900 text-xs font-bold rounded">HIGH</span>
+                  <span className="px-2 py-1 bg-red-200 text-red-900 text-xs font-bold rounded-sm">HIGH</span>
                 </div>
               </div>
             </div>
 
             {/* Quick Info */}
-            <div className="bg-white rounded-lg border border-slate-200 p-4 shadow-sm">
+            <div className="bg-white rounded-lg border border-slate-200 p-4 shadow-xs">
               <h4 className="text-sm font-bold text-slate-900 mb-3">Quick Info</h4>
               <div className="space-y-2 text-sm">
                 <div className="flex items-center justify-between">
@@ -1397,16 +1397,16 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
             </div>
 
             {/* Alerts */}
-            <div className="bg-white rounded-lg border border-red-200 p-4 shadow-sm">
+            <div className="bg-white rounded-lg border border-red-200 p-4 shadow-xs">
               <div className="flex items-center gap-2 mb-3">
                 <Bell className="w-4 h-4 text-red-600" />
                 <h4 className="text-sm font-bold text-red-900">Active Alerts</h4>
               </div>
               <div className="space-y-2">
-                <div className="p-2 bg-red-50 rounded text-xs text-red-800">
+                <div className="p-2 bg-red-50 rounded-sm text-xs text-red-800">
                   ⚠️ Waterlow assessment overdue
                 </div>
-                <div className="p-2 bg-amber-50 rounded text-xs text-amber-800">
+                <div className="p-2 bg-amber-50 rounded-sm text-xs text-amber-800">
                   ⚠️ Falls risk - high precautions
                 </div>
               </div>
@@ -1423,7 +1423,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
               <h3 className="text-lg font-semibold text-slate-900">
                 {editingRule ? 'Edit Visit Schedule' : 'Add Visit Schedule'}
               </h3>
-              <button onClick={() => setShowSchedulingModal(false)} className="p-1 hover:bg-slate-100 rounded">
+              <button onClick={() => setShowSchedulingModal(false)} className="p-1 hover:bg-slate-100 rounded-sm">
                 <X className="w-5 h-5 text-slate-500" />
               </button>
             </div>
@@ -1523,7 +1523,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
               <h3 className="text-lg font-semibold text-slate-900">
                 {editingRisk ? 'Edit Risk Assessment' : 'Add Risk Assessment'}
               </h3>
-              <button onClick={() => setShowRiskModal(false)} className="p-1 hover:bg-slate-100 rounded">
+              <button onClick={() => setShowRiskModal(false)} className="p-1 hover:bg-slate-100 rounded-sm">
                 <X className="w-5 h-5 text-slate-500" />
               </button>
             </div>

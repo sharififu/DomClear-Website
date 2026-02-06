@@ -1,4 +1,43 @@
-export type DemoId = 'dashboard' | 'scheduling' | 'care-planning' | 'care-plan' | 'finance' | 'payroll' | 'compliance' | 'emar' | 'patient-medications' | 'template-builder' | 'form-templates' | 'templates-page' | 'care-plan-demo';
+export type DemoId =
+  | 'dashboard'
+  | 'scheduling'
+  | 'care-planning'
+  | 'care-plan'
+  | 'care-plan-demo'
+  | 'finance'
+  | 'payroll'
+  | 'compliance'
+  | 'emar'
+  | 'patient-medications'
+  | 'template-builder'
+  | 'form-templates'
+  | 'templates-page'
+  // Management
+  | 'service-users'
+  | 'visits'
+  | 'medications'
+  | 'custom-tasks'
+  | 'monitoring-alerts'
+  | 'alert-rules'
+  | 'absence-requests'
+  | 'family-portal'
+  // Workforce
+  | 'staff'
+  | 'teams'
+  | 'shift-management'
+  | 'attendance'
+  // Compliance & Safety
+  | 'audit-dashboard'
+  | 'compliance-reports'
+  | 'incidents'
+  | 'training'
+  // Finance
+  | 'visit-cost-types'
+  // Resources
+  | 'documents'
+  | 'policies'
+  | 'reports'
+  | 'ppe-stock';
 
 export interface DemoTab {
   id: DemoId;

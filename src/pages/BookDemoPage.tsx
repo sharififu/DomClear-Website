@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { TextField, Label, Input, Select, ListBox } from '@heroui/react';
 import { Button } from '../components/Button';
 import { Calendar, CheckCircle } from 'lucide-react';
 
 export const BookDemoPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [viewMode, setViewMode] = useState<'form' | 'calendly'>('form');
+  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', phone: '', organisation: '', role: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +31,7 @@ export const BookDemoPage: React.FC = () => {
       <div className="min-h-screen pt-32 pb-20 bg-[#FAFBFC] flex items-center justify-center">
         <div className="max-w-2xl mx-auto px-8 text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#e6f7ff] mb-6">
-            <CheckCircle className="w-10 h-10 text-[#1a86f0]" />
+            <CheckCircle className="w-10 h-10 text-[#4370B7]" />
           </div>
           <h1 className="text-4xl font-bold text-[#0F172A] mb-6">Thank you for your interest!</h1>
           <p className="text-xl text-[#4B5563] mb-8">
@@ -55,7 +57,7 @@ export const BookDemoPage: React.FC = () => {
     <div className="min-h-screen pt-32 pb-20 bg-[#FAFBFC]" id="top">
       <div className="max-w-[1200px] mx-auto px-8">
         <div className="text-center mb-12">
-          <span className="inline-block px-4 py-2 bg-white rounded-full text-xs font-bold text-[#1a86f0] uppercase tracking-wider mb-6 border border-[rgba(20,30,60,0.08)]">
+          <span className="inline-block px-4 py-2 bg-white rounded-full text-xs font-bold text-[#4370B7] uppercase tracking-wider mb-6 border border-[rgba(20,30,60,0.08)]">
             Book a Demo
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
@@ -68,13 +70,13 @@ export const BookDemoPage: React.FC = () => {
 
         {/* Toggle between form and Calendly */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-white rounded-full p-1 border border-[rgba(20,30,60,0.08)] shadow-sm">
+          <div className="inline-flex items-center gap-2 bg-white rounded-full p-1 border border-[rgba(20,30,60,0.08)] shadow-xs">
             <button 
               onClick={() => setViewMode('form')}
               className={`px-6 py-2 rounded-full font-semibold text-sm transition-all ${
                 viewMode === 'form'
-                  ? 'bg-[#1a86f0] text-white'
-                  : 'text-[#4B5563] hover:text-[#1a86f0]'
+                  ? 'bg-[#4370B7] text-white'
+                  : 'text-[#4B5563] hover:text-[#4370B7]'
               }`}
             >
               Request a demo
@@ -83,8 +85,8 @@ export const BookDemoPage: React.FC = () => {
               onClick={() => setViewMode('calendly')}
               className={`px-6 py-2 rounded-full font-semibold text-sm transition-all ${
                 viewMode === 'calendly'
-                  ? 'bg-[#1a86f0] text-white'
-                  : 'text-[#4B5563] hover:text-[#1a86f0]'
+                  ? 'bg-[#4370B7] text-white'
+                  : 'text-[#4B5563] hover:text-[#4370B7]'
               }`}
             >
               Pick a time now
@@ -106,7 +108,7 @@ export const BookDemoPage: React.FC = () => {
             <div className="mb-6 p-4 bg-[#FAFBFC] rounded-xl border border-[rgba(20,30,60,0.08)]">
               <a 
                 href="#" 
-                className="text-[#1a86f0] font-semibold text-sm hover:underline inline-flex items-center gap-2"
+                className="text-[#4370B7] font-semibold text-sm hover:underline inline-flex items-center gap-2"
               >
                 Import starter kit
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,83 +120,48 @@ export const BookDemoPage: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-[#4B5563] mb-2">
-                    First name *
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1a86f0] transition-shadow"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-[#4B5563] mb-2">
-                    Last name *
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1a86f0] transition-shadow"
-                  />
-                </div>
+                <TextField name="firstName" value={formData.firstName} onChange={(v) => setFormData((d) => ({ ...d, firstName: v }))} isRequired fullWidth>
+                  <Label>First name</Label>
+                  <Input placeholder="First name" />
+                </TextField>
+                <TextField name="lastName" value={formData.lastName} onChange={(v) => setFormData((d) => ({ ...d, lastName: v }))} isRequired fullWidth>
+                  <Label>Last name</Label>
+                  <Input placeholder="Last name" />
+                </TextField>
               </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-[#4B5563] mb-2">
-                  Email address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1a86f0] transition-shadow"
-                />
-              </div>
+              <TextField name="email" type="email" value={formData.email} onChange={(v) => setFormData((d) => ({ ...d, email: v }))} isRequired fullWidth>
+                <Label>Email address</Label>
+                <Input type="email" placeholder="Email address" />
+              </TextField>
 
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium text-[#4B5563] mb-2">
-                  Phone number *
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1a86f0] transition-shadow"
-                />
-              </div>
+              <TextField name="phone" type="tel" value={formData.phone} onChange={(v) => setFormData((d) => ({ ...d, phone: v }))} isRequired fullWidth>
+                <Label>Phone number</Label>
+                <Input type="tel" placeholder="Phone number" />
+              </TextField>
 
-              <div>
-                <label htmlFor="organisation" className="block text-sm font-medium text-[#4B5563] mb-2">
-                  Organisation name *
-                </label>
-                <input
-                  type="text"
-                  id="organisation"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1a86f0] transition-shadow"
-                />
-              </div>
+              <TextField name="organisation" value={formData.organisation} onChange={(v) => setFormData((d) => ({ ...d, organisation: v }))} isRequired fullWidth>
+                <Label>Organisation name</Label>
+                <Input placeholder="Organisation name" />
+              </TextField>
 
-              <div>
-                <label htmlFor="role" className="block text-sm font-medium text-[#4B5563] mb-2">
-                  Your role *
-                </label>
-                <select
-                  id="role"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1a86f0] transition-shadow"
-                >
-                  <option value="">Select a role</option>
-                  <option value="owner">Agency Owner/Director</option>
-                  <option value="manager">Care Manager</option>
-                  <option value="coordinator">Care Coordinator</option>
-                  <option value="operations">Operations Manager</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+              <Select
+                label="Your role"
+                name="role"
+                placeholder="Select a role"
+                isRequired
+                value={formData.role || null}
+                onChange={(v) => setFormData((d) => ({ ...d, role: (v as string) || '' }))}
+                fullWidth
+              >
+                <ListBox>
+                  <ListBox.Item id="owner" textValue="Agency Owner/Director">Agency Owner/Director</ListBox.Item>
+                  <ListBox.Item id="manager" textValue="Care Manager">Care Manager</ListBox.Item>
+                  <ListBox.Item id="coordinator" textValue="Care Coordinator">Care Coordinator</ListBox.Item>
+                  <ListBox.Item id="operations" textValue="Operations Manager">Operations Manager</ListBox.Item>
+                  <ListBox.Item id="other" textValue="Other">Other</ListBox.Item>
+                </ListBox>
+              </Select>
 
               <Button type="submit" variant="primary" size="lg" className="w-full">
                 Submit demo request
@@ -224,7 +191,7 @@ export const BookDemoPage: React.FC = () => {
               <ul className="space-y-3">
                 <li className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
-                    <span className="text-xs font-bold text-[#1a86f0]">1</span>
+                    <span className="text-xs font-bold text-[#4370B7]">1</span>
                   </div>
                   <div>
                     <p className="font-medium text-[#0F172A]">Personalised walkthrough</p>
@@ -235,7 +202,7 @@ export const BookDemoPage: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
-                    <span className="text-xs font-bold text-[#1a86f0]">2</span>
+                    <span className="text-xs font-bold text-[#4370B7]">2</span>
                   </div>
                   <div>
                     <p className="font-medium text-[#0F172A]">Live Q&A</p>
@@ -246,7 +213,7 @@ export const BookDemoPage: React.FC = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-6 h-6 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
-                    <span className="text-xs font-bold text-[#1a86f0]">3</span>
+                    <span className="text-xs font-bold text-[#4370B7]">3</span>
                   </div>
                   <div>
                     <p className="font-medium text-[#0F172A]">Next steps</p>

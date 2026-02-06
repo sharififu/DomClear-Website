@@ -20,7 +20,7 @@ export const HomePage: React.FC = () => {
       <section className="py-20 bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC]">
         <div className="max-w-[1200px] mx-auto px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-white rounded-full text-xs font-bold text-[#1a86f0] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
+            <span className="inline-block px-4 py-2 bg-white rounded-full text-xs font-bold text-[#4370B7] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
               Proven Outcomes
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
@@ -39,7 +39,7 @@ export const HomePage: React.FC = () => {
       <section className="py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-8">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-[#FAFBFC] rounded-full text-xs font-bold text-[#1a86f0] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
+            <span className="inline-block px-4 py-2 bg-[#FAFBFC] rounded-full text-xs font-bold text-[#4370B7] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
               Testimonials
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
@@ -93,7 +93,7 @@ export const HomePage: React.FC = () => {
                     href={EXTERNAL_SIGNUP_URL}
                     target="_blank"
                     rel="noreferrer"
-                    className="hover:bg-white/90"
+                    className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
                     analyticsEvent="subscription_cta"
                     analyticsProperties={{ source: 'homepage_cta' }}
                   >

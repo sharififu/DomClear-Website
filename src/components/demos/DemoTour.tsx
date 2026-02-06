@@ -122,7 +122,7 @@ export const DemoTour: React.FC<DemoTourProps> = ({
       }}
       styles={{
         options: {
-          primaryColor: '#1a86f0',
+          primaryColor: '#4370B7',
           textColor: '#0F172A',
           zIndex: 2000,
         },

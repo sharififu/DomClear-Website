@@ -1,7 +1,7 @@
 import { Visit, Staff, Client, FormTemplate, TimesheetEntry, AuditChecklist, IncidentReport } from './types';
 
 export const STAFF_MEMBERS: Staff[] = [
-  { id: 's1', name: 'Sarah J.', role: 'Senior Carer', avatar: 'SJ', color: '#1a86f0' },
+  { id: 's1', name: 'Sarah J.', role: 'Senior Carer', avatar: 'SJ', color: '#4370B7' },
   { id: 's2', name: 'Mike T.', role: 'Carer', avatar: 'MT', color: '#10b981' },
   { id: 's3', name: 'Emma W.', role: 'Carer', avatar: 'EW', color: '#f59e0b' },
   { id: 's4', name: 'James L.', role: 'Carer', avatar: 'JL', color: '#8b5cf6' },

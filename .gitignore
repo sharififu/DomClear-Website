@@ -21,3 +21,9 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Cursor / IDE
+.cursor/
+
+# Vite temp
+*.timestamp*.mjs

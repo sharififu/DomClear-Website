@@ -96,7 +96,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-[rgba(20,30,60,0.08)]">
           <div className="flex items-center gap-3">
-            <Calendar className="w-5 h-5 text-[#1a86f0]" />
+            <Calendar className="w-5 h-5 text-[#4370B7]" />
             <h2 className="text-xl font-semibold text-[#0F172A]">Schedule New Visit</h2>
           </div>
           <button
@@ -115,7 +115,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
               Patient <span className="text-red-500">*</span>
             </label>
             {patientName ? (
-              <div className="w-full px-4 py-3 border-2 border-[#1a86f0] rounded-lg bg-blue-50">
+              <div className="w-full px-4 py-3 border-2 border-[#4370B7] rounded-lg bg-blue-50">
                 <p className="text-sm font-semibold text-[#0F172A]">{patientName}</p>
                 {patientAddress && (
                   <p className="text-xs text-[#6b7280] mt-1">{patientAddress}</p>
@@ -127,7 +127,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                 placeholder="Search patients by name..."
                 value={formData.patient}
                 onChange={(e) => setFormData({ ...formData, patient: e.target.value })}
-                className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
               />
             )}
           </div>
@@ -145,7 +145,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                     type="date"
                     value={formData.date}
                     onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                    className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                    className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
                   />
                   <Calendar className="absolute right-3 top-2.5 w-4 h-4 text-[#6b7280] pointer-events-none" />
                 </div>
@@ -156,7 +156,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                   type="time"
                   value={formData.startTime}
                   onChange={(e) => setFormData({ ...formData, startTime: e.target.value })}
-                  className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                  className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
                 />
               </div>
               <div>
@@ -165,7 +165,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                   type="time"
                   value={formData.endTime}
                   onChange={(e) => setFormData({ ...formData, endTime: e.target.value })}
-                  className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                  className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
                 />
               </div>
             </div>
@@ -201,7 +201,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                   const newCount = parseInt(e.target.value) || 1;
                   setFormData({ ...formData, staffCount: newCount, selectedStaff: formData.selectedStaff.slice(0, newCount) });
                 }}
-                className="w-16 px-3 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg text-center focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                className="w-16 px-3 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg text-center focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
               />
               <button
                 onClick={() => setFormData({ ...formData, staffCount: formData.staffCount + 1 })}
@@ -226,11 +226,11 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                     <button
                       type="button"
                       onClick={() => setIsStaffDropdownOpen(isStaffDropdownOpen ? false : index)}
-                      className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg text-left flex items-center justify-between hover:bg-[#f8fafc] focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                      className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg text-left flex items-center justify-between hover:bg-[#f8fafc] focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
                     >
                       {selectedStaffMember ? (
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-[#1a86f0] flex items-center justify-center text-white text-xs font-semibold">
+                          <div className="w-8 h-8 rounded-full bg-[#4370B7] flex items-center justify-center text-white text-xs font-semibold">
                             {selectedStaffMember.avatar}
                           </div>
                           <div>
@@ -267,7 +267,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                                 isAlreadyAssigned ? 'opacity-50 cursor-not-allowed' : ''
                               }`}
                             >
-                              <div className="w-8 h-8 rounded-full bg-[#1a86f0] flex items-center justify-center text-white text-xs font-semibold">
+                              <div className="w-8 h-8 rounded-full bg-[#4370B7] flex items-center justify-center text-white text-xs font-semibold">
                                 {staff.avatar}
                               </div>
                               <div className="flex-1">
@@ -308,7 +308,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                 onClick={() => setFormData({ ...formData, costType: 'cost-type' })}
                 className={`flex-1 px-4 py-3 rounded-lg border-2 flex items-center justify-center gap-2 transition-colors ${
                   formData.costType === 'cost-type'
-                    ? 'border-[#1a86f0] bg-blue-50 text-[#1a86f0]'
+                    ? 'border-[#4370B7] bg-blue-50 text-[#4370B7]'
                     : 'border-[rgba(20,30,60,0.08)] bg-white text-[#6b7280] hover:bg-[#f8fafc]'
                 }`}
               >
@@ -319,7 +319,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                 onClick={() => setFormData({ ...formData, costType: 'manual-cost' })}
                 className={`flex-1 px-4 py-3 rounded-lg border-2 flex items-center justify-center gap-2 transition-colors ${
                   formData.costType === 'manual-cost'
-                    ? 'border-[#1a86f0] bg-blue-50 text-[#1a86f0]'
+                    ? 'border-[#4370B7] bg-blue-50 text-[#4370B7]'
                     : 'border-[rgba(20,30,60,0.08)] bg-white text-[#6b7280] hover:bg-[#f8fafc]'
                 }`}
               >
@@ -336,7 +336,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                     <p className="text-xs text-[#6b7280]">Standard care visit during normal hours</p>
                     <p className="text-xs text-[#6b7280] mt-1">GBP 30/hour • per visit</p>
                   </div>
-                  <button className="px-3 py-1.5 text-xs font-medium text-[#1a86f0] hover:bg-blue-100 rounded">
+                  <button className="px-3 py-1.5 text-xs font-medium text-[#4370B7] hover:bg-blue-100 rounded-sm">
                     Change
                   </button>
                 </div>
@@ -348,7 +348,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                   placeholder="Enter manual cost amount"
                   value={formData.manualCost}
                   onChange={(e) => setFormData({ ...formData, manualCost: e.target.value })}
-                  className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                  className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
                 />
               </div>
             )}
@@ -371,7 +371,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
               value={formData.notes}
               onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
               rows={4}
-              className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0] resize-none"
+              className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] resize-none"
             />
           </div>
 
@@ -403,7 +403,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                       type="text"
                       value={formData.funderName}
                       onChange={(e) => setFormData({ ...formData, funderName: e.target.value })}
-                      className="w-full px-4 py-2 border-2 border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-200 bg-green-50/50"
+                      className="w-full px-4 py-2 border-2 border-green-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-green-200 bg-green-50/50"
                     />
                     <div className="flex items-center gap-1 mt-1">
                       <svg className="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -418,7 +418,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                       type="text"
                       value={formData.funderReference}
                       onChange={(e) => setFormData({ ...formData, funderReference: e.target.value })}
-                      className="w-full px-4 py-2 border-2 border-green-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-200 bg-green-50/50"
+                      className="w-full px-4 py-2 border-2 border-green-300 rounded-lg focus:outline-hidden focus:ring-2 focus:ring-green-200 bg-green-50/50"
                     />
                     <div className="flex items-center gap-1 mt-1">
                       <svg className="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20">
@@ -441,7 +441,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                       placeholder="Enter funder name"
                       value={formData.funderName}
                       onChange={(e) => setFormData({ ...formData, funderName: e.target.value })}
-                      className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                      className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
                     />
                   </div>
                   <div>
@@ -450,7 +450,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                       placeholder="Enter funder reference"
                       value={formData.funderReference}
                       onChange={(e) => setFormData({ ...formData, funderReference: e.target.value })}
-                      className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1a86f0]"
+                      className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
                     />
                   </div>
                 </div>
@@ -467,7 +467,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
               <button
                 onClick={() => setFormData({ ...formData, recurrenceEnabled: !formData.recurrenceEnabled })}
                 className={`relative w-11 h-6 rounded-full transition-colors ${
-                  formData.recurrenceEnabled ? 'bg-[#1a86f0]' : 'bg-[#d1d5db]'
+                  formData.recurrenceEnabled ? 'bg-[#4370B7]' : 'bg-[#d1d5db]'
                 }`}
               >
                 <span
@@ -485,7 +485,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
               <label className="block text-sm font-medium text-[#0F172A]">
                 Care Tasks
               </label>
-              <button className="px-3 py-1.5 bg-[#1a86f0] text-white rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-[#1570d1]">
+              <button className="px-3 py-1.5 bg-[#4370B7] text-white rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-[#365a9a]">
                 <Plus className="w-4 h-4" />
                 Add Task
               </button>
@@ -531,7 +531,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
               onClose();
             }}
             disabled={!formData.patient}
-            className="px-6 py-2 bg-[#1a86f0] text-white rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-[#1570d1] disabled:bg-[#9ca3af] disabled:cursor-not-allowed"
+            className="px-6 py-2 bg-[#4370B7] text-white rounded-lg text-sm font-medium flex items-center gap-2 hover:bg-[#365a9a] disabled:bg-[#9ca3af] disabled:cursor-not-allowed"
           >
             <Calendar className="w-4 h-4" />
             Create Visit

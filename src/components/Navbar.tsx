@@ -93,7 +93,7 @@ export const Navbar: React.FC = () => {
                 <a
                   href={item.href}
                   className={`flex items-center gap-1 font-medium transition-colors ${
-                    shouldShowWhite ? 'text-[#4B5563] hover:text-[#1a86f0]' : 'text-white/90 hover:text-white'
+                    shouldShowWhite ? 'text-[#4B5563] hover:text-[#4370B7]' : 'text-white/90 hover:text-white'
                   }`}
                   aria-expanded={item.children ? openDropdown === item.label : undefined}
                   aria-haspopup={item.children ? 'menu' : undefined}
@@ -117,7 +117,7 @@ export const Navbar: React.FC = () => {
                         <a
                           key={child.label}
                           href={child.href}
-                          className="block px-4 py-2 text-[#4B5563] hover:bg-[#FAFBFC] hover:text-[#1a86f0] transition-colors"
+                          className="block px-4 py-2 text-[#4B5563] hover:bg-[#FAFBFC] hover:text-[#4370B7] transition-colors"
                           role="menuitem"
                         >
                           {child.label}
@@ -183,7 +183,7 @@ export const Navbar: React.FC = () => {
               <div key={item.label}>
                 <a
                   href={item.href}
-                  className="block py-2 font-medium text-[#4B5563] hover:text-[#1a86f0]"
+                  className="block py-2 font-medium text-[#4B5563] hover:text-[#4370B7]"
                 >
                   {item.label}
                 </a>
@@ -193,7 +193,7 @@ export const Navbar: React.FC = () => {
                       <a
                         key={child.label}
                         href={child.href}
-                        className="block py-1 text-sm text-[#4B5563] hover:text-[#1a86f0]"
+                        className="block py-1 text-sm text-[#4B5563] hover:text-[#4370B7]"
                       >
                         {child.label}
                       </a>
@@ -203,7 +203,7 @@ export const Navbar: React.FC = () => {
               </div>
             ))}
             <div className="flex flex-col gap-2 pt-4 border-t border-[rgba(20,30,60,0.08)]">
-              <Button variant="ghost" size="md" href={EXTERNAL_LOGIN_URL} className="text-[#1a86f0]">
+              <Button variant="ghost" size="md" href={EXTERNAL_LOGIN_URL} className="text-[#4370B7]">
                 Log in
               </Button>
               <Button 

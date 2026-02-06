@@ -388,7 +388,7 @@ export const PayrollDemo: React.FC = () => {
               <select
                 value={selectedStaff}
                 onChange={(e) => setSelectedStaff(e.target.value)}
-                className="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500"
               >
                 <option value="all">All Staff</option>
                 {payrollData.map((staff) => (
@@ -407,7 +407,7 @@ export const PayrollDemo: React.FC = () => {
                 placeholder="Search staff..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm focus:outline-hidden focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
             </div>
 
@@ -534,7 +534,7 @@ export const PayrollDemo: React.FC = () => {
               <h3 className="text-lg font-semibold text-slate-900">Select Date Range</h3>
               <button
                 onClick={() => setShowDatePicker(false)}
-                className="p-1 hover:bg-slate-100 rounded"
+                className="p-1 hover:bg-slate-100 rounded-sm"
               >
                 <X className="w-5 h-5 text-slate-500" />
               </button>
@@ -606,7 +606,7 @@ export const PayrollDemo: React.FC = () => {
               </div>
               <button
                 onClick={() => setSelectedReport(null)}
-                className="p-1 hover:bg-slate-100 rounded"
+                className="p-1 hover:bg-slate-100 rounded-sm"
               >
                 <X className="w-5 h-5 text-slate-500" />
               </button>

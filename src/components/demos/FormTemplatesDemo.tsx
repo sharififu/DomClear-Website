@@ -88,7 +88,7 @@ const mockTemplates: FormTemplate[] = [
   }
 ];
 
-export const FormTemplatesDemo: React.FC<{ onReset: () => void; enableTour?: boolean }> = ({ onReset, enableTour = true }) => {
+export const FormTemplatesDemo: React.FC<{ onReset: () => void; onOpenTemplateBuilder?: () => void; enableTour?: boolean }> = ({ onReset, onOpenTemplateBuilder, enableTour = true }) => {
   const [templates, setTemplates] = useState<FormTemplate[]>(mockTemplates);
   const [searchQuery, setSearchQuery] = useState('');
   const [filterType, setFilterType] = useState<'all' | 'risk_assessment' | 'medical_risk' | 'service_review' | 'feedback' | 'staff_supervision' | 'incident_report' | 'care_plan' | 'custom'>('all');
@@ -196,7 +196,12 @@ export const FormTemplatesDemo: React.FC<{ onReset: () => void; enableTour?: boo
               Create and manage reusable form templates for assessments, reviews, and feedback
             </p>
           </div>
-          <button className="flex items-center gap-2 px-5 py-3 bg-blue-500 text-white rounded-lg font-semibold text-sm hover:bg-blue-600 transition-colors" data-tour="templates-library-actions">
+          <button
+            type="button"
+            onClick={onOpenTemplateBuilder ?? undefined}
+            className="flex items-center gap-2 px-5 py-3 bg-blue-500 text-white rounded-lg font-semibold text-sm hover:bg-blue-600 transition-colors"
+            data-tour="templates-library-actions"
+          >
             <Plus className="w-5 h-5" />
             <span>Create Template</span>
           </button>
@@ -256,7 +261,11 @@ export const FormTemplatesDemo: React.FC<{ onReset: () => void; enableTour?: boo
               }
             </p>
             {!searchQuery && filterType === 'all' && (
-              <button className="flex items-center gap-2 px-5 py-3 bg-blue-500 text-white rounded-lg font-semibold text-sm hover:bg-blue-600 transition-colors">
+              <button
+                type="button"
+                onClick={onOpenTemplateBuilder ?? undefined}
+                className="flex items-center gap-2 px-5 py-3 bg-blue-500 text-white rounded-lg font-semibold text-sm hover:bg-blue-600 transition-colors"
+              >
                 <Plus className="w-5 h-5" />
                 <span>Create First Template</span>
               </button>

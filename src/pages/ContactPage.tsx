@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { TextField, TextArea, Select, ListBox, Label, Input } from '@heroui/react';
 import { Button } from '../components/Button';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
 export const ContactPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', organisation: '', subject: '', message: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -51,83 +53,48 @@ export const ContactPage: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-[#4B5563] mb-2">
-                    First name *
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1F6FEB] transition-shadow"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-[#4B5563] mb-2">
-                    Last name *
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    required
-                    className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1F6FEB] transition-shadow"
-                  />
-                </div>
+                <TextField name="firstName" value={formData.firstName} onChange={(v) => setFormData((d) => ({ ...d, firstName: v }))} isRequired fullWidth>
+                  <Label>First name</Label>
+                  <Input placeholder="First name" />
+                </TextField>
+                <TextField name="lastName" value={formData.lastName} onChange={(v) => setFormData((d) => ({ ...d, lastName: v }))} isRequired fullWidth>
+                  <Label>Last name</Label>
+                  <Input placeholder="Last name" />
+                </TextField>
               </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-[#4B5563] mb-2">
-                  Email address *
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1F6FEB] transition-shadow"
-                />
-              </div>
+              <TextField name="email" type="email" value={formData.email} onChange={(v) => setFormData((d) => ({ ...d, email: v }))} isRequired fullWidth>
+                <Label>Email address</Label>
+                <Input type="email" placeholder="Email address" />
+              </TextField>
 
-              <div>
-                <label htmlFor="organisation" className="block text-sm font-medium text-[#4B5563] mb-2">
-                  Organisation name
-                </label>
-                <input
-                  type="text"
-                  id="organisation"
-                  className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1F6FEB] transition-shadow"
-                />
-              </div>
+              <TextField name="organisation" value={formData.organisation} onChange={(v) => setFormData((d) => ({ ...d, organisation: v }))} fullWidth>
+                <Label>Organisation name</Label>
+                <Input placeholder="Organisation name" />
+              </TextField>
 
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-[#4B5563] mb-2">
-                  Subject *
-                </label>
-                <select
-                  id="subject"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1F6FEB] transition-shadow"
-                >
-                  <option value="">Select a subject</option>
-                  <option value="demo">Request a demo</option>
-                  <option value="pricing">Pricing inquiry</option>
-                  <option value="support">Technical support</option>
-                  <option value="partnership">Partnership opportunity</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
+              <Select
+                label="Subject"
+                name="subject"
+                placeholder="Select a subject"
+                isRequired
+                value={formData.subject || null}
+                onChange={(v) => setFormData((d) => ({ ...d, subject: (v as string) || '' }))}
+                fullWidth
+              >
+                <ListBox>
+                  <ListBox.Item id="demo" textValue="Request a demo">Request a demo</ListBox.Item>
+                  <ListBox.Item id="pricing" textValue="Pricing inquiry">Pricing inquiry</ListBox.Item>
+                  <ListBox.Item id="support" textValue="Technical support">Technical support</ListBox.Item>
+                  <ListBox.Item id="partnership" textValue="Partnership opportunity">Partnership opportunity</ListBox.Item>
+                  <ListBox.Item id="other" textValue="Other">Other</ListBox.Item>
+                </ListBox>
+              </Select>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-[#4B5563] mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  required
-                  placeholder="Tell us how we can help..."
-                  className="w-full px-4 py-3 rounded-xl border border-[rgba(20,30,60,0.08)] focus:outline-none focus:ring-4 focus:ring-blue-200 focus:border-[#1F6FEB] transition-shadow resize-none"
-                />
-              </div>
+              <TextField name="message" value={formData.message} onChange={(v) => setFormData((d) => ({ ...d, message: v }))} isRequired fullWidth>
+                <Label>Message</Label>
+                <TextArea placeholder="Tell us how we can help..." minRows={4} className="resize-none" />
+              </TextField>
 
               <Button type="submit" variant="primary" size="lg" className="w-full">
                 Send message
@@ -186,12 +153,12 @@ export const ContactPage: React.FC = () => {
                 Book a personalised demonstration and see how DomiClear can transform your agency.
               </p>
               <Button 
-                variant="accent" 
+                variant="secondary" 
                 size="md" 
                 href={EXTERNAL_SIGNUP_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="bg-white text-[#1F6FEB] hover:bg-white/90"
+                className="!bg-white !text-[#1F6FEB] border-0 hover:!bg-white/90"
               >
                 Start free trial
               </Button>
