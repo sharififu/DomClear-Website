@@ -18,7 +18,7 @@ export const HomePage: React.FC = () => {
       <ComprehensiveFeatures />
 
       <section className="py-20 bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC]">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-white rounded-full text-xs font-bold text-[#4370B7] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
               Proven Outcomes
@@ -37,7 +37,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-[#FAFBFC] rounded-full text-xs font-bold text-[#4370B7] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
               Testimonials
@@ -61,7 +61,7 @@ export const HomePage: React.FC = () => {
       <CQCOutcomes />
 
       <section className="py-20 bg-[#FAFBFC]">
-        <div className="max-w-[1200px] mx-auto px-8">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-[#1a86f0] to-[#7c6df0] rounded-3xl p-12 md:p-16 text-white relative overflow-hidden">
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-10 right-10 w-64 h-64 bg-white rounded-full blur-3xl"></div>

@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
             <img
               src="/demo-media/Mobile-white.png"
               alt="DomiClear Mobile App"
-              className="hidden sm:block w-32 sm:w-40 md:w-56 lg:w-64 xl:w-72 h-auto object-contain self-end -ml-8 sm:-ml-12 md:-ml-16 lg:-ml-20 xl:-ml-24"
+              className="block w-24 sm:w-40 md:w-56 lg:w-64 xl:w-72 h-auto object-contain self-end -ml-4 sm:-ml-8 md:-ml-12 lg:-ml-16 xl:-ml-24"
             />
           </div>
 
@@ -101,13 +101,6 @@ export const Hero: React.FC = () => {
                 <p className="mt-3 text-white/80 text-sm">
                   No card required • UK support • Cancel anytime
                 </p>
-
-                {/* CTA row text */}
-                <div className="mt-4 flex justify-center lg:justify-start">
-                  <p className="text-white/80 text-sm">
-                    {heroContent.primaryCta} · {heroContent.secondaryCta}
-                  </p>
-                </div>
 
                 {/* Trust badges directly below CTAs */}
                 <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2 text-white/90 text-sm">

@@ -1343,7 +1343,7 @@ export const CarePlanDemo: React.FC<{ onReset: () => void }> = ({ onReset }) => 
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 overflow-y-auto p-6" data-tour="care-plan-content">
+        <div className="flex-1 min-w-0 overflow-y-auto p-6" data-tour="care-plan-content">
           {renderSectionContent()}
         </div>
 

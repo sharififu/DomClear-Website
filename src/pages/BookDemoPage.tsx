@@ -19,16 +19,16 @@ export const BookDemoPage: React.FC = () => {
       script.src = 'https://assets.calendly.com/assets/external/widget.js';
       script.async = true;
       document.body.appendChild(script);
-      return () => {
-        document.body.removeChild(script);
-      };
+return () => {
+      if (script.parentNode) document.body.removeChild(script);
+    };
     }
   }, [viewMode]);
 
   if (submitted) {
     return (
       <div className="min-h-screen pt-32 pb-20 bg-[#FAFBFC] flex items-center justify-center">
-        <div className="max-w-2xl mx-auto px-8 text-center">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#e6f7ff] mb-6">
             <CheckCircleIcon className="w-10 h-10 text-[#4370B7]" />
           </div>
@@ -54,7 +54,7 @@ export const BookDemoPage: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 bg-[#FAFBFC]" id="top">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-2 bg-white rounded-full text-xs font-bold text-[#4370B7] uppercase tracking-wider mb-6 border border-[rgba(20,30,60,0.08)]">
             Book a Demo
@@ -106,7 +106,7 @@ export const BookDemoPage: React.FC = () => {
             {/* Import starter kit link */}
             <div className="mb-6 p-4 bg-[#FAFBFC] rounded-xl border border-[rgba(20,30,60,0.08)]">
               <a 
-                href="#" 
+                href="/contact" 
                 className="text-[#4370B7] font-semibold text-sm hover:underline inline-flex items-center gap-2"
               >
                 Import starter kit
@@ -129,7 +129,7 @@ export const BookDemoPage: React.FC = () => {
                     value={formData.firstName}
                     onChange={(e) => setFormData((d) => ({ ...d, firstName: e.target.value }))}
                     placeholder="First name"
-                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                   />
                 </div>
                 <div>
@@ -142,7 +142,7 @@ export const BookDemoPage: React.FC = () => {
                     value={formData.lastName}
                     onChange={(e) => setFormData((d) => ({ ...d, lastName: e.target.value }))}
                     placeholder="Last name"
-                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                   />
                 </div>
               </div>
@@ -157,7 +157,7 @@ export const BookDemoPage: React.FC = () => {
                   value={formData.email}
                   onChange={(e) => setFormData((d) => ({ ...d, email: e.target.value }))}
                   placeholder="Email address"
-                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                 />
               </div>
 
@@ -171,7 +171,7 @@ export const BookDemoPage: React.FC = () => {
                   value={formData.phone}
                   onChange={(e) => setFormData((d) => ({ ...d, phone: e.target.value }))}
                   placeholder="Phone number"
-                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                 />
               </div>
 
@@ -185,7 +185,7 @@ export const BookDemoPage: React.FC = () => {
                   value={formData.organisation}
                   onChange={(e) => setFormData((d) => ({ ...d, organisation: e.target.value }))}
                   placeholder="Organisation name"
-                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                 />
               </div>
 
@@ -197,7 +197,7 @@ export const BookDemoPage: React.FC = () => {
                   required
                   value={formData.role}
                   onChange={(e) => setFormData((d) => ({ ...d, role: e.target.value }))}
-                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent bg-white"
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent bg-white"
                 >
                   <option value="">Select a role</option>
                   <option value="owner">Agency Owner/Director</option>
@@ -222,10 +222,10 @@ export const BookDemoPage: React.FC = () => {
               </div>
               <h2 className="text-2xl font-bold text-[#0F172A]">Pick a time now</h2>
             </div>
-            {/* Calendly inline embed - replace CALENDLY_USERNAME with actual Calendly username */}
+            {/* Calendly inline embed - set VITE_CALENDLY_URL in .env or replace with your Calendly scheduling URL */}
             <div 
               className="calendly-inline-widget" 
-              data-url="https://calendly.com/CALENDLY_USERNAME" 
+              data-url={import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/domiclear'} 
               style={{ minWidth: '320px', height: '700px' }}
             ></div>
           </div>

@@ -69,7 +69,7 @@ export const Navbar: React.FC = () => {
       }`}
       style={{ height: '72px' }}
     >
-      <div className="max-w-[1200px] mx-auto px-8 h-full flex items-center justify-between">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
         <div className="flex items-center gap-12">
           <a href="/" className="flex items-center gap-2">
             <img 
@@ -164,21 +164,22 @@ export const Navbar: React.FC = () => {
         </div>
 
         <button
-          className="lg:hidden"
+          className={`lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg -mr-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:ring-offset-2 focus:ring-offset-transparent ${!shouldShowWhite ? 'bg-white/10 hover:bg-white/20' : 'hover:bg-slate-100'}`}
+          style={{ padding: '10px' }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? (
-            <XMarkIcon className={shouldShowWhite ? 'text-[#0F172A]' : 'text-white'} />
+            <XMarkIcon className={`w-6 h-6 ${shouldShowWhite ? 'text-[#0F172A]' : 'text-white'}`} />
           ) : (
-            <Bars3Icon className={shouldShowWhite ? 'text-[#0F172A]' : 'text-white'} />
+            <Bars3Icon className={`w-6 h-6 ${shouldShowWhite ? 'text-[#0F172A]' : 'text-white'}`} />
           )}
         </button>
       </div>
 
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white border-t border-[rgba(20,30,60,0.08)] shadow-lg">
-          <div className="max-w-[1200px] mx-auto px-8 py-4 space-y-4">
+          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-4">
             {navigation.map((item) => (
               <div key={item.label}>
                 <a

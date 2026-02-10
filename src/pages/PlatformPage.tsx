@@ -64,7 +64,7 @@ export const PlatformPage: React.FC = () => {
   return (
     <div>
       <section className="pt-32 pb-20 bg-gradient-to-br from-[#1a86f0] to-[#7c6df0] text-white">
-        <div className="max-w-[1200px] mx-auto px-8 text-center">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold uppercase tracking-wider mb-6">
             Platform Overview
           </span>
@@ -88,7 +88,7 @@ export const PlatformPage: React.FC = () => {
       </section>
 
       <section className="py-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-8 space-y-24">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
           {features.map((feature, index) => (
             <div
               key={feature.id}
@@ -148,7 +148,7 @@ export const PlatformPage: React.FC = () => {
       </section>
 
       <section className="py-20 bg-[#FAFBFC]">
-        <div className="max-w-[1200px] mx-auto px-8 text-center">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">
             See how it all works together
           </h2>
