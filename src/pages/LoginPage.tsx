@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { TextField, Label, Input, Checkbox } from '@heroui/react';
 import { Button } from '../components/Button';
 import { PricingCard } from '../components/PricingCard';
 import { pricingTiers } from '../data/content';
@@ -89,20 +88,44 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
           <div className="max-w-md mx-auto">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-[rgba(20,30,60,0.08)]">
               <form onSubmit={handleLogin} className="space-y-6">
-                <TextField name="email" type="email" value={email} onChange={setEmail} isRequired fullWidth>
-                  <Label>Email address</Label>
-                  <Input type="email" placeholder="you@example.com" />
-                </TextField>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-[#0F172A] mb-2">Email address</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@example.com"
+                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                  />
+                </div>
 
-                <TextField name="password" value={password} onChange={setPassword} isRequired fullWidth>
-                  <Label>Password</Label>
-                  <Input type="password" placeholder="Enter your password" />
-                </TextField>
+                <div>
+                  <label htmlFor="password" className="block text-sm font-semibold text-[#0F172A] mb-2">Password</label>
+                  <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    required
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter your password"
+                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                  />
+                </div>
 
                 <div className="flex items-center justify-between">
-                  <Checkbox defaultSelected className="text-[#4B5563]">
-                    Remember me
-                  </Checkbox>
+                  <label className="flex items-center gap-2 cursor-pointer text-[#4B5563]">
+                    <input
+                      type="checkbox"
+                      name="remember"
+                      defaultChecked
+                      className="w-4 h-4 rounded border-[rgba(20,30,60,0.2)] text-[#4370B7] focus:ring-2 focus:ring-[#4370B7]"
+                    />
+                    <span>Remember me</span>
+                  </label>
                   <a
                     href="#forgot-password"
                     className="text-sm font-semibold text-[#4370B7] hover:text-[#365a9a]"

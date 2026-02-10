@@ -11,20 +11,23 @@ interface PricingCardProps {
 
 export const PricingCard: React.FC<PricingCardProps> = ({ tier, billingPeriod = 'monthly' }) => {
   const isDemoCta = tier.cta?.toLowerCase().includes('book');
-  const ctaHref = isDemoCta ? '/book-demo' : EXTERNAL_SIGNUP_URL;
+  const isContactSales = tier.cta?.toLowerCase().includes('contact');
+  const ctaHref = isDemoCta ? '/book-demo' : isContactSales ? '/contact' : EXTERNAL_SIGNUP_URL;
 
   const displayPrice = tier.price !== undefined
     ? billingPeriod === 'annual'
-      ? Math.round(tier.price * 12 * 0.85)
+      ? Math.round(tier.price * 12 * 0.8)
       : tier.price
     : undefined;
 
   const displayUnit = billingPeriod === 'annual' ? '/year' : tier.priceUnit;
 
   const overagePricing: { [key: string]: string } = {
-    'Starter': '+£2.00 per additional active service user/mo',
-    'Professional': '+£1.50 per additional active service user/mo',
-    'Enterprise': 'Volume pricing',
+    'Launch': 'Included',
+    'Starter': 'Included',
+    'Growth': 'Included',
+    'Professional': 'Included',
+    'Enterprise': 'Contact sales for 120+',
   };
 
   return (
@@ -84,8 +87,8 @@ export const PricingCard: React.FC<PricingCardProps> = ({ tier, billingPeriod = 
           variant={tier.highlighted ? 'primary' : 'secondary'}
           size="lg"
           href={ctaHref}
-          target={isDemoCta ? undefined : '_blank'}
-          rel={isDemoCta ? undefined : 'noreferrer'}
+          target={isDemoCta || isContactSales ? undefined : '_blank'}
+          rel={isDemoCta || isContactSales ? undefined : 'noreferrer'}
           className="w-full mb-8"
           analyticsEvent="pricing_tier_click"
           analyticsProperties={{ tier: tier.name, billing_period: billingPeriod }}
