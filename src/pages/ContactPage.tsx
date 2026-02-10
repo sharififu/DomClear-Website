@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { TextField, TextArea, Select, ListBox, Label, Input } from '@heroui/react';
 import { Button } from '../components/Button';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
@@ -53,48 +52,93 @@ export const ContactPage: React.FC = () => {
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <TextField name="firstName" value={formData.firstName} onChange={(v) => setFormData((d) => ({ ...d, firstName: v }))} isRequired fullWidth>
-                  <Label>First name</Label>
-                  <Input placeholder="First name" />
-                </TextField>
-                <TextField name="lastName" value={formData.lastName} onChange={(v) => setFormData((d) => ({ ...d, lastName: v }))} isRequired fullWidth>
-                  <Label>Last name</Label>
-                  <Input placeholder="Last name" />
-                </TextField>
+                <div>
+                  <label htmlFor="firstName" className="block text-sm font-semibold text-[#0F172A] mb-2">First name</label>
+                  <input
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    required
+                    value={formData.firstName}
+                    onChange={(e) => setFormData((d) => ({ ...d, firstName: e.target.value }))}
+                    placeholder="First name"
+                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="block text-sm font-semibold text-[#0F172A] mb-2">Last name</label>
+                  <input
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    required
+                    value={formData.lastName}
+                    onChange={(e) => setFormData((d) => ({ ...d, lastName: e.target.value }))}
+                    placeholder="Last name"
+                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                  />
+                </div>
               </div>
 
-              <TextField name="email" type="email" value={formData.email} onChange={(v) => setFormData((d) => ({ ...d, email: v }))} isRequired fullWidth>
-                <Label>Email address</Label>
-                <Input type="email" placeholder="Email address" />
-              </TextField>
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-[#0F172A] mb-2">Email address</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData((d) => ({ ...d, email: e.target.value }))}
+                  placeholder="Email address"
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                />
+              </div>
 
-              <TextField name="organisation" value={formData.organisation} onChange={(v) => setFormData((d) => ({ ...d, organisation: v }))} fullWidth>
-                <Label>Organisation name</Label>
-                <Input placeholder="Organisation name" />
-              </TextField>
+              <div>
+                <label htmlFor="organisation" className="block text-sm font-semibold text-[#0F172A] mb-2">Organisation name</label>
+                <input
+                  id="organisation"
+                  name="organisation"
+                  type="text"
+                  value={formData.organisation}
+                  onChange={(e) => setFormData((d) => ({ ...d, organisation: e.target.value }))}
+                  placeholder="Organisation name"
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                />
+              </div>
 
-              <Select
-                label="Subject"
-                name="subject"
-                placeholder="Select a subject"
-                isRequired
-                value={formData.subject || null}
-                onChange={(v) => setFormData((d) => ({ ...d, subject: (v as string) || '' }))}
-                fullWidth
-              >
-                <ListBox>
-                  <ListBox.Item id="demo" textValue="Request a demo">Request a demo</ListBox.Item>
-                  <ListBox.Item id="pricing" textValue="Pricing inquiry">Pricing inquiry</ListBox.Item>
-                  <ListBox.Item id="support" textValue="Technical support">Technical support</ListBox.Item>
-                  <ListBox.Item id="partnership" textValue="Partnership opportunity">Partnership opportunity</ListBox.Item>
-                  <ListBox.Item id="other" textValue="Other">Other</ListBox.Item>
-                </ListBox>
-              </Select>
+              <div>
+                <label htmlFor="subject" className="block text-sm font-semibold text-[#0F172A] mb-2">Subject</label>
+                <select
+                  id="subject"
+                  name="subject"
+                  required
+                  value={formData.subject}
+                  onChange={(e) => setFormData((d) => ({ ...d, subject: e.target.value }))}
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent bg-white"
+                >
+                  <option value="">Select a subject</option>
+                  <option value="demo">Request a demo</option>
+                  <option value="pricing">Pricing inquiry</option>
+                  <option value="support">Technical support</option>
+                  <option value="partnership">Partnership opportunity</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
 
-              <TextField name="message" value={formData.message} onChange={(v) => setFormData((d) => ({ ...d, message: v }))} isRequired fullWidth>
-                <Label>Message</Label>
-                <TextArea placeholder="Tell us how we can help..." minRows={4} className="resize-none" />
-              </TextField>
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-[#0F172A] mb-2">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={4}
+                  value={formData.message}
+                  onChange={(e) => setFormData((d) => ({ ...d, message: e.target.value }))}
+                  placeholder="Tell us how we can help..."
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent resize-none"
+                />
+              </div>
 
               <Button type="submit" variant="primary" size="lg" className="w-full">
                 Send message

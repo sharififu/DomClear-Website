@@ -55,12 +55,12 @@ export const PricingPage: React.FC = () => {
                     : 'text-[#4B5563] hover:text-[#4370B7]'
                 }`}
               >
-                Annual (save 15%)
+                Annual (save 20%)
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {pricingTiers.map((tier, index) => (
               <PricingCard key={index} tier={tier} billingPeriod={billingPeriod} />
             ))}

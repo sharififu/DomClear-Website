@@ -17,12 +17,12 @@ export const Hero: React.FC = () => {
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center">
           {/* Images on the left */}
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start items-end relative z-0">
-            {/* Starting Price Badge - Pill (matches pricing: £39/mo Starter plan) */}
+            {/* Starting Price Badge - Pill (matches pricing: £49/mo Launch plan) */}
             <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 z-50">
               <div className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 rounded-[2rem] bg-gradient-to-r from-[#67e8f9] via-[#5eead4] to-[#4ade80] shadow-lg backdrop-blur-sm">
                 <div className="flex flex-col items-center justify-center text-center">
                   <span className="text-white font-bold text-lg sm:text-xl md:text-2xl leading-tight">
-                    From £39
+                    From £49
                   </span>
                   <span className="text-white/95 text-xs sm:text-sm leading-tight">
                     per month
