@@ -82,12 +82,12 @@ export const DemoPage: React.FC = () => {
       <div className="w-full max-w-[100%] px-4 sm:px-6">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-4">
-            Interactive Demos
+            Try the home care management app
           </h1>
           <p className="text-lg text-[#4B5563] max-w-3xl mx-auto mb-6">
-            Experience the power of DomiClear with our interactive demos. No login required.
+            Explore DomiClear with interactive demos: scheduling, eMAR, compliance and more. Built for UK care agencies—no login required.
           </p>
-          <div className="flex items-center justify-center gap-4 mb-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-2">
             <a
               href={EXTERNAL_SIGNUP_URL}
               target="_blank"
@@ -96,7 +96,6 @@ export const DemoPage: React.FC = () => {
             >
               <span>Start free trial</span>
             </a>
-            <span className="text-[#4B5563]">·</span>
             <a
               href="/book-demo"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-slate-300 text-slate-700 rounded-lg font-semibold text-sm hover:bg-slate-50 transition-colors"
@@ -104,6 +103,7 @@ export const DemoPage: React.FC = () => {
               <span>Book a demo</span>
             </a>
           </div>
+          <p className="text-sm text-[#4B5563]">No card required · UK support · Cancel anytime</p>
           <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
             {QUICK_NAV_DEMOS.map(({ id, label }) => (
               <button

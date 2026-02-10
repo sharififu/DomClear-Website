@@ -51,7 +51,7 @@ export const valuePillars: Feature[] = [
   {
     icon: 'Activity',
     title: 'Operational clarity',
-    description: 'Manage rotas, visits, tasks, and EMAR in one unified platform that keeps everyone aligned.',
+    description: 'Manage rotas, visits, tasks, and eMAR in one unified platform that keeps everyone aligned.',
   },
   {
     icon: 'Shield',
@@ -82,7 +82,7 @@ export const featureHighlights: Feature[] = [
     icon: 'Smartphone',
     title: 'Offline-capable carer app',
     description:
-      'Attendance tracking, EMAR logging, notes, GPS verify, and incident capture work without signal, syncing when back online.',
+      'Attendance tracking, eMAR logging, notes, GPS verify, and incident capture work without signal, syncing when back online.',
   },
   {
     icon: 'CheckCircle',
@@ -200,10 +200,10 @@ export const platformFeatures = {
     id: 'carer-app',
     title: 'Carer Mobile App',
     description:
-      'Designed for carers on the move, the mobile app supports offline capability so poor signal doesn\'t stop care delivery. Task lists guide carers through each visit step-by-step. EMAR logging records medication administration with photos and timestamps. Notes, attachments, and incident forms capture observations in the moment. GPS verification confirms visit location and time, providing evidence for billing and compliance. Secure in-app messaging keeps carers connected to the office without sharing personal phone numbers. All data syncs to the central platform when connectivity returns, ensuring managers have up-to-date visibility.',
+      'Designed for carers on the move, the mobile app supports offline capability so poor signal doesn\'t stop care delivery. Task lists guide carers through each visit step-by-step. eMAR logging records medication administration with photos and timestamps. Notes, attachments, and incident forms capture observations in the moment. GPS verification confirms visit location and time, providing evidence for billing and compliance. Secure in-app messaging keeps carers connected to the office without sharing personal phone numbers. All data syncs to the central platform when connectivity returns, ensuring managers have up-to-date visibility.',
     features: [
       'Offline-capable attendance tracking',
-      'EMAR with photo evidence',
+      'eMAR with photo evidence',
       'Rich text notes and attachments',
       'Incident and observation capture',
       'GPS visit verification',
@@ -350,7 +350,7 @@ export const pricingTiers: PricingTier[] = [
       'Unlimited staff accounts',
       'Carer mobile app (iOS & Android)',
       'Rota planning and visit scheduling',
-      'Patient management & EMAR',
+      'Patient management & eMAR',
       'Basic reporting & email support',
       'Family portal access',
     ],
@@ -437,7 +437,7 @@ export const featureOverviewContent = {
     {
       icon: 'Smartphone',
       title: 'Offline-Capable Carer App',
-      description: 'Carers complete tasks, log EMAR with photos, and capture notes without signal. Everything syncs automatically when connectivity returns—never miss a visit due to poor coverage.',
+      description: 'Carers complete tasks, log eMAR with photos, and capture notes without signal. Everything syncs automatically when connectivity returns—never miss a visit due to poor coverage.',
     },
     {
       icon: 'CheckCircle',

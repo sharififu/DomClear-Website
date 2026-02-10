@@ -35,16 +35,38 @@ export const AboutPage: React.FC = () => {
             About DomiClear
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            We're building the connected homecare platform that UK care agencies deserve—operational clarity, quality compliance, and empowered care teams.
+            We're building the connected home care platform that UK care agencies deserve—one care management app for operational clarity, CQC-ready compliance, and empowered care teams.
           </p>
-          <Button
-            variant="secondary"
-            size="lg"
-            href="/contact"
-            className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
-          >
-            Get in touch
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+            <Button
+              variant="secondary"
+              size="lg"
+              href={EXTERNAL_SIGNUP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
+            >
+              Start free trial
+              <ArrowRightIcon className="w-5 h-5" />
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              href="/book-demo"
+              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+            >
+              Book a demo
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              href="/contact"
+              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+            >
+              Get in touch
+            </Button>
+          </div>
+          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
         </div>
       </section>
 
@@ -59,7 +81,7 @@ export const AboutPage: React.FC = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                'UK-focused homecare expertise',
+                'UK-focused home care expertise',
                 'CQC-aligned compliance built in',
                 'Modern, intuitive technology',
               ].map((value, i) => (
@@ -86,7 +108,7 @@ export const AboutPage: React.FC = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A]">Careers</h2>
               </div>
               <p className="text-lg text-[#4B5563] leading-relaxed mb-8">
-                We're always looking for talented people who care about improving homecare. If you're passionate about technology and care quality, we'd love to hear from you.
+                We're always looking for talented people who care about improving home care. If you're passionate about technology and care quality, we'd love to hear from you.
               </p>
               <p className="text-[#4B5563] mb-8">
                 Open roles will be posted here as we grow. In the meantime, send us your CV and a note about why you're interested in joining the team.
@@ -102,7 +124,7 @@ export const AboutPage: React.FC = () => {
                   <BriefcaseIcon className="w-16 h-16 text-[#4370B7] mx-auto mb-4" />
                   <span className="block text-[#0F172A] font-semibold text-xl">Join our team</span>
                   <p className="text-sm text-[#4B5563] mt-2">
-                    Help us build the future of homecare technology.
+                    Help us build the future of home care technology.
                   </p>
                 </div>
               </div>
@@ -122,7 +144,7 @@ export const AboutPage: React.FC = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A]">Press</h2>
               </div>
               <p className="text-lg text-[#4B5563] leading-relaxed mb-8">
-                For press enquiries, interview requests, or media assets, please contact our team. We're happy to provide information about DomiClear and the UK homecare sector.
+                For press enquiries, interview requests, or media assets, please contact our team. We're happy to provide information about DomiClear and the UK home care sector.
               </p>
               <p className="text-[#4B5563] mb-8">
                 Media kit and brand assets available on request.
@@ -156,15 +178,27 @@ export const AboutPage: React.FC = () => {
             <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mb-8">
               Join UK care agencies using DomiClear to reduce admin, improve care quality and stay CQC-ready.
             </p>
-            <Button
-              variant="primary"
-              size="lg"
-              href={EXTERNAL_SIGNUP_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Start free trial
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+              <Button
+                variant="primary"
+                size="lg"
+                href={EXTERNAL_SIGNUP_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Start free trial
+                <ArrowRightIcon className="w-5 h-5" />
+              </Button>
+              <Button
+                variant="secondary"
+                size="lg"
+                href="/book-demo"
+                className="border-[#0F172A]/20 text-[#0F172A] hover:bg-[#0F172A]/5"
+              >
+                Book a demo
+              </Button>
+            </div>
+            <p className="text-sm text-[#4B5563]">No card required · UK support · Cancel anytime</p>
           </div>
         </div>
       </section>

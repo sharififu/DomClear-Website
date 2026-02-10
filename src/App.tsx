@@ -14,6 +14,45 @@ import { LegalPage } from './pages/LegalPage';
 import { AboutPage } from './pages/AboutPage';
 import { analytics } from './utils/analytics';
 
+const DEFAULT_TITLE = 'Home Care Management App for UK Care Agencies | DomiClear';
+const DEFAULT_DESCRIPTION = 'All-in-one home care app for UK agencies. Manage visits, eMAR and care records while staying CQC-ready. Start a free trial — no card required.';
+
+const PAGE_META: Record<string, { title: string; description: string }> = {
+  '/': { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION },
+  '/platform': {
+    title: 'Home Care Software & Platform Features | DomiClear',
+    description: 'Care planning, scheduling, eMAR, compliance and family portal in one home care management platform. Built for UK care agencies. Start a free trial.',
+  },
+  '/pricing': {
+    title: 'Home Care Software Pricing for UK Agencies | DomiClear',
+    description: 'Transparent pricing for home care management software. Pay per service user, unlimited staff, all features included. UK support, no hidden costs. Start a free trial.',
+  },
+  '/solutions': {
+    title: 'Home Care Solutions for UK Agencies | DomiClear',
+    description: 'Care management solutions for care managers, agency owners and families. One home care app for rotas, eMAR, compliance and family portal. UK-focused. Start a free trial.',
+  },
+  '/about': {
+    title: 'About DomiClear | Home Care Software for UK Agencies',
+    description: 'We build the home care management platform UK care agencies rely on—operational clarity, CQC-ready compliance, empowered care teams. Learn about our mission and get in touch.',
+  },
+  '/demo': {
+    title: 'Try DomiClear | Interactive Home Care Software Demo',
+    description: 'Try the home care management app with interactive demos. Explore scheduling, eMAR, compliance and more—no login required. Built for UK care agencies. Start a free trial or book a demo.',
+  },
+  '/demos': {
+    title: 'Try DomiClear | Interactive Home Care Software Demo',
+    description: 'Try the home care management app with interactive demos. Explore scheduling, eMAR, compliance and more—no login required. Built for UK care agencies. Start a free trial or book a demo.',
+  },
+  '/contact': {
+    title: 'Contact DomiClear | Home Care Software for UK Agencies',
+    description: 'Get in touch about the home care management app. Questions, demo requests or pricing—our UK team is here to help. We respond within one business day.',
+  },
+  '/book-demo': {
+    title: 'Book a Demo | Home Care Software for UK Agencies | DomiClear',
+    description: 'Schedule a personalised demo of the home care management app. Our UK team will walk you through scheduling, eMAR, compliance and more. No obligation. Book a time or request a call.',
+  },
+};
+
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
@@ -53,6 +92,15 @@ function App() {
   // Track page views
   useEffect(() => {
     analytics.trackPageView(currentPath);
+  }, [currentPath]);
+
+  // Per-route document title and meta description (SEO)
+  useEffect(() => {
+    const path = currentPath.split('#')[0];
+    const meta = PAGE_META[path] ?? { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION };
+    document.title = meta.title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', meta.description);
   }, [currentPath]);
 
   const renderPage = () => {

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { PricingCard } from '../components/PricingCard';
 import { FAQAccordion } from '../components/FAQAccordion';
+import { Button } from '../components/Button';
 import { pricingTiers, faqItems } from '../data/content';
-import { CheckIcon } from '@heroicons/react/24/outline';
+import { EXTERNAL_SIGNUP_URL } from '../constants/links';
+import { CheckIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { analytics } from '../utils/analytics';
 
 export const PricingPage: React.FC = () => {
@@ -21,14 +23,36 @@ export const PricingPage: React.FC = () => {
       <section className="pt-32 pb-20 bg-gradient-to-br from-[#1a86f0] to-[#7c6df0] text-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-            Transparent Pricing
+            Pricing
           </span>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Simple, transparent pricing
+            Home care software pricing for UK agencies
           </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Pay only for the service users you support. Unlimited staff seats on every plan. Scale up or down anytime.
+          <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
+            Transparent pricing for your care management app: pay per service user, unlimited staff on every plan, all features included. Scale up or down anytime. No hidden costs.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+            <Button
+              variant="secondary"
+              size="lg"
+              href={EXTERNAL_SIGNUP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
+            >
+              Start free trial
+              <ArrowRightIcon className="w-5 h-5" />
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              href="/book-demo"
+              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+            >
+              Book a demo
+            </Button>
+          </div>
+          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
         </div>
       </section>
 
@@ -108,7 +132,7 @@ export const PricingPage: React.FC = () => {
               Frequently asked questions
             </h2>
             <p className="text-lg text-[#4B5563]">
-              Have more questions? Contact our team and we'll be happy to help.
+              Have more questions? <a href="/contact" className="text-[#4370B7] font-semibold hover:underline">Contact our team</a> or <a href="/book-demo" className="text-[#4370B7] font-semibold hover:underline">book a demo</a> and we'll be happy to help.
             </p>
           </div>
           <FAQAccordion items={faqItems} />

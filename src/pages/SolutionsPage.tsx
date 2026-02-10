@@ -36,21 +36,33 @@ export const SolutionsPage: React.FC = () => {
             Solutions
           </span>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Tailored solutions for every role
+            Home care solutions for every role
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            Whether you're managing care operations, running an agency, or supporting a loved one, DomiClear is designed with your needs in mind.
+            One care management app for UK agencies: built for care managers, agency owners and families. Rotas, eMAR, CQC-ready compliance and family portal—designed around how you work.
           </p>
-          <Button 
-            variant="secondary" 
-            size="lg" 
-            href={EXTERNAL_SIGNUP_URL} 
-            target="_blank" 
-            rel="noreferrer" 
-            className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
-          >
-            Start free trial
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+            <Button
+              variant="secondary"
+              size="lg"
+              href={EXTERNAL_SIGNUP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
+            >
+              Start free trial
+              <ArrowRightIcon className="w-5 h-5" />
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              href="/book-demo"
+              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+            >
+              Book a demo
+            </Button>
+          </div>
+          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
         </div>
       </section>
 
@@ -157,15 +169,27 @@ export const SolutionsPage: React.FC = () => {
             </div>
 
             <div className="text-center">
-              <Button 
-                variant="primary" 
-                size="lg" 
-                href={EXTERNAL_SIGNUP_URL}
-                target="_blank"
-                rel="noreferrer"
-              >
-                Start free trial
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  href={EXTERNAL_SIGNUP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Start free trial
+                  <ArrowRightIcon className="w-5 h-5" />
+                </Button>
+                <Button
+                  variant="secondary"
+                  size="lg"
+                  href="/book-demo"
+                  className="border-[#0F172A]/20 text-[#0F172A] hover:bg-[#0F172A]/5"
+                >
+                  Book a demo
+                </Button>
+              </div>
+              <p className="text-sm text-[#4B5563]">No card required · UK support · Cancel anytime</p>
             </div>
           </div>
         </div>

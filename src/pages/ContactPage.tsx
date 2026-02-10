@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../components/Button';
-import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, PhoneIcon, MapPinIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
 export const ContactPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -35,14 +36,35 @@ export const ContactPage: React.FC = () => {
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-2 bg-white rounded-full text-xs font-bold text-[#1F6FEB] uppercase tracking-wider mb-6 border border-[rgba(20,30,60,0.08)]">
-            Get in Touch
+            Contact
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-            Ready to transform your agency?
+            Contact DomiClear — home care software for UK agencies
           </h1>
-          <p className="text-xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed">
-            Have questions about DomiClear? Our team is here to help you find the right solution for your care agency.
+          <p className="text-xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed mb-6">
+            Questions about the home care management app? Our UK team is here to help with demos, pricing and support for your care agency.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-2">
+            <Button
+              variant="primary"
+              size="md"
+              href={EXTERNAL_SIGNUP_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Start free trial
+              <ArrowRightIcon className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="secondary"
+              size="md"
+              href="/book-demo"
+              className="border-[#0F172A]/20 text-[#0F172A] hover:bg-[#0F172A]/5"
+            >
+              Book a demo
+            </Button>
+          </div>
+          <p className="text-sm text-[#4B5563]">UK support · We respond within one business day</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
