@@ -867,7 +867,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
         </div>
 
         {/* Canvas - Center Panel */}
-        <div className="flex-1 flex flex-col overflow-hidden bg-white" data-tour="template-builder-canvas">
+        <div className="flex-1 flex flex-col min-w-0 overflow-hidden bg-white" data-tour="template-builder-canvas">
           {/* Toolbar */}
           <div className="flex items-center justify-between px-3 py-2 border-b border-slate-200 bg-white" data-tour="template-builder-toolbar">
             <Breadcrumbs selection={selection} onNavigate={handleNavigate} />

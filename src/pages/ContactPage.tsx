@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '../components/Button';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
-import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
 export const ContactPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -15,7 +14,7 @@ export const ContactPage: React.FC = () => {
   if (submitted) {
     return (
       <div className="min-h-screen pt-32 pb-20 bg-[#FAFBFC] flex items-center justify-center">
-        <div className="max-w-2xl mx-auto px-8 text-center">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-[#e6f7ff] mb-6">
             <EnvelopeIcon className="w-10 h-10 text-[#1F6FEB]" />
           </div>
@@ -33,7 +32,7 @@ export const ContactPage: React.FC = () => {
 
   return (
     <div className="min-h-screen pt-32 pb-20 bg-[#FAFBFC]">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="inline-block px-4 py-2 bg-white rounded-full text-xs font-bold text-[#1F6FEB] uppercase tracking-wider mb-6 border border-[rgba(20,30,60,0.08)]">
             Get in Touch
@@ -62,7 +61,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.firstName}
                     onChange={(e) => setFormData((d) => ({ ...d, firstName: e.target.value }))}
                     placeholder="First name"
-                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                   />
                 </div>
                 <div>
@@ -75,7 +74,7 @@ export const ContactPage: React.FC = () => {
                     value={formData.lastName}
                     onChange={(e) => setFormData((d) => ({ ...d, lastName: e.target.value }))}
                     placeholder="Last name"
-                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                   />
                 </div>
               </div>
@@ -90,7 +89,7 @@ export const ContactPage: React.FC = () => {
                   value={formData.email}
                   onChange={(e) => setFormData((d) => ({ ...d, email: e.target.value }))}
                   placeholder="Email address"
-                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                 />
               </div>
 
@@ -103,7 +102,7 @@ export const ContactPage: React.FC = () => {
                   value={formData.organisation}
                   onChange={(e) => setFormData((d) => ({ ...d, organisation: e.target.value }))}
                   placeholder="Organisation name"
-                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                 />
               </div>
 
@@ -115,7 +114,7 @@ export const ContactPage: React.FC = () => {
                   required
                   value={formData.subject}
                   onChange={(e) => setFormData((d) => ({ ...d, subject: e.target.value }))}
-                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent bg-white"
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent bg-white"
                 >
                   <option value="">Select a subject</option>
                   <option value="demo">Request a demo</option>
@@ -136,7 +135,7 @@ export const ContactPage: React.FC = () => {
                   value={formData.message}
                   onChange={(e) => setFormData((d) => ({ ...d, message: e.target.value }))}
                   placeholder="Tell us how we can help..."
-                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent resize-none"
+                  className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent resize-none"
                 />
               </div>
 
@@ -146,7 +145,7 @@ export const ContactPage: React.FC = () => {
 
               <p className="text-sm text-[#4B5563] text-center">
                 By submitting this form, you agree to our{' '}
-                <a href="/privacy" className="text-[#1F6FEB] hover:underline">
+                <a href="/legal/privacy" className="text-[#1F6FEB] hover:underline">
                   Privacy Policy
                 </a>
                 .
@@ -199,12 +198,10 @@ export const ContactPage: React.FC = () => {
               <Button 
                 variant="secondary" 
                 size="md" 
-                href={EXTERNAL_SIGNUP_URL}
-                target="_blank"
-                rel="noreferrer"
+                href="/book-demo"
                 className="!bg-white !text-[#1F6FEB] border-0 hover:!bg-white/90"
               >
-                Start free trial
+                Book a demo
               </Button>
             </div>
           </div>

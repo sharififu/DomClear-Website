@@ -44,7 +44,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#FAFBFC] to-white pt-32 pb-20">
-      <div className="max-w-[1400px] mx-auto px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-4">
@@ -98,7 +98,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="you@example.com"
-                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                   />
                 </div>
 
@@ -112,7 +112,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password"
-                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                    className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                   />
                 </div>
 
@@ -152,7 +152,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                 </p>
                 <button
                   onClick={() => setIsLoginMode(false)}
-                  className="w-full inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 focus:outline-hidden focus:ring-4 focus:ring-blue-200 px-5 py-3 text-base gap-2 bg-white text-[#4370B7] border border-[rgba(20,30,60,0.08)] hover:bg-[#FAFBFC] hover:scale-[1.02]"
+                  className="w-full inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-200 px-5 py-3 text-base gap-2 bg-white text-[#4370B7] border border-[rgba(20,30,60,0.08)] hover:bg-[#FAFBFC] hover:scale-[1.02]"
                 >
                   View subscription plans
                 </button>
@@ -188,7 +188,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                   <div className="mt-4">
                     <button
                       onClick={() => handleSubscriptionSelect(tier.name)}
-                      className={`w-full inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 focus:outline-hidden focus:ring-4 focus:ring-blue-200 px-6 py-4 text-lg gap-2 ${
+                      className={`w-full inline-flex items-center justify-center font-semibold rounded-full transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-blue-200 px-6 py-4 text-lg gap-2 ${
                         tier.highlighted
                           ? 'bg-[#4370B7] text-white hover:bg-[#365a9a] hover:scale-[1.02]'
                           : 'bg-white text-[#4370B7] border border-[rgba(20,30,60,0.08)] hover:bg-[#FAFBFC] hover:scale-[1.02]'
@@ -252,7 +252,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                           <input
                             type="text"
                             placeholder="1234 5678 9012 3456"
-                            className="w-full pl-10 pr-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                            className="w-full pl-10 pr-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                           />
                         </div>
                       </div>
@@ -264,7 +264,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                           <input
                             type="text"
                             placeholder="MM/YY"
-                            className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                            className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                           />
                         </div>
                         <div>
@@ -274,7 +274,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                           <input
                             type="text"
                             placeholder="123"
-                            className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                            className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                           />
                         </div>
                       </div>
@@ -291,7 +291,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                         <input
                           type="text"
                           placeholder="Your agency name"
-                          className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                          className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                         />
                       </div>
                       <div>
@@ -301,7 +301,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                         <input
                           type="email"
                           placeholder="you@example.com"
-                          className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-hidden focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
+                          className="w-full px-4 py-3 border border-[rgba(20,30,60,0.08)] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:border-transparent"
                         />
                       </div>
                     </div>

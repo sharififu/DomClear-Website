@@ -6,7 +6,7 @@ export const FeatureOverview: React.FC = () => {
   const ClipboardIcon = getContentIcon('Clipboard');
   return (
     <section className="py-20 bg-gradient-to-br from-[#f8fafc] to-[#e2e8f0]">
-      <div className="max-w-[1200px] mx-auto px-8">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
           {/* Background image behind the two graphics */}
           <div 

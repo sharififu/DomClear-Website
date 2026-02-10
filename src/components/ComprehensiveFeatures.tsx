@@ -9,7 +9,7 @@ export const ComprehensiveFeatures: React.FC = () => {
   const UsersIcon = getContentIcon('Users');
   return (
     <section className="py-20 bg-gray-50">
-      <div className="max-w-[1400px] mx-auto px-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* First Feature Section - Search/Scheduling */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 items-center mb-20">
           {/* Left side - Text content */}
