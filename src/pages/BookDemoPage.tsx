@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../components/Button';
-import { CalendarDaysIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { CalendarDaysIcon, CheckCircleIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
 export const BookDemoPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -60,11 +61,25 @@ return () => {
             Book a Demo
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-            See DomiClear in action
+            Book a demo — home care management app for UK agencies
           </h1>
-          <p className="text-xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed">
-            Schedule a personalised demo with our team. We'll walk you through the platform, answer your questions, and show you how DomiClear can transform your agency.
+          <p className="text-xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed mb-6">
+            Schedule a personalised demo of the home care software. Our UK team will walk you through scheduling, eMAR, compliance and how DomiClear can transform your care agency. No obligation.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-2">
+            <Button
+              variant="secondary"
+              size="md"
+              href={EXTERNAL_SIGNUP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="border-[#0F172A]/20 text-[#0F172A] hover:bg-[#0F172A]/5"
+            >
+              Start free trial instead
+              <ArrowRightIcon className="w-4 h-4" />
+            </Button>
+          </div>
+          <p className="text-sm text-[#4B5563]">No obligation · UK support · We respond within one business day</p>
         </div>
 
         {/* Toggle between form and Calendly */}

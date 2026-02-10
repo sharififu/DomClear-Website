@@ -15,34 +15,7 @@ export const Hero: React.FC = () => {
 
       <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-12 py-16 sm:py-24 md:py-32">
         <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center">
-          {/* Images on the left */}
-          <div className="order-2 lg:order-1 flex justify-center lg:justify-start items-end relative z-0">
-            {/* Starting Price Badge - Pill (matches pricing: £49/mo Launch plan) */}
-            <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 z-50">
-              <div className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 rounded-[2rem] bg-gradient-to-r from-[#67e8f9] via-[#5eead4] to-[#4ade80] shadow-lg backdrop-blur-sm">
-                <div className="flex flex-col items-center justify-center text-center">
-                  <span className="text-white font-bold text-lg sm:text-xl md:text-2xl leading-tight">
-                    From £49
-                  </span>
-                  <span className="text-white/95 text-xs sm:text-sm leading-tight">
-                    per month
-                  </span>
-                </div>
-              </div>
-            </div>
-            <img
-              src="/demo-media/Desktop-white.png"
-              alt="DomiClear Desktop Platform"
-              className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-auto object-contain"
-            />
-            <img
-              src="/demo-media/Mobile-white.png"
-              alt="DomiClear Mobile App"
-              className="block w-24 sm:w-40 md:w-56 lg:w-64 xl:w-72 h-auto object-contain self-end -ml-4 sm:-ml-8 md:-ml-12 lg:-ml-16 xl:-ml-24"
-            />
-          </div>
-
-          {/* Content on the right */}
+          {/* Content first in DOM for SEO (keyword-led); order-1 lg:order-2 keeps it right on desktop */}
           <div className="order-1 lg:order-2 text-center lg:text-left relative z-10">
             <div className="relative bg-white/10 backdrop-blur-xl rounded-2xl md:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 border border-white/20 shadow-2xl overflow-hidden">
               {/* Liquid glass gradient overlay */}
@@ -112,6 +85,33 @@ export const Hero: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Images second in DOM; order-2 lg:order-1 keeps them left on desktop */}
+          <div className="order-2 lg:order-1 flex justify-center lg:justify-start items-end relative z-0">
+            {/* Starting Price Badge - Pill (matches pricing: £49/mo Launch plan) */}
+            <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 z-50">
+              <div className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 rounded-[2rem] bg-gradient-to-r from-[#67e8f9] via-[#5eead4] to-[#4ade80] shadow-lg backdrop-blur-sm">
+                <div className="flex flex-col items-center justify-center text-center">
+                  <span className="text-white font-bold text-lg sm:text-xl md:text-2xl leading-tight">
+                    From £49
+                  </span>
+                  <span className="text-white/95 text-xs sm:text-sm leading-tight">
+                    per month
+                  </span>
+                </div>
+              </div>
+            </div>
+            <img
+              src="/demo-media/Desktop-white.png"
+              alt="DomiClear Desktop Platform"
+              className="w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl h-auto object-contain"
+            />
+            <img
+              src="/demo-media/Mobile-white.png"
+              alt="DomiClear Mobile App"
+              className="block w-24 sm:w-40 md:w-56 lg:w-64 xl:w-72 h-auto object-contain self-end -ml-4 sm:-ml-8 md:-ml-12 lg:-ml-16 xl:-ml-24"
+            />
           </div>
         </div>
       </div>

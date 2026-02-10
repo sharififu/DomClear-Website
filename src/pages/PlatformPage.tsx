@@ -66,13 +66,13 @@ export const PlatformPage: React.FC = () => {
       <section className="pt-32 pb-20 bg-gradient-to-br from-[#1a86f0] to-[#7c6df0] text-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-            Platform Overview
+            Platform
           </span>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            A complete platform for modern homecare
+            Home care management platform for UK agencies
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            Every tool your agency needs to plan care, schedule visits, ensure compliance, and keep families informed—unified in one powerful platform.
+            One home care software for care planning, scheduling, eMAR, compliance and family portal. Built for UK care agencies—CQC-ready and unified in one platform.
           </p>
         <Button 
           variant="secondary" 
@@ -155,15 +155,26 @@ export const PlatformPage: React.FC = () => {
           <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mb-10">
             Book a personalised demo and we'll show you how DomiClear can transform your agency's operations.
           </p>
-          <Button 
-            variant="primary" 
-            size="lg" 
-            href={EXTERNAL_SIGNUP_URL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Start free trial
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+            <Button 
+              variant="primary" 
+              size="lg" 
+              href={EXTERNAL_SIGNUP_URL}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Start free trial
+            </Button>
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              href="/book-demo"
+              className="border-[#0F172A]/20 text-[#0F172A] hover:bg-[#0F172A]/5"
+            >
+              Book a demo
+            </Button>
+          </div>
+          <p className="text-sm text-[#4B5563]">No card required · UK support · Cancel anytime</p>
         </div>
       </section>
     </div>
