@@ -43,15 +43,10 @@ class Analytics {
   }
 
   private sendEvent(event: AnalyticsEvent) {
-    // Placeholder for sending to analytics service
-    // Could integrate with PostHog, Plausible, or custom endpoint
     try {
-      // Example: Send to custom endpoint
-      // fetch('/api/analytics', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(event)
-      // });
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', event.event, event.properties || {});
+      }
     } catch (error) {
       console.warn('Analytics error:', error);
     }
