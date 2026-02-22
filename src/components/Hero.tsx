@@ -89,12 +89,12 @@ export const Hero: React.FC = () => {
 
           {/* Images second in DOM; order-2 lg:order-1 keeps them left on desktop */}
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start items-end relative z-0">
-            {/* Starting Price Badge - Pill (matches pricing: £49/mo Launch plan) */}
+            {/* Starting Price Badge - Pill (matches pricing: £59/mo Launch plan) */}
             <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 z-50">
               <div className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 rounded-[2rem] bg-gradient-to-r from-[#67e8f9] via-[#5eead4] to-[#4ade80] shadow-lg backdrop-blur-sm">
                 <div className="flex flex-col items-center justify-center text-center">
                   <span className="text-white font-bold text-lg sm:text-xl md:text-2xl leading-tight">
-                    From £49
+                    From £59
                   </span>
                   <span className="text-white/95 text-xs sm:text-sm leading-tight">
                     per month
