@@ -23,9 +23,9 @@ const cqcOutcomes: CQCOutcome[] = [
     icon: <ShieldCheckIcon className="w-6 h-6" />,
     description: 'Protecting people from abuse and avoidable harm',
     evidence: [
-      'GPS visit verification ensures carers arrive on time',
+      'GPS visit verification helps record where and when visits take place',
       'Incident reporting workflows track and resolve issues',
-      'EMAR medication logging with photo evidence prevents errors',
+      'eMAR logging with photo evidence supports consistent medication rounds',
       'Audit trails for all care activities',
     ],
     exportDetails: 'Export incident reports, medication administration records, and GPS verification logs. Generate Safe domain reports showing incident trends, medication errors, and visit compliance rates. All exports include timestamps, carer details, and full audit trails.',
@@ -37,7 +37,7 @@ const cqcOutcomes: CQCOutcome[] = [
     evidence: [
       'Evidence-based care plan templates',
       'Outcome tracking and KPI dashboards',
-      'Compliance reports demonstrate quality measures',
+      'Reporting views help you track quality measures',
       'Data-driven insights for service improvement',
     ],
     exportDetails: 'Export care plan outcomes, KPI dashboards, and quality metrics. Generate Effective domain reports showing outcome achievement rates, care plan adherence, and evidence-based interventions. Reports include comparative analysis and trend data.',
@@ -72,7 +72,7 @@ const cqcOutcomes: CQCOutcome[] = [
     description: 'Leadership ensures high-quality, person-centred care',
     evidence: [
       'Executive dashboards provide oversight and insights',
-      'CQC-ready domain reports demonstrate compliance',
+      'Structured reports for governance and oversight',
       'Performance metrics identify areas for improvement',
       'Clear audit trails support governance and accountability',
     ],
@@ -94,16 +94,17 @@ export const CQCOutcomes: React.FC = () => {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-[#FAFBFC] rounded-full text-xs font-bold text-[#4370B7] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
-              CQC Compliance
+              CQC key lines of enquiry
             </span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Be CQC-Ready With Confidence
+              Evidence quality mapped to CQC domains
             </h2>
             <p className="text-lg text-[#4B5563] max-w-2xl mx-auto mb-2">
-              DomiClear helps you evidence compliance across all five CQC key lines of enquiry.
+              DomiClear groups tools and exports around the five key lines of enquiry so you can find documentation
+              faster — your agency remains responsible for meeting standards.
             </p>
             <p className="text-base text-[#4B5563] max-w-2xl mx-auto">
-              Be confident you can evidence compliance at any time — not just during inspections.
+              Use structured records and reports to support supervision, governance, and regulator questions.
             </p>
           </div>
 

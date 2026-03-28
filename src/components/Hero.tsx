@@ -79,7 +79,7 @@ export const Hero: React.FC = () => {
                 <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2 text-white/90 text-sm">
                   <span>Web, iOS & Android</span>
                   <span className="text-white/60">•</span>
-                  <span>CQC-ready</span>
+                  <span>Clear audit trails</span>
                   <span className="text-white/60">•</span>
                   <span>UK-focused</span>
                 </div>

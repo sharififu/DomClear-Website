@@ -7,6 +7,9 @@ export const ComprehensiveFeatures: React.FC = () => {
   const PlusIcon = getContentIcon('Plus');
   const UserIcon = getContentIcon('User');
   const UsersIcon = getContentIcon('Users');
+  const FileTextIcon = getContentIcon('FileText');
+  const SmartphoneIcon = getContentIcon('Smartphone');
+  const ShieldIcon = getContentIcon('Shield');
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,10 +21,10 @@ export const ComprehensiveFeatures: React.FC = () => {
               {SearchIcon && <SearchIcon className="w-8 h-8 text-white" />}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              Smart Scheduling & Rota Planning
+              Home care scheduling software your coordinators can rely on
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Plan rotas in minutes, match carers to clients, and avoid clashes, missed visits and double bookings.
+              Plan rotas in minutes, match carers to clients, and keep the day visible in one domiciliary care software workspace — fewer clashes, fewer missed visits, less spreadsheet wrangling.
             </p>
           </div>
 
@@ -253,11 +256,77 @@ export const ComprehensiveFeatures: React.FC = () => {
               {UsersIcon && <UsersIcon className="w-8 h-8 text-white" />}
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              Complete Care Team Management
+              Visibility across carers, visits, and the rota
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Keep your whole team organised, supported and accountable — from onboarding to day-to-day care delivery.
+              Give managers and owners one operational picture of who is out, what is running late, and what still needs cover — without jumping between spreadsheets and chat threads.
             </p>
+          </div>
+        </div>
+
+        {/* Care planning software */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div>
+            <div className="w-16 h-16 rounded-full bg-teal-500 flex items-center justify-center mb-6">
+              {FileTextIcon && <FileTextIcon className="w-8 h-8 text-white" />}
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
+              Care planning software that stays with the visit
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Digital care plans, risk context, and structured handovers mean your home care app and office teams work from the same detail — not a faded printout from last month.
+            </p>
+          </div>
+          <div className="relative">
+            <img
+              src="/demo-media/demo-patient-profile-care-planning.png"
+              alt="Care planning view in DomiClear domiciliary care software"
+              className="rounded-2xl shadow-lg border border-gray-100 w-full h-auto"
+            />
+          </div>
+        </div>
+
+        {/* eMAR */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div className="order-2 lg:order-1 relative">
+            <img
+              src="/demo-media/demo-emar-medication-management.png"
+              alt="eMAR medication management in DomiClear"
+              className="rounded-2xl shadow-lg border border-gray-100 w-full h-auto"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <div className="w-16 h-16 rounded-full bg-indigo-500 flex items-center justify-center mb-6">
+              {SmartphoneIcon && <SmartphoneIcon className="w-8 h-8 text-white" />}
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
+              eMAR software on the carer app
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Medication rounds with prompts, photos, and timestamps help teams document what was given, when, and where — aligned with how domiciliary visits actually run.
+            </p>
+          </div>
+        </div>
+
+        {/* Records & compliance tooling */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+          <div>
+            <div className="w-16 h-16 rounded-full bg-slate-600 flex items-center justify-center mb-6">
+              {ShieldIcon && <ShieldIcon className="w-8 h-8 text-white" />}
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
+              Records, incidents, and audit-friendly reporting
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Keep incidents, governance views, and exports organised so you can answer supervision and regulatory questions with less last-minute scrambling.
+            </p>
+          </div>
+          <div className="relative">
+            <img
+              src="/demo-media/demo-audit-dashboard.png"
+              alt="Audit and reporting dashboard in DomiClear"
+              className="rounded-2xl shadow-lg border border-gray-100 w-full h-auto"
+            />
           </div>
         </div>
       </div>

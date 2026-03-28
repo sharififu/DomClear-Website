@@ -39,12 +39,49 @@ export const navigation: NavItem[] = [
 ];
 
 export const heroContent = {
-  eyebrow: 'HOME CARE APP',
-  title: 'Home Care Management App for UK Care Agencies',
+  eyebrow: 'DOMICILIARY CARE SOFTWARE',
+  title: 'Domiciliary care software for modern UK home care agencies',
   subtitle:
-    'Reduce admin, manage visits and staff, record care safely, and stay CQC-ready — all in one simple home care app built for UK domiciliary care agencies.',
+    'Run rotas, care planning, eMAR, and records in one home care management platform — with a carer-friendly home care app your team will actually use. Built for owners, care managers, and coordinators who are done with clunky tools.',
   primaryCta: 'Start free trial',
-  secondaryCta: 'Book a live demo',
+  secondaryCta: 'Book a demo',
+};
+
+/** Trust band directly under hero — factual positioning, no compliance guarantees */
+export const homepageTrustContent = {
+  title: 'One platform for UK domiciliary care operations',
+  subtitle:
+    'DomiClear brings together home care scheduling, digital care plans, medication (eMAR), and auditable records so your agency can work from a single source of truth.',
+  bullets: [
+    'Designed around UK domiciliary care workflows',
+    'Care planning software features alongside rotas and visits',
+    'eMAR and visit notes structured for clear handovers',
+    'Modern interface — less training, fewer mistakes',
+  ],
+};
+
+export const homepageWhySwitchContent = {
+  title: 'Outgrown paper, spreadsheets, and patchwork tools?',
+  subtitle:
+    'If your team is bouncing between files, group chats, and legacy systems, you are not alone. DomiClear replaces fragmented admin with one home care management software stack.',
+  items: [
+    {
+      pain: 'Paper folders and printouts that never quite match the rota',
+      outcome: 'Live schedules, tasks, and records everyone can see in real time.',
+    },
+    {
+      pain: 'Spreadsheets that break when cover changes',
+      outcome: 'Home care scheduling software with conflict checks and a clear daily view.',
+    },
+    {
+      pain: 'WhatsApp threads and ad hoc texts for handovers',
+      outcome: 'Structured notes, eMAR, and care plan context in the app — not lost in chat.',
+    },
+    {
+      pain: 'Older care systems that feel slow and dated',
+      outcome: 'A fast, coherent experience from office to doorstep.',
+    },
+  ],
 };
 
 export const valuePillars: Feature[] = [
@@ -55,8 +92,9 @@ export const valuePillars: Feature[] = [
   },
   {
     icon: 'Shield',
-    title: 'Quality & compliance',
-    description: 'Evidence outcomes with audit trails and CQC-ready reports, built for UK regulation.',
+    title: 'Quality & records',
+    description:
+      'Structured records, audit trails, and exports that help you evidence how care is delivered — without promising inspection outcomes.',
   },
   {
     icon: 'Users',
@@ -67,34 +105,34 @@ export const valuePillars: Feature[] = [
 
 export const featureHighlights: Feature[] = [
   {
-    icon: 'FileText',
-    title: 'Configurable form builder',
+    icon: 'Calendar',
+    title: 'Home care scheduling & rotas',
     description:
-      'Visual form templates with conditional logic, validations, and version tracking—tailor assessments and reviews to your agency workflows.',
+      'Plan visits with conflict alerts, travel context, and GPS-backed attendance so coordinators see what is happening today — not yesterday\'s spreadsheet.',
   },
   {
-    icon: 'Calendar',
-    title: 'Intelligent scheduling',
+    icon: 'FileText',
+    title: 'Care planning software & forms',
     description:
-      'Rota planning with conflict alerts, travel time calculations, and GPS visit confirmation—reduce missed visits and paperwork.',
+      'Digital care plans and configurable form templates with versioning — keep assessments, reviews, and risk documentation consistent.',
   },
   {
     icon: 'Smartphone',
-    title: 'Offline-capable carer app',
+    title: 'eMAR software in the carer app',
     description:
-      'Attendance tracking, eMAR logging, notes, GPS verify, and incident capture work without signal, syncing when back online.',
+      'Medication rounds, photos, and timestamps on the home care app, with offline support where signal drops — syncs when carers are back online.',
   },
   {
     icon: 'CheckCircle',
-    title: 'CQC-ready compliance',
+    title: 'Records, incidents, and governance',
     description:
-      'Audit dashboard, incident workflows, and document control with review cycles built for inspections.',
+      'Incident workflows, document control, and reporting views that help leadership and managers find answers quickly.',
   },
   {
     icon: 'Users',
-    title: 'Team management',
+    title: 'Teams, access, and visibility',
     description:
-      'Onboarding workflows, training and qualifications tracking, availability, and performance insights for your care teams.',
+      'Onboarding, qualifications, availability, and role-based access so carers, coordinators, and owners each see what they need.',
   },
   {
     icon: 'PoundSterling',
@@ -120,7 +158,7 @@ export const outcomes: Stat[] = [
   { metric: 'Up to 42%', label: 'less admin time', icon: 'TrendingDown' },
   { metric: '3+ hrs', label: 'Save 3+ hours per manager per week', icon: 'Clock' },
   { metric: '98%+', label: 'visit & care record accuracy', icon: 'TrendingUp' },
-  { metric: '100%', label: 'UK CQC-aligned structure', icon: 'MapPin' },
+  { metric: 'One', label: 'system for office & doorstep', icon: 'MapPin' },
 ];
 
 export const testimonials: Testimonial[] = [
@@ -138,7 +176,7 @@ export const testimonials: Testimonial[] = [
     role: 'Agency Director',
     organisation: 'CompassCare Ltd',
     content:
-      'We were drowning in paperwork. Now we have CQC-ready reports at our fingertips and our compliance scores have never been better.',
+      'We were drowning in paperwork. Now evidence for supervision and audits is in one place, and the team spends less time chasing documents.',
     rating: 5,
     verified: true,
   },
@@ -304,7 +342,7 @@ export const solutionsContent = {
       'Spend less time on admin and more time supporting your team. The desktop-first CMS gives you full control over rotas, care plans, and compliance tasks. Intelligent alerts flag issues before they escalate, and one-click reports give you the evidence you need for supervision and audits. Stay connected to carers via secure messaging, and see real-time visit updates so you always know what\'s happening on the ground.',
     benefits: [
       'Streamlined rota planning with conflict detection',
-      'One-click CQC-ready reports',
+      'Faster access to reports for supervision and audits',
       'Real-time visibility of visits in progress',
       'Secure team messaging',
       'Automated compliance reminders',
@@ -401,24 +439,27 @@ export const featureOverviewContent = {
   features: [
     {
       icon: 'Calendar',
-      title: 'Intelligent Scheduling',
-      description: 'Staff clock in and out with GPS location verification for accurate attendance tracking. Automatically generate timesheets with verified start and end times, eliminating manual entry errors. Real-time visibility of who\'s on shift gives managers instant oversight of your care team.',
+      title: 'Home care scheduling software',
+      description:
+        'Build rotas, spot clashes early, and give coordinators a live view of who is where. GPS-backed clock-in ties visits to real attendance so timesheets and billing start from facts, not guesswork.',
     },
     {
       icon: 'Smartphone',
-      title: 'Offline-Capable Carer App',
-      description: 'Carers complete tasks, log eMAR with photos, and capture notes without signal. Everything syncs automatically when connectivity returns—never miss a visit due to poor coverage.',
+      title: 'Home care app with eMAR',
+      description:
+        'Carers run tasks, log eMAR with photos, and capture notes on the mobile app — including offline when signal drops. Everything syncs when they are back online.',
     },
     {
       icon: 'CheckCircle',
-      title: 'CQC-Ready Compliance',
-      description: 'Generate domain reports, manage audit checklists, and track incidents with full evidence trails. Stay inspection-ready with purpose-built tools for UK care regulation.',
+      title: 'Care records & governance',
+      description:
+        'Keep incidents, documents, and reporting views in one domiciliary care software stack so managers can answer questions quickly and show how care is delivered.',
     },
   ],
 };
 
 export const comprehensiveFeaturesContent = {
-  title: 'Comprehensive Feature Set of DomiClear',
+  title: 'Domiciliary care software that covers the full visit lifecycle',
   features: [
     {
       icon: 'Calendar',
