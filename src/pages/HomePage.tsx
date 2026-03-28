@@ -6,15 +6,81 @@ import { TestimonialCard } from '../components/TestimonialCard';
 import { StatCard } from '../components/StatCard';
 import { Button } from '../components/Button';
 import { CQCOutcomes } from '../components/CQCOutcomes';
-import { outcomes, testimonials } from '../data/content';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import {
+  outcomes,
+  testimonials,
+  homepageTrustContent,
+  homepageWhySwitchContent,
+} from '../data/content';
+import { ArrowRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
 export const HomePage: React.FC = () => {
   return (
     <div>
       <Hero />
+
+      <section
+        className="py-16 bg-white border-b border-[rgba(20,30,60,0.08)]"
+        aria-labelledby="trust-heading"
+      >
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            id="trust-heading"
+            className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-4"
+          >
+            {homepageTrustContent.title}
+          </h2>
+          <p className="text-lg text-[#4B5563] text-center max-w-3xl mx-auto mb-10">
+            {homepageTrustContent.subtitle}
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {homepageTrustContent.bullets.map((bullet, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 bg-[#FAFBFC] rounded-xl p-4 border border-[rgba(20,30,60,0.08)]"
+              >
+                <CheckCircleIcon className="w-6 h-6 text-[#4370B7] flex-shrink-0 mt-0.5" />
+                <span className="text-[#374151]">{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <FeatureOverview />
+
+      <section className="py-20 bg-[#F8FAFC]" aria-labelledby="why-switch-heading">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            id="why-switch-heading"
+            className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-4"
+          >
+            {homepageWhySwitchContent.title}
+          </h2>
+          <p className="text-lg text-[#4B5563] text-center max-w-3xl mx-auto mb-12">
+            {homepageWhySwitchContent.subtitle}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {homepageWhySwitchContent.items.map((item, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-6 border border-[rgba(20,30,60,0.08)] shadow-sm"
+              >
+                <p className="text-sm font-semibold text-[#64748B] uppercase tracking-wide mb-2">
+                  The friction
+                </p>
+                <p className="text-[#0F172A] font-medium mb-4">{item.pain}</p>
+                <p className="text-sm font-semibold text-[#4370B7] uppercase tracking-wide mb-2">
+                  With DomiClear
+                </p>
+                <p className="text-[#4B5563]">{item.outcome}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <ComprehensiveFeatures />
 
       <section className="py-20 bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC]">
@@ -46,7 +112,8 @@ export const HomePage: React.FC = () => {
               Trusted by Care Agencies Across the UK
             </h2>
             <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
-              Care providers use DomiClear every day to stay organised, compliant and inspection-ready.
+              UK domiciliary care providers use DomiClear to align rotas, visits, and records in one home care
+              management software stack.
             </p>
           </div>
 
@@ -69,22 +136,21 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Left side - App Showcase Image */}
               <div className="flex justify-center lg:justify-start">
-                <img 
-                  src="/demo-media/domiclearappshowcase.png" 
-                  alt="DomiClear App Showcase" 
+                <img
+                  src="/demo-media/domiclearappshowcase.png"
+                  alt="DomiClear domiciliary care software on desktop and mobile"
                   className="max-w-full h-auto scale-[1.2]"
                 />
               </div>
 
-              {/* Right side - CTA content */}
               <div className="text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Ready to Simplify Your Home Care Management?
+                  Ready to run your agency on modern domiciliary care software?
                 </h2>
                 <p className="text-xl text-white/90 mb-10 leading-relaxed">
-                  Join UK care agencies using DomiClear to reduce admin, improve care quality and stay CQC-ready.
+                  Start your free trial on DomiClear, or book a demo to walk through scheduling, care plans, and
+                  eMAR with our team.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button
