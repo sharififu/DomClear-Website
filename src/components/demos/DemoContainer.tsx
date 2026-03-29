@@ -72,7 +72,7 @@ export const DemoContainer: React.FC<DemoContainerProps> = ({ activeDemo, onDemo
       }`}>
         {/* Sidebar Header */}
         <div className="h-16 flex items-center px-6 border-b border-slate-100">
-          <h1 className="font-bold text-slate-800 text-lg">HomeCare CMS</h1>
+          <h1 className="font-bold text-slate-800 text-lg">DomiClear</h1>
           <button
             onClick={() => {
               window.location.href = '/';
@@ -350,7 +350,7 @@ export const DemoContainer: React.FC<DemoContainerProps> = ({ activeDemo, onDemo
           >
             <Menu className="w-6 h-6" />
           </button>
-          <span className="font-bold text-slate-800 ml-2">HomeCare CMS</span>
+          <span className="font-bold text-slate-800 ml-2">DomiClear</span>
         </div>
         {children}
       </div>
@@ -369,7 +369,7 @@ export const DemoContainer: React.FC<DemoContainerProps> = ({ activeDemo, onDemo
             aria-label="CMS menu"
           >
             <div className="h-16 flex items-center justify-between px-4 border-b border-slate-100 flex-shrink-0">
-              <h1 className="font-bold text-slate-800 text-lg">HomeCare CMS</h1>
+              <h1 className="font-bold text-slate-800 text-lg">DomiClear</h1>
               <button
                 type="button"
                 onClick={() => setSidebarOpen(false)}

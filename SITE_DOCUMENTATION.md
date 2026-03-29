@@ -282,7 +282,7 @@ Replace placeholders with production assets:
 ## Contact & Support
 
 **Demo Requests**: Routed to `/demo` with qualifying form
-**Sales Enquiries**: hello@homecaremana.co.uk, 0800 123 4567
+**Sales Enquiries**: info@domi-clear.com, 0800 123 4567
 **Support**: Monday–Friday, 9:00–17:00 GMT
 
 ---

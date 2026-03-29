@@ -50,6 +50,75 @@ export const HomePage: React.FC = () => {
 
       <FeatureOverview />
 
+      <section className="py-16 bg-white border-b border-[rgba(20,30,60,0.08)]" aria-labelledby="workflow-guides-heading">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2
+            id="workflow-guides-heading"
+            className="text-2xl md:text-3xl font-bold text-[#0F172A] text-center mb-3"
+          >
+            Explore DomiClear by workflow
+          </h2>
+          <p className="text-[#4B5563] text-center max-w-2xl mx-auto mb-10 text-sm md:text-base">
+            Short guides for the topics teams evaluate most—alongside the full story on the{' '}
+            <a href="/platform" className="text-[#4370B7] font-semibold hover:underline">
+              Platform
+            </a>{' '}
+            and{' '}
+            <a href="/" className="text-[#4370B7] font-semibold hover:underline">
+              Homepage
+            </a>
+            .
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              {
+                href: '/home-care-scheduling-software',
+                title: 'Scheduling software',
+                blurb: 'Rotas, visit changes, and coordinator visibility in one place.',
+              },
+              {
+                href: '/care-planning-software',
+                title: 'Care planning software',
+                blurb: 'Digital plans, updates, and access for field and office teams.',
+              },
+              {
+                href: '/emar-software',
+                title: 'eMAR software',
+                blurb: 'Structured medication workflows with clearer handovers.',
+              },
+              {
+                href: '/home-care-app',
+                title: 'Home care app',
+                blurb: 'Practical mobile use for carers with office coordination.',
+              },
+              {
+                href: '/platform',
+                title: 'Platform',
+                blurb: 'How scheduling, planning, eMAR, and records connect.',
+              },
+            ].map((card) => (
+              <a
+                key={card.href}
+                href={card.href}
+                className="group rounded-2xl border border-[rgba(20,30,60,0.08)] bg-[#FAFBFC] p-6 hover:border-[#4370B7]/30 hover:shadow-sm transition-all"
+              >
+                <h3 className="text-lg font-bold text-[#0F172A] mb-2 group-hover:text-[#4370B7] transition-colors">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-[#4B5563] leading-relaxed">{card.blurb}</p>
+              </a>
+            ))}
+          </div>
+          <p className="text-center text-sm text-[#64748B] mt-8">
+            Comparing care software?{' '}
+            <a href="/birdie-alternative" className="text-[#4370B7] font-semibold hover:underline">
+              How DomiClear fits when you review alternatives
+            </a>
+            .
+          </p>
+        </div>
+      </section>
+
       <section className="py-20 bg-[#F8FAFC]" aria-labelledby="why-switch-heading">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2
@@ -148,9 +217,16 @@ export const HomePage: React.FC = () => {
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   Ready to run your agency on modern domiciliary care software?
                 </h2>
-                <p className="text-xl text-white/90 mb-10 leading-relaxed">
-                  Start your free trial on DomiClear, or book a demo to walk through scheduling, care plans, and
-                  eMAR with our team.
+                <p className="text-xl text-white/90 mb-4 leading-relaxed">
+                  Start your free trial to explore DomiClear in your own time, or book a demo to walk through
+                  scheduling, care plans, and eMAR with our team.
+                </p>
+                <p className="text-base text-white/85 mb-10 leading-relaxed max-w-2xl">
+                  Usage-based plans give many UK agencies a lower cost of entry than heavyweight platforms — see{' '}
+                  <a href="/pricing" className="font-semibold text-white underline decoration-white/40 hover:decoration-white">
+                    pricing
+                  </a>{' '}
+                  for full detail.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button

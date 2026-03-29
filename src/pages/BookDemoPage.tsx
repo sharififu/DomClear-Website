@@ -63,8 +63,15 @@ return () => {
           <h1 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
             Book a demo — home care management app for UK agencies
           </h1>
-          <p className="text-xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed mb-6">
-            Schedule a personalised demo of the home care software. Our UK team will walk you through scheduling, eMAR, compliance and how DomiClear can transform your care agency. No obligation.
+          <p className="text-xl text-[#4B5563] max-w-3xl mx-auto leading-relaxed mb-4">
+            Schedule a personalised demo of the home care software. Our UK team will walk you through scheduling, eMAR, compliance evidence and how DomiClear fits your agency. No obligation.
+          </p>
+          <p className="text-base text-[#4B5563] max-w-2xl mx-auto leading-relaxed mb-6">
+            Looking for a practical, more affordable option with a lower cost of entry? See{' '}
+            <a href="/pricing" className="text-[#4370B7] font-semibold hover:underline">
+              transparent pricing
+            </a>{' '}
+            — or start a trial below whenever you are ready.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-2">
             <Button
@@ -75,10 +82,13 @@ return () => {
               rel="noreferrer"
               className="border-[#0F172A]/20 text-[#0F172A] hover:bg-[#0F172A]/5"
             >
-              Start free trial instead
+              Start free trial
               <ArrowRightIcon className="w-4 h-4" />
             </Button>
           </div>
+          <p className="text-sm text-[#4B5563] mb-1">
+            Prefer to explore first? No card required — same full platform access during your trial.
+          </p>
           <p className="text-sm text-[#4B5563]">No obligation · UK support · We respond within one business day</p>
         </div>
 

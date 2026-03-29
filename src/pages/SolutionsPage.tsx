@@ -137,6 +137,34 @@ export const SolutionsPage: React.FC = () => {
         </div>
       </section>
 
+      <section className="py-12 bg-[#F8FAFC] border-y border-[rgba(20,30,60,0.06)]" aria-labelledby="solutions-related-heading">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 id="solutions-related-heading" className="text-base font-bold text-[#0F172A] mb-2">
+            Related workflows
+          </h2>
+          <p className="text-sm text-[#4B5563] max-w-xl mx-auto mb-5">
+            Jump to the product areas owners and care managers usually weigh alongside role-based needs.
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
+            <a href="/home-care-app" className="text-[#4370B7] font-semibold hover:underline">
+              Home care app
+            </a>
+            <a href="/home-care-scheduling-software" className="text-[#4370B7] font-semibold hover:underline">
+              Scheduling software
+            </a>
+            <a href="/care-planning-software" className="text-[#4370B7] font-semibold hover:underline">
+              Care planning software
+            </a>
+            <a href="/emar-software" className="text-[#4370B7] font-semibold hover:underline">
+              eMAR software
+            </a>
+            <a href="/platform" className="text-[#4370B7] font-semibold hover:underline">
+              Platform
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 bg-[#FAFBFC]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-3xl p-12 md:p-16 border border-[rgba(20,30,60,0.08)] shadow-card">

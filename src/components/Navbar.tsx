@@ -149,7 +149,7 @@ export const Navbar: React.FC = () => {
             className={shouldShowWhite ? '' : 'bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20'}
             onClick={() => analytics.trackDemoRequest('navbar')}
           >
-            Book live demo
+            Book a demo
           </Button>
           <Button 
             variant="primary" 
@@ -212,7 +212,7 @@ export const Navbar: React.FC = () => {
                 size="md" 
                 href="/book-demo"
               >
-                Book live demo
+                Book a demo
               </Button>
               <Button 
                 variant="primary" 

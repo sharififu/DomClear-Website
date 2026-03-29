@@ -72,18 +72,32 @@ export const PlatformPage: React.FC = () => {
             Home care management platform for UK agencies
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            One home care software for care planning, scheduling, eMAR, compliance and family portal. Built for UK care agencies—CQC-ready and unified in one platform.
+            One home care software for care planning, scheduling, eMAR, compliance evidence and family portal.
+            Built for UK care agencies — unified in one platform, with transparent usage-based pricing and a lower
+            cost of entry than many larger systems.
           </p>
-        <Button 
-          variant="secondary" 
-          size="lg" 
-          href={EXTERNAL_SIGNUP_URL} 
-          target="_blank" 
-          rel="noreferrer" 
-          className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
-        >
-            Start free trial
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
+            <Button
+              variant="secondary"
+              size="lg"
+              href={EXTERNAL_SIGNUP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
+            >
+              Start free trial
+              <ArrowRightIcon className="w-5 h-5" />
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              href="/book-demo"
+              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+            >
+              Book a demo
+            </Button>
+          </div>
+          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
         </div>
       </section>
 
@@ -144,6 +158,41 @@ export const PlatformPage: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="py-14 bg-white border-t border-[rgba(20,30,60,0.08)]" aria-labelledby="platform-guides-heading">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 id="platform-guides-heading" className="text-xl md:text-2xl font-bold text-[#0F172A] text-center mb-2">
+            Workflow guides
+          </h2>
+          <p className="text-center text-[#4B5563] text-sm max-w-xl mx-auto mb-6">
+            Deeper reads that match how UK domiciliary teams work day to day.
+          </p>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+            <a href="/home-care-scheduling-software" className="text-[#4370B7] font-semibold hover:underline">
+              Scheduling software
+            </a>
+            <a href="/care-planning-software" className="text-[#4370B7] font-semibold hover:underline">
+              Care planning software
+            </a>
+            <a href="/emar-software" className="text-[#4370B7] font-semibold hover:underline">
+              eMAR software
+            </a>
+            <a href="/home-care-app" className="text-[#4370B7] font-semibold hover:underline">
+              Home care app
+            </a>
+            <a href="/" className="text-[#4370B7] font-semibold hover:underline">
+              Homepage
+            </a>
+          </div>
+          <p className="text-center text-xs text-[#64748B] mt-5 max-w-lg mx-auto">
+            Reviewing vendors?{' '}
+            <a href="/birdie-alternative" className="text-[#4370B7] font-semibold hover:underline">
+              A careful comparison angle
+            </a>
+            .
+          </p>
         </div>
       </section>
 

@@ -29,7 +29,7 @@ export const PricingPage: React.FC = () => {
             Home care software pricing for UK agencies
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            Transparent pricing for your care management app: pay per service user, unlimited staff on every plan, all features included. Scale up or down anytime. No hidden costs.
+            Transparent pricing for your care management app: pay per active service user, unlimited staff on every plan, all features included. DomiClear is designed as a more affordable home care software option for UK agencies that want a lower cost of entry — strong day-to-day workflows without the cost or complexity of larger platforms. Scale up or down anytime. No hidden costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Button
@@ -52,12 +52,30 @@ export const PricingPage: React.FC = () => {
               Book a demo
             </Button>
           </div>
-          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
+          <p className="text-sm text-white/80 max-w-xl mx-auto">
+            Start with a free trial to explore in your own time, or book a demo if you want a guided walkthrough first. No card required · UK support · Cancel anytime
+          </p>
         </div>
       </section>
 
       <section className="py-20 bg-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center text-[#4B5563] max-w-3xl mx-auto mb-10 leading-relaxed">
+            <strong className="text-[#0F172A]">Not sure where to start?</strong> Most agencies open a{' '}
+            <a
+              href={EXTERNAL_SIGNUP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#4370B7] font-semibold hover:underline"
+            >
+              free trial
+            </a>{' '}
+            first. If you would rather talk it through,{' '}
+            <a href="/book-demo" className="text-[#4370B7] font-semibold hover:underline">
+              book a demo
+            </a>{' '}
+            and we will tailor the session to your team.
+          </p>
           {/* Annual toggle */}
           <div className="flex justify-center mb-12">
             <div className="inline-flex items-center gap-2 bg-[#FAFBFC] rounded-full p-1 border border-[rgba(20,30,60,0.08)] shadow-xs">
@@ -105,6 +123,7 @@ export const PricingPage: React.FC = () => {
               {[
                 'Unlimited staff accounts',
                 'Unlimited family portal logins',
+                'Usage-based billing — costs track active service users',
                 'iOS & Android carer apps',
                 'UK/EU data residency',
                 'Regular platform updates',

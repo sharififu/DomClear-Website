@@ -38,13 +38,13 @@ The site has a clear value proposition, strong CTAs (Start free trial, Book a de
 ### Content & configuration
 
 - **Calendly:** Replace `CALENDLY_USERNAME` in BookDemoPage with a real Calendly username, or use an env var (e.g. `VITE_CALENDLY_URL`) and document in `.env.example`.
-- **Contact email/domain:** Footer and schema use `hello@homecaremana.co.uk` and domain `homecaremana.co.uk`. Confirm this is intentional (vs e.g. "homecaremanager") for branding and trust.
+- **Contact email/domain:** Footer, contact page, and Organization JSON-LD use `info@domi-clear.com`; marketing site URLs use `https://domi-clear.com`. Product signup/login remain on `domiclear.app` via `constants/links.ts`.
 - **Phone number:** Placeholder "0800 123 4567" appears in BookDemoPage and ContactPage; replace with the real support number before launch.
 
 ### SEO & meta
 
 - **index.html:** Add `og:image` and `twitter:image` (e.g. `/demo-media/domiclearappshowcase.png` or a dedicated share image) for better social previews.
-- **Canonical / OG URL:** Currently `https://homecaremana.co.uk`; ensure this matches the live domain.
+- **Canonical / OG URL:** Default and SPA-updated canonical use `https://domi-clear.com`; keep aligned with production marketing host.
 
 ### Accessibility & UX
 

@@ -82,6 +82,8 @@ export const Hero: React.FC = () => {
                   <span>Clear audit trails</span>
                   <span className="text-white/60">•</span>
                   <span>UK-focused</span>
+                  <span className="text-white/60">•</span>
+                  <span>Transparent, usage-based pricing</span>
                 </div>
               </div>
             </div>
