@@ -26,6 +26,14 @@ export const ComprehensiveFeatures: React.FC = () => {
             <p className="text-lg text-gray-600 leading-relaxed">
               Plan rotas in minutes, match carers to clients, and keep the day visible in one domiciliary care software workspace — fewer clashes, fewer missed visits, less spreadsheet wrangling.
             </p>
+            <p className="mt-4">
+              <a
+                href="/home-care-scheduling-software"
+                className="text-[#4370B7] font-semibold text-sm hover:underline"
+              >
+                Scheduling software
+              </a>
+            </p>
           </div>
 
           {/* Right side - UI Mockup */}
@@ -261,6 +269,11 @@ export const ComprehensiveFeatures: React.FC = () => {
             <p className="text-lg text-gray-600 leading-relaxed">
               Give managers and owners one operational picture of who is out, what is running late, and what still needs cover — without jumping between spreadsheets and chat threads.
             </p>
+            <p className="mt-4">
+              <a href="/home-care-app" className="text-[#4370B7] font-semibold text-sm hover:underline">
+                Home care app
+              </a>
+            </p>
           </div>
         </div>
 
@@ -275,6 +288,14 @@ export const ComprehensiveFeatures: React.FC = () => {
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               Digital care plans, risk context, and structured handovers mean your home care app and office teams work from the same detail — not a faded printout from last month.
+            </p>
+            <p className="mt-4">
+              <a
+                href="/care-planning-software"
+                className="text-[#4370B7] font-semibold text-sm hover:underline"
+              >
+                Care planning software
+              </a>
             </p>
           </div>
           <div className="relative">
@@ -305,6 +326,11 @@ export const ComprehensiveFeatures: React.FC = () => {
             <p className="text-lg text-gray-600 leading-relaxed">
               Medication rounds with prompts, photos, and timestamps help teams document what was given, when, and where — aligned with how domiciliary visits actually run.
             </p>
+            <p className="mt-4">
+              <a href="/emar-software" className="text-[#4370B7] font-semibold text-sm hover:underline">
+                eMAR software
+              </a>
+            </p>
           </div>
         </div>
 
@@ -319,6 +345,11 @@ export const ComprehensiveFeatures: React.FC = () => {
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               Keep incidents, governance views, and exports organised so you can answer supervision and regulatory questions with less last-minute scrambling.
+            </p>
+            <p className="mt-4">
+              <a href="/platform" className="text-[#4370B7] font-semibold text-sm hover:underline">
+                Platform
+              </a>
             </p>
           </div>
           <div className="relative">

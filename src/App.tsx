@@ -13,10 +13,18 @@ import { SolutionsPage } from './pages/SolutionsPage';
 import { LoginPage } from './pages/LoginPage';
 import { LegalPage } from './pages/LegalPage';
 import { AboutPage } from './pages/AboutPage';
+import { HomeCareSchedulingSoftwarePage } from './pages/HomeCareSchedulingSoftwarePage';
+import { EmarSoftwarePage } from './pages/EmarSoftwarePage';
+import { CarePlanningSoftwarePage } from './pages/CarePlanningSoftwarePage';
+import { HomeCareAppPage } from './pages/HomeCareAppPage';
+import { BirdieAlternativePage } from './pages/BirdieAlternativePage';
 import { analytics } from './utils/analytics';
 
+const CANONICAL_ORIGIN = 'https://domi-clear.com';
+
 const DEFAULT_TITLE = 'Home Care Management App for UK Care Agencies | DomiClear';
-const DEFAULT_DESCRIPTION = 'All-in-one home care app for UK agencies. Manage visits, eMAR and care records while staying CQC-ready. Start a free trial — no card required.';
+const DEFAULT_DESCRIPTION =
+  'All-in-one home care app for UK agencies. Manage visits, eMAR and care records with clearer day-to-day workflows. Start a free trial — no card required.';
 
 const PAGE_META: Record<string, { title: string; description: string }> = {
   '/': { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION },
@@ -34,7 +42,8 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
   },
   '/about': {
     title: 'About DomiClear | Home Care Software for UK Agencies',
-    description: 'We build the home care management platform UK care agencies rely on—operational clarity, CQC-ready compliance, empowered care teams. Learn about our mission and get in touch.',
+    description:
+      'We build the home care management platform UK care agencies rely on—operational clarity, practical compliance support, empowered care teams. Learn about our mission and get in touch.',
   },
   '/demo': {
     title: 'Try DomiClear | Interactive Home Care Software Demo',
@@ -52,6 +61,32 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
     title: 'Book a Demo | Home Care Software for UK Agencies | DomiClear',
     description: 'Schedule a personalised demo of the home care management app. Our UK team will walk you through scheduling, eMAR, compliance and more. No obligation. Book a time or request a call.',
   },
+  '/home-care-scheduling-software': {
+    title: 'Home Care Scheduling Software for UK Domiciliary Care Agencies | DomiClear',
+    description:
+      'Home care scheduling software for UK agencies. Plan rotas, manage visit changes, improve carer allocation, and keep daily operations visible with DomiClear.',
+  },
+  '/emar-software': {
+    title: 'eMAR Software for UK Domiciliary Care Agencies | DomiClear',
+    description:
+      'eMAR software for UK agencies. Manage medication administration records with clearer workflows, better visibility, and less paperwork across care teams.',
+  },
+  '/care-planning-software': {
+    title: 'Care Planning Software for UK Domiciliary Care Agencies | DomiClear',
+    description:
+      'Care planning software for UK agencies. Digital care plans, clearer updates, organised workflows, and easier team access with DomiClear.',
+  },
+  '/home-care-app': {
+    title: 'Home Care App for UK Domiciliary Care Agencies | DomiClear',
+    description:
+      'Home care app for UK domiciliary agencies: a practical home care management app and care app for agencies, with mobile-friendly visits and clearer office visibility. Start a free trial.',
+  },
+  '/birdie-alternative': {
+    title: 'Birdie Alternative for UK Domiciliary Care Agencies | DomiClear',
+    description:
+      'Looking for a Birdie alternative? DomiClear may be a better fit for UK agencies looking for a more affordable care software option, a lower cost of entry, and clearer day-to-day workflows.',
+  },
+
 };
 
 function App() {
@@ -95,13 +130,39 @@ function App() {
     analytics.trackPageView(currentPath);
   }, [currentPath]);
 
-  // Per-route document title and meta description (SEO)
+  // Per-route document title, meta description, and canonical URL (SEO)
   useEffect(() => {
-    const path = currentPath.split('#')[0];
-    const meta = PAGE_META[path] ?? { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION };
+    const pathOnly = currentPath.split('#')[0].split('?')[0];
+    const meta = PAGE_META[pathOnly] ?? { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION };
     document.title = meta.title;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', meta.description);
+
+    const canonicalPath = pathOnly === '/' ? '' : pathOnly.replace(/\/$/, '');
+    const canonicalHref = `${CANONICAL_ORIGIN}${canonicalPath === '' ? '' : canonicalPath}`;
+
+    const setMetaTag = (attribute: 'name' | 'property', key: string, content: string) => {
+      let tag = document.querySelector(`meta[${attribute}="${key}"]`) as HTMLMetaElement | null;
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute(attribute, key);
+        document.head.appendChild(tag);
+      }
+      tag.setAttribute('content', content);
+    };
+
+    setMetaTag('name', 'description', meta.description);
+    setMetaTag('property', 'og:title', meta.title);
+    setMetaTag('property', 'og:description', meta.description);
+    setMetaTag('property', 'og:url', canonicalHref || `${CANONICAL_ORIGIN}/`);
+    setMetaTag('name', 'twitter:title', meta.title);
+    setMetaTag('name', 'twitter:description', meta.description);
+
+    let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      document.head.appendChild(link);
+    }
+    link.setAttribute('href', canonicalHref || `${CANONICAL_ORIGIN}/`);
   }, [currentPath]);
 
   const renderPage = () => {
@@ -121,6 +182,16 @@ function App() {
         return <DemoPage />;
       case '/book-demo':
         return <BookDemoPage />;
+      case '/home-care-scheduling-software':
+        return <HomeCareSchedulingSoftwarePage />;
+      case '/emar-software':
+        return <EmarSoftwarePage />;
+      case '/care-planning-software':
+        return <CarePlanningSoftwarePage />;
+      case '/home-care-app':
+        return <HomeCareAppPage />;
+      case '/birdie-alternative':
+        return <BirdieAlternativePage />;
       case '/demo-fullscreen':
         return <FullScreenDemoPage />;
       case '/contact':

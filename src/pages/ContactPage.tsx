@@ -195,7 +195,11 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-[#0F172A]">Email</p>
-                    <p className="text-[#4B5563]">hello@homecaremana.co.uk</p>
+                    <p className="text-[#4B5563]">
+                      <a href="mailto:info@domi-clear.com" className="text-[#1F6FEB] hover:underline">
+                        info@domi-clear.com
+                      </a>
+                    </p>
                     <p className="text-sm text-[#4B5563]">We'll respond within 24 hours</p>
                   </div>
                 </div>

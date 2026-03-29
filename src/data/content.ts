@@ -42,7 +42,7 @@ export const heroContent = {
   eyebrow: 'DOMICILIARY CARE SOFTWARE',
   title: 'Domiciliary care software for modern UK home care agencies',
   subtitle:
-    'Run rotas, care planning, eMAR, and records in one home care management platform — with a carer-friendly home care app your team will actually use. Built for owners, care managers, and coordinators who are done with clunky tools.',
+    'Run rotas, care planning, eMAR, and records in one home care management platform — with a carer-friendly home care app your team will actually use. Built for owners, care managers, and coordinators who are done with clunky tools. DomiClear is a practical, more affordable option with a lower cost of entry than many larger platforms — strong day-to-day workflows without their cost or complexity.',
   primaryCta: 'Start free trial',
   secondaryCta: 'Book a demo',
 };
@@ -54,6 +54,7 @@ export const homepageTrustContent = {
     'DomiClear brings together home care scheduling, digital care plans, medication (eMAR), and auditable records so your agency can work from a single source of truth.',
   bullets: [
     'Designed around UK domiciliary care workflows',
+    'Transparent, usage-based pricing — a lower cost of entry for agencies watching costs',
     'Care planning software features alongside rotas and visits',
     'eMAR and visit notes structured for clear handovers',
     'Modern interface — less training, fewer mistakes',
@@ -63,7 +64,7 @@ export const homepageTrustContent = {
 export const homepageWhySwitchContent = {
   title: 'Outgrown paper, spreadsheets, and patchwork tools?',
   subtitle:
-    'If your team is bouncing between files, group chats, and legacy systems, you are not alone. DomiClear replaces fragmented admin with one home care management software stack.',
+    'If your team is bouncing between files, group chats, and legacy systems, you are not alone. DomiClear replaces fragmented admin with one home care management software stack — a practical option if you want strong day-to-day functionality without the cost or complexity of oversized platforms.',
   items: [
     {
       pain: 'Paper folders and printouts that never quite match the rota',
@@ -379,7 +380,7 @@ export const solutionsContent = {
 export const pricingTiers: PricingTier[] = [
   {
     name: 'Launch',
-    description: 'For small agencies getting started',
+    description: 'For small agencies getting started — lower cost of entry',
     priceLabel: 'Up to 10 service users',
     price: 59,
     priceUnit: '/mo',
@@ -487,6 +488,11 @@ export const comprehensiveFeaturesContent = {
 };
 
 export const faqItems = [
+  {
+    question: 'How does DomiClear pricing work?',
+    answer:
+      'Plans are usage-based: you pay per active service user each month, with unlimited staff on every tier. That keeps costs predictable for growing agencies. You can start with a 14-day free trial (no card required), see full numbers on the pricing page, or book a demo if you want a walkthrough first.',
+  },
   {
     question: 'Does DomiClear work offline?',
     answer:

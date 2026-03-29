@@ -8,7 +8,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#0F172A] text-white">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 mb-12">
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <img 
@@ -21,6 +21,22 @@ export const Footer: React.FC = () => {
             <p className="text-white/70 mb-6 max-w-sm">
               The connected homecare platform for UK agencies. Operational clarity, quality compliance, and empowered care teams.
             </p>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 mt-2 mb-6 text-sm">
+              <a
+                href={EXTERNAL_SIGNUP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#7dd3fc] font-semibold hover:text-white transition-colors"
+              >
+                Start free trial
+              </a>
+              <a href="/book-demo" className="text-[#7dd3fc] font-semibold hover:text-white transition-colors">
+                Book a demo
+              </a>
+              <a href="/pricing" className="text-[#7dd3fc] font-semibold hover:text-white transition-colors">
+                Pricing
+              </a>
+            </div>
             <div className="flex gap-4">
               <a
                 href="https://linkedin.com"
@@ -41,7 +57,7 @@ export const Footer: React.FC = () => {
                 <LinkIcon className="w-5 h-5" />
               </a>
               <a
-                href="mailto:hello@homecaremana.co.uk"
+                href="mailto:info@domi-clear.com"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="Email"
               >
@@ -76,6 +92,37 @@ export const Footer: React.FC = () => {
               <li>
                 <a href="/platform#security" className="text-white/70 hover:text-white transition-colors">
                   Security
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold mb-4">Guides</h3>
+            <ul className="space-y-3">
+              <li>
+                <a href="/home-care-scheduling-software" className="text-white/70 hover:text-white transition-colors">
+                  Scheduling software
+                </a>
+              </li>
+              <li>
+                <a href="/care-planning-software" className="text-white/70 hover:text-white transition-colors">
+                  Care planning software
+                </a>
+              </li>
+              <li>
+                <a href="/emar-software" className="text-white/70 hover:text-white transition-colors">
+                  eMAR software
+                </a>
+              </li>
+              <li>
+                <a href="/home-care-app" className="text-white/70 hover:text-white transition-colors">
+                  Home care app
+                </a>
+              </li>
+              <li>
+                <a href="/birdie-alternative" className="text-white/70 hover:text-white transition-colors">
+                  Comparing software options
                 </a>
               </li>
             </ul>

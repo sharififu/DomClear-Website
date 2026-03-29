@@ -1,62 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://homecaremana.co.uk/</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://domi-clear.com</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://homecaremana.co.uk/platform</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://domi-clear.com/platform</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://homecaremana.co.uk/solutions</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://domi-clear.com/solutions</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://homecaremana.co.uk/pricing</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://domi-clear.com/pricing</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://homecaremana.co.uk/resources</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://homecaremana.co.uk/about</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://domi-clear.com/about</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://homecaremana.co.uk/demos</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://domi-clear.com/contact</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://domi-clear.com/demos</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://homecaremana.co.uk/book-demo</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://domi-clear.com/book-demo</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://homecaremana.co.uk/legal/privacy</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://domi-clear.com/home-care-app</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://domi-clear.com/birdie-alternative</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://domi-clear.com/home-care-scheduling-software</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://domi-clear.com/emar-software</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://domi-clear.com/care-planning-software</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://domi-clear.com/legal/privacy</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://homecaremana.co.uk/legal/terms</loc>
-    <lastmod>2025-10-19</lastmod>
+    <loc>https://domi-clear.com/legal/terms</loc>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
