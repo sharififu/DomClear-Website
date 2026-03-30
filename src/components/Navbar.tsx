@@ -10,6 +10,7 @@ export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,6 +58,22 @@ export const Navbar: React.FC = () => {
       window.history.pushState = originalPushState;
     };
   }, []);
+
+  useEffect(() => {
+    closeMobileMenu();
+  }, [currentPath]);
+
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isMobileMenuOpen]);
 
   // On demo pages, always show white background
   const isDemoPage = currentPath === '/demo' || currentPath === '/demos' || currentPath === '/book-demo' || currentPath === '/demo-fullscreen';
@@ -166,7 +183,7 @@ export const Navbar: React.FC = () => {
         <button
           className={`lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg -mr-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:ring-offset-2 focus:ring-offset-transparent ${!shouldShowWhite ? 'bg-white/10 hover:bg-white/20' : 'hover:bg-slate-100'}`}
           style={{ padding: '10px' }}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? (
@@ -178,13 +195,14 @@ export const Navbar: React.FC = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-[rgba(20,30,60,0.08)] shadow-lg">
+        <div className="lg:hidden max-h-[calc(100dvh-72px)] overflow-y-auto overscroll-y-contain bg-white border-t border-[rgba(20,30,60,0.08)] shadow-lg">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-4">
             {navigation.map((item) => (
               <div key={item.label}>
                 <a
                   href={item.href}
                   className="block py-2 font-medium text-[#4B5563] hover:text-[#4370B7]"
+                  onClick={closeMobileMenu}
                 >
                   {item.label}
                 </a>
@@ -195,6 +213,7 @@ export const Navbar: React.FC = () => {
                         key={child.label}
                         href={child.href}
                         className="block py-1 text-sm text-[#4B5563] hover:text-[#4370B7]"
+                        onClick={closeMobileMenu}
                       >
                         {child.label}
                       </a>
@@ -204,13 +223,17 @@ export const Navbar: React.FC = () => {
               </div>
             ))}
             <div className="flex flex-col gap-2 pt-4 border-t border-[rgba(20,30,60,0.08)]">
-              <Button variant="ghost" size="md" href={EXTERNAL_LOGIN_URL} className="text-[#4370B7]">
+              <Button variant="ghost" size="md" href={EXTERNAL_LOGIN_URL} className="text-[#4370B7]" onClick={closeMobileMenu}>
                 Log in
               </Button>
               <Button 
                 variant="secondary" 
                 size="md" 
                 href="/book-demo"
+                onClick={(event) => {
+                  closeMobileMenu();
+                  analytics.trackDemoRequest('navbar_mobile');
+                }}
               >
                 Book a demo
               </Button>
@@ -220,7 +243,10 @@ export const Navbar: React.FC = () => {
                 href={EXTERNAL_SIGNUP_URL}
                 target="_blank"
                 rel="noreferrer"
-                onClick={() => analytics.trackStartTrialClicked('navbar_mobile')}
+                onClick={() => {
+                  closeMobileMenu();
+                  analytics.trackStartTrialClicked('navbar_mobile');
+                }}
               >
                 Start free trial
               </Button>
