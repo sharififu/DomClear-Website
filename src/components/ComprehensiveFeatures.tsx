@@ -45,83 +45,17 @@ export const ComprehensiveFeatures: React.FC = () => {
                 <h3 className="text-lg font-bold text-[#0F172A]">Staff Availability Management</h3>
               </div>
 
-              {/* Weekly Schedule - Days as Columns */}
-              <div className="p-6">
-                {/* Day Headers */}
-                <div className="grid grid-cols-7 gap-4 mb-4">
-                  {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
-                    <div key={day} className="text-center">
-                      <div className="text-sm font-bold text-[#0F172A]">{day}</div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Schedule Blocks */}
-                <div className="grid grid-cols-7 gap-4">
-                  {[
-                    { 
-                      day: 'Monday', 
-                      availability: [
-                        { start: '17:00', end: '23:00', borderColor: '#34d399' },
-                        { start: '14:00', end: '16:00', borderColor: '#34d399' }
-                      ] 
-                    },
-                    { 
-                      day: 'Tuesday', 
-                      availability: [
-                        { start: '09:00', end: '17:00', borderColor: '#a78bfa' },
-                        { start: '19:00', end: '21:00', borderColor: '#a78bfa' }
-                      ] 
-                    },
-                    { 
-                      day: 'Wednesday', 
-                      availability: [
-                        { start: '10:00', end: '12:00', borderColor: '#9ca3af' },
-                        { start: '15:00', end: '18:00', borderColor: '#9ca3af' }
-                      ] 
-                    },
-                    { 
-                      day: 'Thursday', 
-                      availability: [
-                        { start: '08:00', end: '12:00', borderColor: '#34d399' }
-                      ] 
-                    },
-                    { 
-                      day: 'Friday', 
-                      availability: [
-                        { start: '13:00', end: '17:00', borderColor: '#a78bfa' }
-                      ] 
-                    },
-                    { 
-                      day: 'Saturday', 
-                      availability: [
-                        { start: '09:00', end: '23:00', borderColor: '#9ca3af' }
-                      ] 
-                    },
-                    { 
-                      day: 'Sunday', 
-                      availability: [
-                        { start: '09:00', end: '23:00', borderColor: '#34d399' }
-                      ] 
-                    },
-                  ].map((day, index) => (
-                    <div key={index} className="flex flex-col gap-2">
-                      {day.availability.map((slot, slotIndex) => (
-                        <div
-                          key={slotIndex}
-                          className="bg-white border rounded-lg p-3 shadow-xs"
-                          style={{ borderBottom: `3px solid ${slot.borderColor}` }}
-                        >
-                          <div className="space-y-1">
-                            <div className="h-1 bg-gray-200 rounded-sm w-full"></div>
-                            <div className="h-1 bg-gray-200 rounded-sm w-3/4"></div>
-                            <div className="h-1 bg-gray-200 rounded-sm w-1/2"></div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
+              <div className="bg-[#f8fafc]">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-auto block"
+                  aria-label="Staff availability management in DomiClear domiciliary care software"
+                >
+                  <source src="/demo-media/demo-staff-availability.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
 
