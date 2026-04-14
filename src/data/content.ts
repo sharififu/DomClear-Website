@@ -40,9 +40,9 @@ export const navigation: NavItem[] = [
 
 export const heroContent = {
   eyebrow: 'DOMICILIARY CARE SOFTWARE',
-  title: 'Domiciliary care software for modern UK home care agencies',
-  subtitle:
-    'Run rotas, care planning, eMAR, and records in one home care management platform — with a carer-friendly home care app your team will actually use. Built for owners, care managers, and coordinators who are done with clunky tools. DomiClear is a practical, more affordable option with a lower cost of entry than many larger platforms — strong day-to-day workflows without their cost or complexity.',
+  title: 'Modern Domiciliary care software your team will actually use',
+  subtitle: `Manage rotas, care plans, eMAR, and records in one intuitive platform.
+Built for carers, managers, and coordinators — with a focus on simplicity, clarity, and everyday efficiency.`,
   primaryCta: 'Start free trial',
   secondaryCta: 'Book a demo',
 };
