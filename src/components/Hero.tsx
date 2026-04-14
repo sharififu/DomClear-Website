@@ -41,7 +41,7 @@ export const Hero: React.FC = () => {
                 </h1>
 
                 <p
-                  className="text-white/90 max-w-2xl lg:max-w-none mx-auto lg:mx-0 mb-10"
+                  className="text-white/90 max-w-2xl lg:max-w-none mx-auto lg:mx-0 mb-10 whitespace-pre-line"
                   style={{
                     fontSize: 'clamp(16px, 2vw, 20px)',
                     lineHeight: 1.6,
@@ -112,7 +112,7 @@ export const Hero: React.FC = () => {
             <img
               src="/demo-media/Mobile-white.png"
               alt="DomiClear Mobile App"
-              className="block w-24 sm:w-40 md:w-56 lg:w-64 xl:w-72 h-auto object-contain self-end -ml-4 sm:-ml-8 md:-ml-12 lg:-ml-16 xl:-ml-24"
+              className="block w-24 sm:w-40 md:w-56 lg:w-64 xl:w-72 h-auto object-contain self-end -ml-8 sm:-ml-12 md:-ml-16 lg:-ml-24 xl:-ml-32 lg:-translate-x-4 xl:-translate-x-8"
             />
           </div>
         </div>
