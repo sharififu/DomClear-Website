@@ -115,7 +115,17 @@ function App() {
           e.preventDefault();
           window.history.pushState({}, '', anchor.href);
           setCurrentPath(url.pathname);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          if (!url.hash) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        } else if (url.hash) {
+          e.preventDefault();
+          window.history.pushState({}, '', anchor.href);
+          const id = decodeURIComponent(url.hash.substring(1));
+          const el = document.getElementById(id);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       }
     });
@@ -123,6 +133,26 @@ function App() {
     return () => {
       window.removeEventListener('popstate', handlePopState);
     };
+  }, [currentPath]);
+
+  // Scroll to hash target on path change or initial load
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = decodeURIComponent(window.location.hash.substring(1));
+      const scrollToHash = () => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+
+      // Try scrolling immediately, then again after a short delay
+      // to ensure the new page components have mounted and rendered.
+      requestAnimationFrame(() => {
+        scrollToHash();
+        setTimeout(scrollToHash, 100);
+      });
+    }
   }, [currentPath]);
 
   // Track page views

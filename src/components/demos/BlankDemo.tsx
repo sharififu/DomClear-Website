@@ -4,6 +4,7 @@ import { FileText } from 'lucide-react';
 import { DemoId } from './types';
 
 const BLANK_TITLES: Record<string, string> = {
+  'dashboard': 'Dashboard',
   'service-users': 'Service users',
   'visits': 'Visits',
   'medications': 'Medications',

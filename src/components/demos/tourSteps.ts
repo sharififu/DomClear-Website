@@ -12,55 +12,39 @@ const baseStep = (overrides: Step): Step => ({
 });
 
 const baseSteps: StepMap = {
-  dashboard: [
-    baseStep({
-      target: target('dashboard-header'),
-      title: 'Welcome to your command centre',
-      content: 'This dashboard gives you a real-time snapshot of carers, visits and alerts across your agency.',
-      placement: 'bottom',
-    }),
-    baseStep({
-      target: target('dashboard-metrics'),
-      title: 'Key metrics',
-      content: 'Staff on duty, active visits and completion status update live so you can act quickly.',
-      placement: 'bottom',
-    }),
-    baseStep({
-      target: target('dashboard-staff'),
-      title: 'Staff activity feed',
-      content: 'Drill into who is currently working, their rota slots and check-in times.',
-      placement: 'left',
-    }),
-    baseStep({
-      target: target('dashboard-map'),
-      title: 'Live map tracking',
-      content: 'Plot every scheduled visit on the map and click markers for detailed shift context.',
-      placement: 'top',
-    }),
-  ],
   scheduling: [
     baseStep({
       target: target('scheduling-header'),
-      title: 'Daily roster overview',
-      content: 'Control views (daily, weekly, teams) and keep the rota aligned with staffing levels.',
+      title: 'Shift Management shell',
+      content:
+        'This preview mirrors the DomiClear CMS header and search. Use the tour on the toolbar below for roster controls — data here is sample only.',
+      placement: 'bottom',
+    }),
+    baseStep({
+      target: target('scheduling-toolbar'),
+      title: 'Roster controls',
+      content:
+        'Daily and weekly views, Teams and Regional grouping, conflicts, absence, refresh, Build Shift and New Visit — same layout as the live app (preview actions explain when you click).',
       placement: 'bottom',
     }),
     baseStep({
       target: target('scheduling-filters'),
-      title: 'Smart filters',
-      content: 'Filter by teams, availability or shift type to focus on the staff who matter right now.',
+      title: 'Focus and regions',
+      content: 'Narrow the roster (e.g. unallocated only) or show the regional chip bar when Regional is on — matches how filters sit above the timeline in the app.',
       placement: 'bottom',
     }),
     baseStep({
       target: target('scheduling-staff'),
-      title: 'Staff list',
-      content: 'Every carer has an avatar with quick-glance status and upcoming visits.',
+      title: 'Staff rail',
+      content:
+        'Unallocated row, optional team headers, and carer rows with initials — same 140px rail width and row height as the live daily roster.',
       placement: 'right',
     }),
     baseStep({
       target: target('scheduling-timeline'),
-      title: 'Drag-and-drop timeline',
-      content: 'Allocate visits, resolve clashes and see every 15-minute block for the whole team.',
+      title: 'Timeline & gestures',
+      content:
+        'On Daily view: double-click an empty lane to add a 1-hour visit, hold Shift and drag to draw a ranged visit (15-minute snap), drag blocks to move, drag the edges to resize, then use Undo for the last change. All edits are local preview only — nothing saves to your account.',
       placement: 'top',
     }),
   ],
@@ -119,14 +103,14 @@ const baseSteps: StepMap = {
     }),
     baseStep({
       target: target('patient-medications-calendar'),
-      title: 'Visit calendar',
-      content: 'Visualise scheduled visits per day and drill into staffing requirements.',
-      placement: 'top',
+      title: 'Patient profile & tabs',
+      content: 'Switch between Medications and MAR Chart — the tour jumps to each area automatically.',
+      placement: 'bottom',
     }),
     baseStep({
       target: target('patient-medications-sidebar'),
-      title: 'Daily visit summary',
-      content: 'See who is due today, timings and add more visits with one click.',
+      title: 'MAR quick view',
+      content: 'A compact MAR snapshot beside the medication list (demo counts; open MAR Chart for the full eMAR).',
       placement: 'top',
     }),
     baseStep({
@@ -135,30 +119,104 @@ const baseSteps: StepMap = {
       content: 'Inventory prescribed meds, frequency, route and indications with advanced filters.',
       placement: 'top',
     }),
+    baseStep({
+      target: target('patient-mar-panel'),
+      title: 'eMAR workspace',
+      content: 'Full-width MAR shell matching the CMS: export/print (preview), MAR History, and patient banner.',
+      placement: 'bottom',
+    }),
+    baseStep({
+      target: target('patient-mar-header'),
+      title: 'MAR actions',
+      content: 'Export PDF and Print are preview-only here — same placement as the live patient profile.',
+      placement: 'bottom',
+    }),
+    baseStep({
+      target: target('patient-mar-toolbar'),
+      title: 'Range & filters',
+      content: 'Today / Week / Month, interval navigation, jump date, medication search, and caregiver/status chips.',
+      placement: 'bottom',
+    }),
+    baseStep({
+      target: target('patient-mar-kpi'),
+      title: 'MAR KPI strip',
+      content: 'Due, administered, late, missed, refused, and PRN counts derived from demo schedules and administrations.',
+      placement: 'top',
+    }),
+    baseStep({
+      target: target('patient-mar-grid'),
+      title: 'Weekly matrix',
+      content: 'Medication detail column with day columns; tap a cell for status, staff line, and administration detail.',
+      placement: 'top',
+    }),
+    baseStep({
+      target: target('patient-mar-legend'),
+      title: 'Status legend',
+      content: 'Symbols mirror the live MAR (given, late, missed, refused, PRN, empty slot).',
+      placement: 'top',
+    }),
+    baseStep({
+      target: target('patient-mar-sidebar'),
+      title: 'Slot detail rail',
+      content: 'Select a matrix cell for slot metadata, preview actions, and link to the administration modal.',
+      placement: 'left',
+    }),
+    baseStep({
+      target: target('patient-mar-history-toggle'),
+      title: 'MAR History',
+      content:
+        'Open MAR History for presets, search, status/medication filters, compliance summary, and preview-only export. Targets for those controls appear after you toggle — all demo data, no backend writes.',
+      placement: 'left',
+    }),
   ],
   compliance: [
     baseStep({
-      target: target('compliance-tabs'),
-      title: 'Compliance modes',
-      content: 'Switch between overview dashboards, detailed audits and incident tracking.',
+      target: target('compliance-intel-header'),
+      title: 'Compliance Intelligence',
+      content:
+        'Navy header matches the live audit dashboard: integrity score, CQC mode, refresh, export, and reports — all preview-only here.',
+      placement: 'bottom',
+    }),
+    baseStep({
+      target: target('compliance-filters'),
+      title: 'Date range and search',
+      content: 'Filter the mock audit trail by window, search logs, and category chips (Medication, Patient, Staff, Critical).',
       placement: 'bottom',
     }),
     baseStep({
       target: target('compliance-metrics'),
-      title: 'Key risk indicators',
-      content: 'Overall score, incidents and audit cadence surface issues before inspections.',
+      title: 'Snapshot metrics',
+      content: 'Quick counts for logs in view, filtered rows, and checklist score — derived from sample data only.',
       placement: 'bottom',
+    }),
+    baseStep({
+      target: target('compliance-alerts'),
+      title: 'Critical alerts',
+      content: 'High-risk exports, deletions, and off-hours access surface first — dismiss or open a detail drawer in this preview.',
+      placement: 'top',
+    }),
+    baseStep({
+      target: target('compliance-signals'),
+      title: 'Clinical signals',
+      content: 'Priority signals explain why patterns matter (e.g. unusual read volume). Wording mirrors the app; data is demo.',
+      placement: 'top',
+    }),
+    baseStep({
+      target: target('compliance-charts'),
+      title: 'Trends and anomalies',
+      content: 'Action mix and daily activity bars summarise the current filter window — static SVG-style charts, no backend.',
+      placement: 'top',
     }),
     baseStep({
       target: target('compliance-domains'),
       title: 'CQC domain performance',
-      content: 'Monitor each domain (Safe, Caring, etc.) with trend-aware visualisations.',
+      content: 'Domain rings summarise mock “Good” ratings — same mental model as compliance reporting in the app.',
       placement: 'top',
     }),
     baseStep({
-      target: target('compliance-table'),
-      title: 'Audit workbench',
-      content: 'Drill into every audit, track scores and download remediation reports.',
+      target: target('compliance-audit-log'),
+      title: 'Audit log',
+      content: 'Sortable table or timeline, pagination, and row detail — mirrors the audit log panel; nothing persists to your org.',
       placement: 'top',
     }),
   ],
@@ -274,6 +332,8 @@ baseSteps['care-plan-demo'] = baseSteps['care-plan'];
 
 // care-planning now uses the same CarePlanDemo as care-plan
 baseSteps['care-planning'] = baseSteps['care-plan'];
+
+baseSteps['patient-medications-mar'] = baseSteps['patient-medications'];
 
 export const tourSteps = baseSteps;
 

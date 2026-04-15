@@ -4,12 +4,20 @@ import { Button } from '../components/Button';
 import { platformFeatures } from '../data/content';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
-// Mapping of features to demo images and deep links
-const featureDemoMap: { [key: string]: { image: string; deepLink: string; deepLinkText: string } } = {
+// Mapping of features to demo media and deep links
+const featureDemoMap: {
+  [key: string]: {
+    image?: string;
+    video?: string;
+    videoAriaLabel?: string;
+    deepLink: string;
+    deepLinkText: string;
+  };
+} = {
   'care-planning': {
-    image: '/demo-media/demo-patient-profile-care-planning.png',
+    video: '/demo-media/demo-care-planning.mp4',
     deepLink: '/demos#care-planning',
-    deepLinkText: 'View care planning →'
+    deepLinkText: 'View care planning →',
   },
   'form-templates': {
     image: '/demo-media/demo-form-templates.png',
@@ -17,19 +25,19 @@ const featureDemoMap: { [key: string]: { image: string; deepLink: string; deepLi
     deepLinkText: 'Try form builder →'
   },
   'scheduling': {
-    image: '/demo-media/demo-schedule-rota-planning.png',
+    video: '/demo-media/demo-shift-management.mp4',
     deepLink: '/demos#scheduling',
-    deepLinkText: 'See rota conflict detection →'
+    deepLinkText: 'See rota conflict detection →',
   },
   'carer-app': {
-    image: '/demo-media/Mobile-white.png',
+    image: '/demo-media/demo-carer-mobile-visit-scheduled.png',
     deepLink: '/demos#emar',
-    deepLinkText: 'Try MAR entry →'
+    deepLinkText: 'Try MAR entry →',
   },
   'compliance': {
-    image: '/demo-media/demo-cqc-compliance-reports.png',
+    image: '/demo-media/demo-compliance-intelligence-dashboard.png',
     deepLink: '/demos#compliance',
-    deepLinkText: 'View CQC exports →'
+    deepLinkText: 'View CQC exports →',
   },
   'team': {
     image: '/demo-media/demo-patient-management.png',
@@ -42,19 +50,20 @@ const featureDemoMap: { [key: string]: { image: string; deepLink: string; deepLi
     deepLinkText: 'See financial reports →'
   },
   'family': {
-    image: '/demo-media/demo-patient-management.png',
+    image: '/demo-media/demo-family-portal-reports.png',
     deepLink: '/demos',
-    deepLinkText: 'View family portal →'
+    deepLinkText: 'View family portal →',
   },
   'analytics': {
-    image: '/demo-media/demo-reports-analytics.png',
+    image: '/demo-media/demo-reports-intelligence.png',
     deepLink: '/demos#compliance',
-    deepLinkText: 'See reports & analytics →'
+    deepLinkText: 'See reports & analytics →',
   },
   'security': {
-    image: '/demo-media/demo-dashboard-overview.png',
+    video: '/demo-media/demo-audit-dashboard.mp4',
+    videoAriaLabel: 'Audit and reporting dashboard in DomiClear',
     deepLink: '/demos',
-    deepLinkText: 'Learn about security →'
+    deepLinkText: 'Learn about security →',
   },
 };
 
@@ -139,11 +148,27 @@ export const PlatformPage: React.FC = () => {
                 {/* Screenshot */}
                 {featureDemoMap[feature.id] ? (
                   <div className="w-full rounded-2xl border border-[rgba(20,30,60,0.08)] overflow-hidden shadow-lg">
-                    <img
-                      src={featureDemoMap[feature.id].image}
-                      alt={feature.title}
-                      className="w-full h-auto object-cover"
-                    />
+                    {featureDemoMap[feature.id].video ? (
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="w-full h-auto object-cover block"
+                        aria-label={
+                          featureDemoMap[feature.id].videoAriaLabel ??
+                          `${feature.title} view in DomiClear domiciliary care software`
+                        }
+                      >
+                        <source src={featureDemoMap[feature.id].video} type="video/mp4" />
+                      </video>
+                    ) : (
+                      <img
+                        src={featureDemoMap[feature.id].image}
+                        alt={feature.title}
+                        className="w-full h-auto object-cover"
+                      />
+                    )}
                   </div>
                 ) : (
                   <div className="w-full aspect-video bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC] rounded-2xl border border-[rgba(20,30,60,0.08)] flex items-center justify-center">
