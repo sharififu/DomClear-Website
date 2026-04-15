@@ -134,7 +134,7 @@ export const DemoContainer: React.FC<DemoContainerProps> = ({ activeDemo, onDemo
             <div className={`pl-14 pr-4 space-y-1 ${isManagementOpen ? 'block' : 'hidden'}`}>
               {[
                 { id: 'service-users' as DemoId, label: 'Service users' },
-                { id: 'scheduling' as DemoId, label: 'Visits' },
+                { id: 'scheduling' as DemoId, label: 'Shift Management' },
                 { id: 'emar' as DemoId, label: 'Medications' },
                 { id: 'custom-tasks' as DemoId, label: 'Custom Tasks' },
                 { id: 'monitoring-alerts' as DemoId, label: 'Monitoring Alerts' },
@@ -430,7 +430,7 @@ export const DemoContainer: React.FC<DemoContainerProps> = ({ activeDemo, onDemo
                   <div className={`pl-14 pr-4 space-y-1 ${isManagementOpen ? 'block' : 'hidden'}`}>
                     {[
                       { id: 'service-users' as DemoId, label: 'Service users' },
-                      { id: 'scheduling' as DemoId, label: 'Visits' },
+                      { id: 'scheduling' as DemoId, label: 'Shift Management' },
                       { id: 'emar' as DemoId, label: 'Medications' },
                       { id: 'custom-tasks' as DemoId, label: 'Custom Tasks' },
                       { id: 'monitoring-alerts' as DemoId, label: 'Monitoring Alerts' },

@@ -7,29 +7,15 @@ import { PayrollDemo } from '../components/demos/PayrollDemo';
 import { ComplianceDemo } from '../components/demos/ComplianceDemo';
 import { EMARDemo } from '../components/demos/EMARDemo';
 import { PatientMedicationsDemo } from '../components/demos/PatientMedicationsDemo';
-import { DashboardDemo } from '../components/demos/DashboardDemo';
 import { TemplateBuilderDemo } from '../components/demos/TemplateBuilderDemo';
 import { FormTemplatesDemo } from '../components/demos/FormTemplatesDemo';
 import { TemplatesPageDemo } from '../components/demos/TemplatesPageDemo';
 import { BlankDemo } from '../components/demos/BlankDemo';
+import { ALL_DEMO_IDS, BLANK_DEMO_IDS } from '../components/demos/demoConfig';
 import { DemoId } from '../components/demos/types';
 
-const ALL_DEMO_IDS: DemoId[] = [
-  'dashboard', 'scheduling', 'care-planning', 'care-plan', 'care-plan-demo', 'finance', 'payroll',
-  'compliance', 'emar', 'patient-medications', 'template-builder', 'form-templates', 'templates-page',
-  'service-users', 'custom-tasks', 'monitoring-alerts', 'alert-rules', 'absence-requests', 'family-portal',
-  'staff', 'teams', 'shift-management', 'attendance', 'compliance-reports', 'incidents', 'training',
-  'visit-cost-types', 'documents', 'policies', 'reports', 'ppe-stock',
-];
-
-const BLANK_DEMO_IDS: DemoId[] = [
-  'service-users', 'custom-tasks', 'monitoring-alerts', 'alert-rules', 'absence-requests', 'family-portal',
-  'staff', 'teams', 'shift-management', 'attendance', 'compliance-reports', 'incidents', 'training',
-  'visit-cost-types', 'documents', 'policies', 'reports', 'ppe-stock',
-];
-
 export const FullScreenDemoPage: React.FC = () => {
-  const [activeDemo, setActiveDemo] = useState<DemoId>('dashboard');
+  const [activeDemo, setActiveDemo] = useState<DemoId>('scheduling');
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -54,7 +40,6 @@ export const FullScreenDemoPage: React.FC = () => {
       return <BlankDemo demoId={activeDemo} onReset={() => handleDemoChange(activeDemo)} />;
     }
     switch (activeDemo) {
-      case 'dashboard': return <DashboardDemo />;
       case 'scheduling': return <SchedulingDemo />;
       case 'care-planning': return <CarePlanDemo onReset={() => handleDemoChange('care-planning')} />;
       case 'care-plan': return <CarePlanDemo onReset={() => handleDemoChange('care-plan')} />;
@@ -63,7 +48,10 @@ export const FullScreenDemoPage: React.FC = () => {
       case 'payroll': return <PayrollDemo />;
       case 'compliance': return <ComplianceDemo />;
       case 'emar': return <EMARDemo />;
-      case 'patient-medications': return <PatientMedicationsDemo />;
+      case 'patient-medications':
+        return <PatientMedicationsDemo />;
+      case 'patient-medications-mar':
+        return <PatientMedicationsDemo initialPatientTab="MAR Chart" />;
       case 'template-builder': return <TemplateBuilderDemo onReset={() => handleDemoChange('template-builder')} />;
       case 'form-templates': return <FormTemplatesDemo onReset={() => handleDemoChange('form-templates')} />;
       case 'templates-page': return (
@@ -72,7 +60,7 @@ export const FullScreenDemoPage: React.FC = () => {
           onOpenTemplateBuilder={() => handleDemoChange('template-builder')}
         />
       );
-      default: return <DashboardDemo />;
+      default: return <SchedulingDemo />;
     }
   };
 

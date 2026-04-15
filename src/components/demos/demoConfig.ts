@@ -2,6 +2,7 @@ import type { DemoId } from './types';
 
 /** Demo IDs that show the placeholder (no real demo content). */
 export const BLANK_DEMO_IDS: DemoId[] = [
+  'dashboard',
   'service-users',
   'custom-tasks',
   'monitoring-alerts',
@@ -24,7 +25,6 @@ export const BLANK_DEMO_IDS: DemoId[] = [
 
 /** All demo IDs (for hash routing). */
 export const ALL_DEMO_IDS: DemoId[] = [
-  'dashboard',
   'scheduling',
   'care-planning',
   'care-plan',
@@ -34,6 +34,7 @@ export const ALL_DEMO_IDS: DemoId[] = [
   'compliance',
   'emar',
   'patient-medications',
+  'patient-medications-mar',
   'template-builder',
   'form-templates',
   'templates-page',
@@ -42,14 +43,13 @@ export const ALL_DEMO_IDS: DemoId[] = [
 
 /** Demos with content: id + label for quick navigation. */
 export const QUICK_NAV_DEMOS: { id: DemoId; label: string }[] = [
-  { id: 'dashboard', label: 'Dashboard' },
-  { id: 'scheduling', label: 'Visits' },
+  { id: 'scheduling', label: 'Shift Management' },
   { id: 'care-planning', label: 'Care planning' },
   { id: 'finance', label: 'Finance' },
   { id: 'payroll', label: 'Payroll' },
   { id: 'compliance', label: 'Compliance' },
-  { id: 'emar', label: 'eMAR' },
-  { id: 'patient-medications', label: 'Medications' },
+  { id: 'emar', label: 'Medication Management' },
+  { id: 'patient-medications-mar', label: 'eMAR' },
   { id: 'template-builder', label: 'Template builder' },
   { id: 'form-templates', label: 'Form templates' },
   { id: 'templates-page', label: 'Templates' },

@@ -9,6 +9,7 @@ export type DemoId =
   | 'compliance'
   | 'emar'
   | 'patient-medications'
+  | 'patient-medications-mar'
   | 'template-builder'
   | 'form-templates'
   | 'templates-page'
@@ -126,5 +127,46 @@ export interface IncidentReport {
   severity: 'low' | 'medium' | 'high' | 'critical';
   status: 'open' | 'investigating' | 'resolved';
   description: string;
+}
+
+/** Marketing demo audit log row — mirrors CMS `audit_logs` shape used on audit dashboard. */
+export type DemoAuditAction = 'create' | 'read' | 'update' | 'delete' | 'export' | 'login' | 'logout';
+
+export interface DemoAuditLog {
+  id: string;
+  user_id: string;
+  user_name: string;
+  user_role?: string;
+  action: DemoAuditAction;
+  table_name: string;
+  timestamp: string;
+  ip_address: string;
+  session_id?: string;
+  details?: string;
+}
+
+/** Demo MAR schedule row — mirrors CMS `medication_schedules` + medication join. */
+export interface DemoMARScheduleRow {
+  id: string;
+  medication_id: string;
+  medication_name: string;
+  indication?: string | null;
+  start_date: string;
+  end_date?: string | null;
+  frequency: string;
+  scheduled_times: string[];
+  route: string;
+  dose: string;
+}
+
+/** Demo administration — mirrors CMS `medication_administrations`. */
+export interface DemoMARAdminRow {
+  id: string;
+  medication_id: string;
+  administered_at: string;
+  scheduled_time: string | null;
+  status: string;
+  staff_display_name?: string | null;
+  notes?: string | null;
 }
 
