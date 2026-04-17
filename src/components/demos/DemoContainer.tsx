@@ -22,6 +22,7 @@ interface DemoContainerProps {
   onDemoChange: (id: DemoId) => void;
   children: React.ReactNode;
   isEmbedded?: boolean;
+  onExit?: () => void;
 }
 
 const MANAGEMENT_IDS: DemoId[] = ['service-users', 'visits', 'medications', 'custom-tasks', 'monitoring-alerts', 'alert-rules', 'absence-requests', 'family-portal'];
@@ -30,7 +31,7 @@ const COMPLIANCE_IDS: DemoId[] = ['audit-dashboard', 'compliance-reports', 'inci
 const FINANCE_IDS: DemoId[] = ['invoices', 'payroll', 'visit-cost-types'];
 const RESOURCES_IDS: DemoId[] = ['documents', 'policies', 'templates-page', 'reports', 'ppe-stock'];
 
-export const DemoContainer: React.FC<DemoContainerProps> = ({ activeDemo, onDemoChange, children, isEmbedded = false }) => {
+export const DemoContainer: React.FC<DemoContainerProps> = ({ activeDemo, onDemoChange, children, isEmbedded = false, onExit }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isManagementOpen, setIsManagementOpen] = useState(true);
   const [isWorkforceOpen, setIsWorkforceOpen] = useState(false);
@@ -75,7 +76,8 @@ export const DemoContainer: React.FC<DemoContainerProps> = ({ activeDemo, onDemo
           <h1 className="font-bold text-slate-800 text-lg">DomiClear</h1>
           <button
             onClick={() => {
-              window.location.href = '/';
+              if (onExit) onExit();
+              else window.location.href = '/';
             }}
             className="ml-auto flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-slate-600 hover:text-slate-800 hover:bg-slate-50 rounded-lg transition-colors"
             title="Exit Demo"
