@@ -300,7 +300,7 @@ return () => {
               <p className="text-white/90 mb-4">
                 Our team is ready to answer your questions and schedule a demo.
               </p>
-              <p className="text-lg font-semibold mb-1">0800 123 4567</p>
+              <p className="text-lg font-semibold mb-1">07931010555</p>
               <p className="text-sm text-white/80">Monday–Friday, 9:00–17:00 GMT</p>
             </div>
 
