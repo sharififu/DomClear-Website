@@ -185,7 +185,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-[#0F172A]">Phone</p>
-                    <p className="text-[#4B5563]">0800 123 4567</p>
+                    <p className="text-[#4B5563]">07931010555</p>
                     <p className="text-sm text-[#4B5563]">Monday–Friday, 9:00–17:00 GMT</p>
                   </div>
                 </div>
