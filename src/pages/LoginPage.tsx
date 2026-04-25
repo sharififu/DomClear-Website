@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '../components/Button';
 import { PricingCard } from '../components/PricingCard';
 import { pricingTiers } from '../data/content';
+import { EXTERNAL_LOGIN_URL, EXTERNAL_SIGNUP_URL } from '../constants/links';
 import {
   EnvelopeIcon,
   LockClosedIcon,
@@ -32,14 +33,11 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle login logic here
-    console.log('Login:', { email, password });
+    window.location.href = EXTERNAL_LOGIN_URL;
   };
 
   const handleSubscriptionSelect = (tierName: string) => {
     setSelectedTier(tierName);
-    // Handle subscription selection logic here
-    console.log('Selected tier:', tierName);
   };
 
   return (
@@ -316,6 +314,9 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                   </div>
 
                   <Button
+                    href={`${EXTERNAL_SIGNUP_URL}?plan=${encodeURIComponent(selectedTier)}`}
+                    target="_blank"
+                    rel="noreferrer"
                     variant="primary"
                     size="lg"
                     className="w-full"

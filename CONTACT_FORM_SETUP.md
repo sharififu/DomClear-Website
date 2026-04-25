@@ -1,6 +1,6 @@
 # Contact Form Setup
 
-The contact page posts to `POST /api/contact`, which is implemented as a Vercel serverless function in `api/contact.ts`.
+The contact and book-demo pages post to `POST /api/contact`, which is implemented as a Vercel serverless function in `api/contact.ts`.
 
 ## Required Environment Variables
 
@@ -16,7 +16,7 @@ Set these in Vercel project settings for production and in `.env` when using `ve
 
 ## Behaviour
 
-- Valid submissions are sent via Hostinger SMTP.
+- Valid contact and demo request submissions are sent via Hostinger SMTP.
 - The visitor's email is set as `replyTo`, so replying to the notification emails replies to the lead.
 - Invalid name, email, subject, or message values return a `400` with a user-facing error.
 - The hidden `website` honeypot field returns `{ "ok": true }` without sending email.

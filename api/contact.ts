@@ -23,7 +23,9 @@ type ContactSubmission = {
   firstName?: string;
   lastName?: string;
   email?: string;
+  phone?: string;
   organisation?: string;
+  role?: string;
   subject?: string;
   message?: string;
   website?: string;
@@ -41,7 +43,9 @@ const maxLengths = {
   firstName: 80,
   lastName: 80,
   email: 160,
+  phone: 80,
   organisation: 160,
+  role: 120,
   subject: 40,
   message: 3000,
 };
@@ -83,7 +87,9 @@ function validateSubmission(body: unknown) {
     firstName: clean(data.firstName, maxLengths.firstName),
     lastName: clean(data.lastName, maxLengths.lastName),
     email: clean(data.email, maxLengths.email).toLowerCase(),
+    phone: clean(data.phone, maxLengths.phone),
     organisation: clean(data.organisation, maxLengths.organisation),
+    role: clean(data.role, maxLengths.role),
     subject: clean(data.subject, maxLengths.subject),
     message: clean(data.message, maxLengths.message),
     website: clean(data.website, 200),
@@ -119,7 +125,9 @@ function buildEmail(submission: Required<Omit<ContactSubmission, 'website'>>) {
     ``,
     `Name: ${fullName}`,
     `Email: ${submission.email}`,
+    `Phone: ${submission.phone || 'Not provided'}`,
     `Organisation: ${submission.organisation || 'Not provided'}`,
+    `Role: ${submission.role || 'Not provided'}`,
     `Subject: ${subject}`,
     ``,
     `Message:`,
@@ -130,7 +138,9 @@ function buildEmail(submission: Required<Omit<ContactSubmission, 'website'>>) {
     <h2>New DomiClear contact form submission</h2>
     <p><strong>Name:</strong> ${escapeHtml(fullName)}</p>
     <p><strong>Email:</strong> ${escapeHtml(submission.email)}</p>
+    <p><strong>Phone:</strong> ${escapeHtml(submission.phone || 'Not provided')}</p>
     <p><strong>Organisation:</strong> ${escapeHtml(submission.organisation || 'Not provided')}</p>
+    <p><strong>Role:</strong> ${escapeHtml(submission.role || 'Not provided')}</p>
     <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
     <p><strong>Message:</strong></p>
     <p>${escapeHtml(submission.message).replace(/\n/g, '<br />')}</p>
@@ -199,7 +209,9 @@ export default async function handler(req: RequestLike, res: ResponseLike) {
       firstName: result.submission.firstName,
       lastName: result.submission.lastName,
       email: result.submission.email,
+      phone: result.submission.phone,
       organisation: result.submission.organisation,
+      role: result.submission.role,
       subject: result.submission.subject,
       message: result.submission.message,
     });
