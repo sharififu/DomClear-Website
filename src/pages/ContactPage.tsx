@@ -2,14 +2,53 @@ import React, { useState } from 'react';
 import { Button } from '../components/Button';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
+import { analytics } from '../utils/analytics';
 
 export const ContactPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', organisation: '', subject: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    organisation: '',
+    subject: '',
+    message: '',
+    website: '',
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = (await response.json().catch(() => ({}))) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Unable to send your message right now.');
+      }
+
+      analytics.trackContactForm('contact_page');
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to send your message right now. Please try again.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -72,6 +111,19 @@ export const ContactPage: React.FC = () => {
             <h2 className="text-2xl font-bold text-[#0F172A] mb-6">Send us a message</h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={(e) => setFormData((d) => ({ ...d, website: e.target.value }))}
+                />
+              </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-semibold text-[#0F172A] mb-2">First name</label>
@@ -161,8 +213,14 @@ export const ContactPage: React.FC = () => {
                 />
               </div>
 
-              <Button type="submit" variant="primary" size="lg" className="w-full">
-                Send message
+              {submitError && (
+                <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+                  {submitError}
+                </div>
+              )}
+
+              <Button type="submit" variant="primary" size="lg" className="w-full" isDisabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send message'}
               </Button>
 
               <p className="text-sm text-[#4B5563] text-center">
