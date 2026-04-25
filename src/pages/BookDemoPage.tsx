@@ -5,12 +5,58 @@ import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
 export const BookDemoPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [viewMode, setViewMode] = useState<'form' | 'calendly'>('form');
-  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', phone: '', organisation: '', role: '' });
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    organisation: '',
+    role: '',
+    website: '',
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          subject: 'demo',
+          message: [
+            'Demo request from the Book a Demo page.',
+            '',
+            `Phone: ${formData.phone}`,
+            `Role: ${formData.role}`,
+          ].join('\n'),
+        }),
+      });
+
+      const result = (await response.json().catch(() => ({}))) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Unable to send your demo request right now.');
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error
+          ? error.message
+          : 'Unable to send your demo request right now. Please try again.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Load Calendly script
@@ -143,6 +189,19 @@ return () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="hidden" aria-hidden="true">
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={(e) => setFormData((d) => ({ ...d, website: e.target.value }))}
+                />
+              </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-semibold text-[#0F172A] mb-2">First name</label>
@@ -233,8 +292,14 @@ return () => {
                 </select>
               </div>
 
-              <Button type="submit" variant="primary" size="lg" className="w-full">
-                Submit demo request
+              {submitError && (
+                <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700" role="alert">
+                  {submitError}
+                </div>
+              )}
+
+              <Button type="submit" variant="primary" size="lg" className="w-full" isDisabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Submit demo request'}
               </Button>
             </form>
           </div>
@@ -342,4 +407,3 @@ return () => {
     </div>
   );
 };
-
