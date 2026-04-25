@@ -1,3 +1,5 @@
+import nodemailer from 'nodemailer';
+
 declare const process: {
   env: Record<string, string | undefined>;
 };
@@ -137,6 +139,19 @@ function buildEmail(submission: Required<Omit<ContactSubmission, 'website'>>) {
   return { fullName, subject, text, html };
 }
 
+function getSmtpPort() {
+  const port = Number(process.env.SMTP_PORT || 465);
+  return Number.isFinite(port) ? port : 465;
+}
+
+function getSmtpSecure(port: number) {
+  if (process.env.SMTP_SECURE) {
+    return process.env.SMTP_SECURE === 'true';
+  }
+
+  return port === 465;
+}
+
 function escapeHtml(value: string) {
   return value
     .replace(/&/g, '&amp;')
@@ -166,11 +181,14 @@ export default async function handler(req: RequestLike, res: ResponseLike) {
       return;
     }
 
-    const resendApiKey = process.env.RESEND_API_KEY;
-    const fromEmail = process.env.CONTACT_FROM_EMAIL;
+    const smtpHost = process.env.SMTP_HOST;
+    const smtpUser = process.env.SMTP_USER;
+    const smtpPass = process.env.SMTP_PASS;
+    const smtpPort = getSmtpPort();
+    const fromEmail = process.env.CONTACT_FROM_EMAIL || smtpUser;
     const toEmail = process.env.CONTACT_TO_EMAIL || 'info@domi-clear.com';
 
-    if (!resendApiKey || !fromEmail) {
+    if (!smtpHost || !smtpUser || !smtpPass || !fromEmail) {
       sendJson(res, 500, {
         error: 'Contact form email delivery is not configured.',
       });
@@ -186,23 +204,26 @@ export default async function handler(req: RequestLike, res: ResponseLike) {
       message: result.submission.message,
     });
 
-    const response = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        'Content-Type': 'application/json',
+    const transporter = nodemailer.createTransport({
+      host: smtpHost,
+      port: smtpPort,
+      secure: getSmtpSecure(smtpPort),
+      auth: {
+        user: smtpUser,
+        pass: smtpPass,
       },
-      body: JSON.stringify({
+    });
+
+    try {
+      await transporter.sendMail({
         from: fromEmail,
-        to: [toEmail],
-        reply_to: result.submission.email,
+        to: toEmail,
+        replyTo: result.submission.email,
         subject: `DomiClear contact: ${email.subject}`,
         text: email.text,
         html: email.html,
-      }),
-    });
-
-    if (!response.ok) {
+      });
+    } catch {
       sendJson(res, 502, { error: 'Unable to send your message right now.' });
       return;
     }
