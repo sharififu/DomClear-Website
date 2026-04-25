@@ -209,7 +209,7 @@ export const ContactPage: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-[#0F172A]">Office</p>
-                    <p className="text-[#4B5563]">London, United Kingdom</p>
+                    <p className="text-[#4B5563]">Derby, United Kingdom</p>
                     <p className="text-sm text-[#4B5563]">Serving agencies across the UK</p>
                   </div>
                 </div>
