@@ -222,7 +222,7 @@ export const BirdieAlternativePage: React.FC = () => {
                 <a href="/platform" className="text-[#4370B7] font-semibold hover:underline">
                   Platform
                 </a>
-                <a href="/home-care-app" className="text-[#4370B7] font-semibold hover:underline">
+                <a href="/care-management-app" className="text-[#4370B7] font-semibold hover:underline">
                   Home care app
                 </a>
                 <a href="/home-care-scheduling-software" className="text-[#4370B7] font-semibold hover:underline">

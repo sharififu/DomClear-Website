@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://domi-clear.com/sitemap.xml
+Sitemap: https://www.domi-clear.com/sitemap.xml

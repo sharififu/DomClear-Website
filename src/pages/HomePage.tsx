@@ -87,7 +87,7 @@ export const HomePage: React.FC = () => {
                 blurb: 'Structured medication workflows with clearer handovers.',
               },
               {
-                href: '/home-care-app',
+                href: '/care-management-app',
                 title: 'Home care app',
                 blurb: 'Practical mobile use for carers with office coordination.',
               },

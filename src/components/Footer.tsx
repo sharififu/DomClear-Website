@@ -117,8 +117,8 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="/home-care-app" className="text-white/70 hover:text-white transition-colors">
-                  Home care app
+                <a href="/care-management-app" className="text-white/70 hover:text-white transition-colors">
+                  Care management app
                 </a>
               </li>
               <li>
