@@ -1,5 +1,6 @@
 import React from 'react';
-import { LinkIcon, EnvelopeIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon } from '@heroicons/react/24/outline';
+import { FacebookLogo, LinkedInLogo } from './icons';
 import { EXTERNAL_SIGNUP_URL, EXTERNAL_LOGIN_URL } from '../constants/links';
 
 export const Footer: React.FC = () => {
@@ -39,22 +40,22 @@ export const Footer: React.FC = () => {
             </div>
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/domiclear/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
-                <LinkIcon className="w-5 h-5" />
+                <LinkedInLogo className="w-5 h-5" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://www.facebook.com/people/DomiClear/61565861833986/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-                aria-label="Twitter"
+                aria-label="Facebook"
               >
-                <LinkIcon className="w-5 h-5" />
+                <FacebookLogo className="w-5 h-5" />
               </a>
               <a
                 href="mailto:info@domi-clear.com"

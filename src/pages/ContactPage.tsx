@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../components/Button';
-import { EnvelopeIcon, PhoneIcon, MapPinIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, MapPinIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { WhatsAppLogo } from '../components/icons';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 import { analytics } from '../utils/analytics';
 
@@ -238,12 +239,21 @@ export const ContactPage: React.FC = () => {
               <h3 className="text-xl font-bold text-[#0F172A] mb-4">Contact information</h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#e6f7ff] flex items-center justify-center">
-                    <PhoneIcon className="w-5 h-5 text-[#1F6FEB]" />
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-[#E7F8EF] flex items-center justify-center">
+                    <WhatsAppLogo className="w-5 h-5 text-[#25D366]" />
                   </div>
                   <div>
-                    <p className="font-semibold text-[#0F172A]">Phone</p>
-                    <p className="text-[#4B5563]">07931010555</p>
+                    <p className="font-semibold text-[#0F172A]">WhatsApp</p>
+                    <p className="text-[#4B5563]">
+                      <a
+                        href="https://wa.me/447931010555"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#1F6FEB] hover:underline"
+                      >
+                        +447931010555
+                      </a>
+                    </p>
                     <p className="text-sm text-[#4B5563]">Monday–Friday, 9:00–17:00 GMT</p>
                   </div>
                 </div>

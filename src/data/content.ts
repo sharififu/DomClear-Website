@@ -36,6 +36,7 @@ export const navigation: NavItem[] = [
     ],
   },
   { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export const heroContent = {
