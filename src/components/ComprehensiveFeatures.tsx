@@ -114,7 +114,7 @@ export const ComprehensiveFeatures: React.FC = () => {
               Give managers and care staff one operational picture of who is out, what is running late, and what still needs cover — without jumping between spreadsheets and chat threads.
             </p>
             <p className="mt-4">
-              <a href="/home-care-app" className="text-[#4370B7] font-semibold text-sm hover:underline">
+              <a href="/care-management-app" className="text-[#4370B7] font-semibold text-sm hover:underline">
                 Home care app
               </a>
             </p>

@@ -146,7 +146,7 @@ export const SolutionsPage: React.FC = () => {
             Jump to the product areas owners and care managers usually weigh alongside role-based needs.
           </p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm">
-            <a href="/home-care-app" className="text-[#4370B7] font-semibold hover:underline">
+            <a href="/care-management-app" className="text-[#4370B7] font-semibold hover:underline">
               Home care app
             </a>
             <a href="/home-care-scheduling-software" className="text-[#4370B7] font-semibold hover:underline">

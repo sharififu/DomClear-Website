@@ -45,13 +45,13 @@ export const HomeCareAppPage: React.FC = () => {
       <section className="pt-32 pb-20 bg-gradient-to-br from-[#1a86f0] to-[#7c6df0] text-white">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-            Home care app
+            Care management app
           </span>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Home care app for UK domiciliary care agencies
+            Care management app for UK domiciliary care agencies
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            A practical home care management app for teams on the move and coordinators in the office. See schedules and
+            A practical care management app for teams on the move and coordinators in the office. See schedules and
             records with less friction than paper, scattered tools, or clunky software. Built as a domiciliary care app
             agencies can run day to day.
           </p>
@@ -327,7 +327,7 @@ export const HomeCareAppPage: React.FC = () => {
       <section className="py-20 bg-gradient-to-br from-[#1a86f0] to-[#7c6df0] text-white">
         <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready for a home care app your team will actually use?
+            Ready for a care management app your team will actually use?
           </h2>
           <p className="text-lg text-white/90 mb-10">
             DomiClear gives UK domiciliary agencies a practical app-led experience alongside powerful office tools, so

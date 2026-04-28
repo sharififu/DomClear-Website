@@ -204,7 +204,7 @@ export const PlatformPage: React.FC = () => {
             <a href="/emar-software" className="text-[#4370B7] font-semibold hover:underline">
               eMAR software
             </a>
-            <a href="/home-care-app" className="text-[#4370B7] font-semibold hover:underline">
+            <a href="/care-management-app" className="text-[#4370B7] font-semibold hover:underline">
               Home care app
             </a>
             <a href="/" className="text-[#4370B7] font-semibold hover:underline">

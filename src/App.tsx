@@ -20,7 +20,7 @@ import { HomeCareAppPage } from './pages/HomeCareAppPage';
 import { BirdieAlternativePage } from './pages/BirdieAlternativePage';
 import { analytics } from './utils/analytics';
 
-const CANONICAL_ORIGIN = 'https://domi-clear.com';
+const CANONICAL_ORIGIN = 'https://www.domi-clear.com';
 
 const DEFAULT_TITLE = 'Home Care Management App for UK Care Agencies | DomiClear';
 const DEFAULT_DESCRIPTION =
@@ -76,10 +76,10 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
     description:
       'Care planning software for UK agencies. Digital care plans, clearer updates, organised workflows, and easier team access with DomiClear.',
   },
-  '/home-care-app': {
-    title: 'Home Care App for UK Domiciliary Care Agencies | DomiClear',
+  '/care-management-app': {
+    title: 'Care Management App for UK Domiciliary Care Agencies | DomiClear',
     description:
-      'Home care app for UK domiciliary agencies: a practical home care management app and care app for agencies, with mobile-friendly visits and clearer office visibility. Start a free trial.',
+      'Care management app for UK domiciliary agencies: practical home care software for mobile-friendly visits, care records, scheduling, and clearer office visibility. Start a free trial.',
   },
   '/birdie-alternative': {
     title: 'Birdie Alternative for UK Domiciliary Care Agencies | DomiClear',
@@ -91,6 +91,14 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+  useEffect(() => {
+    if (window.location.pathname === '/home-care-app') {
+      const nextUrl = `/care-management-app${window.location.search}${window.location.hash}`;
+      window.history.replaceState({}, '', nextUrl);
+      setCurrentPath(window.location.pathname);
+    }
+  }, [currentPath]);
 
   useEffect(() => {
     const handlePopState = () => {
@@ -218,7 +226,7 @@ function App() {
         return <EmarSoftwarePage />;
       case '/care-planning-software':
         return <CarePlanningSoftwarePage />;
-      case '/home-care-app':
+      case '/care-management-app':
         return <HomeCareAppPage />;
       case '/birdie-alternative':
         return <BirdieAlternativePage />;
