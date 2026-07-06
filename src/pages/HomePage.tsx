@@ -2,13 +2,11 @@ import React from 'react';
 import { Hero } from '../components/Hero';
 import { FeatureOverview } from '../components/FeatureOverview';
 import { ComprehensiveFeatures } from '../components/ComprehensiveFeatures';
-import { TestimonialCard } from '../components/TestimonialCard';
 import { StatCard } from '../components/StatCard';
 import { Button } from '../components/Button';
 import { CQCOutcomes } from '../components/CQCOutcomes';
 import {
   outcomes,
-  testimonials,
   homepageTrustContent,
   homepageWhySwitchContent,
 } from '../data/content';
@@ -166,29 +164,6 @@ export const HomePage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {outcomes.map((stat, index) => (
               <StatCard key={index} stat={stat} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-[#FAFBFC] rounded-full text-xs font-bold text-[#4370B7] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
-              Testimonials
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Trusted by Care Agencies Across the UK
-            </h2>
-            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
-              UK domiciliary care providers use DomiClear to align rotas, visits, and records in one home care
-              management software stack.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <TestimonialCard key={index} testimonial={testimonial} />
             ))}
           </div>
         </div>
