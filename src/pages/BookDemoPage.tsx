@@ -8,7 +8,6 @@ export const BookDemoPage: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
-  const [viewMode, setViewMode] = useState<'form' | 'calendly'>('form');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -59,19 +58,6 @@ export const BookDemoPage: React.FC = () => {
       setIsSubmitting(false);
     }
   };
-
-  // Load Calendly script
-  React.useEffect(() => {
-    if (viewMode === 'calendly') {
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      document.body.appendChild(script);
-return () => {
-      if (script.parentNode) document.body.removeChild(script);
-    };
-    }
-  }, [viewMode]);
 
   if (submitted) {
     return (
@@ -139,35 +125,9 @@ return () => {
           <p className="text-sm text-[#4B5563]">No obligation · UK support · We respond within one business day</p>
         </div>
 
-        {/* Toggle between form and Calendly */}
-        <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 bg-white rounded-full p-1 border border-[rgba(20,30,60,0.08)] shadow-xs">
-            <button 
-              onClick={() => setViewMode('form')}
-              className={`px-6 py-2 rounded-full font-semibold text-sm transition-all ${
-                viewMode === 'form'
-                  ? 'bg-[#4370B7] text-white'
-                  : 'text-[#4B5563] hover:text-[#4370B7]'
-              }`}
-            >
-              Request a demo
-            </button>
-            <button 
-              onClick={() => setViewMode('calendly')}
-              className={`px-6 py-2 rounded-full font-semibold text-sm transition-all ${
-                viewMode === 'calendly'
-                  ? 'bg-[#4370B7] text-white'
-                  : 'text-[#4B5563] hover:text-[#4370B7]'
-              }`}
-            >
-              Pick a time now
-            </button>
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto mb-20">
           {/* Form version */}
-          <div className={`bg-white rounded-2xl p-8 border border-[rgba(20,30,60,0.08)] shadow-[0_6px_20px_rgba(10,20,40,0.06)] ${viewMode !== 'form' ? 'hidden' : ''}`}>
+          <div className="bg-white rounded-2xl p-8 border border-[rgba(20,30,60,0.08)] shadow-[0_6px_20px_rgba(10,20,40,0.06)]">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2ea0ff] to-[#7c6df0] flex items-center justify-center">
                 <CalendarDaysIcon className="w-6 h-6 text-white" />
@@ -303,22 +263,6 @@ return () => {
                 {isSubmitting ? 'Sending...' : 'Submit demo request'}
               </Button>
             </form>
-          </div>
-
-          {/* Calendly embed version */}
-          <div className={`bg-white rounded-2xl p-8 border border-[rgba(20,30,60,0.08)] shadow-[0_6px_20px_rgba(10,20,40,0.06)] ${viewMode !== 'calendly' ? 'hidden' : ''}`}>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2ea0ff] to-[#7c6df0] flex items-center justify-center">
-                <CalendarDaysIcon className="w-6 h-6 text-white" />
-              </div>
-              <h2 className="text-2xl font-bold text-[#0F172A]">Pick a time now</h2>
-            </div>
-            {/* Calendly inline embed - set VITE_CALENDLY_URL in .env or replace with your Calendly scheduling URL */}
-            <div 
-              className="calendly-inline-widget" 
-              data-url={import.meta.env.VITE_CALENDLY_URL || 'https://calendly.com/domiclear'} 
-              style={{ minWidth: '320px', height: '700px' }}
-            ></div>
           </div>
 
           <div className="space-y-6">
