@@ -77,6 +77,8 @@ export const Hero: React.FC = () => {
 
                 {/* Trust badges directly below CTAs */}
                 <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2 text-white/90 text-sm">
+                  <span className="font-semibold">Built for CQC &amp; Ofsted</span>
+                  <span className="text-white/60">•</span>
                   <span>Web, iOS & Android</span>
                   <span className="text-white/60">•</span>
                   <span>Clear audit trails</span>
@@ -92,8 +94,8 @@ export const Hero: React.FC = () => {
           {/* Images second in DOM; order-2 lg:order-1 keeps them left on desktop */}
           <div className="order-2 lg:order-1 flex justify-center lg:justify-start items-end relative z-0">
             {/* Starting Price Badge - Pill (matches pricing: £59/mo Launch plan) */}
-            <div className="absolute top-0 left-0 -translate-x-1/4 -translate-y-1/4 z-50">
-              <div className="inline-flex items-center justify-center px-5 py-2.5 sm:px-6 sm:py-3 rounded-[2rem] bg-gradient-to-r from-[#67e8f9] via-[#5eead4] to-[#4ade80] shadow-lg backdrop-blur-sm">
+            <div className="absolute top-0 left-0 -translate-y-1/4 z-50 flex flex-col items-start gap-1.5">
+              <div className="inline-flex items-center justify-center -translate-x-1/4 px-5 py-2.5 sm:px-6 sm:py-3 rounded-[2rem] bg-gradient-to-r from-[#67e8f9] via-[#5eead4] to-[#4ade80] shadow-lg backdrop-blur-sm">
                 <div className="flex flex-col items-center justify-center text-center">
                   <span className="text-white font-bold text-lg sm:text-xl md:text-2xl leading-tight">
                     From £59
@@ -103,6 +105,9 @@ export const Hero: React.FC = () => {
                   </span>
                 </div>
               </div>
+              <span className="inline-block px-3 py-1 rounded-full bg-[#0F172A]/70 backdrop-blur-sm border border-white/15 text-white text-[10px] sm:text-xs font-semibold leading-tight whitespace-nowrap shadow-sm">
+                Unlimited staff &amp; carers
+              </span>
             </div>
             <img
               src="/demo-media/Desktop-white.png"

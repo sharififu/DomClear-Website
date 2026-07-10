@@ -29,7 +29,7 @@ export const PricingPage: React.FC = () => {
             Home care software pricing for UK agencies
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            Transparent pricing for your care management app: pay per active service user, unlimited staff on every plan, all features included. DomiClear is designed as a more affordable home care software option for UK agencies that want a lower cost of entry — strong day-to-day workflows without the cost or complexity of larger platforms. Scale up or down anytime. No hidden costs.
+            Transparent pricing for your care management app: pay per active client (service user), unlimited staff on every plan, all features included. DomiClear is designed as a more affordable home care software option for UK agencies that want a lower cost of entry — strong day-to-day workflows without the cost or complexity of larger platforms. Scale up or down anytime. No hidden costs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Button
@@ -111,7 +111,7 @@ export const PricingPage: React.FC = () => {
           {/* Unit definition note */}
           <div className="mt-12 bg-[#FAFBFC] rounded-xl p-6 border border-[rgba(20,30,60,0.08)]">
             <p className="text-sm text-[#4B5563] leading-relaxed">
-              <strong className="text-[#0F172A]">What counts as an "active service user"?</strong> Any client with at least one scheduled or recorded visit in a billing month. Archived clients aren't billed.
+              <strong className="text-[#0F172A]">What counts as an "active client (service user)"?</strong> Any client with at least one scheduled or recorded visit in a billing month. Archived clients aren't billed.
             </p>
           </div>
 
@@ -123,7 +123,7 @@ export const PricingPage: React.FC = () => {
               {[
                 'Unlimited staff accounts',
                 'Unlimited family portal logins',
-                'Usage-based billing — costs track active service users',
+                'Usage-based billing — costs track active clients',
                 'iOS & Android carer apps',
                 'UK/EU data residency',
                 'Regular platform updates',
