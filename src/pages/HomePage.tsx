@@ -48,6 +48,8 @@ export const HomePage: React.FC = () => {
 
       <FeatureOverview />
 
+      <ComprehensiveFeatures />
+
       <section className="py-16 bg-white border-b border-[rgba(20,30,60,0.08)]" aria-labelledby="workflow-guides-heading">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2
@@ -147,8 +149,6 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
-
-      <ComprehensiveFeatures />
 
       <section className="py-20 bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
