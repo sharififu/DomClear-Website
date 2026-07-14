@@ -43,7 +43,7 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
   '/about': {
     title: 'About DomiClear | Home Care Software for UK Agencies',
     description:
-      'We build the home care management platform UK care agencies rely on—operational clarity, practical compliance support, empowered care teams. Learn about our mission and get in touch.',
+      'Discover DomiClear\'s mission to make enterprise-grade home care technology accessible to UK providers, with connected workflows and CQC-ready oversight for services in England.',
   },
   '/demo': {
     title: 'Try DomiClear | Interactive Home Care Software Demo',
