@@ -60,7 +60,7 @@ The site has a clear value proposition, strong CTAs (Start free trial, Book a de
 
 ### Legal & trust
 
-- **Footer:** "UK Company Registration pending" is visible; update when registration is complete.
+- **Footer:** Keep the registered company number and office address synchronized with the legal pages and Companies House record.
 - **Legal pages:** Links to `/legal`, `/legal/privacy`, `/legal/terms`, etc. point to LegalPage; ensure all linked documents exist under `public/legal/`.
 
 ---

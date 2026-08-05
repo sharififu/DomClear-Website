@@ -18,6 +18,7 @@ import { EmarSoftwarePage } from './pages/EmarSoftwarePage';
 import { CarePlanningSoftwarePage } from './pages/CarePlanningSoftwarePage';
 import { HomeCareAppPage } from './pages/HomeCareAppPage';
 import { BirdieAlternativePage } from './pages/BirdieAlternativePage';
+import { CompanyInformationPage } from './pages/CompanyInformationPage';
 import { analytics } from './utils/analytics';
 
 const CANONICAL_ORIGIN = 'https://www.domi-clear.com';
@@ -57,6 +58,10 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
     title: 'Contact DomiClear | Home Care Software for UK Agencies',
     description: 'Get in touch about the home care management app. Questions, demo requests or pricing—our UK team is here to help. We respond within one business day.',
   },
+  '/company-information': {
+    title: 'Company Information | DomiClear',
+    description: 'Legal and company information for DomiClear, operated by DOMICLEAR LTD, company number 17383911.',
+  },
   '/book-demo': {
     title: 'Book a Demo | Home Care Software for UK Agencies | DomiClear',
     description: 'Schedule a personalised demo of the home care management app. Our UK team will walk you through scheduling, eMAR, compliance and more. No obligation. Book a time or request a call.',
@@ -77,9 +82,9 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
       'Care planning software for UK agencies. Digital care plans, clearer updates, organised workflows, and easier team access with DomiClear.',
   },
   '/care-management-app': {
-    title: 'Care Management App for UK Domiciliary Care Agencies | DomiClear',
+    title: 'Care Management App & Healthcare Case Management Software | DomiClear',
     description:
-      'Care management app for UK domiciliary agencies: practical home care software for mobile-friendly visits, care records, scheduling, and clearer office visibility. Start a free trial.',
+      'Care management app for UK domiciliary care agencies. Connect schedules, care notes, eMAR, incidents and healthcare case management actions in one chronological care record.',
   },
   '/birdie-alternative': {
     title: 'Birdie Alternative for UK Domiciliary Care Agencies | DomiClear',
@@ -236,6 +241,8 @@ function App() {
         return <ContactPage />;
       case '/about':
         return <AboutPage />;
+      case '/company-information':
+        return <CompanyInformationPage />;
       case '/login':
         return <LoginPage />;
       case '/signup':

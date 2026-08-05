@@ -276,12 +276,18 @@ export const ContactPage: React.FC = () => {
                     <MapPinIcon className="w-5 h-5 text-[#1F6FEB]" />
                   </div>
                   <div>
-                    <p className="font-semibold text-[#0F172A]">Office</p>
-                    <p className="text-[#4B5563]">Derby, United Kingdom</p>
-                    <p className="text-sm text-[#4B5563]">Serving agencies across the UK</p>
+                    <p className="font-semibold text-[#0F172A]">Registered office</p>
+                    <p className="text-[#4B5563]">17 School Lane, Chellaston, Derby, DE73 6TF</p>
+                    <p className="text-sm text-[#4B5563]">DOMICLEAR LTD · Company No. 17383911</p>
                   </div>
                 </div>
               </div>
+              <p className="mt-5 border-t border-[rgba(20,30,60,0.08)] pt-4 text-sm leading-6 text-[#64748B]">
+                DomiClear is operated by DOMICLEAR LTD, registered in England and Wales.{' '}
+                <a href="/company-information" className="font-semibold text-[#4370B7] hover:underline">
+                  Company information
+                </a>
+              </p>
             </div>
 
             <div className="bg-gradient-to-br from-[#1F6FEB] to-[#14B8A6] rounded-2xl p-6 text-white">

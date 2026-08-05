@@ -4,8 +4,6 @@ import { FacebookLogo, LinkedInLogo } from './icons';
 import { EXTERNAL_SIGNUP_URL, EXTERNAL_LOGIN_URL } from '../constants/links';
 
 export const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className="bg-[#0F172A] text-white">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -183,15 +181,23 @@ export const Footer: React.FC = () => {
                   Service Level
                 </a>
               </li>
+              <li>
+                <a href="/company-information" className="text-white/70 hover:text-white transition-colors">
+                  Company information
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/60 text-sm">
-            © {currentYear} DomiClear Ltd. All rights reserved. UK Company Registration pending.
-          </p>
-          <div className="flex items-center gap-4 text-sm text-white/60">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-start gap-6">
+          <div className="max-w-2xl text-sm leading-6 text-white/65">
+            <p className="font-medium text-white/80">DomiClear is operated by DOMICLEAR LTD</p>
+            <p>Registered in England and Wales · Company No. 17383911</p>
+            <p>Registered office: 17 School Lane, Chellaston, Derby, DE73 6TF</p>
+            <p className="mt-2">© 2026 DOMICLEAR LTD. All rights reserved.</p>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white/60 md:justify-end">
             <span>UK/EU Data Residency</span>
             <span>•</span>
             <span>ISO 27001 Aligned</span>

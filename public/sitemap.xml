@@ -37,6 +37,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.domi-clear.com/company-information</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://www.domi-clear.com/demos</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -50,7 +56,7 @@
   </url>
   <url>
     <loc>https://www.domi-clear.com/care-management-app</loc>
-    <lastmod>2026-03-28</lastmod>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -80,13 +86,13 @@
   </url>
   <url>
     <loc>https://www.domi-clear.com/legal/privacy</loc>
-    <lastmod>2026-03-28</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.domi-clear.com/legal/terms</loc>
-    <lastmod>2026-03-28</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
