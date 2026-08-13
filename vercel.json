@@ -3,7 +3,9 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "redirects": [
-    { "source": "/home-care-app", "destination": "/care-management-app", "permanent": true }
+    { "source": "/home-care-app", "destination": "/care-management-app", "permanent": true },
+    { "source": "/legal/privacy.pdf", "destination": "/legal/privacy", "permanent": false },
+    { "source": "/legal/terms.pdf", "destination": "/legal/terms", "permanent": false }
   ],
   "rewrites": [
     { "source": "/((?!api/|assets/).*)", "destination": "/index.html" }
