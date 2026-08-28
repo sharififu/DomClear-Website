@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '../components/Button';
-import { CalendarDaysIcon, CheckCircleIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
-import { WhatsAppLogo } from '../components/icons';
+import { CalendarDaysIcon, CheckCircleIcon, ArrowRightIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
 export const BookDemoPage: React.FC = () => {
@@ -307,20 +306,18 @@ export const BookDemoPage: React.FC = () => {
 
             <div className="bg-gradient-to-br from-[#1F6FEB] to-[#14B8A6] rounded-2xl p-6 text-white">
               <h3 className="text-xl font-bold mb-2 flex items-center gap-2">
-                <WhatsAppLogo className="w-5 h-5 text-white" />
-                Prefer WhatsApp?
+                <DevicePhoneMobileIcon className="w-5 h-5 text-white" />
+                Prefer to call?
               </h3>
               <p className="text-white/90 mb-4">
-                Message our team with questions or to schedule a demo.
+                Call our team with questions or to schedule a demo.
               </p>
               <p className="text-lg font-semibold mb-1">
                 <a
-                  href="https://wa.me/447931010555"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="tel:+447350235868"
                   className="underline decoration-white/40 hover:decoration-white"
                 >
-                  +447931010555
+                  07350 235868
                 </a>
               </p>
               <p className="text-sm text-white/80">Monday–Friday, 9:00–17:00 GMT</p>
