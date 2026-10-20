@@ -317,7 +317,7 @@ export const BookDemoPage: React.FC = () => {
                   href="tel:+447350235868"
                   className="underline decoration-white/40 hover:decoration-white"
                 >
-                  07350 235868
+                  +44 7350 235868
                 </a>
               </p>
               <p className="text-sm text-white/80">Monday–Friday, 9:00–17:00 GMT</p>
