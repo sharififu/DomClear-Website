@@ -30,7 +30,7 @@ The site has a clear value proposition, strong CTAs (Start free trial, Book a de
 
 ### Conversion & CTAs
 
-- **Navbar:** Consider adding a visible phone number (e.g. "0800 123 4567") for high-intent users.
+- **Navbar:** Consider adding the business phone number (+44 7350 235868) for high-intent users.
 - **Pricing:** Ensure "Contact sales" for Enterprise clearly leads to `/contact` or a pre-filled subject.
 - **Login / Subscribe:** "Complete subscription" on Login page is a fake form; consider linking to `EXTERNAL_SIGNUP_URL` with a `?plan=...` query for the selected tier so users complete signup on the real app.
 - **Forgot password:** Login page "Forgot password?" uses `#forgot-password` (no route). Link to `EXTERNAL_LOGIN_URL` with a hash or path for password reset if the app supports it.
@@ -39,7 +39,7 @@ The site has a clear value proposition, strong CTAs (Start free trial, Book a de
 
 - **Calendly:** Replace `CALENDLY_USERNAME` in BookDemoPage with a real Calendly username, or use an env var (e.g. `VITE_CALENDLY_URL`) and document in `.env.example`.
 - **Contact email/domain:** Footer, contact page, and Organization JSON-LD use `info@domi-clear.com`; marketing site URLs use `https://www.domi-clear.com`. Product signup/login remain on `domiclear.app` via `constants/links.ts`.
-- **Phone number:** Placeholder "0800 123 4567" appears in BookDemoPage and ContactPage; replace with the real support number before launch.
+- **Phone number:** BookDemoPage and ContactPage display the business number +44 7350 235868 with working click-to-call links.
 
 ### SEO & meta
 

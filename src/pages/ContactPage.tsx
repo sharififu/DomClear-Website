@@ -248,7 +248,7 @@ export const ContactPage: React.FC = () => {
                         href="tel:+447350235868"
                         className="text-[#1F6FEB] hover:underline"
                       >
-                        07350 235868
+                        +44 7350 235868
                       </a>
                     </p>
                     <p className="text-sm text-[#4B5563]">Monday–Friday, 9:00–17:00 GMT</p>
