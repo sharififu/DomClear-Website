@@ -16,54 +16,54 @@ const featureDemoMap: {
 } = {
   'care-planning': {
     video: '/demo-media/demo-care-planning.mp4',
-    deepLink: '/demos#care-planning',
-    deepLinkText: 'View care planning →',
+    deepLink: '/tutorials',
+    deepLinkText: 'Tutorial videos →',
   },
   'form-templates': {
     image: '/demo-media/demo-form-templates.png',
-    deepLink: '/demos#form-templates',
-    deepLinkText: 'Try form builder →'
+    deepLink: '/tutorials',
+    deepLinkText: 'Tutorial videos →'
   },
   'scheduling': {
     video: '/demo-media/demo-shift-management.mp4',
-    deepLink: '/demos#scheduling',
-    deepLinkText: 'See rota conflict detection →',
+    deepLink: '/tutorials',
+    deepLinkText: 'Tutorial videos →',
   },
   'carer-app': {
     image: '/demo-media/demo-carer-mobile-visit-scheduled.png',
-    deepLink: '/demos#emar',
-    deepLinkText: 'Try MAR entry →',
+    deepLink: '/tutorials',
+    deepLinkText: 'Tutorial videos →',
   },
   'compliance': {
     image: '/demo-media/demo-compliance-intelligence-dashboard.png',
-    deepLink: '/demos#compliance',
-    deepLinkText: 'View CQC exports →',
+    deepLink: '/tutorials',
+    deepLinkText: 'Tutorial videos →',
   },
   'team': {
     image: '/demo-media/demo-patient-management.png',
-    deepLink: '/demos',
-    deepLinkText: 'View team management →'
+    deepLink: '/tutorials',
+    deepLinkText: 'Tutorial videos →'
   },
   'finance': {
     image: '/demo-media/demo-payroll-financial-management.png',
-    deepLink: '/demos#finance',
-    deepLinkText: 'See financial reports →'
+    deepLink: '/tutorials',
+    deepLinkText: 'Tutorial videos →'
   },
   'family': {
     image: '/demo-media/demo-family-portal-reports.png',
-    deepLink: '/demos',
-    deepLinkText: 'View family portal →',
+    deepLink: '/tutorials',
+    deepLinkText: 'Tutorial videos →',
   },
   'analytics': {
     image: '/demo-media/demo-reports-intelligence.png',
-    deepLink: '/demos#compliance',
-    deepLinkText: 'See reports & analytics →',
+    deepLink: '/tutorials',
+    deepLinkText: 'Tutorial videos →',
   },
   'security': {
     video: '/demo-media/demo-audit-dashboard.mp4',
     videoAriaLabel: 'Audit and reporting dashboard in DomiClear',
-    deepLink: '/demos',
-    deepLinkText: 'Learn about security →',
+    deepLink: '/tutorials',
+    deepLinkText: 'Tutorial videos →',
   },
 };
 
@@ -174,8 +174,8 @@ export const PlatformPage: React.FC = () => {
                   <div className="w-full aspect-video bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC] rounded-2xl border border-[rgba(20,30,60,0.08)] flex items-center justify-center">
                     <div className="text-center">
                       <span className="block text-[#0F172A] font-semibold mb-2">{feature.title}</span>
-                      <a href={`/demos#${feature.id}`} className="text-[#4370B7] hover:underline text-sm">
-                        View guided demo
+                      <a href="/tutorials" className="text-[#4370B7] hover:underline text-sm">
+                        Tutorial videos
                       </a>
                     </div>
                   </div>

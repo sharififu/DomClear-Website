@@ -76,7 +76,13 @@ export const Navbar: React.FC = () => {
   }, [isMobileMenuOpen]);
 
   // On demo pages, always show white background
-  const isDemoPage = currentPath === '/demo' || currentPath === '/demos' || currentPath === '/book-demo' || currentPath === '/demo-fullscreen';
+  const isDemoPage =
+    currentPath === '/tutorials' ||
+    currentPath === '/demo' ||
+    currentPath === '/demos' ||
+    currentPath === '/book-demo' ||
+    currentPath === '/demo-fullscreen' ||
+    currentPath === '/care-management-app';
   const shouldShowWhite = isDemoPage || isScrolled;
 
   return (

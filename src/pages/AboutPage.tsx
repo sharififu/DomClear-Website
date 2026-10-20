@@ -139,6 +139,14 @@ export const AboutPage: React.FC = () => {
               That experience shaped the platform we wanted to use: powerful enough for a complex care service, but
               straightforward and affordable enough for a growing independent provider.
             </p>
+            <p className="text-base text-[#64748B]">
+              DomiClear is developed and operated by DOMICLEAR LTD, registered in England and Wales under company
+              number 17383911.{' '}
+              <a href="/company-information" className="font-semibold text-[#4370B7] hover:underline">
+                View company information
+              </a>
+              .
+            </p>
           </div>
         </div>
       </section>

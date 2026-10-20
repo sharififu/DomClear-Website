@@ -28,10 +28,10 @@ export const navigation: NavItem[] = [
   },
   { label: 'Pricing', href: '/pricing' },
   {
-    label: 'Demo',
-    href: '/demos',
+    label: 'Tutorials',
+    href: '/tutorials',
     children: [
-      { label: 'Interactive Demo', href: '/demos' },
+      { label: 'Tutorial Videos', href: '/tutorials' },
       { label: 'Book a Demo', href: '/book-demo' },
     ],
   },

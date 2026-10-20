@@ -1,357 +1,308 @@
 import React from 'react';
 import {
   ArrowRightIcon,
+  CameraIcon,
   CheckCircleIcon,
-  DevicePhoneMobileIcon,
-  EyeIcon,
-  ArrowsRightLeftIcon,
+  ClipboardDocumentCheckIcon,
   ClipboardDocumentListIcon,
+  ClockIcon,
+  DevicePhoneMobileIcon,
+  MapPinIcon,
+  MicrophoneIcon,
+  ShieldCheckIcon,
+  SignalIcon,
+  WifiIcon,
 } from '@heroicons/react/24/outline';
-import { Button } from '../components/Button';
-import { FAQAccordion } from '../components/FAQAccordion';
-import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
-const homeCareAppFaqItems = [
+const phoneMockup = '/demo-media/care-app-figma-phone.png';
+const mapOfflineMockup = '/demo-media/care-app-figma-map-offline.png';
+const dashboardMockup = '/demo-media/care-app-figma-dashboard.png';
+const careAppDemoVideo = '/demo-media/careapp-demo.mp4';
+
+const featureCards = [
   {
-    question: 'What is a home care app?',
-    answer:
-      'A home care app is software carers and office teams use on mobile devices to access schedules, care information, and records during domiciliary visits, with less reliance on paper or scattered messages.',
+    icon: ClockIcon,
+    title: 'Clear Daily Schedules',
+    text: 'See exactly where to go, when to be there, and who needs care. Real-time updates mean no more calling the office.',
   },
   {
-    question: 'Is DomiClear suitable for domiciliary care agencies?',
-    answer:
-      'Yes. DomiClear is built for UK domiciliary care agencies and supports practical day-to-day use in the field and coordination from the office.',
+    icon: ClipboardDocumentListIcon,
+    title: 'Step-by-Step Tasks',
+    text: 'Mandatory and optional tasks clearly laid out. Ensure care plans are followed perfectly every single visit.',
   },
   {
-    question: 'Can carers and managers both use it?',
-    answer:
-      'Carers typically use the mobile app for visits, while coordinators and managers use the web experience for oversight, planning, and administration. Everyone works from connected information.',
+    icon: MicrophoneIcon,
+    title: 'Voice-to-Text Notes',
+    text: 'Dictate detailed care notes instantly. Our intelligent system captures tone and details without typing.',
   },
   {
-    question: 'Does it help replace paper and fragmented systems?',
-    answer:
-      'DomiClear helps agencies move routine coordination and record access into one home care software app workflow, reducing dependence on loose paper and disconnected chat threads.',
+    icon: ShieldCheckIcon,
+    title: 'Safe eMAR Logging',
+    text: 'Clear prompts for PRN and scheduled meds. Prevent errors before they happen with built-in safety alerts.',
   },
   {
-    question: 'Can I try it before booking a full demo?',
-    answer:
-      'Yes. Start a free trial to explore the app in your own context, or book a demo if you prefer a guided walkthrough.',
+    icon: CameraIcon,
+    title: 'Secure Photo Capture',
+    text: 'Snap photos of wounds or household hazards securely within the app. Nothing saves to the personal camera roll.',
   },
+  {
+    icon: MapPinIcon,
+    title: 'GPS Clock In/Out',
+    text: 'Automatic geofencing ensures accurate visit times. Protects carers and provides transparency for families.',
+  },
+];
+
+const pocketBenefits = [
+  {
+    icon: ClipboardDocumentCheckIcon,
+    title: 'Clear Daily Schedules',
+    text: 'See exactly where to go, when to be there, and who needs care. Real-time updates mean no more calling the office.',
+  },
+  {
+    icon: MapPinIcon,
+    title: 'GPS Clock In/Out',
+    text: 'Automatic geofencing ensures accurate visit times. Protects carers and provides transparency for families.',
+  },
+  {
+    icon: DevicePhoneMobileIcon,
+    title: 'Interactive Body Maps',
+    text: 'Visually track and update physical conditions and wound care directly on the app.',
+  },
+];
+
+const managerBullets = [
+  'See instantly when visits start, run late, or are completed.',
+  'Receive immediate alerts for missed medications or urgent notes.',
+  'Ensure full compliance with automatic audit trails for CQC inspections.',
 ];
 
 export const HomeCareAppPage: React.FC = () => {
   return (
-    <div>
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#1a86f0] to-[#7c6df0] text-white">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold uppercase tracking-wider mb-6">
-            Care management app
-          </span>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Care management app for UK domiciliary care agencies
-          </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            A practical care management app for teams on the move and coordinators in the office. See schedules and
-            records with less friction than paper, scattered tools, or clunky software. Built as a domiciliary care app
-            agencies can run day to day.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
-            <Button
-              variant="secondary"
-              size="lg"
-              href={EXTERNAL_SIGNUP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
-            >
-              Start free trial
-              <ArrowRightIcon className="w-5 h-5" />
-            </Button>
-            <Button
-              variant="secondary"
-              size="lg"
-              href="/book-demo"
-              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
-            >
-              Book a demo
-            </Button>
+    <div className="bg-[#f8f9ff] text-[#0b1c30]">
+      <section className="relative overflow-hidden pt-32 pb-20 lg:pb-28">
+        <div className="absolute inset-0 bg-[linear-gradient(147deg,#dce9ff_0%,#f8f9ff_52%,#f8f9ff_100%)]" />
+        <div className="absolute -right-32 -top-32 h-96 w-96 rounded-full bg-[#004ac6]/5 blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-[#006686]/5 blur-3xl" />
+
+        <div className="relative mx-auto grid max-w-[1280px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+          <div className="max-w-2xl text-center lg:text-left">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d3e4fe] bg-[#e5eeff] px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#434655] shadow-sm">
+              <SignalIcon className="h-4 w-4 text-[#2563eb]" />
+              Built for all care providers
+            </div>
+
+            <h1 className="mb-6 text-4xl font-bold leading-tight tracking-[-0.02em] text-[#0b1c30] sm:text-5xl lg:text-[48px] lg:leading-[1.15]">
+              The Home Care App That Cares!
+            </h1>
+
+            <p className="mx-auto mb-8 max-w-xl text-base leading-8 text-[#434655] sm:text-lg lg:mx-0">
+              Give your care team a mobile tool they&apos;ll actually love using. DomiClear streamlines schedules,
+              tasks, and eMAR so carers can focus on what matters: the person in front of them.
+            </p>
+
+            <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+              <a
+                href="/tutorials"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#004ac6] to-[#003ea8] px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-[#2563eb]/20 transition-transform hover:-translate-y-0.5"
+              >
+                Tutorial videos
+                <ArrowRightIcon className="h-4 w-4" />
+              </a>
+              <a
+                href="#features"
+                className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[#c3c6d7] bg-[#f8f9ff] px-8 py-3 text-sm font-semibold text-[#0b1c30] shadow-sm transition-colors hover:bg-white"
+              >
+                View Carer Testimonials
+              </a>
+            </div>
           </div>
-          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
+
+          <div className="relative mx-auto h-[520px] w-full max-w-[520px] lg:h-[600px]">
+            <div className="absolute left-0 top-20 z-20 hidden items-center gap-3 rounded-lg border border-[#e5eeff] bg-white p-3 shadow-[0_12px_32px_-8px_rgba(37,99,235,0.18)] sm:flex">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#d1fae5]">
+                <CheckCircleIcon className="h-4 w-4 text-[#16a34a]" />
+              </span>
+              <span>
+                <span className="block text-sm text-[#0b1c30]">Visit Completed</span>
+                <span className="block text-[11px] text-[#434655]">Arthur P. - 09:48 AM</span>
+              </span>
+            </div>
+
+            <div className="absolute right-0 top-72 z-20 hidden items-center gap-3 rounded-lg border border-[#e5eeff] bg-white p-3 shadow-[0_12px_32px_-8px_rgba(37,99,235,0.18)] sm:flex">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#fef3c7]">
+                <ShieldCheckIcon className="h-4 w-4 text-[#d97706]" />
+              </span>
+              <span>
+                <span className="block text-sm text-[#0b1c30]">Medication Reviewed</span>
+                <span className="block text-[11px] text-[#434655]">Signed by Mary</span>
+              </span>
+            </div>
+
+            <div className="absolute left-1/2 top-0 h-full w-[300px] -translate-x-1/2 rounded-[40px] border-8 border-[#dce9ff] bg-white px-5 py-4 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] sm:w-[324px]">
+              <img
+                src={phoneMockup}
+                alt="DomiClear home care app visit screen"
+                className="h-full w-full rounded-[28px] object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white" aria-labelledby="why-app-heading">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 id="why-app-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Why agencies need a better home care app
-            </h2>
-            <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              Domiciliary care depends on clear information at the point of care. When the app experience is weak, teams
-              fall back to workarounds that create extra admin and uneven visibility.
-            </p>
+      <section className="bg-white py-20 lg:py-24" aria-labelledby="pocket-heading">
+        <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+          <div className="order-2 mx-auto w-full max-w-[620px] lg:order-1">
+            <video
+              className="block h-auto w-full rounded-2xl shadow-[0_25px_50px_-12px_rgba(0,0,0,0.18)]"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+              aria-label="DomiClear care app demo video"
+            >
+              <source src={careAppDemoVideo} type="video/mp4" />
+            </video>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              'Carers juggling paper, photos, and messages to piece together what matters on a visit',
-              'Coordinators unable to see a joined-up picture of the day without multiple tools',
-              'Care record access that is slow or awkward on mobile when time is tight',
-              'Office and field teams working from different snapshots of the same situation',
-            ].map((item) => (
-              <div key={item} className="rounded-2xl border border-[rgba(20,30,60,0.08)] bg-[#FAFBFC] p-6">
-                <p className="text-[#0F172A] font-medium">{item}</p>
+
+          <div className="order-1 lg:order-2">
+            <h2 id="pocket-heading" className="mb-6 max-w-lg text-4xl font-bold leading-tight tracking-[-0.01em] text-[#0b1c30]">
+              Everything a carer needs in their pocket
+            </h2>
+            <p className="mb-10 max-w-xl text-lg leading-8 text-[#444653]">
+              Everything a carer needs to know, right in their hand. Immediate access to critical information ensures
+              confident, easy, swift personalised care.
+            </p>
+
+            <div className="space-y-8">
+              {pocketBenefits.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="flex gap-4">
+                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#e5eeff] text-[#004ac6]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <h3 className="mb-1 text-sm font-bold tracking-[0.04em] text-[#0b1c30]">{item.title}</h3>
+                      <p className="max-w-lg text-base leading-6 text-[#434655]">{item.text}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#f8f9ff] py-20 lg:py-24" aria-labelledby="secure-heading">
+        <div className="mx-auto grid max-w-[1050px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-10">
+          <div>
+            <h2 id="secure-heading" className="mb-6 max-w-md text-4xl font-bold leading-tight tracking-[-0.01em] text-[#004ac6]">
+              Secure, reliable, always connected
+            </h2>
+            <p className="mb-10 max-w-xl text-lg leading-8 text-[#434655]">
+              Built for the realities of field work. Ensures safety for carers and uninterrupted service delivery
+              regardless of connectivity.
+            </p>
+
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <div className="rounded-xl border border-[#e5eeff] bg-white p-6 shadow-[0_4px_18px_-10px_rgba(37,99,235,0.35)]">
+                <MapPinIcon className="mb-4 h-7 w-7 text-[#2563eb]" />
+                <h3 className="mb-2 text-sm font-semibold text-[#0b1c30]">GPS Verification</h3>
+                <p className="text-sm leading-6 text-[#434655]">
+                  Automated check-ins safeguard carer location and verify visit compliance.
+                </p>
               </div>
-            ))}
+              <div className="rounded-xl border border-[#e5eeff] bg-white p-6 shadow-[0_4px_18px_-10px_rgba(37,99,235,0.35)]">
+                <WifiIcon className="mb-4 h-7 w-7 text-[#2563eb]" />
+                <h3 className="mb-2 text-sm font-semibold text-[#0b1c30]">Robust Offline Mode</h3>
+                <p className="text-sm leading-6 text-[#434655]">
+                  Full access to care plans and note-taking even in zero-signal areas. Syncs automatically.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mx-auto flex min-h-[520px] w-full max-w-[500px] items-center justify-center">
+            <div className="absolute h-[390px] w-[390px] rounded-[64px] bg-[#dce9ff]/70 rotate-12" />
+            <div className="relative h-[560px] w-[280px] overflow-hidden rounded-[32px] border-4 border-[#f9f9fc] bg-white shadow-[0_15px_40px_rgba(3,52,165,0.15)]">
+              <img
+                src={mapOfflineMockup}
+                alt="DomiClear map and offline mode"
+                className="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-[#F8FAFC]" aria-labelledby="benefits-heading">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 id="benefits-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Core benefits of a care app for agencies
-            </h2>
-            <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              DomiClear is designed as practical home care software app experience: mobile-friendly where visits happen,
-              clearer for managers who need visibility without chasing updates.
-            </p>
+      <section className="bg-white py-20 lg:py-24" aria-labelledby="manager-heading">
+        <div className="mx-auto max-w-[1232px] px-6">
+          <div className="grid grid-cols-1 items-center gap-12 rounded-3xl border border-[#e5eeff] bg-[#f8f9ff] p-6 shadow-[0_12px_32px_-8px_rgba(37,99,235,0.12)] md:p-12 lg:grid-cols-2">
+            <div>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-[#004ac6]">For managers</p>
+              <h2 id="manager-heading" className="mb-6 max-w-lg text-3xl font-semibold leading-tight tracking-[-0.01em] text-[#0b1c30] sm:text-4xl">
+                CQC compliance software MANAGEMENT
+              </h2>
+              <p className="mb-8 max-w-xl text-lg leading-8 text-[#444653]">
+                When a carer reports a fall, medication error or safeguarding concern, DomiClear doesn&apos;t just file
+                it. Every incident lands on the client&apos;s chronological care timeline and instantly generates the
+                follow-up actions your inspectors expect to see.
+              </p>
+
+              <ul className="space-y-4">
+                {managerBullets.map((bullet) => (
+                  <li key={bullet} className="flex gap-3 text-base leading-6 text-[#434655]">
+                    <CheckCircleIcon className="mt-0.5 h-5 w-5 shrink-0 text-[#004ac6]" />
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="relative mx-auto w-full max-w-[514px]">
+              <div className="overflow-hidden rounded-xl border border-[#e5eeff] bg-white shadow-lg">
+                <img
+                  src={dashboardMockup}
+                  alt="DomiClear dashboard showing care data"
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute -bottom-6 left-4 flex items-center gap-4 rounded-xl border border-[#e5eeff] bg-white p-4 shadow-[0_4px_24px_-4px_rgba(37,99,235,0.18)] sm:-left-6">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#dcfce7]">
+                  <CheckCircleIcon className="h-5 w-5 text-[#16a34a]" />
+                </span>
+                <span>
+                  <span className="block text-xl font-semibold leading-none text-[#0b1c30]">100%</span>
+                  <span className="block text-[10px] uppercase tracking-wide text-[#434655]">Compliance tracked</span>
+                </span>
+              </div>
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                icon: DevicePhoneMobileIcon,
-                title: 'Easier day-to-day use on the go',
-                text: 'Access what you need for visits without wrestling with awkward mobile workflows.',
-              },
-              {
-                icon: ClipboardDocumentListIcon,
-                title: 'Clearer access to records and schedules',
-                text: 'Bring routine information into one place so carers spend less time hunting for context.',
-              },
-              {
-                icon: EyeIcon,
-                title: 'Better visibility for teams',
-                text: 'Help coordinators and managers see progress and gaps with less manual chasing.',
-              },
-              {
-                icon: ArrowsRightLeftIcon,
-                title: 'More joined-up workflows',
-                text: 'Reduce handover friction between office planning and doorstep delivery.',
-              },
-            ].map((item) => {
+        </div>
+      </section>
+
+      <section id="features" className="border-t border-[#dce9ff] bg-[#f8f9ff] py-20 lg:py-24" aria-labelledby="features-heading">
+        <div className="mx-auto max-w-[1280px] px-6">
+          <h2 id="features-heading" className="mb-16 text-center text-3xl font-semibold tracking-[-0.01em] text-[#0b1c30]">
+            Everything a carer needs in their pocket
+          </h2>
+
+          <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+            {featureCards.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="bg-white rounded-2xl border border-[rgba(20,30,60,0.08)] p-6">
-                  <div className="w-12 h-12 rounded-full bg-[#e6f7ff] flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-[#4370B7]" />
+                <article key={item.title}>
+                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#2563eb] text-white">
+                    <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-2">{item.title}</h3>
-                  <p className="text-[#4B5563]">{item.text}</p>
-                </div>
+                  <h3 className="mb-2 text-lg font-normal text-[#0b1c30]">{item.title}</h3>
+                  <p className="text-base leading-6 text-[#434655]">{item.text}</p>
+                </article>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white" aria-labelledby="connected-heading">
-        <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 id="connected-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-            How DomiClear helps carers, coordinators, and managers stay connected
-          </h2>
-          <p className="text-lg text-[#4B5563] mb-8">
-            An app for domiciliary care agencies should connect roles without duplicating work. Carers get structured visit
-            support; coordinators get operational clarity; managers get a clearer line of sight across the week.
-          </p>
-          <ul className="space-y-4">
-            {[
-              'Scheduling visibility so teams know where they need to be and what is changing',
-              'Care planning access so visit context is easier to find before and during care',
-              'Medication visibility in line with your eMAR workflow, without turning this page into a medication deep dive',
-              'Less admin friction from re-keying the same detail across separate channels',
-            ].map((point) => (
-              <li key={point} className="flex items-start gap-3">
-                <CheckCircleIcon className="w-6 h-6 text-[#4370B7] flex-shrink-0 mt-0.5" />
-                <span className="text-[#374151]">{point}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#F8FAFC]" aria-labelledby="visual-heading">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 id="visual-heading" className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-4">
-              Home care app on mobile, clarity on the web for the office
-            </h2>
-            <p className="text-lg text-[#4B5563] max-w-2xl mx-auto">
-              The same domiciliary care app experience scales from the doorstep to the coordinator desk, so teams are not
-              working from different versions of the day.
-            </p>
-          </div>
-          <div className="space-y-6">
-            <div className="rounded-2xl border border-[rgba(20,30,60,0.08)] overflow-hidden shadow-lg bg-white">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-0">
-                <div className="p-4 flex items-center justify-center bg-[#FAFBFC]">
-                  <img
-                    src="/demo-media/Mobile-white.png"
-                    alt="DomiClear home care app on mobile"
-                    className="max-w-full h-auto object-contain max-h-80"
-                  />
-                </div>
-                <div className="p-4 flex items-center justify-center">
-                  <img
-                    src="/demo-media/Desktop-white.png"
-                    alt="DomiClear web for coordinators and managers"
-                    className="max-w-full h-auto object-contain max-h-72"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="bg-white rounded-2xl border border-[rgba(20,30,60,0.08)] p-6">
-              <p className="text-[#0F172A] font-semibold mb-2">Explore related workflows</p>
-              <p className="text-[#4B5563] mb-4">
-                This page focuses on the app experience. Use these links for feature-specific detail.
-              </p>
-              <div className="flex flex-wrap gap-x-4 gap-y-2">
-                <a href="/" className="text-[#4370B7] font-semibold hover:underline">
-                  Homepage
-                </a>
-                <a href="/platform" className="text-[#4370B7] font-semibold hover:underline">
-                  Platform
-                </a>
-                <a href="/home-care-scheduling-software" className="text-[#4370B7] font-semibold hover:underline">
-                  Scheduling software
-                </a>
-                <a href="/care-planning-software" className="text-[#4370B7] font-semibold hover:underline">
-                  Care planning software
-                </a>
-                <a href="/emar-software" className="text-[#4370B7] font-semibold hover:underline">
-                  eMAR software
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-white" aria-labelledby="switch-heading">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 id="switch-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Why agencies switch from fragmented systems and outdated tools
-            </h2>
-            <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              When every visit depends on a patchwork of tools, small delays add up. A focused home care management app
-              brings routine coordination into a clearer daily rhythm.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                before: 'Before: Information trapped in paper folders and ad hoc messages',
-                after: 'After: A structured app workflow carers can use on shift',
-              },
-              {
-                before: 'Before: Coordinators rebuilding the day from partial updates',
-                after: 'After: Better visibility of visits, changes, and handover context',
-              },
-              {
-                before: 'Before: Older apps that feel slow or unintuitive on mobile',
-                after: 'After: A more practical mobile-friendly experience for domiciliary work',
-              },
-              {
-                before: 'Before: Duplicate admin across separate systems',
-                after: 'After: More joined-up records and scheduling context in one platform',
-              },
-            ].map((item) => (
-              <div key={item.before} className="bg-white rounded-2xl border border-[rgba(20,30,60,0.08)] p-6">
-                <p className="text-sm uppercase tracking-wide text-[#64748B] font-semibold mb-2">Before</p>
-                <p className="text-[#0F172A] font-medium mb-4">{item.before.replace('Before: ', '')}</p>
-                <p className="text-sm uppercase tracking-wide text-[#4370B7] font-semibold mb-2">After</p>
-                <p className="text-[#4B5563]">{item.after.replace('After: ', '')}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#F8FAFC]">
-        <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">
-            Start a free trial and put the app in your team&apos;s hands
-          </h2>
-          <p className="text-lg text-[#4B5563] mb-10">
-            See how DomiClear fits real domiciliary workflows before you commit to a longer rollout conversation.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="primary" size="lg" href={EXTERNAL_SIGNUP_URL} target="_blank" rel="noreferrer">
-              Start free trial
-            </Button>
-            <Button
-              variant="secondary"
-              size="lg"
-              href="/book-demo"
-              className="border-[#0F172A]/20 text-[#0F172A] hover:bg-[#0F172A]/5"
-            >
-              Book a demo
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#FAFBFC]" aria-labelledby="faq-heading">
-        <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 id="faq-heading" className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">
-              Frequently asked questions
-            </h2>
-            <p className="text-lg text-[#4B5563]">
-              Need more detail?{' '}
-              <a href="/contact" className="text-[#4370B7] font-semibold hover:underline">
-                Contact our team
-              </a>{' '}
-              or{' '}
-              <a href="/book-demo" className="text-[#4370B7] font-semibold hover:underline">
-                book a demo
-              </a>
-              .
-            </p>
-          </div>
-          <FAQAccordion items={homeCareAppFaqItems} />
-        </div>
-      </section>
-
-      <section className="py-20 bg-gradient-to-br from-[#1a86f0] to-[#7c6df0] text-white">
-        <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready for a care management app your team will actually use?
-          </h2>
-          <p className="text-lg text-white/90 mb-10">
-            DomiClear gives UK domiciliary agencies a practical app-led experience alongside powerful office tools, so
-            day-to-day coordination stays clearer for everyone.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button
-              variant="secondary"
-              size="lg"
-              href={EXTERNAL_SIGNUP_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
-            >
-              Start free trial
-            </Button>
-            <Button
-              variant="secondary"
-              size="lg"
-              href="/book-demo"
-              className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
-            >
-              Book a demo
-            </Button>
           </div>
         </div>
       </section>

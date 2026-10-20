@@ -5,9 +5,8 @@ import { Footer } from './components/Footer';
 import { HomePage } from './pages/HomePage';
 import { PlatformPage } from './pages/PlatformPage';
 import { PricingPage } from './pages/PricingPage';
-import { DemoPage } from './pages/DemoPage';
+import { TutorialsPage } from './pages/TutorialsPage';
 import { BookDemoPage } from './pages/BookDemoPage';
-import { FullScreenDemoPage } from './pages/FullScreenDemoPage';
 import { ContactPage } from './pages/ContactPage';
 import { SolutionsPage } from './pages/SolutionsPage';
 import { LoginPage } from './pages/LoginPage';
@@ -18,6 +17,7 @@ import { EmarSoftwarePage } from './pages/EmarSoftwarePage';
 import { CarePlanningSoftwarePage } from './pages/CarePlanningSoftwarePage';
 import { HomeCareAppPage } from './pages/HomeCareAppPage';
 import { BirdieAlternativePage } from './pages/BirdieAlternativePage';
+import { CompanyInformationPage } from './pages/CompanyInformationPage';
 import { analytics } from './utils/analytics';
 
 const CANONICAL_ORIGIN = 'https://www.domi-clear.com';
@@ -45,17 +45,25 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
     description:
       'Discover DomiClear\'s mission to make enterprise-grade home care technology accessible to UK providers, with connected workflows and CQC-ready oversight for services in England.',
   },
+  '/tutorials': {
+    title: 'DomiClear Tutorial Videos | Home Care Software',
+    description: 'Explore DomiClear tutorial videos for UK care teams, or book a personalised walkthrough with our team.',
+  },
   '/demo': {
-    title: 'Try DomiClear | Interactive Home Care Software Demo',
-    description: 'Try the home care management app with interactive demos. Explore scheduling, eMAR, compliance and more—no login required. Built for UK care agencies. Start a free trial or book a demo.',
+    title: 'DomiClear Tutorial Videos | Home Care Software',
+    description: 'Explore DomiClear tutorial videos for UK care teams, or book a personalised walkthrough with our team.',
   },
   '/demos': {
-    title: 'Try DomiClear | Interactive Home Care Software Demo',
-    description: 'Try the home care management app with interactive demos. Explore scheduling, eMAR, compliance and more—no login required. Built for UK care agencies. Start a free trial or book a demo.',
+    title: 'DomiClear Tutorial Videos | Home Care Software',
+    description: 'Explore DomiClear tutorial videos for UK care teams, or book a personalised walkthrough with our team.',
   },
   '/contact': {
     title: 'Contact DomiClear | Home Care Software for UK Agencies',
     description: 'Get in touch about the home care management app. Questions, demo requests or pricing—our UK team is here to help. We respond within one business day.',
+  },
+  '/company-information': {
+    title: 'Company Information | DomiClear',
+    description: 'Legal and company information for DomiClear, operated by DOMICLEAR LTD, company number 17383911.',
   },
   '/book-demo': {
     title: 'Book a Demo | Home Care Software for UK Agencies | DomiClear',
@@ -77,9 +85,9 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
       'Care planning software for UK agencies. Digital care plans, clearer updates, organised workflows, and easier team access with DomiClear.',
   },
   '/care-management-app': {
-    title: 'Care Management App for UK Domiciliary Care Agencies | DomiClear',
+    title: 'Care Management App & Healthcare Case Management Software | DomiClear',
     description:
-      'Care management app for UK domiciliary agencies: practical home care software for mobile-friendly visits, care records, scheduling, and clearer office visibility. Start a free trial.',
+      'Care management app for UK domiciliary care agencies. Connect schedules, care notes, eMAR, incidents and healthcare case management actions in one chronological care record.',
   },
   '/birdie-alternative': {
     title: 'Birdie Alternative for UK Domiciliary Care Agencies | DomiClear',
@@ -93,6 +101,10 @@ function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
   useEffect(() => {
+    if (['/demo', '/demos', '/demo-fullscreen'].includes(window.location.pathname)) {
+      window.history.replaceState({}, '', '/tutorials');
+      setCurrentPath('/tutorials');
+    }
     if (window.location.pathname === '/home-care-app') {
       const nextUrl = `/care-management-app${window.location.search}${window.location.hash}`;
       window.history.replaceState({}, '', nextUrl);
@@ -217,7 +229,8 @@ function App() {
         return <PricingPage />;
       case '/demo':
       case '/demos':
-        return <DemoPage />;
+      case '/tutorials':
+        return <TutorialsPage />;
       case '/book-demo':
         return <BookDemoPage />;
       case '/home-care-scheduling-software':
@@ -231,11 +244,13 @@ function App() {
       case '/birdie-alternative':
         return <BirdieAlternativePage />;
       case '/demo-fullscreen':
-        return <FullScreenDemoPage />;
+        return <TutorialsPage />;
       case '/contact':
         return <ContactPage />;
       case '/about':
         return <AboutPage />;
+      case '/company-information':
+        return <CompanyInformationPage />;
       case '/login':
         return <LoginPage />;
       case '/signup':
@@ -264,11 +279,10 @@ function App() {
     }
   };
 
-  const isFullScreenDemo = currentPath === '/demo-fullscreen';
 
   return (
     <div className="min-h-screen bg-white">
-      {!isFullScreenDemo && (
+      {(
         <>
           <a 
             href="#main-content" 
@@ -282,7 +296,7 @@ function App() {
       <main id="main-content">
         {renderPage()}
       </main>
-      {!isFullScreenDemo && <Footer />}
+      <Footer />
       <Analytics />
     </div>
   );

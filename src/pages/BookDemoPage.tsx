@@ -71,10 +71,10 @@ export const BookDemoPage: React.FC = () => {
           </p>
           <div className="bg-white rounded-2xl p-6 border border-[rgba(20,30,60,0.08)] mb-8">
             <p className="text-[#4B5563] mb-4">
-              While you wait, explore our interactive demos to see the platform in action.
+              Visit our tutorial video page for updates on recorded walkthroughs.
             </p>
-            <Button variant="primary" size="md" href="/demos">
-              View Interactive Demos
+            <Button variant="primary" size="md" href="/tutorials">
+              Tutorial videos
             </Button>
           </div>
           <Button variant="ghost" size="md" href="/">
@@ -324,12 +324,12 @@ export const BookDemoPage: React.FC = () => {
             </div>
 
             <div className="bg-white rounded-2xl p-6 border border-[rgba(20,30,60,0.08)] shadow-[0_6px_20px_rgba(10,20,40,0.06)]">
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">Try it yourself</h3>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-4">Tutorial videos</h3>
               <p className="text-[#4B5563] mb-4">
-                Explore our interactive demos to experience the platform firsthand. No login required.
+                Find recorded walkthroughs and updates on our tutorial video page.
               </p>
-              <Button variant="primary" size="md" href="/demos" className="w-full">
-                View Interactive Demos
+              <Button variant="primary" size="md" href="/tutorials" className="w-full">
+                Tutorial videos
               </Button>
             </div>
 
