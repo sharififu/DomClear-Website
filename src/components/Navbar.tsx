@@ -92,9 +92,9 @@ export const Navbar: React.FC = () => {
       }`}
       style={{ height: '72px' }}
     >
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
-        <div className="flex items-center gap-12">
-          <a href="/" className="flex items-center gap-2">
+      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-6">
+        <div className="flex min-w-0 items-center gap-6 2xl:gap-10">
+          <a href="/" className="flex shrink-0 items-center gap-2">
             <img 
               src="/logo.png" 
               alt="DomiClear Logo" 
@@ -105,7 +105,7 @@ export const Navbar: React.FC = () => {
             </span>
           </a>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden xl:flex items-center gap-5 2xl:gap-6">
             {navigation.map((item) => (
               <div
                 key={item.label}
@@ -115,7 +115,7 @@ export const Navbar: React.FC = () => {
               >
                 <a
                   href={item.href}
-                  className={`flex items-center gap-1 font-medium transition-colors ${
+                  className={`flex items-center gap-1 whitespace-nowrap font-medium transition-colors ${
                     shouldShowWhite ? 'text-[#4B5563] hover:text-[#4370B7]' : 'text-white/90 hover:text-white'
                   }`}
                   aria-expanded={item.children ? openDropdown === item.label : undefined}
@@ -154,7 +154,7 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden xl:flex shrink-0 items-center gap-3 whitespace-nowrap [&>a]:h-10 [&>a]:shrink-0 [&>a]:whitespace-nowrap">
           <Button 
             variant="ghost" 
             size="sm" 
@@ -187,7 +187,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         <button
-          className={`lg:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg -mr-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:ring-offset-2 focus:ring-offset-transparent ${!shouldShowWhite ? 'bg-white/10 hover:bg-white/20' : 'hover:bg-slate-100'}`}
+          className={`xl:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg -mr-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:ring-offset-2 focus:ring-offset-transparent ${!shouldShowWhite ? 'bg-white/10 hover:bg-white/20' : 'hover:bg-slate-100'}`}
           style={{ padding: '10px' }}
           onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
           aria-label="Toggle menu"
@@ -201,7 +201,7 @@ export const Navbar: React.FC = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="lg:hidden max-h-[calc(100dvh-72px)] overflow-y-auto overscroll-y-contain bg-white border-t border-[rgba(20,30,60,0.08)] shadow-lg">
+        <div className="xl:hidden max-h-[calc(100dvh-72px)] overflow-y-auto overscroll-y-contain bg-white border-t border-[rgba(20,30,60,0.08)] shadow-lg">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-4">
             {navigation.map((item) => (
               <div key={item.label}>
