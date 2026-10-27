@@ -18,6 +18,7 @@ import { CarePlanningSoftwarePage } from './pages/CarePlanningSoftwarePage';
 import { HomeCareAppPage } from './pages/HomeCareAppPage';
 import { BirdieAlternativePage } from './pages/BirdieAlternativePage';
 import { CompanyInformationPage } from './pages/CompanyInformationPage';
+import { CredentialsPage } from './pages/CredentialsPage';
 import { analytics } from './utils/analytics';
 
 const CANONICAL_ORIGIN = 'https://www.domi-clear.com';
@@ -60,6 +61,10 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
   '/contact': {
     title: 'Contact DomiClear | Home Care Software for UK Agencies',
     description: 'Get in touch about the home care management app. Questions, demo requests or pricing—our UK team is here to help. We respond within one business day.',
+  },
+  '/credentials': {
+    title: 'Security Credentials & Compliance | DomiClear',
+    description: 'View DomiClear’s current NHS DSPT Standards Met assessment, ICO registration and transparent roadmap for security, accessibility and clinical safety assurance.',
   },
   '/company-information': {
     title: 'Company Information | DomiClear',
@@ -251,6 +256,8 @@ function App() {
         return <AboutPage />;
       case '/company-information':
         return <CompanyInformationPage />;
+      case '/credentials':
+        return <CredentialsPage />;
       case '/login':
         return <LoginPage />;
       case '/signup':
