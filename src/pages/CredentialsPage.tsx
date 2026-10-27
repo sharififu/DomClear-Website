@@ -1,9 +1,10 @@
 import React from 'react';
-import { ArrowTopRightOnSquareIcon, CheckBadgeIcon, ClipboardDocumentCheckIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import { ArrowTopRightOnSquareIcon, CheckBadgeIcon, ClipboardDocumentCheckIcon, ShieldCheckIcon, IdentificationIcon, LockClosedIcon, HeartIcon, UserGroupIcon, AcademicCapIcon, EyeIcon } from '@heroicons/react/24/outline';
 
 const completed = [
   {
     title: 'NHS Data Security and Protection Toolkit',
+    emblem: 'dspt',
     status: 'Standards Met — 2026–27',
     description: 'DomiClear Ltd published its NHS Data Security and Protection Toolkit self-assessment on 24 October 2026. The result is Standards Met, valid to 30 June 2028.',
     detail: 'The DSPT is an organisational self-assessment. It is not NHS product endorsement or inclusion on the NHS Assured Solutions List.',
@@ -12,6 +13,7 @@ const completed = [
   },
   {
     title: 'Information Commissioner’s Office',
+    emblem: 'ico',
     status: 'Registered — ZC220419',
     description: 'DomiClear Ltd is registered with the Information Commissioner’s Office under registration reference ZC220419.',
     detail: 'ICO registration is a statutory registration, not certification that a product or organisation complies with every data-protection requirement.',
@@ -23,22 +25,27 @@ const completed = [
 const underway = [
   {
     title: 'Cyber Essentials',
+    icon: LockClosedIcon,
     description: 'Technical readiness and remediation are under way. We are not yet Cyber Essentials certified.',
   },
   {
     title: 'Accessibility and WCAG 2.2',
+    icon: EyeIcon,
     description: 'Accessibility testing and improvements are in progress; full WCAG 2.2 conformance has not yet been established.',
   },
   {
     title: 'DCB0129 clinical risk management',
+    icon: HeartIcon,
     description: 'Clinical safety documentation and independent review are being prepared. DCB0129 compliance has not yet been established.',
   },
   {
     title: 'Care information standards — MODS and PRSB',
+    icon: UserGroupIcon,
     description: 'We are mapping care-record functionality to NHS data standards. DomiClear does not currently claim MODS or PRSB conformance or PRSB Quality Partner status.',
   },
   {
     title: 'ISO/IEC 27001',
+    icon: AcademicCapIcon,
     description: 'Preparatory information-security management work is under way. DomiClear is not ISO 27001 certified.',
   },
 ];
@@ -65,10 +72,17 @@ export const CredentialsPage: React.FC = () => (
             <h2 id="verified-credentials" className="text-3xl font-bold">Achieved and registered</h2>
           </div>
         </div>
+        <p className="mb-6 text-sm text-[#64748B]">DomiClear-designed illustrations, not official regulator logos or certification marks.</p>
         <div className="grid gap-6 md:grid-cols-2">
           {completed.map((item) => (
             <article key={item.title} className="rounded-2xl border border-[#DCE7F1] bg-white p-7 shadow-[0_14px_40px_rgba(15,23,42,0.06)]">
-              <span className="mb-5 inline-flex rounded-full bg-[#E5F6F0] px-3 py-1 text-xs font-semibold text-[#086C5D]">{item.status}</span>
+              <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
+                <div className="flex h-24 w-24 flex-col items-center justify-center rounded-2xl border border-[#B9DCCD] bg-gradient-to-br from-[#F2FBF7] to-[#E6F4FF] text-[#116F64] shadow-sm" aria-hidden="true">
+                  {item.emblem === 'dspt' ? <ShieldCheckIcon className="mb-1 h-10 w-10" /> : <IdentificationIcon className="mb-1 h-10 w-10" />}
+                  <span className="text-[11px] font-extrabold tracking-[0.15em]">{item.emblem === 'dspt' ? 'DSPT' : 'REGISTERED'}</span>
+                </div>
+                <span className="inline-flex items-center gap-2 rounded-full bg-[#E5F6F0] px-3 py-1.5 text-xs font-semibold text-[#086C5D]"><CheckBadgeIcon className="h-4 w-4" aria-hidden="true" />{item.status}</span>
+              </div>
               <h3 className="mb-3 text-2xl font-bold leading-tight">{item.title}</h3>
               <p className="mb-4 leading-7 text-[#475569]">{item.description}</p>
               <p className="mb-5 text-sm leading-6 text-[#64748B]">{item.detail}</p>
@@ -94,7 +108,12 @@ export const CredentialsPage: React.FC = () => (
         <div className="grid gap-4 md:grid-cols-2">
           {underway.map((item) => (
             <article key={item.title} className="rounded-xl border border-[#DCE7F1] bg-white p-6">
-              <span className="mb-3 inline-block rounded-full bg-[#EAF2FF] px-3 py-1 text-xs font-semibold text-[#255794]">In progress</span>
+              <div className="mb-4 flex items-center justify-between gap-4">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-[#DDE7F1] bg-[#F1F5FA] text-[#476783]" aria-hidden="true">
+                  <item.icon className="h-7 w-7" />
+                </div>
+                <span className="rounded-full bg-[#EAF2FF] px-3 py-1.5 text-xs font-semibold text-[#255794]">In progress</span>
+              </div>
               <h3 className="mb-2 text-xl font-bold">{item.title}</h3>
               <p className="leading-7 text-[#475569]">{item.description}</p>
             </article>
