@@ -136,6 +136,11 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
+                <a href="/credentials" className="text-white/70 hover:text-white transition-colors">
+                  Security &amp; credentials
+                </a>
+              </li>
+              <li>
                 <a href="/tutorials" className="text-white/70 hover:text-white transition-colors">
                   Tutorial videos
                 </a>
@@ -198,11 +203,9 @@ export const Footer: React.FC = () => {
             <p className="mt-2">© 2026 DOMICLEAR LTD. All rights reserved.</p>
           </div>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-white/60 md:justify-end">
-            <span>UK/EU Data Residency</span>
+            <a href="/credentials" className="hover:text-white transition-colors">DSPT Standards Met — 2026–27</a>
             <span>•</span>
-            <span>ISO 27001 Aligned</span>
-            <span>•</span>
-            <span>GDPR Compliant</span>
+            <a href="/credentials" className="hover:text-white transition-colors">ICO Registered</a>
           </div>
         </div>
       </div>
