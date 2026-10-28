@@ -23,61 +23,61 @@ WCAG 2.2 AA requires **every applicable Level A and AA Success Criterion** (55 b
 
 | SC | Requirement (W3C title) | Level | Recorded state | Existing evidence / next verification |
 | --- | --- | :---: | --- | --- |
-| [1.1.1](https://www.w3.org/TR/WCAG22/#111) | Non-text Content | A | NOT VERIFIED | Assess full-page states and applicability for text alternatives. |
-| [1.2.1](https://www.w3.org/TR/WCAG22/#121) | Audio-only and Video-only (Prerecorded) | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for time-based media. |
-| [1.2.2](https://www.w3.org/TR/WCAG22/#122) | Captions (Prerecorded) | A | AUTOMATED SUPPORT — UNVERIFIED | Four YouTube tutorials: caption accuracy and availability not verified. |
-| [1.2.3](https://www.w3.org/TR/WCAG22/#123) | Audio Description or Media Alternative (Prerecorded) | A | AUTOMATED SUPPORT — UNVERIFIED | Four YouTube tutorials plus decorative silent loops: audible/visual meaning not assessed. |
-| [1.2.4](https://www.w3.org/TR/WCAG22/#124) | Captions (Live) | AA | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for time-based media. |
-| [1.2.5](https://www.w3.org/TR/WCAG22/#125) | Audio Description (Prerecorded) | AA | AUTOMATED SUPPORT — UNVERIFIED | Audio description or adequate narration of meaningful visuals not verified. |
-| [1.3.1](https://www.w3.org/TR/WCAG22/#131) | Info and Relationships | A | NOT VERIFIED | Assess full-page states and applicability for adaptable. |
-| [1.3.2](https://www.w3.org/TR/WCAG22/#132) | Meaningful Sequence | A | NOT VERIFIED | Assess full-page states and applicability for adaptable. |
-| [1.3.3](https://www.w3.org/TR/WCAG22/#133) | Sensory Characteristics | A | NOT VERIFIED | Assess full-page states and applicability for adaptable. |
-| [1.3.4](https://www.w3.org/TR/WCAG22/#134) | Orientation | AA | NOT VERIFIED | Assess full-page states and applicability for adaptable. |
-| [1.3.5](https://www.w3.org/TR/WCAG22/#135) | Identify Input Purpose | AA | NOT VERIFIED | Assess full-page states and applicability for adaptable. |
-| [1.4.1](https://www.w3.org/TR/WCAG22/#141) | Use of Color | A | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
-| [1.4.2](https://www.w3.org/TR/WCAG22/#142) | Audio Control | A | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
-| [1.4.3](https://www.w3.org/TR/WCAG22/#143) | Contrast (Minimum) | AA | AUTOMATED SUPPORT — UNVERIFIED | Automated contrast checks: 26-route axe discovery; CTA/teal/legal regression tests (limited page states). |
-| [1.4.4](https://www.w3.org/TR/WCAG22/#144) | Resize Text | AA | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
-| [1.4.5](https://www.w3.org/TR/WCAG22/#145) | Images of Text | AA | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
-| [1.4.10](https://www.w3.org/TR/WCAG22/#1410) | Reflow | AA | AUTOMATED SUPPORT — UNVERIFIED | 34 measurements at 320/640 CSS px: no page-level overflow after Platform fix; not actual browser zoom. |
-| [1.4.11](https://www.w3.org/TR/WCAG22/#1411) | Non-text Contrast | AA | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
-| [1.4.12](https://www.w3.org/TR/WCAG22/#1412) | Text Spacing | AA | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
-| [1.4.13](https://www.w3.org/TR/WCAG22/#1413) | Content on Hover or Focus | AA | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
-| [2.1.1](https://www.w3.org/TR/WCAG22/#211) | Keyboard | A | AUTOMATED SUPPORT — UNVERIFIED | Playwright desktop/mobile menu keyboard, route-change and skip-link checks; not full journeys. |
-| [2.1.2](https://www.w3.org/TR/WCAG22/#212) | No Keyboard Trap | A | NOT VERIFIED | Assess full-page states and applicability for keyboard accessible. |
-| [2.1.4](https://www.w3.org/TR/WCAG22/#214) | Character Key Shortcuts | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for keyboard accessible. |
-| [2.2.1](https://www.w3.org/TR/WCAG22/#221) | Timing Adjustable | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for enough time. |
-| [2.2.2](https://www.w3.org/TR/WCAG22/#222) | Pause, Stop, Hide | A | AUTOMATED SUPPORT — UNVERIFIED | Platform has 3 autoplay looping muted videos; pause/stop requirement and 5-second/essential exceptions need assessment. |
-| [2.3.1](https://www.w3.org/TR/WCAG22/#231) | Three Flashes or Below Threshold | A | NOT VERIFIED | Assess full-page states and applicability for seizures and physical reactions. |
-| [2.4.1](https://www.w3.org/TR/WCAG22/#241) | Bypass Blocks | A | AUTOMATED SUPPORT — UNVERIFIED | Playwright skip-link focus regression. |
-| [2.4.2](https://www.w3.org/TR/WCAG22/#242) | Page Titled | A | AUTOMATED SUPPORT — UNVERIFIED | Playwright route page-title checks. |
-| [2.4.3](https://www.w3.org/TR/WCAG22/#243) | Focus Order | A | AUTOMATED SUPPORT — UNVERIFIED | Playwright route focus and browser history checks; limited states. |
-| [2.4.4](https://www.w3.org/TR/WCAG22/#244) | Link Purpose (In Context) | A | NOT VERIFIED | Assess full-page states and applicability for navigable. |
-| [2.4.5](https://www.w3.org/TR/WCAG22/#245) | Multiple Ways | AA | NOT VERIFIED | Assess full-page states and applicability for navigable. |
-| [2.4.6](https://www.w3.org/TR/WCAG22/#246) | Headings and Labels | AA | NOT VERIFIED | Assess full-page states and applicability for navigable. |
-| [2.4.7](https://www.w3.org/TR/WCAG22/#247) | Focus Visible | AA | AUTOMATED SUPPORT — UNVERIFIED | Navigation focus regression and CSS focus styles; not all controls. |
-| [2.4.11](https://www.w3.org/TR/WCAG22/#2411) | Focus Not Obscured (Minimum) | AA | AUTOMATED SUPPORT — UNVERIFIED | Route focus and skip-link tests; focus-obscured visual assessment still missing. |
-| [2.5.1](https://www.w3.org/TR/WCAG22/#251) | Pointer Gestures | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for input modalities. |
-| [2.5.2](https://www.w3.org/TR/WCAG22/#252) | Pointer Cancellation | A | NOT VERIFIED | Assess full-page states and applicability for input modalities. |
-| [2.5.3](https://www.w3.org/TR/WCAG22/#253) | Label in Name | A | NOT VERIFIED | Assess full-page states and applicability for input modalities. |
-| [2.5.4](https://www.w3.org/TR/WCAG22/#254) | Motion Actuation | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for input modalities. |
-| [2.5.7](https://www.w3.org/TR/WCAG22/#257) | Dragging Movements | AA | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for input modalities. |
-| [2.5.8](https://www.w3.org/TR/WCAG22/#258) | Target Size (Minimum) | AA | NOT VERIFIED | Assess full-page states and applicability for input modalities. |
-| [3.1.1](https://www.w3.org/TR/WCAG22/#311) | Language of Page | A | NOT VERIFIED | Assess full-page states and applicability for readable. |
-| [3.1.2](https://www.w3.org/TR/WCAG22/#312) | Language of Parts | AA | NOT VERIFIED | Assess full-page states and applicability for readable. |
-| [3.2.1](https://www.w3.org/TR/WCAG22/#321) | On Focus | A | NOT VERIFIED | Assess full-page states and applicability for predictable. |
-| [3.2.2](https://www.w3.org/TR/WCAG22/#322) | On Input | A | NOT VERIFIED | Assess full-page states and applicability for predictable. |
-| [3.2.3](https://www.w3.org/TR/WCAG22/#323) | Consistent Navigation | AA | NOT VERIFIED | Assess full-page states and applicability for predictable. |
-| [3.2.4](https://www.w3.org/TR/WCAG22/#324) | Consistent Identification | AA | NOT VERIFIED | Assess full-page states and applicability for predictable. |
-| [3.2.6](https://www.w3.org/TR/WCAG22/#326) | Consistent Help | A | NOT VERIFIED | Assess full-page states and applicability for predictable. |
-| [3.3.1](https://www.w3.org/TR/WCAG22/#331) | Error Identification | A | NOT VERIFIED | Assess full-page states and applicability for input assistance. |
-| [3.3.2](https://www.w3.org/TR/WCAG22/#332) | Labels or Instructions | A | AUTOMATED SUPPORT — UNVERIFIED | Forms have static labels; full field-by-field audit still required. |
-| [3.3.3](https://www.w3.org/TR/WCAG22/#333) | Error Suggestion | AA | NOT VERIFIED | Assess full-page states and applicability for input assistance. |
-| [3.3.4](https://www.w3.org/TR/WCAG22/#334) | Error Prevention (Legal, Financial, Data) | AA | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for input assistance. |
-| [3.3.7](https://www.w3.org/TR/WCAG22/#337) | Redundant Entry | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for input assistance. |
-| [3.3.8](https://www.w3.org/TR/WCAG22/#338) | Accessible Authentication (Minimum) | AA | AUTOMATED SUPPORT — UNVERIFIED | External login/signup linked from marketing; applicability boundary and password flows must be defined. |
-| [4.1.2](https://www.w3.org/TR/WCAG22/#412) | Name, Role, Value | A | AUTOMATED SUPPORT — UNVERIFIED | Axe discovery and Playwright named-control checks; full AT verification missing. |
-| [4.1.3](https://www.w3.org/TR/WCAG22/#413) | Status Messages | AA | AUTOMATED SUPPORT — UNVERIFIED | Some status roles in source; dynamic announcements unverified. |
+| 1.1.1 | Non-text Content | A | NOT VERIFIED | Assess full-page states and applicability for text alternatives. |
+| 1.2.1 | Audio-only and Video-only (Prerecorded) | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for time-based media. |
+| 1.2.2 | Captions (Prerecorded) | A | AUTOMATED SUPPORT — UNVERIFIED | Four YouTube tutorials: caption accuracy and availability not verified. |
+| 1.2.3 | Audio Description or Media Alternative (Prerecorded) | A | AUTOMATED SUPPORT — UNVERIFIED | Four YouTube tutorials plus decorative silent loops: audible/visual meaning not assessed. |
+| 1.2.4 | Captions (Live) | AA | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for time-based media. |
+| 1.2.5 | Audio Description (Prerecorded) | AA | AUTOMATED SUPPORT — UNVERIFIED | Audio description or adequate narration of meaningful visuals not verified. |
+| 1.3.1 | Info and Relationships | A | NOT VERIFIED | Assess full-page states and applicability for adaptable. |
+| 1.3.2 | Meaningful Sequence | A | NOT VERIFIED | Assess full-page states and applicability for adaptable. |
+| 1.3.3 | Sensory Characteristics | A | NOT VERIFIED | Assess full-page states and applicability for adaptable. |
+| 1.3.4 | Orientation | AA | NOT VERIFIED | Assess full-page states and applicability for adaptable. |
+| 1.3.5 | Identify Input Purpose | AA | NOT VERIFIED | Assess full-page states and applicability for adaptable. |
+| 1.4.1 | Use of Color | A | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
+| 1.4.2 | Audio Control | A | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
+| 1.4.3 | Contrast (Minimum) | AA | AUTOMATED SUPPORT — UNVERIFIED | Automated contrast checks: 26-route axe discovery; CTA/teal/legal regression tests (limited page states). |
+| 1.4.4 | Resize Text | AA | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
+| 1.4.5 | Images of Text | AA | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
+| 1.4.10 | Reflow | AA | AUTOMATED SUPPORT — UNVERIFIED | 34 measurements at 320/640 CSS px: no page-level overflow after Platform fix; not actual browser zoom. |
+| 1.4.11 | Non-text Contrast | AA | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
+| 1.4.12 | Text Spacing | AA | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
+| 1.4.13 | Content on Hover or Focus | AA | NOT VERIFIED | Assess full-page states and applicability for distinguishable. |
+| 2.1.1 | Keyboard | A | AUTOMATED SUPPORT — UNVERIFIED | Playwright desktop/mobile menu keyboard, route-change and skip-link checks; not full journeys. |
+| 2.1.2 | No Keyboard Trap | A | NOT VERIFIED | Assess full-page states and applicability for keyboard accessible. |
+| 2.1.4 | Character Key Shortcuts | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for keyboard accessible. |
+| 2.2.1 | Timing Adjustable | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for enough time. |
+| 2.2.2 | Pause, Stop, Hide | A | AUTOMATED SUPPORT — UNVERIFIED | Platform has 3 autoplay looping muted videos; pause/stop requirement and 5-second/essential exceptions need assessment. |
+| 2.3.1 | Three Flashes or Below Threshold | A | NOT VERIFIED | Assess full-page states and applicability for seizures and physical reactions. |
+| 2.4.1 | Bypass Blocks | A | AUTOMATED SUPPORT — UNVERIFIED | Playwright skip-link focus regression. |
+| 2.4.2 | Page Titled | A | AUTOMATED SUPPORT — UNVERIFIED | Playwright route page-title checks. |
+| 2.4.3 | Focus Order | A | AUTOMATED SUPPORT — UNVERIFIED | Playwright route focus and browser history checks; limited states. |
+| 2.4.4 | Link Purpose (In Context) | A | NOT VERIFIED | Assess full-page states and applicability for navigable. |
+| 2.4.5 | Multiple Ways | AA | NOT VERIFIED | Assess full-page states and applicability for navigable. |
+| 2.4.6 | Headings and Labels | AA | NOT VERIFIED | Assess full-page states and applicability for navigable. |
+| 2.4.7 | Focus Visible | AA | AUTOMATED SUPPORT — UNVERIFIED | Navigation focus regression and CSS focus styles; not all controls. |
+| 2.4.11 | Focus Not Obscured (Minimum) | AA | AUTOMATED SUPPORT — UNVERIFIED | Route focus and skip-link tests; focus-obscured visual assessment still missing. |
+| 2.5.1 | Pointer Gestures | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for input modalities. |
+| 2.5.2 | Pointer Cancellation | A | NOT VERIFIED | Assess full-page states and applicability for input modalities. |
+| 2.5.3 | Label in Name | A | NOT VERIFIED | Assess full-page states and applicability for input modalities. |
+| 2.5.4 | Motion Actuation | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for input modalities. |
+| 2.5.7 | Dragging Movements | AA | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for input modalities. |
+| 2.5.8 | Target Size (Minimum) | AA | NOT VERIFIED | Assess full-page states and applicability for input modalities. |
+| 3.1.1 | Language of Page | A | NOT VERIFIED | Assess full-page states and applicability for readable. |
+| 3.1.2 | Language of Parts | AA | NOT VERIFIED | Assess full-page states and applicability for readable. |
+| 3.2.1 | On Focus | A | NOT VERIFIED | Assess full-page states and applicability for predictable. |
+| 3.2.2 | On Input | A | NOT VERIFIED | Assess full-page states and applicability for predictable. |
+| 3.2.3 | Consistent Navigation | AA | NOT VERIFIED | Assess full-page states and applicability for predictable. |
+| 3.2.4 | Consistent Identification | AA | NOT VERIFIED | Assess full-page states and applicability for predictable. |
+| 3.2.6 | Consistent Help | A | NOT VERIFIED | Assess full-page states and applicability for predictable. |
+| 3.3.1 | Error Identification | A | NOT VERIFIED | Assess full-page states and applicability for input assistance. |
+| 3.3.2 | Labels or Instructions | A | AUTOMATED SUPPORT — UNVERIFIED | Forms have static labels; full field-by-field audit still required. |
+| 3.3.3 | Error Suggestion | AA | NOT VERIFIED | Assess full-page states and applicability for input assistance. |
+| 3.3.4 | Error Prevention (Legal, Financial, Data) | AA | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for input assistance. |
+| 3.3.7 | Redundant Entry | A | CONDITIONAL — UNVERIFIED | Assess full-page states and applicability for input assistance. |
+| 3.3.8 | Accessible Authentication (Minimum) | AA | AUTOMATED SUPPORT — UNVERIFIED | External login/signup linked from marketing; applicability boundary and password flows must be defined. |
+| 4.1.2 | Name, Role, Value | A | AUTOMATED SUPPORT — UNVERIFIED | Axe discovery and Playwright named-control checks; full AT verification missing. |
+| 4.1.3 | Status Messages | AA | AUTOMATED SUPPORT — UNVERIFIED | Some status roles in source; dynamic announcements unverified. |
 
 ## Actual page and media inventory
 
