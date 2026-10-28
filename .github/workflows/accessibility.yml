@@ -7,6 +7,7 @@ on:
       - 'public/legal/**'
       - 'tests/accessibility/**'
       - 'playwright.config.ts'
+      - 'scripts/setup-a11y-tools.mjs'
       - 'package.json'
       - '.github/workflows/accessibility.yml'
   workflow_dispatch:
@@ -27,16 +28,16 @@ jobs:
           cache: npm
       - name: Install application dependencies from lockfile
         run: npm ci
-      - name: Install temporary accessibility test tools without changing repository lockfile
-        run: npm install --no-save --package-lock=false @playwright/test@1.56.1 @axe-core/playwright@4.11.0
+      - name: Isolate accessibility tools from existing HeroUI beta dependencies
+        run: node scripts/setup-a11y-tools.mjs
       - name: Install Chromium
-        run: npx playwright install --with-deps chromium
+        run: node node_modules/.domiclear-a11y-tools/node_modules/playwright/cli.js install --with-deps chromium
       - name: Check TypeScript
         run: npm run typecheck
       - name: Build site (no deployment)
         run: npm run build
       - name: Run browser keyboard regression and axe discovery scans
-        run: npx playwright test
+        run: node node_modules/.domiclear-a11y-tools/node_modules/playwright/cli.js test
       - name: Preserve browser audit evidence
         if: always()
         uses: actions/upload-artifact@v4
