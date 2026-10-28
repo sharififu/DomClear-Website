@@ -83,7 +83,12 @@ export const Navbar: React.FC = () => {
     currentPath === '/book-demo' ||
     currentPath === '/demo-fullscreen' ||
     currentPath === '/care-management-app';
-  const shouldShowWhite = isDemoPage || isScrolled;
+  // Contact, authentication and legal pages begin on light backgrounds, unlike the gradient hero pages.
+  // Keep legible dark navigation before the visitor scrolls.
+  const isLightTopPage =
+    ['/contact', '/login', '/signup', '/legal'].includes(currentPath) ||
+    currentPath.startsWith('/legal/');
+  const shouldShowWhite = isDemoPage || isScrolled || isLightTopPage;
 
   return (
     <nav
