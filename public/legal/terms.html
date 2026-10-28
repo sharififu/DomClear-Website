@@ -12,13 +12,14 @@
   p { margin: 0.5em 0; }
   ul, ol { margin: 0.5em 0; padding-left: 1.5em; }
   li { margin: 0.25em 0; }
-  a { color: #3B82F6; text-decoration: underline; }
+  a { color: #1D4ED8; text-decoration: underline; text-underline-offset: 0.15em; }
   code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
   blockquote { margin: 0.5em 0; padding-left: 1em; border-left: 4px solid #E3E8EB; color: #6E767A; }
   .doc-actions { margin-bottom: 1em; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
   .doc-actions a, .doc-actions .print-btn { font-size: 0.9em; }
   .print-btn { padding: 6px 12px; background: #252829; color: #fff; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; }
-  .print-btn:hover { background: #3B82F6; }
+  .print-btn:hover { background: #1D4ED8; }
+  a:focus-visible, button:focus-visible { outline: 2px solid #1D4ED8; outline-offset: 3px; }
   .back { margin-bottom: 1em; }
   @media print { .doc-actions, .back { display: none !important; } }
 </style>
