@@ -18,3 +18,12 @@ New Playwright `reflow-discovery.spec.ts` collects measured horizontal overflow 
 - Do not make a public WCAG AA claim from a successful discovery run.
 
 **No production code changes in this PR.**
+## Verified baseline and remediation — 28 October 2026
+
+- [Discovery run 40733481990](https://github.com/sharififu/DomClear-Website/actions/runs/40733481990): **94/94 Playwright passed**, strict TypeScript and Vite build passed. Across 17 representative routes at 320 and 640 CSS px (**34 snapshots**) only **`/platform` at 320px** had page-level horizontal overflow: **12px**. The discovery run intentionally did not fail on overflow.
+- [Extended diagnostic run 40734158309](https://github.com/sharififu/DomClear-Website/actions/runs/40734158309): the `/platform` h1 was **316px scrollWidth inside a 288px content column**, resulting in `document.documentElement.scrollWidth = 332px` vs `clientWidth = 320px`. The skip link had a larger internal scrollWidth but was intentionally clipped/offscreen before focus and was **not** the page overflow source.
+- Root cause: `PlatformPage.tsx` used a **48px (`text-5xl`) h1 down to 320px**, making an unbreakable word too wide.
+- Small fix: `text-4xl sm:text-5xl md:text-6xl` sets **36px** heading at 320px while retaining existing >=640px heading sizes.
+- Added a **gating** Playwright check that fails if either the Platform heading or document horizontally overflows at 320px. Keep the non-gating wider discovery sweep to detect additional responsive defects.
+
+**Post-fix CI status:** Check the Actions run for the latest code commit `af26b05aefae6d7406908f56b0e59e3c8e7fb8bb`; do not mark the issue closed until all checks pass and the 320px overflow measurement is zero. Simulated narrow viewport is not a substitute for actual browser zoom or screen-reader checks. Manual audit remains [open](https://github.com/sharififu/DomClear-Website/issues/10).
