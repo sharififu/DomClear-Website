@@ -15,7 +15,6 @@ import {
   Unlock,
   Plus,
   Trash2,
-  ChevronRight,
   CheckCircle,
   AlertCircle,
   AlertTriangle,

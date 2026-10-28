@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
-import { format, addDays, startOfWeek } from 'date-fns';
+import { addDays, startOfWeek } from 'date-fns';
 import { MapPin, AlertTriangle } from 'lucide-react';
 import { DemoHeader } from './DemoHeader';
 import { DemoTour, useDemoTour } from './DemoTour';

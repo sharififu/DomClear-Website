@@ -2,7 +2,7 @@
  * Web travel-gap connector — mirrors RN `TravelGapConnector` line + caps + hit area.
  */
 
-import React, { memo, useCallback, useRef, useState } from 'react';
+import { memo, useCallback, useRef, useState } from 'react';
 import type { TravelGapConnectorModel } from './travelGapTypes';
 
 const HIT_SLOP_HEIGHT = 22;

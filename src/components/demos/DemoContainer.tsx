@@ -5,7 +5,6 @@ import {
   ShieldCheck,
   PoundSterling,
   ChevronDown,
-  Search,
   LogOut,
   Star,
   ArrowLeft,
@@ -28,7 +27,7 @@ interface DemoContainerProps {
 const MANAGEMENT_IDS: DemoId[] = ['service-users', 'visits', 'medications', 'custom-tasks', 'monitoring-alerts', 'alert-rules', 'absence-requests', 'family-portal'];
 const WORKFORCE_IDS: DemoId[] = ['staff', 'teams', 'shift-management', 'attendance'];
 const COMPLIANCE_IDS: DemoId[] = ['audit-dashboard', 'compliance-reports', 'incidents', 'training'];
-const FINANCE_IDS: DemoId[] = ['invoices', 'payroll', 'visit-cost-types'];
+const FINANCE_IDS: DemoId[] = ['payroll', 'visit-cost-types'];
 const RESOURCES_IDS: DemoId[] = ['documents', 'policies', 'templates-page', 'reports', 'ppe-stock'];
 
 export const DemoContainer: React.FC<DemoContainerProps> = ({ activeDemo, onDemoChange, children, isEmbedded = false, onExit }) => {

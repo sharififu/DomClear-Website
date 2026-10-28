@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Calendar, Clock, DollarSign, Pencil, Plus, List, Users, ChevronDown } from 'lucide-react';
+import { X, Calendar, Clock, DollarSign, Pencil, Plus, List, ChevronDown } from 'lucide-react';
 
 interface EnhancedVisitSchedulerProps {
   isOpen: boolean;
@@ -50,7 +50,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
     careTasks: [] as string[]
   });
 
-  const [isStaffDropdownOpen, setIsStaffDropdownOpen] = useState(false);
+  const [isStaffDropdownOpen, setIsStaffDropdownOpen] = useState<number | false>(false);
 
   // Update patient and funder info when patientName prop changes
   useEffect(() => {
@@ -66,7 +66,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
 
   // Close dropdown when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = () => {
       if (isStaffDropdownOpen !== false) {
         setIsStaffDropdownOpen(false);
       }
@@ -225,7 +225,7 @@ export const EnhancedVisitScheduler: React.FC<EnhancedVisitSchedulerProps> = ({
                     <label className="block text-xs text-[#6b7280] mb-1">Staff Member {index + 1}</label>
                     <button
                       type="button"
-                      onClick={() => setIsStaffDropdownOpen(isStaffDropdownOpen ? false : index)}
+                      onClick={() => setIsStaffDropdownOpen(isStaffDropdownOpen === index ? false : index)}
                       className="w-full px-4 py-2 border border-[rgba(20,30,60,0.08)] rounded-lg text-left flex items-center justify-between hover:bg-[#f8fafc] focus:outline-hidden focus:ring-2 focus:ring-[#4370B7]"
                     >
                       {selectedStaffMember ? (

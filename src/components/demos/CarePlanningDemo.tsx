@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Plus, Trash2, GripVertical, Type, CheckSquare, Calendar, Eye, LayoutTemplate, ChevronLeft, Save } from 'lucide-react';
 import { DemoHeader } from './DemoHeader';
-import { Button } from '../Button';
 import { FORM_TEMPLATES } from './mockData';
 import { FormField, FormTemplate } from './types';
 import { DemoTour, useDemoTour } from './DemoTour';
@@ -177,7 +176,7 @@ export const CarePlanningDemo: React.FC = () => {
               </div>
 
               <div className="space-y-6">
-                {activeFields.map((field, index) => (
+                {activeFields.map((field) => (
                   <div 
                     key={field.id} 
                     className={`

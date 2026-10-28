@@ -282,7 +282,7 @@ export const Navbar: React.FC = () => {
                 variant="secondary" 
                 size="md" 
                 href="/book-demo"
-                onClick={(event) => {
+                onClick={() => {
                   closeMobileMenu();
                   analytics.trackDemoRequest('navbar_mobile');
                 }}

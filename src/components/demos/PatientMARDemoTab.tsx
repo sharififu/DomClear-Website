@@ -568,12 +568,12 @@ export const PatientMARDemoTab: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3" data-tour="patient-mar-kpi">
           {(
             [
-              { label: 'Doses due', value: stats.scheduled, Icon: Calendar, accent: '#f0f4f8' },
-              { label: 'Administered', value: stats.taken, Icon: CheckCircle, accent: '#f0f4f8' },
+              { label: 'Doses due', value: stats.scheduled, Icon: Calendar, accent: '#f0f4f8', valueColor: undefined },
+              { label: 'Administered', value: stats.taken, Icon: CheckCircle, accent: '#f0f4f8', valueColor: undefined },
               { label: 'Late', value: stats.late, Icon: Clock, accent: '#fef3c7', valueColor: '#b45309' },
               { label: 'Missed', value: stats.missed, Icon: AlertTriangle, accent: '#fee2e2', valueColor: '#9f403d' },
-              { label: 'Refused', value: stats.refused, Icon: XCircle, accent: '#e0e7ff' },
-              { label: 'PRN', value: stats.prn, Icon: Star, accent: '#f0f4f8' },
+              { label: 'Refused', value: stats.refused, Icon: XCircle, accent: '#e0e7ff', valueColor: undefined },
+              { label: 'PRN', value: stats.prn, Icon: Star, accent: '#f0f4f8', valueColor: undefined },
             ] as const
           ).map(({ label, value, Icon, accent, valueColor }) => (
             <div key={label} className="rounded-xl border border-[#e3e9ec] p-3 bg-white">
