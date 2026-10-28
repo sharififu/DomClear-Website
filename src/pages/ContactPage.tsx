@@ -225,7 +225,7 @@ export const ContactPage: React.FC = () => {
 
               <p className="text-sm text-[#4B5563] text-center">
                 By submitting this form, you agree to our{' '}
-                <a href="/legal/privacy" className="text-[#1F6FEB] hover:underline">
+                <a href="/legal/privacy" className="text-[#1F6FEB] underline underline-offset-2 hover:decoration-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1F6FEB]">
                   Privacy Policy
                 </a>
                 .
