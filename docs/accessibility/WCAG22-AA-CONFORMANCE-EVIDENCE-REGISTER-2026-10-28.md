@@ -111,3 +111,9 @@ WCAG 2.2 AA requires **every applicable Level A and AA Success Criterion** (55 b
 The file `tests/accessibility/legal-pdf-integrity.spec.ts` now checks three **local Vite preview responses**: that the legal hub download links resolve to `/legal/*.pdf`, respond HTTP 200, carry `application/pdf` MIME type and start with `%PDF-` bytes. **Pending CI evidence.** These checks cannot prove that the deployed domain serves the same files or that the PDFs are tagged or screen-reader-accessible.
 
 **Production PDF response audit, structural tag inspection and manual screen-reader PDF reading-order tests remain unverified.**
+
+## Repository PDF structural preflight (not reading-order sign-off)
+
+Inspected the **base64-encoded PDF bytes in GitHub's main branch** for `cookies.pdf` (46,480 bytes; 2 page objects), `acceptable-use.pdf` (43,012 bytes; 1 page object), and `service-level.pdf` (44,089 bytes; 1 page object). Each contains `%PDF-1.4`, `/StructTreeRoot`, `/MarkInfo`, `/Marked true`, `/Lang`, `/ToUnicode`, and a document `/Title`. The number of detected `/Type /Page` objects is a basic source-structure estimate only, not a validated page count. Permanent regression tests were added in `tests/accessibility/legal-pdf-structure-preflight.spec.ts`, in addition to the preview download integrity tests; CI is pending.
+
+**This supports only a PDF metadata preflight**. It does NOT validate tag semantics, image alt text, logical heading/reading order, bookmarks, contrast, keyboard operation, actual Acrobat/Screen Reader results, PDF/UA compliance, or exact deployed-file bytes. Keep all individual PDF manual conformance decisions **UNVERIFIED** until checked.
