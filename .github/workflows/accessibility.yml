@@ -32,12 +32,13 @@ jobs:
         run: node scripts/setup-a11y-tools.mjs
       - name: Install Chromium
         run: node node_modules/.domiclear-a11y-tools/node_modules/playwright/cli.js install --with-deps chromium
-      - name: Check TypeScript
-        run: npm run typecheck
       - name: Build site (no deployment)
         run: npm run build
       - name: Run browser keyboard regression and axe discovery scans
         run: node node_modules/.domiclear-a11y-tools/node_modules/playwright/cli.js test
+      - name: Check TypeScript (existing repo errors reported separately)
+        if: always()
+        run: npm run typecheck
       - name: Preserve browser audit evidence
         if: always()
         uses: actions/upload-artifact@v4
