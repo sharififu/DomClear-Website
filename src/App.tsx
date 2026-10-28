@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
@@ -104,6 +104,7 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const pendingRouteFocus = useRef(false);
 
   useEffect(() => {
     if (['/demo', '/demos', '/demo-fullscreen'].includes(window.location.pathname)) {
@@ -119,6 +120,7 @@ function App() {
 
   useEffect(() => {
     const handlePopState = () => {
+      if (window.location.pathname !== currentPath) pendingRouteFocus.current = true;
       setCurrentPath(window.location.pathname);
     };
 
@@ -126,15 +128,22 @@ function App() {
 
     const originalPushState = window.history.pushState;
     window.history.pushState = function (...args) {
+      const previousPath = window.location.pathname;
       originalPushState.apply(window.history, args);
+      if (window.location.pathname !== previousPath) pendingRouteFocus.current = true;
       setCurrentPath(window.location.pathname);
     };
 
-    document.addEventListener('click', (e) => {
-      const target = e.target as HTMLElement;
+    const handleDocumentClick = (e: MouseEvent) => {
+      // Preserve modified clicks, downloads and external browsing contexts.
+      if (e.defaultPrevented || e.button !== 0 || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+      const target = e.target;
+      if (!(target instanceof Element)) return;
       const anchor = target.closest('a');
 
-      if (anchor && anchor.href && anchor.origin === window.location.origin) {
+      if (anchor && anchor.href && !anchor.hasAttribute('download') &&
+          (!anchor.target || anchor.target === '_self') &&
+          anchor.origin === window.location.origin) {
         const url = new URL(anchor.href);
         if (url.pathname !== currentPath) {
           e.preventDefault();
@@ -149,15 +158,34 @@ function App() {
           const id = decodeURIComponent(url.hash.substring(1));
           const el = document.getElementById(id);
           if (el) {
+            if (el.tabIndex < 0) el.tabIndex = -1;
+            el.focus({ preventScroll: true });
             el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
         }
       }
-    });
+    };
+    document.addEventListener('click', handleDocumentClick);
 
     return () => {
+      document.removeEventListener('click', handleDocumentClick);
       window.removeEventListener('popstate', handlePopState);
+      window.history.pushState = originalPushState;
     };
+  }, [currentPath]);
+
+  // Announce a newly rendered SPA route without changing focus on initial load.
+  useEffect(() => {
+    if (!pendingRouteFocus.current) return;
+    pendingRouteFocus.current = false;
+    const id = window.location.hash ? decodeURIComponent(window.location.hash.slice(1)) : '';
+    const destination = id ? document.getElementById(id) : null;
+    if (destination) {
+      if (destination.tabIndex < 0) destination.tabIndex = -1;
+      destination.focus({ preventScroll: true });
+    } else {
+      document.getElementById('main-content')?.focus({ preventScroll: true });
+    }
   }, [currentPath]);
 
   // Scroll to hash target on path change or initial load
@@ -300,7 +328,7 @@ function App() {
           <Navbar />
         </>
       )}
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1} aria-label="Main content" className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4370B7]">
         {renderPage()}
       </main>
       <Footer />
