@@ -45,7 +45,7 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantClass = {
     primary: 'bg-[#4370B7] text-white hover:bg-[#365a9a]',
-    accent: 'bg-[#0ea08a] text-white hover:bg-[#0c8a75]',
+    accent: 'bg-[#0F766E] text-white hover:bg-[#115E59]',
     secondary: 'border border-[rgba(20,30,60,0.08)] text-[#4370B7] bg-transparent hover:bg-black/5',
     ghost: 'text-[#4370B7] bg-transparent hover:bg-black/5',
   }[variant];

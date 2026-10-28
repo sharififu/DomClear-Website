@@ -51,7 +51,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({ tier, billingPeriod = 
         <p className="text-[#4B5563] mb-4">{tier.description}</p>
 
         <div className="mb-6">
-          <span className="inline-block px-3 py-1 bg-[#0ea08a] text-white text-xs font-bold rounded-full">
+          <span className="inline-block px-3 py-1 bg-[#0F766E] text-white text-xs font-bold rounded-full">
             14-day free trial
           </span>
         </div>

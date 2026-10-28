@@ -1,0 +1,51 @@
+name: WCAG 2.2 automated baseline (not conformance)
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'public/legal/**'
+      - 'tests/accessibility/**'
+      - 'playwright.config.ts'
+      - 'scripts/setup-a11y-tools.mjs'
+      - 'package.json'
+      - '.github/workflows/accessibility.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  accessibility:
+    name: Build, keyboard checks and axe discovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install application dependencies from lockfile
+        run: npm ci
+      - name: Isolate accessibility tools from existing HeroUI beta dependencies
+        run: node scripts/setup-a11y-tools.mjs
+      - name: Install Chromium
+        run: node node_modules/.domiclear-a11y-tools/node_modules/playwright/cli.js install --with-deps chromium
+      - name: Build site (no deployment)
+        run: npm run build
+      - name: Run browser keyboard regression and axe discovery scans
+        run: node node_modules/.domiclear-a11y-tools/node_modules/playwright/cli.js test
+      - name: Check TypeScript (existing repo errors reported separately)
+        if: always()
+        run: npm run typecheck
+      - name: Preserve browser audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wcag22-accessibility-baseline
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 14
