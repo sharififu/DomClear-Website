@@ -170,7 +170,7 @@ Source of targeted findings: the 26-route Chromium axe discovery artifact from [
 **Code root causes and changes:**
 - `src/components/Button.tsx`: `accent` class changed from `bg-[#0ea08a] hover:bg-[#0c8a75]` to `bg-[#0F766E] hover:bg-[#115E59]` while retaining white text, existing event handling, semantics, links, labels and layout.
 - `src/components/PricingCard.tsx`: trial badge background changed from `#0ea08a` to `#0F766E`; kept white text and size/placement.
-- Computed WCAG contrast ratios for normal text on background: **3.27:1 before; 5.47:1 after** (new hover shade **~7.7:1**). The actual browser-computed value and axe scan will be checked by regression; no claim for background gradients or other teal combinations.
+- Computed WCAG contrast ratios for normal text on background: **3.27:1 before; 5.47:1 after** (new hover shade **7.58:1**). The actual browser-computed value and axe scan will be checked by regression; no claim for background gradients or other teal combinations.
 - `tests/accessibility/teal-contrast.spec.ts` tests rendered accent controls on Home and About, all five visible trial badges each on Pricing and Signup, white-on-teal computed contrast, scoped axe `color-contrast`, and CTA hover contrast/destination. The full route-discovery tests remain non-gating for unrelated findings.
 
 **Expected improvement:** Remove 13 repeated white-on-`#0ea08a` failures on the same baseline route states; other blue-on-white and muted grey/teal contrast findings remain outside Batch 03.
