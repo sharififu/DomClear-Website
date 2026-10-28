@@ -51,7 +51,7 @@ export const CompanyInformationPage: React.FC = () => (
             <EnvelopeIcon className="mt-0.5 h-6 w-6 shrink-0 text-[#4370B7]" />
             <span>
               <span className="block text-sm font-semibold text-[#475569]">Contact email</span>
-              <span className="mt-1 block font-medium text-[#1F6FEB]">info@domi-clear.com</span>
+              <span className="mt-1 block font-medium text-[#1D4ED8]">info@domi-clear.com</span>
             </span>
           </a>
           <a
@@ -61,7 +61,7 @@ export const CompanyInformationPage: React.FC = () => (
             <GlobeAltIcon className="mt-0.5 h-6 w-6 shrink-0 text-[#4370B7]" />
             <span>
               <span className="block text-sm font-semibold text-[#475569]">Website</span>
-              <span className="mt-1 block font-medium text-[#1F6FEB]">https://www.domi-clear.com</span>
+              <span className="mt-1 block font-medium text-[#1D4ED8]">https://www.domi-clear.com</span>
             </span>
           </a>
         </div>
