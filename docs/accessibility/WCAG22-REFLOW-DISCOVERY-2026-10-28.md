@@ -27,3 +27,13 @@ New Playwright `reflow-discovery.spec.ts` collects measured horizontal overflow 
 - Added a **gating** Playwright check that fails if either the Platform heading or document horizontally overflows at 320px. Keep the non-gating wider discovery sweep to detect additional responsive defects.
 
 **Post-fix CI status:** Check the Actions run for the latest code commit `af26b05aefae6d7406908f56b0e59e3c8e7fb8bb`; do not mark the issue closed until all checks pass and the 320px overflow measurement is zero. Simulated narrow viewport is not a substitute for actual browser zoom or screen-reader checks. Manual audit remains [open](https://github.com/sharififu/DomClear-Website/issues/10).
+
+## Post-fix verified results — 28 October 2026
+
+[GitHub Actions run 40734602405](https://github.com/sharififu/DomClear-Website/actions/runs/40734602405), tested code commit `af26b05aefae6d7406908f56b0e59e3c8e7fb8bb`, finished **SUCCESS**.
+
+- **95/95 Playwright tests passed**, including all existing 60 integrated tests, 34 reflow discovery measurements, and the new *gating* 320px Platform heading regression test.
+- **34/34 measured route-and-viewport combinations reported 0px page-level horizontal overflow** at 320 and 640 CSS px. The original `/platform` 320px 12px overflow was resolved by the responsive heading size.
+- Strict `npm run typecheck` and Vite build **PASS**. The 26 initial-state axe scans still reported **zero detected violations**, with incomplete/manual checks remaining.
+- The repo code and tests are committed only to **draft PR #11**. The fix is **not merged or deployed**. Production alias still needs separate verification after any approved merge.
+- This is not actual 400% browser zoom, 200% text resizing, screen-reader testing, text spacing or an AA conformance result. [Manual assessment issue #10](https://github.com/sharififu/DomClear-Website/issues/10) stays open.
