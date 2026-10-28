@@ -101,3 +101,21 @@ for (const width of [320, 640]) {
     });
   }
 }
+
+// Regression gate: the prior 48px Platform heading had a 316px scroll width
+// inside a 288px content column and caused 12px of horizontal page scroll.
+test('Platform hero heading reflows at 320 CSS px without horizontal page overflow', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 800 });
+  await page.goto('/platform');
+  const measurements = await page.evaluate(() => {
+    const h1 = document.querySelector('h1');
+    return {
+      page: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      heading: h1 ? h1.scrollWidth - h1.clientWidth : null,
+    };
+  });
+  if (measurements.heading === null) throw new Error('Expected Platform page h1');
+  if (measurements.heading > 1 || measurements.page > 1) {
+    throw new Error('Platform heading/page horizontal overflow at 320px: ' + JSON.stringify(measurements));
+  }
+});
