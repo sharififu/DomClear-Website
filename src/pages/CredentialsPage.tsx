@@ -68,7 +68,7 @@ export const CredentialsPage: React.FC = () => (
         <div className="mb-10 flex items-start gap-4">
           <CheckBadgeIcon className="mt-1 h-9 w-9 shrink-0 text-[#0A8F7A]" aria-hidden="true" />
           <div>
-            <p className="mb-1 text-xs font-bold uppercase tracking-wider text-[#0A8F7A]">Current evidence</p>
+            <p className="mb-1 text-xs font-bold uppercase tracking-wider text-[#0F766E]">Current evidence</p>
             <h2 id="verified-credentials" className="text-3xl font-bold">Achieved and registered</h2>
           </div>
         </div>
@@ -85,10 +85,10 @@ export const CredentialsPage: React.FC = () => (
               <p className="mt-1 text-[11px] text-[#64748B]">Published 24 October 2026</p>
             </div>
             <div className="max-w-2xl">
-              <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[#0A8F7A]">Issued NHS DSPT certificate</p>
+              <p className="mb-2 text-xs font-bold uppercase tracking-wider text-[#0F766E]">Issued NHS DSPT certificate</p>
               <h3 className="mb-3 text-2xl font-bold">Our 2026–27 Standards Met result</h3>
               <p className="mb-4 leading-7 text-[#475569]">The certificate confirms DomiClear Ltd's published organisational DSPT self-assessment, dated 24 October 2026 and valid to 30 June 2028.</p>
-              <p className="mb-5 text-sm leading-6 text-[#64748B]">The graphic is a summary of our genuine issued certificate, not a reproduction or NHS product endorsement. The original PDF can be supplied on request; publication status can be checked with the NHS.</p>
+              <p className="mb-5 text-sm leading-6 text-[#475569]">The graphic is a summary of our genuine issued certificate, not a reproduction or NHS product endorsement. The original PDF can be supplied on request; publication status can be checked with the NHS.</p>
               <a href="https://www.dsptoolkit.nhs.uk/OrganisationSearch" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#164E83] px-5 py-3 font-semibold text-white transition-colors hover:bg-[#123C65]">Check NHS DSPT publication <ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" /></a>
             </div>
           </div>
