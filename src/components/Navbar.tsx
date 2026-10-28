@@ -111,37 +111,61 @@ export const Navbar: React.FC = () => {
                 key={item.label}
                 className="relative"
                 onMouseEnter={() => item.children && setOpenDropdown(item.label)}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseLeave={(event) => {
+                  if (!event.currentTarget.contains(document.activeElement)) setOpenDropdown(null);
+                }}
+                onBlur={(event) => {
+                  if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                    setOpenDropdown(null);
+                  }
+                }}
+                onKeyDown={(event) => {
+                  if (item.children && event.key === 'Escape') {
+                    event.preventDefault();
+                    setOpenDropdown(null);
+                    event.currentTarget.querySelector<HTMLButtonElement>('button')?.focus();
+                  }
+                }}
               >
+                <div className="flex items-center gap-1">
                 <a
                   href={item.href}
-                  className={`flex items-center gap-1 whitespace-nowrap font-medium transition-colors ${
+                  className={`whitespace-nowrap rounded-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
                     shouldShowWhite ? 'text-[#4B5563] hover:text-[#4370B7]' : 'text-white/90 hover:text-white'
                   }`}
-                  aria-expanded={item.children ? openDropdown === item.label : undefined}
-                  aria-haspopup={item.children ? 'menu' : undefined}
                 >
                   {item.label}
-                  {item.children && <ChevronDownIcon className="w-4 h-4" />}
                 </a>
+                {item.children && (
+                  <button
+                    type="button"
+                    aria-label={`${openDropdown === item.label ? 'Close' : 'Open'} ${item.label} submenu`}
+                    aria-expanded={openDropdown === item.label}
+                    aria-controls={`nav-submenu-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                    onClick={() => setOpenDropdown(openDropdown === item.label ? null : item.label)}
+                    className={`flex h-7 w-7 items-center justify-center rounded-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${shouldShowWhite ? 'text-[#4B5563] focus-visible:outline-[#0F172A]' : 'text-white focus-visible:outline-white'}`}
+                  >
+                    <ChevronDownIcon aria-hidden="true" className={`w-4 h-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`} />
+                  </button>
+                )}
+                </div>
 
-                {item.children && openDropdown === item.label && (
-                  <div 
+                {item.children && (
+                  <div
+                    id={`nav-submenu-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+                    hidden={openDropdown !== item.label}
                     className="absolute top-full left-0 pt-2 bg-transparent"
                     onMouseEnter={() => setOpenDropdown(item.label)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <div 
                       className="bg-white rounded-2xl shadow-lg py-2 min-w-[240px] border border-[rgba(20,30,60,0.08)]"
-                      role="menu"
-                      aria-label={`${item.label} submenu`}
                     >
                       {item.children.map((child) => (
                         <a
                           key={child.label}
                           href={child.href}
                           className="block px-4 py-2 text-[#4B5563] hover:bg-[#FAFBFC] hover:text-[#4370B7] transition-colors"
-                          role="menuitem"
                         >
                           {child.label}
                         </a>
@@ -189,8 +213,12 @@ export const Navbar: React.FC = () => {
         <button
           className={`xl:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg -mr-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:ring-offset-2 focus:ring-offset-transparent ${!shouldShowWhite ? 'bg-white/10 hover:bg-white/20' : 'hover:bg-slate-100'}`}
           style={{ padding: '10px' }}
+          id="mobile-navigation-toggle"
+          type="button"
           onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
-          aria-label="Toggle menu"
+          aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-navigation"
         >
           {isMobileMenuOpen ? (
             <XMarkIcon className={`w-6 h-6 ${shouldShowWhite ? 'text-[#0F172A]' : 'text-white'}`} />
@@ -200,8 +228,17 @@ export const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {isMobileMenuOpen && (
-        <div className="xl:hidden max-h-[calc(100dvh-72px)] overflow-y-auto overscroll-y-contain bg-white border-t border-[rgba(20,30,60,0.08)] shadow-lg">
+      <div
+        id="mobile-navigation"
+        hidden={!isMobileMenuOpen}
+        onKeyDown={(event) => {
+          if (event.key === 'Escape') {
+            setIsMobileMenuOpen(false);
+            document.getElementById('mobile-navigation-toggle')?.focus();
+          }
+        }}
+        className="xl:hidden max-h-[calc(100dvh-72px)] overflow-y-auto overscroll-y-contain bg-white border-t border-[rgba(20,30,60,0.08)] shadow-lg"
+      >
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-4">
             {navigation.map((item) => (
               <div key={item.label}>
@@ -259,7 +296,6 @@ export const Navbar: React.FC = () => {
             </div>
           </div>
         </div>
-      )}
     </nav>
   );
 };
