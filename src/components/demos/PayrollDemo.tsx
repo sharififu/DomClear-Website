@@ -20,7 +20,7 @@ import {
 import { DemoHeader } from './DemoHeader';
 import { DemoTour, useDemoTour } from './DemoTour';
 import { TourButton } from './TourButton';
-import { format, startOfWeek, endOfWeek, startOfMonth, endOfMonth, subWeeks, addWeeks, subMonths, addMonths } from 'date-fns';
+import { format, startOfWeek, endOfWeek, startOfMonth, endOfMonth, addWeeks } from 'date-fns';
 
 interface PayrollReport {
   staffId: string;
@@ -275,11 +275,6 @@ export const PayrollDemo: React.FC = () => {
   const totalGrossPay = filteredData.reduce((sum, report) => sum + report.grossPay, 0);
   const totalHours = filteredData.reduce((sum, report) => sum + report.totalHours, 0);
   const avgRate = totalHours > 0 ? totalGrossPay / totalHours : 0;
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return format(date, 'MMM dd, yyyy');
-  };
 
   const formatDateRange = () => {
     return `${format(new Date(dateRange.startDate), 'MMM dd')} - ${format(new Date(dateRange.endDate), 'MMM dd, yyyy')}`;

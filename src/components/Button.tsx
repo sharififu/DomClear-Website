@@ -2,7 +2,7 @@ import React from 'react';
 import { Button as HeroButton } from '@heroui/react';
 import { analytics } from '../utils/analytics';
 
-interface ButtonProps extends Omit<React.ComponentProps<typeof HeroButton>, 'variant' | 'size' | 'onPress'> {
+interface ButtonProps extends Omit<React.ComponentProps<typeof HeroButton>, 'variant' | 'size' | 'onPress' | 'onClick'> {
   variant?: 'primary' | 'accent' | 'secondary' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   children: React.ReactNode;
@@ -12,6 +12,7 @@ interface ButtonProps extends Omit<React.ComponentProps<typeof HeroButton>, 'var
   analyticsEvent?: string;
   analyticsProperties?: Record<string, unknown>;
   onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
+  onPress?: React.ComponentProps<typeof HeroButton>['onPress'];
 }
 
 const variantMap = {

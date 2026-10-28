@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useRef } from 'react';
+import React, { useState, useCallback } from 'react';
 import { DemoHeader } from './DemoHeader';
 import { DemoTour, useDemoTour } from './DemoTour';
 import { TourButton } from './TourButton';
@@ -23,8 +23,6 @@ import {
   Undo2,
   Redo2,
   X,
-  CheckCircle2,
-  AlertTriangle
 } from 'lucide-react';
 
 // Types matching the actual app
@@ -711,7 +709,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
       for (const section of newSchema.sections) {
         for (const row of section.rows) {
           for (const column of row.columns) {
-            const idx = column.elements.findIndex(e => e.id === selection.selectedElementId);
+            const idx = column.elements.findIndex((e: { id: string }) => e.id === selection.selectedElementId);
             if (idx > 0) {
               const [moved] = column.elements.splice(idx, 1);
               column.elements.splice(idx - 1, 0, moved);
@@ -738,7 +736,7 @@ export const TemplateBuilderDemo: React.FC<{ onReset: () => void }> = ({ onReset
       for (const section of newSchema.sections) {
         for (const row of section.rows) {
           for (const column of row.columns) {
-            const idx = column.elements.findIndex(e => e.id === selection.selectedElementId);
+            const idx = column.elements.findIndex((e: { id: string }) => e.id === selection.selectedElementId);
             if (idx >= 0 && idx < column.elements.length - 1) {
               const [moved] = column.elements.splice(idx, 1);
               column.elements.splice(idx + 1, 0, moved);

@@ -85,7 +85,7 @@ export const DemoTour: React.FC<DemoTourProps> = ({
         onStepChange(index);
       }
 
-      if ([STATUS.FINISHED, STATUS.SKIPPED].includes(status)) {
+      if (status === STATUS.FINISHED || status === STATUS.SKIPPED) {
         onComplete();
       }
 
