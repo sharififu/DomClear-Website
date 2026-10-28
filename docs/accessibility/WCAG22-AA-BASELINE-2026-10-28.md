@@ -160,3 +160,19 @@ Fix the **shared legal HTML link colour** and **link non-colour affordance** as 
 - These are **automated preview-build results**, not manually verified production WCAG 2.2 conformance. Manual screen-reader, keyboard journeys, zoom/reflow, captions/transcripts and linked PDF checks remain unassessed.
 
 **Next small remediation candidate:** shared white-on-teal CTA text contrast (baseline: 13 affected instances). Treat SPA route-focus restoration as a separate interactive-behaviour batch. Do not change the primary marketing colour gradient or entire palette without targeted evidence and visual regression review.
+
+## Batch 03 — teal accent CTA and pricing badge contrast (28 October 2026)
+
+**State:** Proposed fix committed on the existing draft PR, pending latest-run regression and manual verification. **No production merge/deploy, no WCAG conformance claim.**
+
+Source of targeted findings: the 26-route Chromium axe discovery artifact from [Batch 02 run 40694245726](https://github.com/sharififu/DomClear-Website/actions/runs/40694245726). Of the **31** remaining affected instances, **13** share `color-contrast` rule, foreground `#ffffff` and background `#0ea08a` (approx. **3.27:1**): one home Hero CTA, two About accent CTAs, five pricing badges on `/pricing`, and five on `/signup`. These are *instances*, not 13 different underlying defects.
+
+**Code root causes and changes:**
+- `src/components/Button.tsx`: `accent` class changed from `bg-[#0ea08a] hover:bg-[#0c8a75]` to `bg-[#0F766E] hover:bg-[#115E59]` while retaining white text, existing event handling, semantics, links, labels and layout.
+- `src/components/PricingCard.tsx`: trial badge background changed from `#0ea08a` to `#0F766E`; kept white text and size/placement.
+- Computed WCAG contrast ratios for normal text on background: **3.27:1 before; 5.47:1 after** (new hover shade **~7.7:1**). The actual browser-computed value and axe scan will be checked by regression; no claim for background gradients or other teal combinations.
+- `tests/accessibility/teal-contrast.spec.ts` tests rendered accent controls on Home and About, all five visible trial badges each on Pricing and Signup, white-on-teal computed contrast, scoped axe `color-contrast`, and CTA hover contrast/destination. The full route-discovery tests remain non-gating for unrelated findings.
+
+**Expected improvement:** Remove 13 repeated white-on-`#0ea08a` failures on the same baseline route states; other blue-on-white and muted grey/teal contrast findings remain outside Batch 03.
+
+**Acceptance:** Confirm browser tests and build pass on the final Batch 03 commit. The complete pipeline still has independent pre-existing TypeScript errors, and passing these specific tests is not a conformance assessment. Screen-reader, zoom/reflow, focus management, media, forms and PDF checks are still outstanding.
