@@ -23,23 +23,23 @@ const completed = [
 const underway = [
   {
     title: 'Cyber Essentials',
-    description: 'Technical readiness and remediation are under way. We are not yet Cyber Essentials certified.',
+    description: 'We are working towards Cyber Essentials certification and completing the required security controls and assessment. Certification has not yet been awarded.',
   },
   {
     title: 'Accessibility and WCAG 2.2',
-    description: 'Accessibility testing and improvements are in progress; full WCAG 2.2 conformance has not yet been established.',
+    description: 'We are improving accessibility and testing selected areas against WCAG criteria. Full WCAG 2.2 conformance has not yet been established.',
   },
   {
     title: 'DCB0129 clinical risk management',
-    description: 'Clinical safety documentation and independent review are being prepared. DCB0129 compliance has not yet been established.',
+    description: 'Clinical safety documentation is being prepared for qualified clinical safety review. DCB0129 assurance remains in progress; clinical sign-off has not been obtained.',
   },
   {
     title: 'Care information standards — MODS and PRSB',
-    description: 'We are mapping care-record functionality to NHS data standards. DomiClear does not currently claim MODS or PRSB conformance or PRSB Quality Partner status.',
+    description: 'We are using relevant PRSB and NHS information standards to inform product design. PRSB / MODS conformance has not yet been established, and DomiClear is not a PRSB Quality Partner.',
   },
   {
     title: 'ISO/IEC 27001',
-    description: 'Preparatory information-security management work is under way. DomiClear is not ISO 27001 certified.',
+    description: 'We are developing our information security controls and assessing them against ISO 27001. DomiClear is not ISO 27001 certified.',
   },
 ];
 
