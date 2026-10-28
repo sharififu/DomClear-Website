@@ -117,3 +117,15 @@ The file `tests/accessibility/legal-pdf-integrity.spec.ts` now checks three **lo
 Inspected the **base64-encoded PDF bytes in GitHub's main branch** for `cookies.pdf` (46,480 bytes; 2 page objects), `acceptable-use.pdf` (43,012 bytes; 1 page object), and `service-level.pdf` (44,089 bytes; 1 page object). Each contains `%PDF-1.4`, `/StructTreeRoot`, `/MarkInfo`, `/Marked true`, `/Lang`, `/ToUnicode`, and a document `/Title`. The number of detected `/Type /Page` objects is a basic source-structure estimate only, not a validated page count. Permanent regression tests were added in `tests/accessibility/legal-pdf-structure-preflight.spec.ts`, in addition to the preview download integrity tests; CI is pending.
 
 **This supports only a PDF metadata preflight**. It does NOT validate tag semantics, image alt text, logical heading/reading order, bookmarks, contrast, keyboard operation, actual Acrobat/Screen Reader results, PDF/UA compliance, or exact deployed-file bytes. Keep all individual PDF manual conformance decisions **UNVERIFIED** until checked.
+
+## Evaluation methodology — WCAG-EM 2.0 (W3C Group Note, 2026)
+
+Use [W3C's WCAG Evaluation Methodology 2.0](https://www.w3.org/TR/WCAG-EM/) as the **non-normative evaluation process** alongside the normative WCAG 2.2 standard:
+
+1. **Define scope:** state public hostname, included route set, services/domains and full processes before claiming anything.
+2. **Explore:** identify shared components, media, iframes, legal PDFs, downloadable resources, and critical user workflows.
+3. **Select representative samples:** include common layouts, distinctive pages, an independently selected sample and **every page in a complete process**.
+4. **Evaluate:** test initial states, all steps in selected processes, accessibility-supported use and noninterference. Sampled checks are not equivalent to a whole-site blanket claim.
+5. **Report:** record tester/AT versions, each SC's scope/applicability and evidence, unresolved issues, date and reviewer decision.
+
+The methodology supports **self-assessment or third-party assessment** but demands competent testing and reproducible findings. This evidence register remains a **working template**, not the completed WCAG-EM report.
