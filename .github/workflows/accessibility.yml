@@ -1,0 +1,49 @@
+name: WCAG 2.2 automated baseline (not conformance)
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'public/legal/**'
+      - 'tests/accessibility/**'
+      - 'playwright.config.ts'
+      - 'package.json'
+      - '.github/workflows/accessibility.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  accessibility:
+    name: Build, keyboard checks and axe discovery
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install application dependencies from lockfile
+        run: npm ci
+      - name: Install temporary accessibility test tools without changing repository lockfile
+        run: npm install --no-save --package-lock=false @playwright/test@1.56.1 @axe-core/playwright@4.11.0
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Check TypeScript
+        run: npm run typecheck
+      - name: Build site (no deployment)
+        run: npm run build
+      - name: Run browser keyboard regression and axe discovery scans
+        run: npx playwright test
+      - name: Preserve browser audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wcag22-accessibility-baseline
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 14
