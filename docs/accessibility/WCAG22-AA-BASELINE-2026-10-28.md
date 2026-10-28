@@ -45,7 +45,7 @@ marketing demos (including guided tour); external login/sign-up links.
 | A11Y-001 | High / confirmed in pre-fix source | Desktop navigation submenu relied on pointer hover to reveal its children. 2.1.1 Keyboard, 4.1.2 Name Role Value, 2.4.3 Focus Order | `src/components/Navbar.tsx`; Batch 01: dedicated button, expanded state, focus handling, Escape, native submenu links |
 | A11Y-002 | High / confirmed navigation architecture, user impact not yet tested | `src/App.tsx` intercepts same-origin anchor clicks, replaces route content and scrolls, but does not put focus on the new heading/main landmark or announce route changes. 2.4.3 Focus Order, 2.4.7 Focus Visible, 4.1.3 Status Messages (as applicable) | Batch 02: design and test route focus restoration, back/forward and hash anchors without SEO regressions |
 | A11Y-003 | Medium / confirmed in pre-fix source | Mobile hamburger did not expose `aria-expanded`, `aria-controls` or a state-specific accessible name; Escape path was absent. 4.1.2, 2.1.1 | `src/components/Navbar.tsx`; Batch 01 |
-| A11Y-004 | Review required / no measured contrast data | Interactive links, light text, icon controls, focus indication and non-text boundaries need computed contrast checks. 1.4.3, 1.4.11, 2.4.7, 2.4.11 | Axe and manual colour/focus measurements at desktop/mobile widths, hero states and sticky-header states |
+| A11Y-004 | Review required / no measured contrast data | Interactive links, light text, icon controls, focus indication and non-text boundaries need computed contrast checks. 1.4.3, 1.4.11, 2.4.7, 2.4.11 | The pre-scroll transparent header also used white nav text over light backgrounds on Contact/Login/Signup/Legal; Batch 01 addresses that specific state. Other gradient-hero contrast and focus checks remain pending. |
 | A11Y-005 | Review required / code observation | FAQ uses shared index-based IDs, potentially repeated across component instances, and visually collapses content with `max-h-0`. 1.3.1, 4.1.2 | Verify unique IDs, keyboard disclosure, accessible hiding and motion in Batch 02 |
 | A11Y-006 | Review required / some correct semantics already exist | Contact and demo forms have labels, required fields and `role="alert"` on submission error. Full error, success, autocomplete, reflow and assistive-technology experience not yet verified. 1.3.5, 3.3.1–3.3.3, 4.1.3 | Automated checks and manual form journeys with mocked endpoints, **never send real requests from tests** |
 | A11Y-007 | Review required / source inventory | `LoginPage` includes login, signup, a plan picker and an apparent payment information section whose labels lack explicit input association. 1.3.1, 3.3.2, 4.1.2 | Check whether these elements remain live/reachable; remove misleading mock payment UI only with separate approval |
@@ -63,6 +63,7 @@ is not automatically a fully verified WCAG failure in every rendered state.
 - Escape collapses submenu and returns focus to its toggle.
 - Removes application-menu semantics (`role="menu"` and `role="menuitem"`) from a normal navigation list that has no full ARIA menu-keyboard implementation.
 - Mobile toggle exposes its state, controls the menu panel, and provides an Escape return path.
+- Light-background Contact, Login, Signup and Legal pages use the existing white/dark header state before scroll; gradient hero pages keep their established appearance.
 - No intentional changes to visual brand palette, route targets, SEO metadata, form submission, application data or server-side services.
 
 ### Regression evidence required before acceptance
@@ -78,14 +79,14 @@ is not automatically a fully verified WCAG failure in every rendered state.
 
 ```sh
 npm ci
-npm install --no-save --package-lock=false @playwright/test@1.56.1 @axe-core/playwright@4.11.0
-npx playwright install chromium
+node scripts/setup-a11y-tools.mjs
+node node_modules/.domiclear-a11y-tools/node_modules/playwright/cli.js install chromium
 npm run typecheck
 npm run build
-npx playwright test
+node node_modules/.domiclear-a11y-tools/node_modules/playwright/cli.js test
 ```
 
-The workflow also performs these checks on the draft PR without deployment.
+The workflow also performs these checks on the draft PR without an explicit deploy command. The accessibility tools install inside an ignored subdirectory of node_modules so npm does not re-resolve the existing locked HeroUI beta dependencies. A connected external deployment service may separately create automatic preview deployments upon a GitHub push; this workflow does not initiate them.
 Baseline axe tests intentionally **collect** findings; they do not fail on every
 pre-existing violation. A green workflow therefore means *only* that the build,
 smoke tests and collection completed. Review `playwright-report/` and the
