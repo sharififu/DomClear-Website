@@ -64,3 +64,14 @@ test('marketing contact and demo forms expose named fields without submission', 
     await expect(form.getByRole('textbox', { name: 'Email address' })).toBeVisible();
   }
 });
+
+test('light-background entry routes show a white header with dark navigation text', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  for (const route of ['/contact', '/login', '/signup', '/legal']) {
+    await page.goto(route);
+    const nav = page.getByRole('navigation');
+    await expect(nav).toHaveClass(/bg-white/);
+    const logoText = nav.getByText('DomiClear', { exact: true });
+    await expect(logoText).toHaveClass(/text-\\[\\#0F172A\\]/);
+  }
+});
