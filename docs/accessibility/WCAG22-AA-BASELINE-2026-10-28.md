@@ -176,3 +176,15 @@ Source of targeted findings: the 26-route Chromium axe discovery artifact from [
 **Expected improvement:** Remove 13 repeated white-on-`#0ea08a` failures on the same baseline route states; other blue-on-white and muted grey/teal contrast findings remain outside Batch 03.
 
 **Acceptance:** Confirm browser tests and build pass on the final Batch 03 commit. The complete pipeline still has independent pre-existing TypeScript errors, and passing these specific tests is not a conformance assessment. Screen-reader, zoom/reflow, focus management, media, forms and PDF checks are still outstanding.
+
+### Batch 03 measured regression result — 28 October 2026
+
+**GitHub Actions evidence:** [run 40695545635](https://github.com/sharififu/DomClear-Website/actions/runs/40695545635), code commit `8cadd79c41722d6a4e2e74daad39b998cc042912` (followed by documentation-only commits).
+
+- `npm ci`, isolated accessibility tools, Chromium install and `npm run build`: **PASS**.
+- Playwright: **45/45 passed** (26 axe discovery snapshots and 19 targeted/behavioural tests, including five new teal checks). Checked Home/About accent CTAs, Pricing/Signup trial badges, actual computed contrast, scoped axe rule and CTA hover styling.
+- Axe discovery across the same 26 route snapshots: **18 affected instances**, down from **31** after Batch 02 (**13 fewer, approx 42%**), and down from **82** initially (**64 fewer, approx 78%**). The 13 targeted `#ffffff` on `#0ea08a` instances were no longer present. Other contrast issues remain.
+- **Overall Actions status: FAIL** from existing full-project `npm run typecheck` errors (Button typing, demo code, unused Navbar handler parameter). Keep this separate from browser accessibility regressions; do not claim a green pipeline.
+- **Manual completion pending:** keyboard and screen-reader journeys, zoom/reflow, hover/focus states beyond tested cases, captions/transcripts, legal PDFs, and complete WCAG 2.2 A/AA criteria matrix. No AA claim or badge.
+
+**Next bounded contrast candidate:** blue `#1A86F0` text on white CTAs (11 remaining baseline instances; measured approx 3.67:1), distinct from the brand hero background gradient; avoid broad palette changes.
