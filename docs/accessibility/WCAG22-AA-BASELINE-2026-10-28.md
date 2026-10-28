@@ -147,3 +147,16 @@ Fix the **shared legal HTML link colour** and **link non-colour affordance** as 
 - Added `tests/accessibility/legal-contrast.spec.ts` with computed contrast measurements, an axe `color-contrast` gate for each standalone legal HTML page and embedded Privacy Notice, a `link-in-text-block` axe gate for Contact, and keyboard/hover checks.
 
 **Important limits:** The new assertions apply to these specific pages/components and browser states; they do not constitute WCAG AA approval for all marketing routes, PDFs, media, forms, focus-management, contrast over backgrounds or assistive-technology journeys. Pre-existing TypeScript failures must remain visible in CI, separate from accessibility-browser results.
+
+### Batch 02 measured regression outcome — 28 October 2026
+
+**Evidence:** [GitHub Actions run 40694245726](https://github.com/sharififu/DomClear-Website/actions/runs/40694245726) on commit `5f0b05d6c484f7b5d657c62ee05e159b180d0ee9` (code unchanged by this evidence-note update).
+
+- `npm ci`, isolated browser-test dependencies, Chromium setup and `npm run build`: **pass**.
+- Playwright + axe tests: **40 passed / 40 total**, including six standalone HTML contrast checks, an HTML print-button hover/focus check, Contact inline-link style + axe check, and a pretty-path legal route check. Existing navigation tests also passed.
+- In the same 26-page discovery sweep, detected affected *instances* fell from **82 to 31** (**51 fewer / approximately 62% reduction**) with the legal and Contact route snapshots each reporting **zero axe violations** in their tested state. Repeated instances across pretty and direct legal URLs are **not** unique defect counts.
+- **Overall workflow remains failed:** `npm run typecheck` still reports existing errors in the Button abstraction, marketing demos and one unused Navbar event argument. Do not mislabel the CI as fully green.
+- The pretty URL `/legal/privacy` was served without the expected React iframe in the preview browser; an overly specific iframe-presence test initially failed. This was corrected to explicitly check a visible Privacy Notice in either a direct HTML or iframe presentation, and the corrected test passed. Route resolution should still receive a separate production/preview comparison.
+- These are **automated preview-build results**, not manually verified production WCAG 2.2 conformance. Manual screen-reader, keyboard journeys, zoom/reflow, captions/transcripts and linked PDF checks remain unassessed.
+
+**Next small remediation candidate:** shared white-on-teal CTA text contrast (baseline: 13 affected instances). Treat SPA route-focus restoration as a separate interactive-behaviour batch. Do not change the primary marketing colour gradient or entire palette without targeted evidence and visual regression review.
