@@ -128,16 +128,16 @@ export const Navbar: React.FC = () => {
                 }}
               >
                 <div className="flex items-center gap-1">
-                <a
+                  <a
                   href={item.href}
                   className={`whitespace-nowrap rounded-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
                     shouldShowWhite ? 'text-[#4B5563] hover:text-[#4370B7]' : 'text-white/90 hover:text-white'
                   }`}
                 >
                   {item.label}
-                </a>
-                {item.children && (
-                  <button
+                  </a>
+                  {item.children && (
+                    <button
                     type="button"
                     aria-label={`${openDropdown === item.label ? 'Close' : 'Open'} ${item.label} submenu`}
                     aria-expanded={openDropdown === item.label}
@@ -147,7 +147,7 @@ export const Navbar: React.FC = () => {
                   >
                     <ChevronDownIcon aria-hidden="true" className={`w-4 h-4 transition-transform ${openDropdown === item.label ? 'rotate-180' : ''}`} />
                   </button>
-                )}
+                  )}
                 </div>
 
                 {item.children && (
@@ -155,8 +155,6 @@ export const Navbar: React.FC = () => {
                     id={`nav-submenu-${item.label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
                     hidden={openDropdown !== item.label}
                     className="absolute top-full left-0 pt-2 bg-transparent"
-                    onMouseEnter={() => setOpenDropdown(item.label)}
-                    onMouseLeave={() => setOpenDropdown(null)}
                   >
                     <div 
                       className="bg-white rounded-2xl shadow-lg py-2 min-w-[240px] border border-[rgba(20,30,60,0.08)]"
@@ -216,6 +214,12 @@ export const Navbar: React.FC = () => {
           id="mobile-navigation-toggle"
           type="button"
           onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape' && isMobileMenuOpen) {
+              event.preventDefault();
+              setIsMobileMenuOpen(false);
+            }
+          }}
           aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
           aria-expanded={isMobileMenuOpen}
           aria-controls="mobile-navigation"
