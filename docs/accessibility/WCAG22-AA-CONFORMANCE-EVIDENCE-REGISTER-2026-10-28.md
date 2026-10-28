@@ -105,3 +105,9 @@ WCAG 2.2 AA requires **every applicable Level A and AA Success Criterion** (55 b
 ### Latest decision
 
 **In progress — independent full-page, manual and document evidence incomplete. Public WCAG 2.2 AA claim: NOT AUTHORISED.**
+
+## Added preview PDF integrity checks — not document accessibility
+
+The file `tests/accessibility/legal-pdf-integrity.spec.ts` now checks three **local Vite preview responses**: that the legal hub download links resolve to `/legal/*.pdf`, respond HTTP 200, carry `application/pdf` MIME type and start with `%PDF-` bytes. **Pending CI evidence.** These checks cannot prove that the deployed domain serves the same files or that the PDFs are tagged or screen-reader-accessible.
+
+**Production PDF response audit, structural tag inspection and manual screen-reader PDF reading-order tests remain unverified.**
