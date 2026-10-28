@@ -133,3 +133,17 @@ Axe also produced **incomplete/manual-review** results, including contrast, capt
 Fix the **shared legal HTML link colour** and **link non-colour affordance** as a tightly bounded change, accompanied by axe assertions and manual contrast calculation. Follow with branded CTA palettes and the remaining affected contexts. Do **not** sweep all colours automatically. Separately test SPA route focus, dialog/accordion interaction, form validation and legal PDF accessibility.
 
 **No WCAG 2.2 AA certification, full conformance statement, or accessibility badge is justified by this evidence.** A manual screen-reader and keyboard assessment, route-level history/focus journey verification, zoom/reflow, media captions/transcripts and accessible PDFs remain outstanding.
+
+## Batch 02 — legal-link contrast and Contact form link (28 October 2026)
+
+**Status:** Code updated in draft PR #5. The definitive after-change test results must be taken from a GitHub Actions run on the *latest Batch 02 commit*; manual screen-reader and broader WCAG checks remain outstanding.
+
+**Root causes:** A11Y-004 / WCAG 2.2 **1.4.3 Contrast (Minimum)** and **1.4.1 Use of Color**. The baseline's repeated legal link contrast findings are a shared stylesheet-pattern problem, not dozens of different defects.
+
+- Updated six standalone legal HTML documents (`index`, `terms`, `privacy`, `cookies`, `acceptable-use`, `service-level`) from `#3B82F6` to `#1D4ED8` for text links. Calculated contrast against white: **3.68:1 before; 6.70:1 after**. Body copy, headings, filenames, legal content, print layout and linked PDFs are unchanged.
+- Kept links persistently underlined and added clear keyboard focus outlines. The hub index no longer removes its link underline on hover.
+- Darkened only legal-document print-button *hover* backgrounds to `#1D4ED8` so white text remains readable; normal dark buttons unchanged.
+- Added a permanent underline and focus style to the Privacy Policy link within the Contact form; kept its existing brand blue `#1F6FEB` (computed against white approximately **4.63:1**).
+- Added `tests/accessibility/legal-contrast.spec.ts` with computed contrast measurements, an axe `color-contrast` gate for each standalone legal HTML page and embedded Privacy Notice, a `link-in-text-block` axe gate for Contact, and keyboard/hover checks.
+
+**Important limits:** The new assertions apply to these specific pages/components and browser states; they do not constitute WCAG AA approval for all marketing routes, PDFs, media, forms, focus-management, contrast over backgrounds or assistive-technology journeys. Pre-existing TypeScript failures must remain visible in CI, separate from accessibility-browser results.
