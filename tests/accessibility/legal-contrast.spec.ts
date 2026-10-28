@@ -56,19 +56,20 @@ for (const doc of legalDocuments) {
 test('legal print buttons preserve readable hover state and keyboard focus', async ({ page }) => {
   await page.goto('/legal/privacy.html');
   const print = page.getByRole('button', { name: /Print/ });
+  await page.keyboard.press('Tab');
+  await expect(print).toBeFocused();
+  await expect(print).toHaveCSS('outline-style', 'solid');
   await print.hover();
   const colours = await print.evaluate((element) => ({
     foreground: getComputedStyle(element).color,
     background: getComputedStyle(element).backgroundColor,
   }));
   expect(contrastRatio(colours.foreground, colours.background)).toBeGreaterThanOrEqual(4.5);
-  await print.focus();
-  await expect(print).toHaveCSS('outline-style', 'solid');
 });
 
 test('Contact privacy link is persistently underlined, including before hover', async ({ page }) => {
   await page.goto('/contact');
-  const link = page.getByRole('link', { name: 'Privacy Policy' });
+  const link = page.locator('form a[href="/legal/privacy"]');
   await expect(link).toHaveCSS('text-decoration-line', 'underline');
   await link.focus();
   await expect(link).toHaveCSS('outline-style', 'solid');
