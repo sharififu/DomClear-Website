@@ -104,3 +104,32 @@ captions/transcripts, interactive demonstrations and legal documents.
 Any future accessibility statement must accurately disclose remaining
 exceptions and dates. **Do not use an AA badge, certification language or
 “Standards Met” claim based on automated checks or this PR alone.**
+
+
+## First Chromium axe / Playwright evidence — 28 October 2026
+
+**Evidence source:** [GitHub Actions run 40683625053](https://github.com/sharififu/DomClear-Website/actions/runs/40683625053), commit \`27fb87d463bd6d7f005787da9615d69626305797\`, artifact \`wcag22-accessibility-baseline\`. This is a **built local preview tested by Chromium**, **not a production-site manual assessment**.
+
+- \`npm ci\`: pass; isolated Playwright/axe tool install: pass; Chromium install: pass; \`npm run build\`: pass.
+- Playwright: **31 tests passed**, including 26 per-route axe *discovery* scans and five navigation/form-field regression checks.
+- \`npm run typecheck\`: **failed** due to existing codebase errors in \`src/components/Button.tsx\`, multiple \`src/components/demos/*\` files, and an unused \`event\` parameter in Navbar. The run's overall GitHub Actions status is therefore **failure** even though its browser step passed. Treat the compilation errors as a separate technical-debt track; do not label CI fully green.
+- Of 26 route snapshots, **22** had one or more automated violations; **4** showed none in that initial snapshot. A route with zero detected violations is **not** evidence of WCAG AA conformance.
+- **82 affected node instances** were logged, **not 82 unique root causes**. Of these, **81 are \`color-contrast\`**, and **1 is \`link-in-text-block\`**. Legal iframe and direct-HTML scans intentionally produce duplicate instance counts. Affected instances are provisional until each is verified in rendered context.
+
+### Grouped evidence by root cause
+
+| Priority | Shared root cause | Axe evidence | Suggested next small batch |
+|---|---|---|---|
+| High — serious | Light legal-document links: \`#3B82F6\` on white, roughly **3.67:1** | **50 affected instances**, with duplication across iframe and direct document scans | Improve legal HTML link palette globally and check link distinctions/hover/focus, preserving document content |
+| High — serious | White lettering on teal \`#0EA08A\`, roughly **3.27:1** | **13 affected instances** across CTA/button variants | Update shared teal foreground/background contrast, preserve the branded teal identity |
+| High — serious | Blue \`#1A86F0\` on white, roughly **3.67:1** | **11 affected instances** | Use a darker accessible blue for text on white while keeping hero gradient branding |
+| High — serious | Other blue/teal and muted grey colour combinations below 4.5:1 | **7 affected instances** (various routes/backgrounds) | Target shared tokens or isolated classes based on exact element snapshots |
+| High — serious | Contact Privacy Policy inline link distinguished from surrounding copy primarily by colour, with 1.63:1 link-to-text contrast | **1 affected instance** (\`link-in-text-block\`) | Add persistent underline or equivalent non-colour styling, verify keyboard focus |
+
+Axe also produced **incomplete/manual-review** results, including contrast, captions, autoplay audio and possible ARIA cases. These do not establish a pass or a fail and **must** be checked manually. All counts are scoped to the initial page states, not every interaction, every viewport or every complete user journey.
+
+### Suggested Batch 02 (not yet implemented)
+
+Fix the **shared legal HTML link colour** and **link non-colour affordance** as a tightly bounded change, accompanied by axe assertions and manual contrast calculation. Follow with branded CTA palettes and the remaining affected contexts. Do **not** sweep all colours automatically. Separately test SPA route focus, dialog/accordion interaction, form validation and legal PDF accessibility.
+
+**No WCAG 2.2 AA certification, full conformance statement, or accessibility badge is justified by this evidence.** A manual screen-reader and keyboard assessment, route-level history/focus journey verification, zoom/reflow, media captions/transcripts and accessible PDFs remain outstanding.
