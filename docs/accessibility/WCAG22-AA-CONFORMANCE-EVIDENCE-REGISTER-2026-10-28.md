@@ -108,13 +108,13 @@ WCAG 2.2 AA requires **every applicable Level A and AA Success Criterion** (55 b
 
 ## Added preview PDF integrity checks — not document accessibility
 
-The file `tests/accessibility/legal-pdf-integrity.spec.ts` now checks three **local Vite preview responses**: that the legal hub download links resolve to `/legal/*.pdf`, respond HTTP 200, carry `application/pdf` MIME type and start with `%PDF-` bytes. **Pending CI evidence.** These checks cannot prove that the deployed domain serves the same files or that the PDFs are tagged or screen-reader-accessible.
+The file `tests/accessibility/legal-pdf-integrity.spec.ts` now checks three **local Vite preview responses**: that the legal hub download links resolve to `/legal/*.pdf`, respond HTTP 200, carry `application/pdf` MIME type and start with `%PDF-` bytes. **Preview integrity tests verified in the CI run below.** These checks cannot prove that the deployed domain serves the same files or that the PDFs are tagged or screen-reader-accessible.
 
 **Production PDF response audit, structural tag inspection and manual screen-reader PDF reading-order tests remain unverified.**
 
 ## Repository PDF structural preflight (not reading-order sign-off)
 
-Inspected the **base64-encoded PDF bytes in GitHub's main branch** for `cookies.pdf` (46,480 bytes; 2 page objects), `acceptable-use.pdf` (43,012 bytes; 1 page object), and `service-level.pdf` (44,089 bytes; 1 page object). Each contains `%PDF-1.4`, `/StructTreeRoot`, `/MarkInfo`, `/Marked true`, `/Lang`, `/ToUnicode`, and a document `/Title`. The number of detected `/Type /Page` objects is a basic source-structure estimate only, not a validated page count. Permanent regression tests were added in `tests/accessibility/legal-pdf-structure-preflight.spec.ts`, in addition to the preview download integrity tests; CI is pending.
+Inspected the **base64-encoded PDF bytes in GitHub's main branch** for `cookies.pdf` (46,480 bytes; 2 page objects), `acceptable-use.pdf` (43,012 bytes; 1 page object), and `service-level.pdf` (44,089 bytes; 1 page object). Each contains `%PDF-1.4`, `/StructTreeRoot`, `/MarkInfo`, `/Marked true`, `/Lang`, `/ToUnicode`, and a document `/Title`. The number of detected `/Type /Page` objects is a basic source-structure estimate only, not a validated page count. Permanent regression tests were added in `tests/accessibility/legal-pdf-structure-preflight.spec.ts`, in addition to the preview download integrity tests; both test groups passed in the verified CI run below.
 
 **This supports only a PDF metadata preflight**. It does NOT validate tag semantics, image alt text, logical heading/reading order, bookmarks, contrast, keyboard operation, actual Acrobat/Screen Reader results, PDF/UA compliance, or exact deployed-file bytes. Keep all individual PDF manual conformance decisions **UNVERIFIED** until checked.
 
@@ -129,3 +129,13 @@ Use [W3C's WCAG Evaluation Methodology 2.0](https://www.w3.org/TR/WCAG-EM/) as t
 5. **Report:** record tester/AT versions, each SC's scope/applicability and evidence, unresolved issues, date and reviewer decision.
 
 The methodology supports **self-assessment or third-party assessment** but demands competent testing and reproducible findings. This evidence register remains a **working template**, not the completed WCAG-EM report.
+
+## Verified evidence-register CI (28 October 2026)
+
+[GitHub Actions run 40780079623](https://github.com/sharififu/DomClear-Website/actions/runs/40780079623) for code head `2d4aa9c17cfabe3876fb0a694181b9f21bbd2133`: **overall SUCCESS**, **101/101 Playwright tests PASSED**, strict TypeScript PASS and Vite build PASS.
+
+- The existing 26 initial-route axe scans reported **zero detected violations** (manual/incomplete checks remain).
+- The 34 narrow-viewport discovery samples still reported **0px page-level horizontal overflow** (does not replace zoom/manual assessment).
+- **Six PDF preflight checks passed:** all 3 legal PDF links resolve to `/legal/*.pdf`, with HTTP 200, `application/pdf` and `%PDF-` magic in the local Vite preview; all 3 source PDF files have the basic tagging/metadata markers identified above.
+- This is **not** a deployed-production PDF response check, tag semantics/reading-order check, caption quality check or full WCAG 2.2 AA evaluation.
+- Subsequent documentation-only changes to this PR are not new application/test changes; latest full test evidence remains valid for the unchanged code blobs.
