@@ -25,3 +25,13 @@ This PR addresses **the compiler defects on `main`** in a separate branch and sh
 **Do not claim success until a CI run confirms `npm run typecheck` PASS and the existing Vite build + Playwright browser suite PASS.** Additional TypeScript errors may be revealed and need measured follow-up. Test the scheduling demo's multi-staff dropdown and menu keyboard behaviour before merging; this is a nonclinical marketing demo but it is still a user interaction.
 
 The PR is draft and unmerged, no production release was requested by creating it. It does not assert WCAG 2.2 AA conformance and does not bypass or downgrade any compiler checks.
+
+## Verified CI — 28 October 2026
+
+[GitHub Actions run 40703780846](https://github.com/sharififu/DomClear-Website/actions/runs/40703780846), commit `db545beb25745a979526115ff3631bfdeff85089`, finished with **overall SUCCESS**:
+
+- `npm run typecheck`: **PASS** with strict checks still enabled.
+- `npm run build`: **PASS**.
+- Playwright browser test suite: **45/45 PASS** (main branch includes accessibility Batches 01–03, not draft PR #6's seven-route blue/teal refinements).
+- Important limitation: staff-dropdown row-index behaviour was typed and corrected but not independently exercised by a dedicated interactive browser test. Do not claim that complete manual journey has passed.
+- Draft PR #7 remains unmerged; successful CI on this branch is not proof main or the separate PR #6 will be green until both are integrated and retested. WCAG 2.2 AA assessment remains incomplete.
