@@ -58,7 +58,7 @@ test('mobile navigation announces state and Escape restores toggle focus', async
 test('marketing contact and demo forms expose named fields without submission', async ({ page }) => {
   for (const path of ['/contact', '/book-demo']) {
     await page.goto(path);
-    const form = page.getByRole('form').first();
+    const form = page.locator('form').first();
     await expect(form.getByRole('textbox', { name: 'First name' })).toBeVisible();
     await expect(form.getByRole('textbox', { name: 'Last name' })).toBeVisible();
     await expect(form.getByRole('textbox', { name: 'Email address' })).toBeVisible();
