@@ -184,7 +184,7 @@ export const AboutPage: React.FC = () => {
       <section className="border-y border-[rgba(20,30,60,0.08)] bg-[#F7F9FC] py-20 lg:py-24" aria-labelledby="action-heading">
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
           <div>
-            <p className="mb-3 text-xs font-bold uppercase text-[#0A8F7A]">More than digital paperwork</p>
+            <p className="mb-3 text-xs font-bold uppercase text-[#0F766E]">More than digital paperwork</p>
             <h2 id="action-heading" className="mb-6 text-3xl font-bold leading-tight sm:text-4xl">
               Care records should lead to action
             </h2>
@@ -273,7 +273,7 @@ export const AboutPage: React.FC = () => {
           <div className="mx-auto mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-[#E8FAF6] text-[#0A8F7A]">
             <EyeIcon className="h-7 w-7" />
           </div>
-          <p className="mb-3 text-xs font-bold uppercase text-[#0A8F7A]">Our vision</p>
+          <p className="mb-3 text-xs font-bold uppercase text-[#0F766E]">Our vision</p>
           <h2 id="vision-heading" className="mb-6 text-3xl font-bold leading-tight sm:text-4xl">
             Better systems. Stronger providers. Higher standards of care.
           </h2>

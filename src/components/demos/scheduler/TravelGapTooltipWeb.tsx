@@ -2,7 +2,7 @@
  * Travel gap tooltip — mirrors `TravelGapTooltip` copy and layout (fixed to viewport).
  */
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { TravelGapConnectorModel } from './travelGapTypes';
 
 function statusAccent(status: TravelGapConnectorModel['status']): string {
