@@ -72,6 +72,6 @@ test('light-background entry routes show a white header with dark navigation tex
     const nav = page.getByRole('navigation');
     await expect(nav).toHaveClass(/bg-white/);
     const logoText = nav.getByText('DomiClear', { exact: true });
-    await expect(logoText).toHaveClass(/text-\\[\\#0F172A\\]/);
+    await expect(logoText).toHaveCSS('color', 'rgb(15, 23, 42)');
   }
 });
