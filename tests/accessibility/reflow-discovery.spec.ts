@@ -55,7 +55,35 @@ for (const width of [320, 640]) {
                 right: Math.round(el.getBoundingClientRect().right),
               }))
           : [];
-        return { viewport, documentWidth, overflowPx, candidates };
+        const oversizedContainers = overflowPx > 1
+          ? [...document.querySelectorAll<HTMLElement>('html, body, body *')]
+              .filter((el) => el.clientWidth > 0 && el.scrollWidth > el.clientWidth + 2)
+              .map((el) => {
+                const rect = el.getBoundingClientRect();
+                const style = getComputedStyle(el);
+                return {
+                  tag: el.tagName.toLowerCase(),
+                  id: el.id || undefined,
+                  className: typeof el.className === 'string' ? el.className.slice(0, 140) : undefined,
+                  clientWidth: el.clientWidth,
+                  scrollWidth: el.scrollWidth,
+                  overflowBy: el.scrollWidth - el.clientWidth,
+                  overflowX: style.overflowX,
+                  position: style.position,
+                  whiteSpace: style.whiteSpace,
+                  rectLeft: Math.round(rect.left),
+                  rectRight: Math.round(rect.right),
+                };
+              })
+              .sort((a, b) => b.overflowBy - a.overflowBy)
+              .slice(0, 25)
+          : [];
+        return {
+          viewport, documentWidth, overflowPx, candidates, oversizedContainers,
+          bodyScrollWidth: document.body?.scrollWidth ?? null,
+          rootScrollWidth: document.documentElement.scrollWidth,
+          innerWidth: window.innerWidth,
+        };
       });
 
       console.log(
