@@ -61,7 +61,7 @@ export const EmarSoftwarePage: React.FC = () => {
               href={EXTERNAL_SIGNUP_URL}
               target="_blank"
               rel="noreferrer"
-              className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
+              className="!bg-white !text-[#1D4ED8] border-0 hover:!bg-white/90"
             >
               Start free trial
               <ArrowRightIcon className="w-5 h-5" />
@@ -306,7 +306,7 @@ export const EmarSoftwarePage: React.FC = () => {
               href={EXTERNAL_SIGNUP_URL}
               target="_blank"
               rel="noreferrer"
-              className="!bg-white !text-[#1a86f0] border-0 hover:!bg-white/90"
+              className="!bg-white !text-[#1D4ED8] border-0 hover:!bg-white/90"
             >
               Start free trial
             </Button>
