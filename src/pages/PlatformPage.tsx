@@ -193,6 +193,26 @@ export const PlatformPage: React.FC = () => {
                     </div>
                   </div>
                 )}
+                {feature.id === 'carer-app' && (
+                  <details className="mt-5 rounded-xl border border-slate-200 bg-[#FAFBFC] p-4">
+                    <summary className="cursor-pointer font-semibold text-[#1D4ED8]">
+                      Watch the full highlighted visit tutorial (2 min 21 sec)
+                    </summary>
+                    <video
+                      controls
+                      playsInline
+                      preload="none"
+                      className="mt-4 block w-full rounded-lg bg-slate-900"
+                      aria-label="How to complete a care visit using the DomiClear Carer Mobile App"
+                    >
+                      <source src="/demo-media/demo-carer-mobile-completing-a-visit.mp4" type="video/mp4" />
+                      Your browser does not support HTML5 video.
+                    </video>
+                    <p className="mt-2 text-xs text-[#64748B]">
+                      Fictional demonstration with narrated guidance and animated highlights.
+                    </p>
+                  </details>
+                )}
               </div>
             </div>
           ))}
