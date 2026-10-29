@@ -208,7 +208,7 @@ export const PlatformPage: React.FC = () => {
                         referrerPolicy="strict-origin-when-cross-origin"
                         allowFullScreen
                       />
-                    </div>            </video>
+                    </div>
                     <p className="mt-2 text-xs text-[#64748B]">
                       Fictional demonstration with narrated guidance and animated highlights.
                     </p>
