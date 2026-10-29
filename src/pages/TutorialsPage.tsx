@@ -3,7 +3,7 @@ import { PlayCircleIcon } from '@heroicons/react/24/outline';
 import { Button } from '../components/Button';
 
 const tutorials = [
-  { id: 'carer-mobile-completing-visit', category: 'Carer App', title: 'How to complete a care visit', description: 'See how carers review a visit, record care tasks and notes, then finish using the DomiClear mobile app.', videoSrc: '/demo-media/demo-carer-mobile-completing-a-visit.mp4' },
+  { id: 'ayRpnggt9nY', category: 'Carer App', title: 'How to complete a care visit', description: 'Follow a carer through reviewing About Me and communication needs, recording planned personal care and vital checks, documenting declined care, and finishing a visit.' },
   { id: 'Vqp9kEvjPwg', category: 'Scheduling', title: 'How to schedule a visit', description: 'Follow this step-by-step tutorial to schedule a visit in DomiClear.' },
   { id: 'jJHYBeMx54A', category: 'Medication', title: 'Managing the medication library', description: 'Learn how to manage the medication library in DomiClear.' },
   { id: 'c3HPYNEt8DM', category: 'Medication', title: 'PRN medication and MAR', description: 'Explore PRN medication and medication administration records (MAR) in DomiClear.' },
@@ -50,29 +50,17 @@ export const TutorialsPage = () => {
       <p role="status" className="mb-5 text-sm text-slate-500">{filtered.length} {filtered.length === 1 ? 'tutorial' : 'tutorials'} found</p>
       <div className="grid items-start gap-6 md:grid-cols-2 xl:grid-cols-3">
       {filtered.slice(0, limit).map((tutorial) => (
-      <section key={tutorial.id} id={tutorial.videoSrc ? tutorial.id : undefined} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" aria-labelledby={`tutorial-${tutorial.id}-title`}>
+      <section key={tutorial.id} id={tutorial.id === 'ayRpnggt9nY' ? 'carer-mobile-completing-visit' : undefined} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" aria-labelledby={`tutorial-${tutorial.id}-title`}>
         <div className="aspect-video bg-slate-900">
           {activeVideo === tutorial.id ? (
-            tutorial.videoSrc ? (
-              <video
-                controls autoPlay playsInline preload="metadata"
-                poster="/demo-media/demo-carer-app-showcase-poster.jpg"
-                className="h-full w-full object-contain"
-                aria-label={`${tutorial.title} in DomiClear`}
-              >
-                <source src={tutorial.videoSrc} type="video/mp4" />
-                Your browser does not support HTML5 video.
-              </video>
-            ) : (
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${tutorial.id}?autoplay=1&rel=0`}
-                title={`${tutorial.title} in DomiClear`}
-                className="h-full w-full border-0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
-            )
+            <iframe
+              src={`https://www.youtube-nocookie.com/embed/${tutorial.id}?autoplay=1&rel=0`}
+              title={`${tutorial.title} in DomiClear`}
+              className="h-full w-full border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
           ) : (
             <button
               type="button"
@@ -81,7 +69,7 @@ export const TutorialsPage = () => {
               className="group relative flex h-full w-full items-center justify-center focus-visible:outline focus-visible:outline-4 focus-visible:-outline-offset-4 focus-visible:outline-white"
             >
               <img
-                src={tutorial.videoSrc ? '/demo-media/demo-carer-app-showcase-poster.jpg' : `https://i.ytimg.com/vi/${tutorial.id}/hqdefault.jpg`}
+                src={`https://i.ytimg.com/vi/${tutorial.id}/hqdefault.jpg`}
                 alt=""
                 width="480"
                 height="360"
@@ -99,15 +87,9 @@ export const TutorialsPage = () => {
           <h2 id={`tutorial-${tutorial.id}-title`} className="mb-3 text-xl font-bold text-[#0F172A]">{tutorial.title}</h2>
           <p className="mb-5 text-sm leading-6 text-[#4B5563]">{tutorial.description}</p>
           {activeVideo === tutorial.id && <button type="button" onClick={() => setActiveVideo(null)} className="mb-4 block min-h-11 font-semibold text-[#4370B7] underline">Close video</button>}
-          {tutorial.videoSrc ? (
-            <button type="button" onClick={() => setActiveVideo(tutorial.id)} className="font-semibold text-[#4370B7] underline underline-offset-4">
-              Watch tutorial on this page
-            </button>
-          ) : (
-            <a href={`https://www.youtube.com/watch?v=${tutorial.id}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#4370B7] underline underline-offset-4">
-              Watch on YouTube (opens in a new tab)
-            </a>
-          )}
+          <a href={`https://www.youtube.com/watch?v=${tutorial.id}`} target="_blank" rel="noopener noreferrer" className="font-semibold text-[#4370B7] underline underline-offset-4">
+            Watch on YouTube (opens in a new tab)
+          </a>
         </div>
       </section>
       ))}
