@@ -37,8 +37,8 @@ const featureDemoMap: {
     videoPoster: '/demo-media/demo-carer-app-showcase-poster.jpg',
     videoAriaLabel: 'DomiClear carer app: route map, schedule, visit overview, messages and alerts',
     portrait: true,
-    deepLink: '/tutorials',
-    deepLinkText: 'Tutorial videos →',
+    deepLink: '/tutorials#carer-mobile-completing-visit',
+    deepLinkText: 'Watch the highlighted carer visit tutorial',
   },
   'compliance': {
     image: '/demo-media/demo-compliance-intelligence-dashboard.png',
