@@ -9,7 +9,10 @@ const featureDemoMap: {
   [key: string]: {
     image?: string;
     video?: string;
+    videoPoster?: string;
     videoAriaLabel?: string;
+    // Tall phone recordings are shown at phone width instead of filling the column.
+    portrait?: boolean;
     deepLink: string;
     deepLinkText: string;
   };
@@ -30,7 +33,10 @@ const featureDemoMap: {
     deepLinkText: 'Tutorial videos →',
   },
   'carer-app': {
-    image: '/demo-media/demo-carer-mobile-visit-scheduled.png',
+    video: '/demo-media/demo-carer-app-showcase.mp4',
+    videoPoster: '/demo-media/demo-carer-app-showcase-poster.jpg',
+    videoAriaLabel: 'DomiClear carer app: route map, schedule, visit overview, messages and alerts',
+    portrait: true,
     deepLink: '/tutorials',
     deepLinkText: 'Tutorial videos →',
   },
@@ -147,13 +153,20 @@ export const PlatformPage: React.FC = () => {
               <div className="flex-1">
                 {/* Screenshot */}
                 {featureDemoMap[feature.id] ? (
-                  <div className="w-full rounded-2xl border border-[rgba(20,30,60,0.08)] overflow-hidden shadow-lg">
+                  <div
+                    className={`border border-[rgba(20,30,60,0.08)] overflow-hidden shadow-lg ${
+                      featureDemoMap[feature.id].portrait
+                        ? 'w-full max-w-[320px] mx-auto rounded-[2rem]'
+                        : 'w-full rounded-2xl'
+                    }`}
+                  >
                     {featureDemoMap[feature.id].video ? (
                       <video
                         autoPlay
                         loop
                         muted
                         playsInline
+                        poster={featureDemoMap[feature.id].videoPoster}
                         className="w-full h-auto object-cover block"
                         aria-label={
                           featureDemoMap[feature.id].videoAriaLabel ??
