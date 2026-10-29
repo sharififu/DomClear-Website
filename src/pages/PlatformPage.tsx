@@ -196,18 +196,19 @@ export const PlatformPage: React.FC = () => {
                 {feature.id === 'carer-app' && (
                   <details className="mt-5 rounded-xl border border-slate-200 bg-[#FAFBFC] p-4">
                     <summary className="cursor-pointer font-semibold text-[#1D4ED8]">
-                      Watch the full highlighted visit tutorial (2 min 21 sec)
+                      Watch the full highlighted visit tutorial (2 min 42 sec)
                     </summary>
-                    <video
-                      controls
-                      playsInline
-                      preload="none"
-                      className="mt-4 block w-full rounded-lg bg-slate-900"
-                      aria-label="How to complete a care visit using the DomiClear Carer Mobile App"
-                    >
-                      <source src="/demo-media/demo-carer-mobile-completing-a-visit.mp4" type="video/mp4" />
-                      Your browser does not support HTML5 video.
-                    </video>
+                    <div className="mt-4 aspect-video overflow-hidden rounded-lg bg-slate-900">
+                      <iframe
+                        src="https://www.youtube-nocookie.com/embed/ayRpnggt9nY?rel=0"
+                        title="How to complete a care visit using the DomiClear Carer Mobile App"
+                        className="h-full w-full border-0"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    </div>            </video>
                     <p className="mt-2 text-xs text-[#64748B]">
                       Fictional demonstration with narrated guidance and animated highlights.
                     </p>
