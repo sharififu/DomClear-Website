@@ -3,6 +3,7 @@ import { PlayCircleIcon } from '@heroicons/react/24/outline';
 import { Button } from '../components/Button';
 
 const tutorials = [
+  { id: 'ayRpnggt9nY', category: 'Carer App', title: 'How to complete a care visit', description: 'Follow a carer through reviewing About Me and communication needs, recording planned personal care and vital checks, documenting declined care, and finishing a visit.' },
   { id: 'Vqp9kEvjPwg', category: 'Scheduling', title: 'How to schedule a visit', description: 'Follow this step-by-step tutorial to schedule a visit in DomiClear.' },
   { id: 'jJHYBeMx54A', category: 'Medication', title: 'Managing the medication library', description: 'Learn how to manage the medication library in DomiClear.' },
   { id: 'c3HPYNEt8DM', category: 'Medication', title: 'PRN medication and MAR', description: 'Explore PRN medication and medication administration records (MAR) in DomiClear.' },
@@ -49,7 +50,7 @@ export const TutorialsPage = () => {
       <p role="status" className="mb-5 text-sm text-slate-500">{filtered.length} {filtered.length === 1 ? 'tutorial' : 'tutorials'} found</p>
       <div className="grid items-start gap-6 md:grid-cols-2 xl:grid-cols-3">
       {filtered.slice(0, limit).map((tutorial) => (
-      <section key={tutorial.id} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" aria-labelledby={`tutorial-${tutorial.id}-title`}>
+      <section key={tutorial.id} id={tutorial.id === 'ayRpnggt9nY' ? 'carer-mobile-completing-visit' : undefined} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm" aria-labelledby={`tutorial-${tutorial.id}-title`}>
         <div className="aspect-video bg-slate-900">
           {activeVideo === tutorial.id ? (
             <iframe

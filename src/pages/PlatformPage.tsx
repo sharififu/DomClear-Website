@@ -37,8 +37,8 @@ const featureDemoMap: {
     videoPoster: '/demo-media/demo-carer-app-showcase-poster.jpg',
     videoAriaLabel: 'DomiClear carer app: route map, schedule, visit overview, messages and alerts',
     portrait: true,
-    deepLink: '/tutorials',
-    deepLinkText: 'Tutorial videos →',
+    deepLink: '/tutorials#carer-mobile-completing-visit',
+    deepLinkText: 'Watch the highlighted carer visit tutorial',
   },
   'compliance': {
     image: '/demo-media/demo-compliance-intelligence-dashboard.png',
@@ -192,6 +192,27 @@ export const PlatformPage: React.FC = () => {
                       </a>
                     </div>
                   </div>
+                )}
+                {feature.id === 'carer-app' && (
+                  <details className="mt-5 rounded-xl border border-slate-200 bg-[#FAFBFC] p-4">
+                    <summary className="cursor-pointer font-semibold text-[#1D4ED8]">
+                      Watch the full highlighted visit tutorial (2 min 42 sec)
+                    </summary>
+                    <div className="mt-4 aspect-video overflow-hidden rounded-lg bg-slate-900">
+                      <iframe
+                        src="https://www.youtube-nocookie.com/embed/ayRpnggt9nY?rel=0"
+                        title="How to complete a care visit using the DomiClear Carer Mobile App"
+                        className="h-full w-full border-0"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      />
+                    </div>
+                    <p className="mt-2 text-xs text-[#64748B]">
+                      Fictional demonstration with narrated guidance and animated highlights.
+                    </p>
+                  </details>
                 )}
               </div>
             </div>
