@@ -35,8 +35,14 @@ export const navigation: NavItem[] = [
       { label: 'Book a Demo', href: '/book-demo' },
     ],
   },
-  { label: 'About', href: '/about' },
-  { label: 'Credentials', href: '/credentials' },
+  {
+    label: 'About',
+    href: '/about',
+    children: [
+      { label: 'About DomiClear', href: '/about' },
+      { label: 'Credentials', href: '/credentials' },
+    ],
+  },
   { label: 'Contact', href: '/contact' },
 ];
 

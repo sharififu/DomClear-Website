@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test('keyboard SPA route navigation and history focus the new main content', async ({ page }) => {
-  await page.setViewportSize({ width: 1600, height: 900 });
+  await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
   const nav = page.getByRole('navigation');
   const pricing = nav.getByRole('link', { name: 'Pricing', exact: true });

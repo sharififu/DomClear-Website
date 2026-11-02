@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test('desktop submenu opens by keyboard, tab reaches links, Escape restores focus', async ({ page }) => {
-  await page.setViewportSize({ width: 1600, height: 900 });
+  await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
 
   const nav = page.getByRole('navigation');
@@ -23,7 +23,7 @@ test('desktop submenu opens by keyboard, tab reaches links, Escape restores focu
 });
 
 test('desktop hover discovery remains available', async ({ page }) => {
-  await page.setViewportSize({ width: 1600, height: 900 });
+  await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
 
   const nav = page.getByRole('navigation');
@@ -77,14 +77,14 @@ test('light-background entry routes show a white header with dark navigation tex
 });
 
 test('desktop header links and CTAs do not overlap at supported desktop widths', async ({ page }) => {
-  for (const width of [1536, 1721, 1920]) {
+  for (const width of [1280, 1366, 1440, 1536, 1721, 1920]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto('/');
 
     const nav = page.getByRole('navigation');
     const links = [
       nav.locator('a[href="/"]').first(),
-      ...['Platform', 'Solutions', 'Pricing', 'Tutorials', 'About', 'Credentials', 'Contact', 'Log in', 'Book a demo', 'Start free trial']
+      ...['Platform', 'Solutions', 'Pricing', 'Tutorials', 'About', 'Contact', 'Log in', 'Book a demo', 'Start free trial']
         .map((name) => nav.getByRole('link', { name, exact: true })),
     ];
 
@@ -101,7 +101,7 @@ test('desktop header links and CTAs do not overlap at supported desktop widths',
 });
 
 test('compact desktop widths use the collapsible navigation rather than overlapping links', async ({ page }) => {
-  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.setViewportSize({ width: 1024, height: 900 });
   await page.goto('/');
 
   const nav = page.getByRole('navigation');
@@ -110,4 +110,40 @@ test('compact desktop widths use the collapsible navigation rather than overlapp
   await openButton.click();
   await expect(nav.getByRole('link', { name: 'Contact', exact: true })).toBeVisible();
   await expect(nav.getByRole('link', { name: 'Log in', exact: true })).toBeVisible();
+});
+
+test('About submenu offers Credentials without a standalone desktop navigation link', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+
+  const nav = page.getByRole('navigation');
+  await expect(nav.getByRole('link', { name: 'Credentials', exact: true })).toBeHidden();
+  const aboutToggle = nav.getByRole('button', { name: 'Open About submenu' });
+  await aboutToggle.focus();
+  await page.keyboard.press('Enter');
+  await expect(nav.getByRole('button', { name: 'Close About submenu' })).toHaveAttribute('aria-expanded', 'true');
+
+  const credentialsLink = nav.getByRole('link', { name: 'Credentials', exact: true });
+  await expect(credentialsLink).toBeVisible();
+  await expect(credentialsLink).toHaveAttribute('href', '/credentials');
+  await credentialsLink.click();
+  await expect(page).toHaveURL(/\/credentials$/);
+});
+
+test('About page links to Credentials and mobile navigation nests it under About', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('/about');
+
+  const mainLink = page.locator('main a[href="/credentials"]');
+  await expect(mainLink).toBeVisible();
+  await mainLink.click();
+  await expect(page).toHaveURL(/\/credentials$/);
+
+  const nav = page.getByRole('navigation');
+  await nav.getByRole('button', { name: 'Open navigation menu' }).click();
+  const aboutLink = nav.getByRole('link', { name: 'About', exact: true });
+  const credentialsLink = nav.getByRole('link', { name: 'Credentials', exact: true });
+  await expect(aboutLink).toBeVisible();
+  await expect(credentialsLink).toBeVisible();
+  await expect(credentialsLink).toHaveAttribute('href', '/credentials');
 });
