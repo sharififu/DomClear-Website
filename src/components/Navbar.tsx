@@ -97,20 +97,20 @@ export const Navbar: React.FC = () => {
       }`}
       style={{ height: '72px' }}
     >
-      <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-6">
-        <div className="flex min-w-0 items-center gap-6 2xl:gap-10">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between gap-4">
+        <div className="flex shrink-0 items-center gap-5 2xl:gap-7">
           <a href="/" className="flex shrink-0 items-center gap-2">
             <img 
               src="/logo.png" 
               alt="DomiClear Logo" 
               className="w-8 h-8 object-contain"
             />
-            <span className={`font-bold text-xl ${shouldShowWhite ? 'text-[#0F172A]' : 'text-white'}`}>
+            <span className={`whitespace-nowrap font-bold text-xl ${shouldShowWhite ? 'text-[#0F172A]' : 'text-white'}`}>
               DomiClear
             </span>
           </a>
 
-          <div className="hidden xl:flex items-center gap-5 2xl:gap-6">
+          <div className="hidden 2xl:flex items-center gap-4 2xl:gap-5">
             {navigation.map((item) => (
               <div
                 key={item.label}
@@ -181,7 +181,7 @@ export const Navbar: React.FC = () => {
           </div>
         </div>
 
-        <div className="hidden xl:flex shrink-0 items-center gap-3 whitespace-nowrap [&>a]:h-10 [&>a]:shrink-0 [&>a]:whitespace-nowrap">
+        <div className="hidden 2xl:flex shrink-0 items-center gap-3 whitespace-nowrap [&>a]:h-10 [&>a]:shrink-0 [&>a]:whitespace-nowrap">
           <Button 
             variant="ghost" 
             size="sm" 
@@ -214,7 +214,7 @@ export const Navbar: React.FC = () => {
         </div>
 
         <button
-          className={`xl:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg -mr-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:ring-offset-2 focus:ring-offset-transparent ${!shouldShowWhite ? 'bg-white/10 hover:bg-white/20' : 'hover:bg-slate-100'}`}
+          className={`2xl:hidden min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg -mr-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#4370B7] focus:ring-offset-2 focus:ring-offset-transparent ${!shouldShowWhite ? 'bg-white/10 hover:bg-white/20' : 'hover:bg-slate-100'}`}
           style={{ padding: '10px' }}
           id="mobile-navigation-toggle"
           type="button"
@@ -246,7 +246,7 @@ export const Navbar: React.FC = () => {
             document.getElementById('mobile-navigation-toggle')?.focus();
           }
         }}
-        className="xl:hidden max-h-[calc(100dvh-72px)] overflow-y-auto overscroll-y-contain bg-white border-t border-[rgba(20,30,60,0.08)] shadow-lg"
+        className="2xl:hidden max-h-[calc(100dvh-72px)] overflow-y-auto overscroll-y-contain bg-white border-t border-[rgba(20,30,60,0.08)] shadow-lg"
       >
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-4">
             {navigation.map((item) => (

@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test('desktop submenu opens by keyboard, tab reaches links, Escape restores focus', async ({ page }) => {
-  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.setViewportSize({ width: 1600, height: 900 });
   await page.goto('/');
 
   const nav = page.getByRole('navigation');
@@ -23,7 +23,7 @@ test('desktop submenu opens by keyboard, tab reaches links, Escape restores focu
 });
 
 test('desktop hover discovery remains available', async ({ page }) => {
-  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.setViewportSize({ width: 1600, height: 900 });
   await page.goto('/');
 
   const nav = page.getByRole('navigation');
@@ -74,4 +74,40 @@ test('light-background entry routes show a white header with dark navigation tex
     const logoText = nav.getByText('DomiClear', { exact: true });
     await expect(logoText).toHaveCSS('color', 'rgb(15, 23, 42)');
   }
+});
+
+test('desktop header links and CTAs do not overlap at supported desktop widths', async ({ page }) => {
+  for (const width of [1536, 1721, 1920]) {
+    await page.setViewportSize({ width, height: 900 });
+    await page.goto('/');
+
+    const nav = page.getByRole('navigation');
+    const links = [
+      nav.locator('a[href="/"]').first(),
+      ...['Platform', 'Solutions', 'Pricing', 'Tutorials', 'About', 'Credentials', 'Contact', 'Log in', 'Book a demo', 'Start free trial']
+        .map((name) => nav.getByRole('link', { name, exact: true })),
+    ];
+
+    let previousRight = 0;
+    for (const link of links) {
+      await expect(link).toBeVisible();
+      const box = await link.boundingBox();
+      expect(box, `Missing header item at ${width}px`).not.toBeNull();
+      expect(box!.x, `Header items overlap at ${width}px`).toBeGreaterThanOrEqual(previousRight);
+      previousRight = box!.x + box!.width;
+    }
+    expect(previousRight, `Header exceeds viewport at ${width}px`).toBeLessThanOrEqual(width);
+  }
+});
+
+test('compact desktop widths use the collapsible navigation rather than overlapping links', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+
+  const nav = page.getByRole('navigation');
+  const openButton = nav.getByRole('button', { name: 'Open navigation menu' });
+  await expect(openButton).toBeVisible();
+  await openButton.click();
+  await expect(nav.getByRole('link', { name: 'Contact', exact: true })).toBeVisible();
+  await expect(nav.getByRole('link', { name: 'Log in', exact: true })).toBeVisible();
 });
