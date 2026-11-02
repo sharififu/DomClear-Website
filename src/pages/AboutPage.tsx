@@ -285,6 +285,24 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
+      <section className="border-t border-[#E5E7EB] bg-white py-12" aria-labelledby="credentials-heading">
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+          <div className="max-w-2xl">
+            <h2 id="credentials-heading" className="mb-2 text-2xl font-bold">Security &amp; credentials</h2>
+            <p className="leading-7 text-[#4B5563]">
+              Find information about DomiClear's security approach, data protection and current assurance status.
+            </p>
+          </div>
+          <a
+            href="/credentials"
+            className="inline-flex min-h-11 shrink-0 items-center gap-2 self-start rounded-full border border-[#4370B7] px-5 py-3 font-semibold text-[#1D4ED8] transition-colors hover:bg-[#EAF2FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1D4ED8]"
+          >
+            View credentials
+            <ArrowRightIcon aria-hidden="true" className="h-5 w-5" />
+          </a>
+        </div>
+      </section>
+
       <section className="border-t border-[rgba(20,30,60,0.08)] bg-[#F7F9FC] py-16 lg:py-20" aria-labelledby="about-cta-heading">
         <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:px-8">
           <div>
