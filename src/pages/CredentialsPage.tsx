@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowTopRightOnSquareIcon, CheckBadgeIcon, ClipboardDocumentCheckIcon, ShieldCheckIcon, IdentificationIcon, LockClosedIcon, HeartIcon, UserGroupIcon, AcademicCapIcon, EyeIcon } from '@heroicons/react/24/outline';
+import { ArrowTopRightOnSquareIcon, CheckBadgeIcon, ClipboardDocumentCheckIcon, ShieldCheckIcon, IdentificationIcon, LockClosedIcon, HeartIcon, AcademicCapIcon, EyeIcon } from '@heroicons/react/24/outline';
 
 const completed = [
   {
@@ -46,11 +46,6 @@ const underway = [
     title: 'DCB0129 clinical risk management',
     icon: HeartIcon,
     description: 'Clinical safety documentation is being prepared for qualified clinical safety review. DCB0129 assurance remains in progress; clinical sign-off has not been obtained.',
-  },
-  {
-    title: 'PRSB care information standards',
-    icon: UserGroupIcon,
-    description: 'We are using relevant PRSB standards to inform product design. PRSB conformance has not yet been established, and DomiClear is not a PRSB Quality Partner.',
   },
   {
     title: 'ISO/IEC 27001',
