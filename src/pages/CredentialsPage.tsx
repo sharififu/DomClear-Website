@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowTopRightOnSquareIcon, CheckBadgeIcon, ClipboardDocumentCheckIcon, ShieldCheckIcon, IdentificationIcon, LockClosedIcon, HeartIcon, AcademicCapIcon, EyeIcon } from '@heroicons/react/24/outline';
+import { ArrowTopRightOnSquareIcon, CheckBadgeIcon, ClipboardDocumentCheckIcon, ShieldCheckIcon, IdentificationIcon } from '@heroicons/react/24/outline';
 
 const completed = [
   {
@@ -31,29 +31,6 @@ const completed = [
   },
 ];
 
-const underway = [
-  {
-    title: 'Cyber Essentials',
-    icon: LockClosedIcon,
-    description: 'We are working towards Cyber Essentials certification and completing the required security controls and assessment. Certification has not yet been awarded.',
-  },
-  {
-    title: 'Accessibility and WCAG 2.2',
-    icon: EyeIcon,
-    description: 'We are improving accessibility and testing selected areas against WCAG criteria. Full WCAG 2.2 conformance has not yet been established.',
-  },
-  {
-    title: 'DCB0129 clinical risk management',
-    icon: HeartIcon,
-    description: 'Clinical safety documentation is being prepared for qualified clinical safety review. DCB0129 assurance remains in progress; clinical sign-off has not been obtained.',
-  },
-  {
-    title: 'ISO/IEC 27001',
-    icon: AcademicCapIcon,
-    description: 'We are developing our information security controls and assessing them against ISO 27001. DomiClear is not ISO 27001 certified.',
-  },
-];
-
 export const CredentialsPage: React.FC = () => (
   <div className="bg-white text-[#0F172A]">
     <section className="bg-gradient-to-br from-[#123458] via-[#245e94] to-[#4a6eb5] px-4 pb-20 pt-36 text-white sm:px-6 lg:px-8">
@@ -61,7 +38,7 @@ export const CredentialsPage: React.FC = () => (
         <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-[#aee9fc]">Security &amp; transparency</p>
         <h1 className="mb-6 max-w-3xl text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">Our credentials &amp; assurance</h1>
         <p className="max-w-3xl text-lg leading-8 text-white/85">
-          Care providers deserve to know what security assurance a supplier has achieved — and what is still in progress.
+          Care providers deserve to know what security assurance a supplier has achieved.
           Here is the current, evidence-based position for DomiClear Ltd.
         </p>
       </div>
@@ -114,33 +91,6 @@ export const CredentialsPage: React.FC = () => (
               <a href={item.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-semibold text-[#2364AA] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2364AA]">
                 {item.linkLabel}<ArrowTopRightOnSquareIcon className="h-4 w-4" aria-hidden="true" />
               </a>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="assurance-roadmap" className="border-y border-[#E2E8F0] bg-[#F6F9FC] px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-      <div className="mx-auto max-w-[1100px]">
-        <div className="mb-9 flex items-start gap-4">
-          <ShieldCheckIcon className="mt-1 h-9 w-9 shrink-0 text-[#4370B7]" aria-hidden="true" />
-          <div>
-            <p className="mb-1 text-xs font-bold uppercase tracking-wider text-[#4370B7]">Our roadmap</p>
-            <h2 id="assurance-roadmap" className="text-3xl font-bold">Work in progress</h2>
-            <p className="mt-3 max-w-3xl leading-7 text-[#475569]">These are planned or ongoing activities, not awarded certifications or independently confirmed conformance.</p>
-          </div>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2">
-          {underway.map((item) => (
-            <article key={item.title} className="rounded-xl border border-[#DCE7F1] bg-white p-6">
-              <div className="mb-4 flex items-center justify-between gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-[#DDE7F1] bg-[#F1F5FA] text-[#476783]" aria-hidden="true">
-                  <item.icon className="h-7 w-7" />
-                </div>
-                <span className="rounded-full bg-[#EAF2FF] px-3 py-1.5 text-xs font-semibold text-[#255794]">In progress</span>
-              </div>
-              <h3 className="mb-2 text-xl font-bold">{item.title}</h3>
-              <p className="leading-7 text-[#475569]">{item.description}</p>
             </article>
           ))}
         </div>
