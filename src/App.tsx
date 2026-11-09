@@ -64,7 +64,7 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
   },
   '/credentials': {
     title: 'Security Credentials & Compliance | DomiClear',
-    description: 'View DomiClear’s current NHS DSPT Standards Met assessment, ICO registration and transparent roadmap for security, accessibility and clinical safety assurance.',
+    description: 'View DomiClear’s current NHS DSPT Standards Met assessment, MODS compliance, ICO registration and transparent roadmap for security, accessibility and clinical safety assurance.',
   },
   '/company-information': {
     title: 'Company Information | DomiClear',

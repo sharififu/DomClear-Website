@@ -20,6 +20,15 @@ const completed = [
     link: 'https://ico.org.uk/esdwebpages/search',
     linkLabel: 'Verify registration at the ICO',
   },
+  {
+    title: 'Minimum Operational Data Standard (MODS)',
+    emblem: 'mods',
+    status: 'MODS compliant — DAPB4102',
+    description: 'DomiClear is compliant with the NHS England Adult Social Care Digital Social Care Record Minimum Operational Data Standard (DAPB4102), the information standard for what a digital social care record must hold.',
+    detail: 'MODS compliance is DomiClear Ltd’s own assessment against the published standard. It is not NHS product endorsement or inclusion on the NHS Assured Solutions List.',
+    link: 'https://digital.nhs.uk/data-and-information/information-standards/governance/latest-activity/standards-and-collections/dapb4102-adult-social-care-record-minimum-operational-data-standard',
+    linkLabel: 'Read the MODS standard',
+  },
 ];
 
 const underway = [
@@ -39,9 +48,9 @@ const underway = [
     description: 'Clinical safety documentation is being prepared for qualified clinical safety review. DCB0129 assurance remains in progress; clinical sign-off has not been obtained.',
   },
   {
-    title: 'Care information standards — MODS and PRSB',
+    title: 'PRSB care information standards',
     icon: UserGroupIcon,
-    description: 'We are using relevant PRSB and NHS information standards to inform product design. PRSB / MODS conformance has not yet been established, and DomiClear is not a PRSB Quality Partner.',
+    description: 'We are using relevant PRSB standards to inform product design. PRSB conformance has not yet been established, and DomiClear is not a PRSB Quality Partner.',
   },
   {
     title: 'ISO/IEC 27001',
@@ -99,8 +108,8 @@ export const CredentialsPage: React.FC = () => (
             <article key={item.title} className="rounded-2xl border border-[#DCE7F1] bg-white p-7 shadow-[0_14px_40px_rgba(15,23,42,0.06)]">
               <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex h-24 w-24 flex-col items-center justify-center rounded-2xl border border-[#B9DCCD] bg-gradient-to-br from-[#F2FBF7] to-[#E6F4FF] text-[#116F64] shadow-sm" aria-hidden="true">
-                  {item.emblem === 'dspt' ? <ShieldCheckIcon className="mb-1 h-10 w-10" /> : <IdentificationIcon className="mb-1 h-10 w-10" />}
-                  <span className="text-[11px] font-extrabold tracking-[0.15em]">{item.emblem === 'dspt' ? 'DSPT' : 'REGISTERED'}</span>
+                  {item.emblem === 'dspt' ? <ShieldCheckIcon className="mb-1 h-10 w-10" /> : item.emblem === 'mods' ? <ClipboardDocumentCheckIcon className="mb-1 h-10 w-10" /> : <IdentificationIcon className="mb-1 h-10 w-10" />}
+                  <span className="text-[11px] font-extrabold tracking-[0.15em]">{item.emblem === 'dspt' ? 'DSPT' : item.emblem === 'mods' ? 'MODS' : 'REGISTERED'}</span>
                 </div>
                 <span className="inline-flex items-center gap-2 rounded-full bg-[#E5F6F0] px-3 py-1.5 text-xs font-semibold text-[#086C5D]"><CheckBadgeIcon className="h-4 w-4" aria-hidden="true" />{item.status}</span>
               </div>
