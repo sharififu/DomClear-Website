@@ -2,122 +2,130 @@ import React from 'react';
 import { getContentIcon } from './icons';
 
 export const ComprehensiveFeatures: React.FC = () => {
-  const SearchIcon = getContentIcon('Search');
-  const PlayIcon = getContentIcon('Play');
-  const PlusIcon = getContentIcon('Plus');
-  const UserIcon = getContentIcon('User');
-  const UsersIcon = getContentIcon('Users');
   const FileTextIcon = getContentIcon('FileText');
   const SmartphoneIcon = getContentIcon('Smartphone');
   const ShieldIcon = getContentIcon('Shield');
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* First Feature Section - Search/Scheduling */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-16 items-center mb-20">
-          {/* Left side - Text content */}
-          <div className="order-2 lg:order-1">
-            <div className="w-16 h-16 rounded-full bg-blue-500 flex items-center justify-center mb-6">
-              {SearchIcon && <SearchIcon className="w-8 h-8 text-white" />}
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              Home care scheduling software your coordinators can rely on
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Plan rotas in minutes, match carers to clients, and keep the day visible in one domiciliary care software workspace — fewer clashes, fewer missed visits, less spreadsheet wrangling.
-            </p>
-            <p className="mt-4">
-              <a
-                href="/home-care-scheduling-software"
-                className="text-[#4370B7] font-semibold text-sm hover:underline"
-              >
-                Scheduling software
-              </a>
-            </p>
-          </div>
-
-          {/* Right side - UI Mockup */}
-          <div className="order-1 lg:order-2 relative">
-            {/* Main card - Staff Availability Management */}
-            <div className="bg-white rounded-2xl shadow-lg relative z-10 overflow-hidden">
-              {/* Simple Title */}
-              <div className="px-6 py-4 border-b border-[rgba(20,30,60,0.08)]">
-                <h3 className="text-lg font-bold text-[#0F172A]">Staff Availability Management</h3>
-              </div>
-
-              <div className="bg-[#f8fafc]">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-auto block"
-                  aria-label="Staff availability management in DomiClear domiciliary care software"
+        {/* Consolidated scheduling feature — staff availability and rota planning */}
+        <div className="relative overflow-hidden rounded-[2rem] bg-white border border-slate-200 shadow-[0_24px_80px_-56px_rgba(15,23,42,0.28)] mb-20">
+          <div
+            className="absolute -top-40 -right-36 h-96 w-96 rounded-full bg-[#4370B7]/10 blur-3xl pointer-events-none"
+            aria-hidden="true"
+          />
+          <div className="relative px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-16 items-start">
+              <div>
+                <p className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.18em] uppercase text-[#4370B7] mb-5">
+                  <span className="h-2 w-2 rounded-full bg-[#10bfa3]" aria-hidden="true" />
+                  Smart care scheduling
+                </p>
+                <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight text-[#0F172A] leading-[1.13] mb-6">
+                  A smarter way to manage your rota.
+                </h2>
+                <p className="text-lg text-slate-600 leading-relaxed">
+                  Plan visits, manage staff availability and see your daily schedule in one clear workspace.
+                </p>
+                <p className="text-base text-slate-600 leading-relaxed mt-4">
+                  With DomiClear's Improve Rota tools, you can spot scheduling conflicts,
+                  identify excessive travel and gaps between visits, and explore alternative
+                  arrangements before making changes.
+                </p>
+                <p className="text-base font-medium text-[#17223c] mt-5">
+                  Keep control of your rota while making more informed scheduling decisions.
+                </p>
+                <a
+                  href="/home-care-scheduling-software"
+                  className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#4370B7] px-5 py-3 font-semibold text-white hover:bg-[#315a98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4370B7] transition-colors"
                 >
-                  <source src="/demo-media/demo-staff-availability.mp4" type="video/mp4" />
-                </video>
+                  Explore scheduling features
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" aria-label="DomiClear scheduling capabilities">
+                {[
+                  {
+                    number: '01',
+                    title: 'Plan the day',
+                    detail: 'Review visits, carer assignments and staff availability in a visual daily rota.',
+                  },
+                  {
+                    number: '02',
+                    title: 'Spot scheduling issues',
+                    detail: 'Identify long gaps, excessive travel and tight connections to review.',
+                  },
+                  {
+                    number: '03',
+                    title: 'Compare alternatives',
+                    detail: 'Preview proposed changes alongside the current schedule before deciding.',
+                  },
+                  {
+                    number: '04',
+                    title: 'Consider care needs',
+                    detail: 'Rota suggestions take recorded absence, availability, skills and care preferences into account.',
+                  },
+                ].map((feature) => (
+                  <div
+                    key={feature.number}
+                    className="rounded-2xl border border-slate-200/80 bg-slate-50/80 px-5 py-5"
+                  >
+                    <span className="text-xs font-bold tracking-widest text-[#4370B7]" aria-hidden="true">
+                      {feature.number}
+                    </span>
+                    <h3 className="text-base font-bold text-[#0F172A] mt-3 mb-2">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-slate-600">
+                      {feature.detail}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center shadow-lg z-20">
-              {PlayIcon && <PlayIcon className="w-6 h-6 text-white" />}
-            </div>
-            <div className="absolute -bottom-4 -left-4 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg z-20">
-              {PlusIcon && <PlusIcon className="w-5 h-5 text-white" />}
-            </div>
-          </div>
-        </div>
-
-        {/* Second Feature Section - Team Management */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left side - UI Mockup */}
-          <div className="relative">
-            {/* Main card - Minimal Roster */}
-            <div className="bg-white rounded-2xl shadow-lg relative z-10 overflow-hidden">
-              <div className="px-6 py-4 border-b border-[rgba(20,30,60,0.08)]">
-                <h3 className="text-lg font-bold text-[#0F172A]">Roster</h3>
+            <div className="mt-10 pt-8 border-t border-slate-200">
+              <p className="text-xs font-semibold tracking-[0.13em] uppercase text-slate-500 mb-4">
+                A closer look at scheduling
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div className="overflow-hidden rounded-2xl bg-[#f8fafc] border border-slate-200 shadow-sm">
+                  <div className="px-5 py-4 flex items-center justify-between gap-4 bg-white">
+                    <h3 className="text-sm sm:text-base font-bold text-[#0F172A]">Daily rota</h3>
+                    <span className="text-xs text-slate-500">Scheduling overview</span>
+                  </div>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-auto block"
+                    aria-label="DomiClear daily rota and shift management demonstration"
+                  >
+                    <source src="/demo-media/demo-shift-management.mp4" type="video/mp4" />
+                  </video>
+                </div>
+                <div className="overflow-hidden rounded-2xl bg-[#f8fafc] border border-slate-200 shadow-sm">
+                  <div className="px-5 py-4 flex items-center justify-between gap-4 bg-white">
+                    <h3 className="text-sm sm:text-base font-bold text-[#0F172A]">Staff availability</h3>
+                    <span className="text-xs text-slate-500">Team planning overview</span>
+                  </div>
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-auto block"
+                    aria-label="DomiClear staff availability management demonstration"
+                  >
+                    <source src="/demo-media/demo-staff-availability.mp4" type="video/mp4" />
+                  </video>
+                </div>
               </div>
-
-              <div className="bg-[#f8fafc]">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-auto block"
-                  aria-label="Roster and shift management in DomiClear domiciliary care software"
-                >
-                  <source src="/demo-media/demo-shift-management.mp4" type="video/mp4" />
-                </video>
-              </div>
             </div>
-
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center shadow-lg z-20">
-              {PlayIcon && <PlayIcon className="w-5 h-5 text-white" />}
-            </div>
-            <div className="absolute -bottom-4 -left-4 w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center shadow-lg z-20">
-              {UserIcon && <UserIcon className="w-4 h-4 text-white" />}
-            </div>
-          </div>
-
-          {/* Right side - Text content */}
-          <div>
-            <div className="w-16 h-16 rounded-full bg-orange-500 flex items-center justify-center mb-6">
-              {UsersIcon && <UsersIcon className="w-8 h-8 text-white" />}
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              Visibility across carers, visits, and the rota
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Give managers and care staff one operational picture of who is out, what is running late, and what still needs cover — without jumping between spreadsheets and chat threads.
-            </p>
-            <p className="mt-4">
-              <a href="/care-management-app" className="text-[#4370B7] font-semibold text-sm hover:underline">
-                Home care app
-              </a>
-            </p>
           </div>
         </div>
 
