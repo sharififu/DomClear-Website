@@ -60,7 +60,7 @@ export const ContactPage: React.FC = () => {
           </div>
           <h1 className="text-4xl font-bold text-[#0F172A] mb-6">Thank you for your message!</h1>
           <p className="text-xl text-[#4B5563] mb-8">
-            We've received your inquiry and will get back to you within one business day.
+            We've received your enquiry. Our team will review it and respond using the contact details provided.
           </p>
           <Button variant="primary" size="md" href="/">
             Return to homepage
@@ -103,7 +103,7 @@ export const ContactPage: React.FC = () => {
               Book a demo
             </Button>
           </div>
-          <p className="text-sm text-[#4B5563]">UK support · We respond within one business day</p>
+          <p className="text-sm text-[#4B5563]">Contact the DomiClear team</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -265,7 +265,7 @@ export const ContactPage: React.FC = () => {
                         info@domi-clear.com
                       </a>
                     </p>
-                    <p className="text-sm text-[#4B5563]">We'll respond within 24 hours</p>
+                    <p className="text-sm text-[#4B5563]">Send us your questions by email</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
