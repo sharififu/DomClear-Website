@@ -218,17 +218,9 @@ body { font-family: var(--body); padding-left: max(16px, env(safe-area-inset-lef
 .player { display: grid; grid-template-columns: auto auto 1fr auto; gap: 14px; align-items: center; }
 .pbtn { appearance: none; border: 1px solid rgba(255,255,255,.14); background: #111b36; color: var(--on-ink); border-radius: 10px; height: 40px; min-width: 40px; padding: 0 14px; font: 600 14px var(--body); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
 .pbtn:hover { background: #18254a; }
-.pbtn:focus-visible, .chap:focus-visible, #scrub:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.pbtn:focus-visible, #scrub:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
 #scrub { width: 100%; min-width: 0; accent-color: var(--teal); }
 .time { font-family: var(--mono); font-size: 13px; color: var(--on-ink-muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.chapters { display: flex; flex-wrap: nowrap; gap: 9px; overflow-x: auto; padding: 4px 2px 8px; scrollbar-width: thin; scrollbar-color: rgba(159,176,212,.35) transparent; }
-.chap { appearance: none; display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto; min-height: 40px; border: 1px solid rgba(159,176,212,.22); background: rgba(255,255,255,.045); color: #bac9e7; border-radius: 12px; padding: 9px 16px; font: 600 13px var(--body); white-space: nowrap; cursor: pointer; transition: color .18s ease, background-color .18s ease, border-color .18s ease, transform .18s ease; }
-.chap::before { content: ""; width: 6px; height: 6px; flex: 0 0 auto; margin-right: 9px; border-radius: 50%; background: #657899; transition: background-color .18s ease; }
-.chap:hover { background: rgba(143,176,234,.13); color: #fff; border-color: rgba(143,176,234,.45); transform: translateY(-1px); }
-.chap:hover::before { background: var(--blue-l); }
-.chap.on { background: rgba(16,191,163,.16); color: #e5fff8; border-color: rgba(16,191,163,.6); box-shadow: inset 0 0 0 1px rgba(16,191,163,.1); }
-.chap.on::before { background: var(--teal); box-shadow: 0 0 0 3px rgba(16,191,163,.13); }
-@media (prefers-reduced-motion: reduce) { .chap, .chap::before { transition: none; } .chap:hover { transform: none; } }
 @media (max-width: 560px) {
   .player { grid-template-columns: auto 1fr auto; }
   .player #fs { display: none; }
@@ -990,7 +982,6 @@ body { font-family: var(--body); padding-left: max(16px, env(safe-area-inset-lef
     <input id="scrub" type="range" min="0" max="36" step="0.01" value="0" aria-label="Timeline position">
     <span class="time" id="time">0:00 / 0:36</span>
   </div>
-  <div class="chapters" id="chapters"></div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -1257,16 +1248,6 @@ body { font-family: var(--body); padding-left: max(16px, env(safe-area-inset-lef
 
   // ---------- player ----------
   const playBtn = $('#play'), scrub = $('#scrub'), timeEl = $('#time');
-  const chaps = [['Hook', 0], ['Improve Rota', 5], ['Operations', 15], ['Care delivery', 22], ['Business', 29], ['Close', 36]];
-  const chapEl = $('#chapters');
-  chaps.forEach((c, i) => {
-    const b = document.createElement('button');
-    b.type = 'button'; b.className = 'chap';
-    b.textContent = c[0];
-    b.setAttribute('aria-label', `Jump to ${c[0]}`);
-    b.addEventListener('click', () => { tl.seek(c[1] + .01, false); renderNums(); syncUI(); if (!tl.isActive() && !paused) tl.play(); });
-    chapEl.appendChild(b);
-  });
   let paused = false;
   const fmt = s => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
   function syncUI() {
@@ -1274,11 +1255,6 @@ body { font-family: var(--body); padding-left: max(16px, env(safe-area-inset-lef
     const elapsed = t / SPEED;
     if (document.activeElement !== scrub) scrub.value = elapsed;
     timeEl.textContent = `${fmt(elapsed)} / ${fmt(DUR / SPEED)}`;
-    $('.chap').forEach((b, i) => {
-      const active = t >= chaps[i][1] && (i === chaps.length - 1 || t < chaps[i + 1][1]);
-      b.classList.toggle('on', active);
-      b.setAttribute('aria-pressed', String(active));
-    });
     const playing = !paused && t < DUR;
     playBtn.textContent = t >= DUR ? 'Replay' : (playing ? 'Pause' : 'Play');
     playBtn.setAttribute('aria-label', playBtn.textContent);
