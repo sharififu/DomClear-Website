@@ -1260,7 +1260,7 @@ body { font-family: var(--body); padding-left: max(16px, env(safe-area-inset-lef
   chaps.forEach((c, i) => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'chap';
-    b.innerHTML = `<span>${fmt(c[1] / SPEED)}</span>${c[0]}`;
+    b.innerHTML = `<span>0:${String(Math.floor(c[1] / SPEED)).padStart(2, '0')}</span>${c[0]}`;
     b.addEventListener('click', () => { tl.seek(c[1] + .01, false); renderNums(); syncUI(); if (!tl.isActive() && !paused) tl.play(); });
     chapEl.appendChild(b);
   });
