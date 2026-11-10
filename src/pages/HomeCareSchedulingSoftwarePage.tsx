@@ -30,7 +30,12 @@ const schedulingFaqItems = [
   {
     question: 'Is it better than spreadsheets or manual scheduling?',
     answer:
-      'For most agencies, yes. A dedicated rota software workflow reduces version confusion, duplicate updates, and fragmented communication from whiteboards, spreadsheets, and WhatsApp threads.',
+      'DomiClear puts visits, allocations and scheduling information in one workspace rather than maintaining several spreadsheet versions. Your team remains responsible for reviewing and making rota decisions.',
+  },
+  {
+    question: 'Does Improve Rota automatically change my schedule?',
+    answer:
+      'Improve Rota provides a view of potential changes and comparisons for a manager to review. It does not silently rearrange a live rota.',
   },
   {
     question: 'Can I try it before booking a full demo?',
@@ -51,8 +56,9 @@ export const HomeCareSchedulingSoftwarePage: React.FC = () => {
             Home care scheduling software for UK domiciliary care agencies
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            Plan rotas faster, keep clear visibility across carers and visits, and handle last-minute changes with less stress.
-            DomiClear gives coordinators practical daily control with modern domiciliary care rota software built for UK teams.
+            Plan daily visits, review staff availability and keep travel and scheduling gaps in view.
+            DomiClear’s Improve Rota tools let coordinators explore proposed arrangements and compare them
+            with the current day before deciding what to change.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Button
@@ -75,7 +81,7 @@ export const HomeCareSchedulingSoftwarePage: React.FC = () => {
               Book a demo
             </Button>
           </div>
-          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
+          <p className="text-sm text-white/80">Explore with a free trial or a guided demo</p>
         </div>
       </section>
 
@@ -112,33 +118,33 @@ export const HomeCareSchedulingSoftwarePage: React.FC = () => {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 id="benefits-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Core rota software benefits for busy agencies
+              Scheduling tools built around real rota decisions
             </h2>
             <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              DomiClear helps you coordinate care delivery with fewer moving parts and better day-to-day control.
+              See the current day’s visits and explore where alternative assignments may help with travel, gaps and availability.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 icon: CalendarDaysIcon,
-                title: 'Plan and adjust rotas faster',
-                text: 'Make rota updates in minutes, not across disconnected files and chats.',
+                title: 'Daily rota and staffing overview',
+                text: 'Review visits, carer allocations and available cover together before making decisions.',
               },
               {
                 icon: UserGroupIcon,
-                title: 'Keep visibility across carers and visits',
-                text: 'See allocations, visit status, and staffing gaps in one operational view.',
+                title: 'Spot travel and timing gaps',
+                text: 'Identify tight connections, travel demands and gaps that may need coordinator attention.',
               },
               {
                 icon: ArrowsRightLeftIcon,
-                title: 'Handle last-minute changes cleanly',
-                text: 'Reassign and rebalance work quickly when absences or delays happen.',
+                title: 'Compare proposed alternatives',
+                text: 'Use Improve Rota to view proposed changes alongside existing assignments before taking action.',
               },
               {
                 icon: ClipboardDocumentListIcon,
-                title: 'Reduce admin friction for coordinators',
-                text: 'Spend less time reconciling updates and more time keeping care delivery on track.',
+                title: 'Consider care constraints',
+                text: 'Review options in the context of availability, recorded care preferences and relevant staff skills.',
               },
             ].map((item) => {
               const Icon = item.icon;
@@ -163,18 +169,17 @@ export const HomeCareSchedulingSoftwarePage: React.FC = () => {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 id="coordinator-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              How DomiClear helps coordinators stay in control
+              Keep the coordinator in control of each change
             </h2>
             <p className="text-lg text-[#4B5563] mb-8">
-              Scheduling software for home care agencies should make daily coordination easier, not add another admin
-              layer. DomiClear keeps rota decisions, visit updates, and team visibility connected.
+              Improve Rota provides proposals and before-and-after context, not automatic permission to change a live schedule. Coordinators assess what is practical for each care team.
             </p>
             <ul className="space-y-4">
               {[
-                'Live rota context for daily stand-up and handover decisions',
-                'Clearer allocation visibility before issues become missed visits',
-                'Smoother communication between office and carers during shift changes',
-                'More confidence when balancing continuity, workload, and timing',
+                'Review the current rota and staff availability together',
+                'Compare travel and gap information in proposed arrangements',
+                'Consider relevant care and staffing constraints before changing assignments',
+                'Keep human review at the centre of rota decisions',
               ].map((point) => (
                 <li key={point} className="flex items-start gap-3">
                   <CheckCircleIcon className="w-6 h-6 text-[#4370B7] flex-shrink-0 mt-0.5" />
@@ -208,47 +213,6 @@ export const HomeCareSchedulingSoftwarePage: React.FC = () => {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#F8FAFC]" aria-labelledby="switch-heading">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 id="switch-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Why agencies switch from spreadsheets, whiteboards, and WhatsApp
-            </h2>
-            <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              When rota coordination is scattered, simple changes become operational risk. A dedicated care staff
-              scheduling software workflow creates cleaner execution.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                before: 'Before: Cover decisions buried in message threads',
-                after: 'After: A shared, visible rota state the whole office can trust',
-              },
-              {
-                before: 'Before: Manual reconciles between carers, coordinators, and payroll',
-                after: 'After: Scheduling decisions are captured once and tracked clearly',
-              },
-              {
-                before: 'Before: Last-minute changes cause confusion and duplicated effort',
-                after: 'After: Reallocation happens quickly with better operational visibility',
-              },
-              {
-                before: 'Before: Coordinators spend hours firefighting basic schedule issues',
-                after: 'After: More time for quality oversight and service continuity',
-              },
-            ].map((item) => (
-              <div key={item.before} className="bg-white rounded-2xl border border-[rgba(20,30,60,0.08)] p-6">
-                <p className="text-sm uppercase tracking-wide text-[#64748B] font-semibold mb-2">Before</p>
-                <p className="text-[#0F172A] font-medium mb-4">{item.before.replace('Before: ', '')}</p>
-                <p className="text-sm uppercase tracking-wide text-[#4370B7] font-semibold mb-2">After</p>
-                <p className="text-[#4B5563]">{item.after.replace('After: ', '')}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

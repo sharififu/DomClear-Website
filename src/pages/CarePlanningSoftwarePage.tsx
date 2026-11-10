@@ -30,7 +30,12 @@ const carePlanningFaqItems = [
   {
     question: 'Does it make care plan updates easier for teams?',
     answer:
-      'Yes. Updates can be reflected in one care plan record, giving carers and office staff a clearer view of what has changed and reducing duplicate admin across channels.',
+      'Changes to goals and care tasks are prepared in a draft revision. An authorised independent manager reviews submitted revisions, and the previously approved plan remains active until approval.',
+  },
+  {
+    question: 'Are care-plan tasks added to every visit automatically?',
+    answer:
+      'No. When planning a visit, a manager selects the relevant approved care-plan tasks. DomiClear does not automatically copy every task onto every visit.',
   },
   {
     question: 'Can I try it before booking a full demo?',
@@ -51,9 +56,9 @@ export const CarePlanningSoftwarePage: React.FC = () => {
             Care planning software for UK domiciliary care agencies
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            Give teams easier access to care plans, clearer updates, and more organised day-to-day workflows. DomiClear
-            is digital care planning software and domiciliary care planning software in one practical system for UK home
-            care teams.
+            Start with assessed needs, connect outcomes to goals and supporting care tasks, and prepare
+            revisions for independent manager review. The previously approved plan remains active
+            until a new revision is approved.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Button
@@ -76,7 +81,7 @@ export const CarePlanningSoftwarePage: React.FC = () => {
               Book a demo
             </Button>
           </div>
-          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
+          <p className="text-sm text-white/80">Explore with a free trial or a guided demo</p>
         </div>
       </section>
 
@@ -110,34 +115,33 @@ export const CarePlanningSoftwarePage: React.FC = () => {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 id="benefits-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Core benefits of a digital care planning system
+              From assessed need to an agreed plan
             </h2>
             <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              Care plan software should make information easier to organise, update, and share. DomiClear supports home care care planning software needs and focuses on a
-              clearer workflow for UK domiciliary teams.
+              DomiClear makes the relationship between the person's needs, desired outcomes, goals and care tasks visible, with a review stage before changes become active.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 icon: DocumentTextIcon,
-                title: 'Easier digital care planning',
-                text: 'Structure care plan content so teams know where to look for needs, preferences, and routines.',
+                title: 'Record assessed needs',
+                text: 'Keep the person’s requirements and relevant preferences in a structured care-plan record.',
               },
               {
                 icon: ArrowPathIcon,
-                title: 'Faster care plan updates',
-                text: 'Reflect changes in one record so the office and doorstep stay closer to the same information.',
+                title: 'Link outcomes and goals',
+                text: 'Connect goals to the outcomes the person is working towards.',
               },
               {
                 icon: FolderOpenIcon,
-                title: 'Clearer information access',
-                text: 'Reduce hunting through folders, inboxes, and ad hoc notes for the detail carers need on shift.',
+                title: 'Add supporting care tasks',
+                text: 'Describe actions needed for one or more goals, ready for review and appropriate visit scheduling.',
               },
               {
                 icon: UserGroupIcon,
-                title: 'Better visibility for carers and managers',
-                text: 'Support day-to-day coordination with a shared view of care plan context across roles.',
+                title: 'Independent review and approval',
+                text: 'Submit a revision for a different authorised manager to approve or return before it replaces the active plan.',
               },
             ].map((item) => {
               const Icon = item.icon;
@@ -159,19 +163,17 @@ export const CarePlanningSoftwarePage: React.FC = () => {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 id="teams-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              How DomiClear helps teams keep care plans clearer and easier to access
+              Care-plan changes need a clear review process
             </h2>
             <p className="text-lg text-[#4B5563] mb-8">
-              Whether you call it care plan software or a broader digital care planning system, the goal is the same:
-              clearer access and faster updates. DomiClear fits real visit rhythms and keeps care plan records organised
-              alongside scheduling and medication workflows.
+              Draft new goals and care tasks without silently replacing an approved plan. Submitted revisions pass through an independent manager decision, with approved tasks available to select when organising a visit.
             </p>
             <ul className="space-y-4">
               {[
-                'A single place to work from for care plan structure and updates',
-                'Less duplicate admin from re-keying or circulating informal changes',
-                'Easier for coordinators to support carers with the right context',
-                'More organised records for day-to-day operations',
+                'Outcomes, goals and supporting tasks are connected rather than isolated fields',
+                'The author cannot approve their own submitted care-plan revision',
+                'The previously approved plan stays in use until a replacement is approved',
+                'Visit planners choose relevant approved tasks rather than importing them all',
               ].map((point) => (
                 <li key={point} className="flex items-start gap-3">
                   <CheckCircleIcon className="w-6 h-6 text-[#4370B7] flex-shrink-0 mt-0.5" />
@@ -209,47 +211,6 @@ export const CarePlanningSoftwarePage: React.FC = () => {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#F8FAFC]" aria-labelledby="switch-heading">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 id="switch-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Why agencies switch from paper files, scattered records, and older software
-            </h2>
-            <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              A dedicated care planning system reduces friction when everyone needs the same up-to-date detail without
-              running a second job as an archivist.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                before: 'Before: Ring binders and printouts that fall behind real life',
-                after: 'After: Digital care plans that are easier to keep organised and find',
-              },
-              {
-                before: 'Before: Updates stuck in emails and informal messages',
-                after: 'After: Care plan changes reflected where the team already works',
-              },
-              {
-                before: 'Before: Carers unsure which version of a plan is current',
-                after: 'After: A clearer shared reference for visits and handovers',
-              },
-              {
-                before: 'Before: Older tools that feel slow or awkward on the front line',
-                after: 'After: A more practical workflow built around domiciliary delivery',
-              },
-            ].map((item) => (
-              <div key={item.before} className="bg-white rounded-2xl border border-[rgba(20,30,60,0.08)] p-6">
-                <p className="text-sm uppercase tracking-wide text-[#64748B] font-semibold mb-2">Before</p>
-                <p className="text-[#0F172A] font-medium mb-4">{item.before.replace('Before: ', '')}</p>
-                <p className="text-sm uppercase tracking-wide text-[#4370B7] font-semibold mb-2">After</p>
-                <p className="text-[#4B5563]">{item.after.replace('After: ', '')}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>

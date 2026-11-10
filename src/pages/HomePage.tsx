@@ -127,18 +127,18 @@ export const HomePage: React.FC = () => {
 
               <div className="text-center lg:text-left">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Ready to run your agency on modern domiciliary care software?
+                  Ready to see DomiClear in your care service?
                 </h2>
                 <p className="text-xl text-white/90 mb-4 leading-relaxed">
-                  Start your free trial to explore DomiClear in your own time, or book a demo to walk through
-                  scheduling, care plans, and eMAR with our team.
+                  Explore the real workflows with a free trial, or book a guided demonstration focused on
+                  scheduling, person-centred care plans, medication records and incident follow-up.
                 </p>
                 <p className="text-base text-white/85 mb-10 leading-relaxed max-w-2xl">
-                  Usage-based plans give many UK agencies a lower cost of entry than heavyweight platforms — see{' '}
+                  Plans are based on active service users. Review our published{' '}
                   <a href="/pricing" className="font-semibold text-white underline decoration-white/40 hover:decoration-white">
                     pricing
                   </a>{' '}
-                  for full detail.
+                  for plan details and costs.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                   <Button
