@@ -1,6 +1,6 @@
 # DomiClear — eMAR marketing video production brief
 
-**Status:** Planned / not produced
+**Status:** Existing published tutorials identified; replacement and new footage remain planned
 **Prepared:** 10 November 2026
 **Owner:** DomiClear marketing and product
 **Destination:** DomiClear marketing homepage eMAR feature section, /emar-software and short social clips
@@ -8,7 +8,20 @@
 
 ## Objective
 
-Show the real medication workflow in DomiClear — not a generic montage. Visitors should understand how an agency sets up medicines, how a carer records an administration during an assigned visit, and how a manager examines the MAR afterwards. Complement the existing clip at \`public/demo-media/demo-emar-medication-management.mp4\`; do not replace it until the new cuts are reviewed.
+Show the real medication workflow in DomiClear — not a generic montage. Visitors should understand how an agency sets up medicines, how a carer records an administration during an assigned visit, and how a manager examines the MAR afterwards. Complement the existing clip at `public/demo-media/demo-emar-medication-management.mp4`; do not replace it until the new cuts are reviewed.
+
+## Existing published medication videos — review before reshooting
+
+The DomiClear tutorial library already lists three published YouTube recordings:
+
+| Video | Coverage confirmed on 10 November 2026 | Action |
+| --- | --- | --- |
+| [Managing the medication library](https://www.youtube.com/watch?v=jJHYBeMx54A) (~1:22) | Transcript confirms library search, manual entry, save and the distinction between a library item and a personal schedule. No dose administration. | Reuse unless outdated. |
+| [PRN medication and MAR](https://www.youtube.com/watch?v=c3HPYNEt8DM) (~1:31) | Transcript shows PRN schedules, MAR history, filters and historic outcomes; explicitly says administration recording is a separate tutorial. | Reuse as a history tutorial; verify against the latest app. |
+| [Adding a medication schedule](https://www.youtube.com/watch?v=Gt4dtcCTSN4) (~2:09) | Description mentions schedules and administration times; full footage/transcript was blocked by YouTube bot verification. | Obtain local MP4, inspect and only then decide on edits. |
+| `public/demo-media/demo-emar-medication-management.mp4` | Existing short homepage promo; footage not inspected frame-by-frame during this review. | Retain pending media inspection. |
+
+**Priority missing footage:** verify whether a local/unpublished video already demonstrates an actual carer recording a scheduled or PRN dose online during an assigned visit and then viewing the saved MAR entry. If none exists, produce that first.
 
 ## Creative direction
 
@@ -18,9 +31,11 @@ Show the real medication workflow in DomiClear — not a generic montage. Visito
 - Optional narration, UK English captions, keyboard-accessible player controls, and a clear opening identifying it as a product demonstration.
 - No claim that DomiClear prescribes, recommends dosage, independently determines clinical correctness, or ensures CQC/NHS compliance. Never demonstrate an unsafe administration process.
 
-## Priority 1 — Medication library to personal schedule (25–35 sec)
+## Optional update — Medication library to personal schedule (25–35 sec)
 
 **Audience:** Registered managers, coordinators and senior staff
+
+Review the existing published library and schedule tutorials first; only film missing or outdated steps.
 
 | Shot | Approx. duration | Action and key message |
 | --- | --- | --- |
@@ -32,7 +47,7 @@ Show the real medication workflow in DomiClear — not a generic montage. Visito
 
 **Gate:** A product owner checks the live screen names and actual create/select workflow, permissions, schedule status and current medicine-library behaviour. Capture only in a synthetic environment with no real patient or prescription data.
 
-## Priority 2 — Carer recording a visit dose / PRN (30–45 sec)
+## Priority 1 — Carer recording a visit dose / PRN (30–45 sec)
 
 **Audience:** Carers and care-team managers
 
@@ -46,9 +61,11 @@ Show the real medication workflow in DomiClear — not a generic montage. Visito
 
 **Critical gate:** Administration recording is **online-only** in the current app; do not depict offline dose saving or background synchronization. Verify visit assignment, performer attribution, PRN reason capture and whether witness functionality is suitable for filming. Do not make administration appear successful before the server confirms it.
 
-## Priority 3 — Manager MAR review and follow-up (25–35 sec)
+## Optional update — Manager MAR review and follow-up (25–35 sec)
 
 **Audience:** Managers and quality leads
+
+Review the published PRN/MAR history tutorial first; only film missing or outdated steps.
 
 | Shot | Approx. duration | Action and key message |
 | --- | --- | --- |
@@ -62,10 +79,11 @@ Show the real medication workflow in DomiClear — not a generic montage. Visito
 
 ## Future optional combined edit
 
-After all three have been verified, cut a **50–65 second** three-chapter overview (library → visit recording → manager review) for the dedicated eMAR page. Keep the homepage video short and avoid looping three long videos at once. Offer the more detailed videos only in a deliberate “Watch the workflow” area if the experience remains fast on mobile.
+After validating existing footage and any newly recorded administration tutorial, optionally cut a **50–65 second** three-chapter overview (library → visit recording → manager review) for the dedicated eMAR page. Keep the homepage video short and avoid looping three long videos at once. Offer the more detailed videos only in a deliberate “Watch the workflow” area if the experience remains fast on mobile.
 
 ## Production readiness checklist
 
+- [ ] Review original MP4 files for the three published tutorials (especially the schedule video) and check for an unpublished carer administration tutorial before reshooting anything.
 - [ ] Confirm app version, relevant commits, demo account permissions and synthetic test fixtures.
 - [ ] Review current medication library / schedule screens; verify both scheduled and PRN saving through the real database.
 - [ ] Check live web and native/device flows; record limitations, especially online-only MAR and witness signing.
@@ -78,13 +96,13 @@ After all three have been verified, cut a **50–65 second** three-chapter overv
 
 ## Code and evidence references
 
-- \`sharififu/DomiCare/app/(cms)/medications/index.tsx\` — medication library
-- \`components/cms/medications/MedicationsTable.tsx\` — prescribed / PRN schedules
-- \`components/visits/EnhancedMedicationItem.tsx\` and \`utils/medication/scheduledDose.ts\` — online recording, regular and PRN entry
-- \`tests/prn-dose-mar.test.ts\` — tested PRN dose and reason fields
-- \`app/(cms)/medications/mar/index.tsx\` — manager MAR review / export
-- \`supabase/migrations/20261011171415_medication_administration_visit_scope.sql\` — assigned-visit guard
-- \`supabase/migrations/20261109110726_mar_performer_guard_and_retire_prn_administrations.sql\` — performer / time checks
-- \`docs/compliance/mods/MODS_MEDICATION_HISTORY_HAZARD.md\` — stop/history work and residual clinical review needs
+- `sharififu/DomiCare/app/(cms)/medications/index.tsx` — medication library
+- `components/cms/medications/MedicationsTable.tsx` — prescribed / PRN schedules
+- `components/visits/EnhancedMedicationItem.tsx` and `utils/medication/scheduledDose.ts` — online recording, regular and PRN entry
+- `tests/prn-dose-mar.test.ts` — tested PRN dose and reason fields
+- `app/(cms)/medications/mar/index.tsx` — manager MAR review / export
+- `supabase/migrations/20261011171415_medication_administration_visit_scope.sql` — assigned-visit guard
+- `supabase/migrations/20261109110726_mar_performer_guard_and_retire_prn_administrations.sql` — performer / time checks
+- `docs/compliance/mods/MODS_MEDICATION_HISTORY_HAZARD.md` — stop/history work and residual clinical review needs
 
 **This brief is not evidence of clinical sign-off, complete production validation, or completed videos.**
