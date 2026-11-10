@@ -47,11 +47,11 @@ export const navigation: NavItem[] = [
 ];
 
 export const heroContent = {
-  eyebrow: 'DOMICILIARY CARE SOFTWARE',
-  title: 'Modern Domiciliary care software your team will actually use',
-  subtitle: `DomiClear is an all-in-one domiciliary care management system that helps UK care agencies manage staff, visits, care plans, eMAR, compliance and finances from one connected platform.
+  eyebrow: 'DOMICILIARY CARE MANAGEMENT SOFTWARE',
+  title: 'From the office to the doorstep, keep care connected.',
+  subtitle: `DomiClear brings visit scheduling, person-centred care planning, medication management (eMAR), incident reporting and quality oversight together in one platform built for UK domiciliary care providers.
 
-Spend less time on administration, give carers the information they need and keep your service ready for its next CQC inspection`,
+Give carers the information they need to deliver care confidently, while managers stay informed, organised and in control of their service.`,
   primaryCta: 'Start free trial',
   secondaryCta: 'Book a demo',
 };
