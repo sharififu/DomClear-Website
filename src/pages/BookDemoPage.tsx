@@ -67,7 +67,7 @@ export const BookDemoPage: React.FC = () => {
           </div>
           <h1 className="text-4xl font-bold text-[#0F172A] mb-6">Thank you for your interest!</h1>
           <p className="text-xl text-[#4B5563] mb-8">
-            We've received your demo request. A member of our team will be in touch within one business day to schedule your personalised demonstration.
+            We've received your demo request. Our team will review your details and contact you about arranging a demonstration.
           </p>
           <div className="bg-white rounded-2xl p-6 border border-[rgba(20,30,60,0.08)] mb-8">
             <p className="text-[#4B5563] mb-4">
@@ -99,7 +99,7 @@ export const BookDemoPage: React.FC = () => {
             Schedule a personalised demo of the home care software. Our UK team will walk you through scheduling, eMAR, compliance evidence and how DomiClear fits your agency. No obligation.
           </p>
           <p className="text-base text-[#4B5563] max-w-2xl mx-auto leading-relaxed mb-6">
-            Looking for a practical, more affordable option with a lower cost of entry? See{' '}
+            Want to compare the available plan options? See{' '}
             <a href="/pricing" className="text-[#4370B7] font-semibold hover:underline">
               transparent pricing
             </a>{' '}
@@ -121,7 +121,7 @@ export const BookDemoPage: React.FC = () => {
           <p className="text-sm text-[#4B5563] mb-1">
             Prefer to explore first? No card required — same full platform access during your trial.
           </p>
-          <p className="text-sm text-[#4B5563]">No obligation · UK support · We respond within one business day</p>
+          <p className="text-sm text-[#4B5563]">No obligation · Request a guided demonstration</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto mb-20">
@@ -338,19 +338,19 @@ export const BookDemoPage: React.FC = () => {
                 <div>
                   <h3 className="text-lg font-bold text-[#0F172A] mb-2">Migration help</h3>
                   <p className="text-[#4B5563] text-sm leading-relaxed">
-                    We'll import your spreadsheets at no extra cost (Starter+).
+                    Ask us about preparing and importing your existing records during onboarding.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#0F172A] mb-2">Security</h3>
                   <p className="text-[#4B5563] text-sm leading-relaxed">
-                    UK/EU data residency, audit trails, role-based access.
+                    London-hosted primary care data, role-based permissions and recorded audit history.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#0F172A] mb-2">Offline mode</h3>
                   <p className="text-[#4B5563] text-sm leading-relaxed">
-                    Carer app syncs when back online.
+                    Cached visit information may be available offline; medication administration is recorded online.
                   </p>
                 </div>
               </div>
