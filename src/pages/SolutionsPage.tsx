@@ -4,6 +4,44 @@ import { Button } from '../components/Button';
 import { solutionsContent } from '../data/content';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
+const roleJourneys: Record<string, {
+  title: string;
+  steps: string[];
+  href: string;
+  linkText: string;
+}> = {
+  'care-managers': {
+    title: 'From planning to follow-up',
+    steps: [
+      'Review visits and current carer assignments',
+      'Check which approved tasks belong on each planned visit',
+      'Investigate incidents and follow actions through',
+    ],
+    href: '/platform#compliance',
+    linkText: 'Explore incident and quality workflows',
+  },
+  owners: {
+    title: 'From records to informed decisions',
+    steps: [
+      'Review care delivery and workforce reporting',
+      'Examine invoice, payroll and attendance records',
+      'Check recorded quality findings and outstanding actions',
+    ],
+    href: '/platform#analytics',
+    linkText: 'Explore reports and analytics',
+  },
+  families: {
+    title: 'Shared information, with permission',
+    steps: [
+      'The care provider links and authorises a family account',
+      'The family member views permitted visits or care information',
+      'The provider can update or withdraw sharing permissions',
+    ],
+    href: '/platform#family',
+    linkText: 'Explore family portal access',
+  },
+};
+
 export const SolutionsPage: React.FC = () => {
   const solutions = Object.values(solutionsContent);
 
@@ -36,10 +74,10 @@ export const SolutionsPage: React.FC = () => {
             Solutions
           </span>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Home care solutions for every role
+            Home care tools for the people behind every visit
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            One care management app for UK agencies: built for care managers, agency owners and families. Rotas, eMAR, CQC-ready compliance and family portal—designed around how you work.
+            For care managers and agency owners, and for relatives who have been granted family-portal access. DomiClear keeps care workflows connected while respecting the different responsibilities and permissions of each role.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Button
@@ -62,7 +100,7 @@ export const SolutionsPage: React.FC = () => {
               Book a demo
             </Button>
           </div>
-          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
+          <p className="text-sm text-white/80">Explore with a free trial or a guided demo</p>
         </div>
       </section>
 
@@ -77,6 +115,7 @@ export const SolutionsPage: React.FC = () => {
             };
 
             const IconComponent = icons[solution.id as keyof typeof icons] || <UsersIcon className="w-12 h-12 text-[#4370B7]" />;
+            const journey = roleJourneys[solution.id];
 
             return (
               <div
@@ -115,20 +154,29 @@ export const SolutionsPage: React.FC = () => {
                     <ArrowRightIcon className="w-4 h-4" />
                   </Button>
                 </div>
-                <div className="flex-1">
-                  <div className="w-full aspect-video bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC] rounded-2xl border border-[rgba(20,30,60,0.08)] flex items-center justify-center p-8">
-                    <div className="text-center max-w-md">
-                      <div className="mb-6 flex justify-center">
-                        <div className="w-20 h-20 rounded-2xl bg-white shadow-card flex items-center justify-center">
-                          {IconComponent}
-                        </div>
-                      </div>
-                      <span className="block text-[#0F172A] font-semibold mb-2 text-xl">{solution.title}</span>
-                      <p className="text-sm text-[#4B5563] mb-4">{solution.description.substring(0, 120)}...</p>
-                      <a href={`/demos#${solution.id}`} className="text-[#4370B7] hover:underline text-sm font-medium">
-                        View demo →
-                      </a>
-                    </div>
+                <div className="flex-1 w-full">
+                  <div className="rounded-2xl border border-[#dce5f2] bg-gradient-to-br from-[#f2f7ff] to-[#f6fcfa] p-6 shadow-[0_12px_38px_-28px_rgba(25,45,78,0.35)] sm:p-8">
+                    <p className="mb-3 text-xs font-bold uppercase tracking-[0.15em] text-[#345e9c]">
+                      How the workflow connects
+                    </p>
+                    <h3 className="mb-5 text-xl font-bold text-[#0F172A] sm:text-2xl">{journey.title}</h3>
+                    <ol className="space-y-4">
+                      {journey.steps.map((step, stepIndex) => (
+                        <li key={step} className="flex items-start gap-3">
+                          <span className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-[#b8d0ed] bg-white text-xs font-bold text-[#345e9c]">
+                            {String(stepIndex + 1).padStart(2, '0')}
+                          </span>
+                          <span className="pt-1 text-sm leading-6 text-[#334155]">{step}</span>
+                        </li>
+                      ))}
+                    </ol>
+                    <a
+                      href={journey.href}
+                      className="mt-7 inline-flex min-h-11 items-center gap-2 font-semibold text-[#23579b] underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#23579b]"
+                    >
+                      {journey.linkText}
+                      <ArrowRightIcon className="h-4 w-4" aria-hidden="true" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -173,27 +221,20 @@ export const SolutionsPage: React.FC = () => {
                 See how DomiClear works for your role
               </h2>
               <p className="text-xl text-[#4B5563] max-w-2xl mx-auto">
-                Book a personalised demo tailored to your needs and discover how DomiClear can transform your care operations.
+                Choose a walkthrough focused on the role and workflows you need to assess. We'll show the real screens and explain the limits as well as the features.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              {solutions.map((solution) => (
-                <div
-                  key={solution.id}
-                  className="p-6 rounded-2xl border border-[rgba(20,30,60,0.08)] hover:shadow-card-hover transition-all duration-300"
-                >
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-3">{solution.title}</h3>
-                  <p className="text-[#4B5563] mb-4 text-sm">{solution.description.substring(0, 100)}...</p>
-                  <a
-                    href={`/solutions#${solution.id}`}
-                    className="text-[#4370B7] hover:underline text-sm font-medium inline-flex items-center gap-1"
-                  >
-                    Learn more
-                    <ArrowRightIcon className="w-3 h-3" />
-                  </a>
-                </div>
-              ))}
+            <div className="mb-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
+              <a href="/tutorials" className="font-semibold text-[#23579b] underline-offset-4 hover:underline">
+                Watch existing product tutorials
+              </a>
+              <a href="/credentials" className="font-semibold text-[#23579b] underline-offset-4 hover:underline">
+                Review security and assurance status
+              </a>
+              <a href="/pricing" className="font-semibold text-[#23579b] underline-offset-4 hover:underline">
+                Explore plans and pricing
+              </a>
             </div>
 
             <div className="text-center">
@@ -217,7 +258,7 @@ export const SolutionsPage: React.FC = () => {
                   Book a demo
                 </Button>
               </div>
-              <p className="text-sm text-[#4B5563]">No card required · UK support · Cancel anytime</p>
+              <p className="text-sm text-[#4B5563]">Explore with a free trial or a guided demo</p>
             </div>
           </div>
         </div>
