@@ -29,14 +29,8 @@ export const PromoShowcase: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-[#070d1d] text-white py-12 md:py-16" aria-labelledby="promo-showcase-heading">
+    <section className="bg-[#070d1d] text-white py-8 md:py-10" aria-label="DomiClear promotional video">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          id="promo-showcase-heading"
-          className="text-3xl md:text-4xl font-bold tracking-tight text-center mb-6"
-        >
-          See DomiClear in action
-        </h2>
         <div ref={containerRef} className="w-full">
           {isVisible ? (
             <iframe
@@ -45,7 +39,7 @@ export const PromoShowcase: React.FC = () => {
               aria-label="DomiClear promotional animation with playback controls and final links to a demo and the app"
               className="block w-full rounded-2xl border-0"
               style={{
-                height: 'clamp(390px, calc((100vw - 32px) * 0.5625 + 185px), 900px)',
+                height: 'clamp(390px, calc((100vw - 32px) * 0.5625 + 160px), 875px)',
               }}
               loading="lazy"
               sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
