@@ -280,37 +280,108 @@ export const ComprehensiveFeatures: React.FC = () => {
           </div>
         </section>
 
-        {/* eMAR */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div className="order-2 lg:order-1 relative">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="rounded-2xl shadow-lg border border-gray-100 w-full h-auto block"
-              aria-label="eMAR medication management in DomiClear"
-            >
-              <source src="/demo-media/demo-emar-medication-management.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <div className="order-1 lg:order-2">
-            <div className="w-16 h-16 rounded-full bg-indigo-500 flex items-center justify-center mb-6">
-              {SmartphoneIcon && <SmartphoneIcon className="w-8 h-8 text-white" />}
+        {/* eMAR: medication library, PRN and recorded administration outcomes */}
+        <section
+          aria-labelledby="home-emar-heading"
+          className="relative mb-20 overflow-hidden rounded-[2rem] border border-[#ced9f0] bg-gradient-to-br from-[#eef3ff] via-[#f9fbff] to-[#e9faf4] shadow-[0_25px_80px_-60px_rgba(27,52,100,0.3)]"
+        >
+          <div className="pointer-events-none absolute -right-24 -top-36 h-80 w-80 rounded-full bg-[#8c93f7]/20 blur-3xl" aria-hidden="true" />
+          <div className="relative px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+            <div className="grid grid-cols-1 lg:grid-cols-[0.94fr_1.06fr] items-center gap-10 lg:gap-14">
+              <div>
+                <p className="mb-5 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-[#435bb6]">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl border border-[#afbde3]/70 bg-white/80" aria-hidden="true">
+                    {SmartphoneIcon && <SmartphoneIcon className="h-5 w-5 text-[#435bb6]" />}
+                  </span>
+                  Medication management &amp; eMAR
+                </p>
+                <h2 id="home-emar-heading" className="mb-6 text-3xl font-bold leading-[1.14] tracking-tight text-[#0F172A] sm:text-4xl lg:text-[2.75rem]">
+                  Know what's scheduled. Record what happened.
+                </h2>
+                <p className="text-lg leading-relaxed text-[#475569]">
+                  Bring your medication library, each person's schedules and their administration history together.
+                  Give carers a structured way to record doses during visits, while managers can review the resulting MAR.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-[#475569]">
+                  From regular medication to as-needed (PRN) doses, keep the dose given, the reason where required,
+                  and the recorded outcome connected to the care record.
+                </p>
+                <a
+                  href="/emar-software"
+                  className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#435bb6] px-5 py-3 font-semibold text-white transition-colors hover:bg-[#304492] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#435bb6]"
+                >
+                  Explore eMAR features
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <div className="overflow-hidden rounded-[1.5rem] border border-[#cbd5e1] bg-white shadow-[0_24px_48px_-28px_rgba(15,23,42,0.45)]">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-5 py-4">
+                  <h3 className="text-sm font-bold text-[#17223c] sm:text-base">
+                    Medication management in DomiClear
+                  </h3>
+                  <span className="rounded-full bg-[#eef3ff] px-3 py-1 text-xs font-semibold text-[#435bb6]">
+                    Interface demo
+                  </span>
+                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  className="block h-auto w-full"
+                  aria-label="DomiClear medication management and eMAR interface demonstration"
+                >
+                  <source src="/demo-media/demo-emar-medication-management.mp4" type="video/mp4" />
+                </video>
+              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              eMAR software with centralised medication management
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Create a medication once and reuse it across service users — no need to enter the same medication again and again. Record administration with prompts, photos, timestamps, and clear audit trails, all built for how UK domiciliary care teams actually work.
-            </p>
-            <p className="mt-4">
-              <a href="/emar-software" className="text-[#4370B7] font-semibold text-sm hover:underline">
-                eMAR software
-              </a>
-            </p>
+
+            <div className="mt-10 border-t border-[#cbd5e1]/80 pt-8">
+              <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-[#52668e]">
+                From setup to recorded care
+              </h3>
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  {
+                    number: '01',
+                    title: 'One medication library',
+                    detail: 'Manage medication definitions and select medicines for individual service-user schedules.',
+                  },
+                  {
+                    number: '02',
+                    title: 'Scheduled and PRN doses',
+                    detail: 'Work with regular schedules and record the actual dose and reason for as-needed medication.',
+                  },
+                  {
+                    number: '03',
+                    title: 'Record dose outcomes',
+                    detail: 'Capture what happened, including the recorded time, staff member and reasons for non-administration where applicable.',
+                  },
+                  {
+                    number: '04',
+                    title: 'Review the MAR',
+                    detail: 'Find administration history, review recorded outcomes and export medication records for follow-up.',
+                  },
+                ].map((feature) => (
+                  <div key={feature.number} className="rounded-2xl border border-[#d7e0f1] bg-white/85 p-5 shadow-sm">
+                    <span className="text-xs font-bold tracking-widest text-[#435bb6]" aria-hidden="true">
+                      {feature.number}
+                    </span>
+                    <h4 className="mt-3 mb-2 text-base font-bold text-[#0F172A]">
+                      {feature.title}
+                    </h4>
+                    <p className="text-sm leading-relaxed text-[#475569]">{feature.detail}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-5 text-xs leading-relaxed text-[#64748b]">
+                Medication administration is recorded while online; carers must reconnect before recording a dose.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
 
         {/* Records & compliance tooling */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
