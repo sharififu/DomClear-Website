@@ -22,46 +22,46 @@ const careAppDemoVideo = '/demo-media/careapp-demo.mp4';
 const featureCards = [
   {
     icon: ClockIcon,
-    title: 'Clear Daily Schedules',
-    text: 'See exactly where to go, when to be there, and who needs care. Real-time updates mean no more calling the office.',
+    title: 'Assigned daily visits',
+    text: 'Review the schedule, service-user details and relevant visit information in one place.',
   },
   {
     icon: ClipboardDocumentListIcon,
-    title: 'Step-by-Step Tasks',
-    text: 'Mandatory and optional tasks clearly laid out. Ensure care plans are followed perfectly every single visit.',
+    title: 'Visit tasks and instructions',
+    text: 'Work through the care tasks chosen for the visit, with relevant care-plan context and instructions where available.',
   },
   {
     icon: MicrophoneIcon,
-    title: 'Voice-to-Text Notes',
-    text: 'Dictate detailed care notes instantly. Our intelligent system captures tone and details without typing.',
+    title: 'Dictation for care notes',
+    text: 'Use device-supported dictation to enter note text, then review and edit it before saving.',
   },
   {
     icon: ShieldCheckIcon,
-    title: 'Safe eMAR Logging',
-    text: 'Clear prompts for PRN and scheduled meds. Prevent errors before they happen with built-in safety alerts.',
+    title: 'Online medication recording',
+    text: 'Record scheduled and PRN administration outcomes while connected, including dose and reason where required.',
   },
   {
     icon: CameraIcon,
-    title: 'Secure Photo Capture',
-    text: 'Snap photos of wounds or household hazards securely within the app. Nothing saves to the personal camera roll.',
+    title: 'Photo attachments',
+    text: 'Attach relevant photos to supported care records using your organisation’s approved workflow and permissions.',
   },
   {
     icon: MapPinIcon,
-    title: 'GPS Clock In/Out',
-    text: 'Automatic geofencing ensures accurate visit times. Protects carers and provides transparency for families.',
+    title: 'Visit check-in and check-out',
+    text: 'Record visit start and end information, with location context where available and permitted.',
   },
 ];
 
 const pocketBenefits = [
   {
     icon: ClipboardDocumentCheckIcon,
-    title: 'Clear Daily Schedules',
-    text: 'See exactly where to go, when to be there, and who needs care. Real-time updates mean no more calling the office.',
+    title: 'Visits and daily schedule',
+    text: 'Check assigned visits and available details before the next appointment.',
   },
   {
     icon: MapPinIcon,
-    title: 'GPS Clock In/Out',
-    text: 'Automatic geofencing ensures accurate visit times. Protects carers and provides transparency for families.',
+    title: 'Visit attendance',
+    text: 'Record a visit’s start and end, with location details where enabled.',
   },
   {
     icon: DevicePhoneMobileIcon,
@@ -71,9 +71,9 @@ const pocketBenefits = [
 ];
 
 const managerBullets = [
-  'See instantly when visits start, run late, or are completed.',
-  'Receive immediate alerts for missed medications or urgent notes.',
-  'Ensure full compliance with automatic audit trails for CQC inspections.',
+  'Review recorded visit activity and outstanding operational issues.',
+  'Follow incidents through relevant actions and manager investigations.',
+  'Use audit records and indicative quality measures for internal review.',
 ];
 
 export const HomeCareAppPage: React.FC = () => {
@@ -88,16 +88,16 @@ export const HomeCareAppPage: React.FC = () => {
           <div className="max-w-2xl text-center lg:text-left">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#d3e4fe] bg-[#e5eeff] px-3 py-2 text-[12px] font-semibold uppercase tracking-[0.08em] text-[#434655] shadow-sm">
               <SignalIcon className="h-4 w-4 text-[#2563eb]" />
-              Built for all care providers
+              Built for UK domiciliary care teams
             </div>
 
             <h1 className="mb-6 text-4xl font-bold leading-tight tracking-[-0.02em] text-[#0b1c30] sm:text-5xl lg:text-[48px] lg:leading-[1.15]">
-              The Home Care App That Cares!
+              The carer app that keeps care connected
             </h1>
 
             <p className="mx-auto mb-8 max-w-xl text-base leading-8 text-[#434655] sm:text-lg lg:mx-0">
-              Give your care team a mobile tool they&apos;ll actually love using. DomiClear streamlines schedules,
-              tasks, and eMAR so carers can focus on what matters: the person in front of them.
+              Help carers see assigned visits, chosen care tasks and relevant care information in one mobile workspace.
+              Record visit activity and, when connected, medication administration with the context managers need.
             </p>
 
             <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
@@ -112,7 +112,7 @@ export const HomeCareAppPage: React.FC = () => {
                 href="#features"
                 className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[#c3c6d7] bg-[#f8f9ff] px-8 py-3 text-sm font-semibold text-[#0b1c30] shadow-sm transition-colors hover:bg-white"
               >
-                View Carer Testimonials
+                Explore carer app features
               </a>
             </div>
           </div>
@@ -123,8 +123,8 @@ export const HomeCareAppPage: React.FC = () => {
                 <CheckCircleIcon className="h-4 w-4 text-[#16a34a]" />
               </span>
               <span>
-                <span className="block text-sm text-[#0b1c30]">Visit Completed</span>
-                <span className="block text-[11px] text-[#434655]">Arthur P. - 09:48 AM</span>
+                <span className="block text-sm text-[#0b1c30]">Visit example</span>
+                <span className="block text-[11px] text-[#434655]">Example visit · 09:48</span>
               </span>
             </div>
 
@@ -133,8 +133,8 @@ export const HomeCareAppPage: React.FC = () => {
                 <ShieldCheckIcon className="h-4 w-4 text-[#d97706]" />
               </span>
               <span>
-                <span className="block text-sm text-[#0b1c30]">Medication Reviewed</span>
-                <span className="block text-[11px] text-[#434655]">Signed by Mary</span>
+                <span className="block text-sm text-[#0b1c30]">Medication example</span>
+                <span className="block text-[11px] text-[#434655]">Recorded in eMAR</span>
               </span>
             </div>
 
@@ -198,11 +198,11 @@ export const HomeCareAppPage: React.FC = () => {
         <div className="mx-auto grid max-w-[1050px] grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-10">
           <div>
             <h2 id="secure-heading" className="mb-6 max-w-md text-4xl font-bold leading-tight tracking-[-0.01em] text-[#004ac6]">
-              Secure, reliable, always connected
+              Useful information, even when signal drops
             </h2>
             <p className="mb-10 max-w-xl text-lg leading-8 text-[#434655]">
-              Built for the realities of field work. Ensures safety for carers and uninterrupted service delivery
-              regardless of connectivity.
+              Previously cached visit details can remain available when connectivity drops.
+              Medication administration records, however, must be saved online.
             </p>
 
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -210,14 +210,14 @@ export const HomeCareAppPage: React.FC = () => {
                 <MapPinIcon className="mb-4 h-7 w-7 text-[#2563eb]" />
                 <h3 className="mb-2 text-sm font-semibold text-[#0b1c30]">GPS Verification</h3>
                 <p className="text-sm leading-6 text-[#434655]">
-                  Automated check-ins safeguard carer location and verify visit compliance.
+                  Check-in and check-out can include location information where enabled. Visit records remain subject to manager review.
                 </p>
               </div>
               <div className="rounded-xl border border-[#e5eeff] bg-white p-6 shadow-[0_4px_18px_-10px_rgba(37,99,235,0.35)]">
                 <WifiIcon className="mb-4 h-7 w-7 text-[#2563eb]" />
-                <h3 className="mb-2 text-sm font-semibold text-[#0b1c30]">Robust Offline Mode</h3>
+                <h3 className="mb-2 text-sm font-semibold text-[#0b1c30]">Previously cached visit details</h3>
                 <p className="text-sm leading-6 text-[#434655]">
-                  Full access to care plans and note-taking even in zero-signal areas. Syncs automatically.
+                  Available cached visit information may still be viewable without signal. Reconnect before recording medication administration.
                 </p>
               </div>
             </div>
@@ -243,12 +243,12 @@ export const HomeCareAppPage: React.FC = () => {
             <div>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.08em] text-[#004ac6]">For managers</p>
               <h2 id="manager-heading" className="mb-6 max-w-lg text-3xl font-semibold leading-tight tracking-[-0.01em] text-[#0b1c30] sm:text-4xl">
-                CQC compliance software MANAGEMENT
+                Care quality oversight for managers
               </h2>
               <p className="mb-8 max-w-xl text-lg leading-8 text-[#444653]">
-                When a carer reports a fall, medication error or safeguarding concern, DomiClear doesn&apos;t just file
-                it. Every incident lands on the client&apos;s chronological care timeline and instantly generates the
-                follow-up actions your inspectors expect to see.
+                Reported incidents can generate relevant follow-up actions for managers to review. Investigation notes,
+                decisions and sign-offs provide a record of the organisation’s response, while CQC-aligned
+                measures remain internal indicators rather than official inspection ratings.
               </p>
 
               <ul className="space-y-4">
@@ -275,8 +275,8 @@ export const HomeCareAppPage: React.FC = () => {
                   <CheckCircleIcon className="h-5 w-5 text-[#16a34a]" />
                 </span>
                 <span>
-                  <span className="block text-xl font-semibold leading-none text-[#0b1c30]">100%</span>
-                  <span className="block text-[10px] uppercase tracking-wide text-[#434655]">Compliance tracked</span>
+                  <span className="block text-base font-semibold leading-none text-[#0b1c30]">Audit history</span>
+                  <span className="block text-[10px] uppercase tracking-wide text-[#434655]">For manager review</span>
                 </span>
               </div>
             </div>
@@ -287,7 +287,7 @@ export const HomeCareAppPage: React.FC = () => {
       <section id="features" className="border-t border-[#dce9ff] bg-[#f8f9ff] py-20 lg:py-24" aria-labelledby="features-heading">
         <div className="mx-auto max-w-[1280px] px-6">
           <h2 id="features-heading" className="mb-16 text-center text-3xl font-semibold tracking-[-0.01em] text-[#0b1c30]">
-            Everything a carer needs in their pocket
+            Carer workflows in one mobile app
           </h2>
 
           <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -303,6 +303,25 @@ export const HomeCareAppPage: React.FC = () => {
                 </article>
               );
             })}
+          </div>
+        </div>
+      </section>
+      <section className="border-t border-[#dce9ff] bg-white py-14 md:py-20" aria-labelledby="care-app-cta-heading">
+        <div className="mx-auto max-w-[900px] px-6 text-center">
+          <h2 id="care-app-cta-heading" className="mb-4 text-3xl font-bold text-[#0b1c30] md:text-4xl">
+            See the carer app in your care service
+          </h2>
+          <p className="mx-auto mb-8 max-w-2xl text-base leading-relaxed text-[#434655] md:text-lg">
+            Explore the mobile experience with a trial, or book a demonstration of visits,
+            care tasks, medication records and manager follow-up.
+          </p>
+          <div className="flex flex-col justify-center gap-3 sm:flex-row">
+            <a href="https://domiclear.app/signup" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#004ac6] px-7 py-3 font-semibold text-white hover:bg-[#003ea8] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#004ac6]">
+              Start free trial
+            </a>
+            <a href="/book-demo" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[#b4c8e8] bg-white px-7 py-3 font-semibold text-[#004ac6] hover:bg-[#f1f5ff] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#004ac6]">
+              Book a demo
+            </a>
           </div>
         </div>
       </section>
