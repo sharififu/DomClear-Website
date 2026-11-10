@@ -1,6 +1,6 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
-import { FeatureOverview } from '../components/FeatureOverview';
+import { PromoShowcase } from '../components/PromoShowcase';
 import { ComprehensiveFeatures } from '../components/ComprehensiveFeatures';
 import { StatCard } from '../components/StatCard';
 import { Button } from '../components/Button';
@@ -17,7 +17,7 @@ export const HomePage: React.FC = () => {
     <div>
       <Hero />
 
-      <FeatureOverview />
+      <PromoShowcase />
 
       <ComprehensiveFeatures />
 
