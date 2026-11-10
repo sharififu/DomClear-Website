@@ -129,40 +129,156 @@ export const ComprehensiveFeatures: React.FC = () => {
           </div>
         </div>
 
-        {/* Care planning software */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div>
-            <div className="w-16 h-16 rounded-full bg-teal-500 flex items-center justify-center mb-6">
-              {FileTextIcon && <FileTextIcon className="w-8 h-8 text-white" />}
+        {/* Person-centred care planning — grounded in DomiClear's versioned workflow */}
+        <section
+          aria-labelledby="home-care-planning-heading"
+          className="relative mb-20 overflow-hidden rounded-[2rem] bg-[#101d36] text-white"
+        >
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-28 -top-36 h-[28rem] w-[28rem] rounded-full bg-[#4370B7]/35 blur-[110px]"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-40 -left-24 h-80 w-80 rounded-full bg-[#10bfa3]/15 blur-[100px]"
+          />
+
+          <div className="relative px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+            <div className="grid grid-cols-1 lg:grid-cols-[1.03fr_1fr] gap-10 lg:gap-14 items-start">
+              <div>
+                <p className="inline-flex items-center gap-3 text-xs font-bold tracking-[0.18em] uppercase text-[#71dec9] mb-5">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/15 bg-white/10" aria-hidden="true">
+                    {FileTextIcon && <FileTextIcon className="h-5 w-5 text-[#8edbcf]" />}
+                  </span>
+                  Person-centred care planning
+                </p>
+                <h2 id="home-care-planning-heading" className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold tracking-tight leading-[1.13] mb-6">
+                  Care plans built around the person, not the paperwork.
+                </h2>
+                <p className="text-lg text-[#d7e1f2] leading-relaxed">
+                  Go beyond a list of tasks. Document assessed needs, connect meaningful outcomes
+                  to goals and supporting care tasks, and keep the purpose of each action clear.
+                </p>
+                <p className="text-base text-[#bbcae2] leading-relaxed mt-4">
+                  Prepare changes as a draft, send revisions for independent manager review,
+                  and keep the existing approved plan in place until the new version is approved.
+                </p>
+                <a
+                  href="/care-planning-software"
+                  className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#10bfa3] px-5 py-3 font-semibold text-[#052b29] hover:bg-[#5be0cd] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white transition-colors"
+                >
+                  Explore care planning
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+
+              <div className="rounded-2xl border border-white/15 bg-white/[0.075] p-5 sm:p-7 backdrop-blur-sm">
+                <h3 className="text-sm font-bold tracking-[0.12em] uppercase text-[#a9c5e9] mb-5">
+                  From an assessed need to a care plan
+                </h3>
+                <ol className="space-y-0">
+                  {[
+                    {
+                      number: '01',
+                      title: 'Understand the need',
+                      detail: 'Record the assessed support someone requires.',
+                    },
+                    {
+                      number: '02',
+                      title: 'Define an outcome',
+                      detail: 'Describe the result that matters to the person.',
+                    },
+                    {
+                      number: '03',
+                      title: 'Set a goal',
+                      detail: 'Link a specific goal to the outcome.',
+                    },
+                    {
+                      number: '04',
+                      title: 'Add supporting tasks',
+                      detail: 'Set out the care actions that support the goal.',
+                    },
+                    {
+                      number: '05',
+                      title: 'Review and approve',
+                      detail: 'Submit plan changes for an independent manager’s decision.',
+                    },
+                  ].map((step, i, steps) => (
+                    <li key={step.number} className="relative flex gap-4 pb-5 last:pb-0">
+                      {i < steps.length - 1 && (
+                        <span
+                          className="absolute left-[17px] top-9 bottom-0 w-px bg-white/20"
+                          aria-hidden="true"
+                        />
+                      )}
+                      <span className="relative z-10 grid h-9 w-9 flex-none place-items-center rounded-full border border-[#71dec9]/50 bg-[#173653] text-xs font-bold text-[#8de1d3]">
+                        {step.number}
+                      </span>
+                      <div className="min-w-0 pt-0.5">
+                        <h4 className="font-semibold text-white">{step.title}</h4>
+                        <p className="mt-1 text-sm leading-relaxed text-[#bdcce2]">{step.detail}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+                <p className="mt-5 border-t border-white/15 pt-4 text-xs leading-relaxed text-[#a9c5e9]">
+                  The team chooses what to record and link; DomiClear does not generate clinical instructions or automatically approve a care plan.
+                </p>
+              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              Care planning software that stays with the visit
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Digital care plans, risk context, and structured handovers mean your home care app and office teams work from the same detail — not a faded printout from last month.
-            </p>
-            <p className="mt-4">
-              <a
-                href="/care-planning-software"
-                className="text-[#4370B7] font-semibold text-sm hover:underline"
-              >
-                Care planning software
-              </a>
-            </p>
+
+            <div className="mt-10 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-10 items-center border-t border-white/15 pt-9">
+              <div className="overflow-hidden rounded-2xl border border-white/15 bg-[#f7fafc] shadow-[0_22px_50px_-24px_rgba(0,0,0,0.4)]">
+                <div className="flex items-center justify-between gap-3 bg-white px-5 py-4">
+                  <h3 className="text-sm sm:text-base font-bold text-[#17223c]">
+                    Care planning in DomiClear
+                  </h3>
+                  <span className="text-xs font-medium text-[#64748B]">Interface preview</span>
+                </div>
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  className="block h-auto w-full"
+                  aria-label="DomiClear care planning interface demonstration"
+                >
+                  <source src="/demo-media/demo-care-planning.mp4" type="video/mp4" />
+                </video>
+              </div>
+
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#71dec9] mb-4">
+                  Beyond the core plan
+                </p>
+                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight leading-snug mb-5">
+                  The details matter, too.
+                </h3>
+                <p className="text-sm sm:text-base leading-relaxed text-[#d7e1f2] mb-5">
+                  Build out the wider care record with specialist planning and review areas,
+                  rather than relying on one generic document.
+                </p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-3">
+                  {[
+                    'Personal care, meals and dietary needs',
+                    'Positioning, handling and mobility',
+                    'Vital checks and monitoring',
+                    'Capacity, consent and related records',
+                  ].map((area) => (
+                    <li key={area} className="flex items-start gap-3 text-sm text-[#e3ecf9]">
+                      <span className="mt-1.5 h-2 w-2 flex-none rounded-full bg-[#10bfa3]" aria-hidden="true" />
+                      <span>{area}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 text-sm text-[#c7d8e9]">
+                  Approved care-plan tasks can also be selected when scheduling a visit.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="relative">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="rounded-2xl shadow-lg border border-gray-100 w-full h-auto block"
-              aria-label="Care planning view in DomiClear domiciliary care software"
-            >
-              <source src="/demo-media/demo-care-planning.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
+        </section>
 
         {/* eMAR */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
