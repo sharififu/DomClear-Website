@@ -2,13 +2,7 @@ import React from 'react';
 import { Hero } from '../components/Hero';
 import { PromoShowcase } from '../components/PromoShowcase';
 import { ComprehensiveFeatures } from '../components/ComprehensiveFeatures';
-import { StatCard } from '../components/StatCard';
 import { Button } from '../components/Button';
-import { CQCOutcomes } from '../components/CQCOutcomes';
-import {
-  outcomes,
-  homepageWhySwitchContent,
-} from '../data/content';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
@@ -21,126 +15,98 @@ export const HomePage: React.FC = () => {
 
       <ComprehensiveFeatures />
 
-      <section className="py-16 bg-white border-b border-[rgba(20,30,60,0.08)]" aria-labelledby="workflow-guides-heading">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            id="workflow-guides-heading"
-            className="text-2xl md:text-3xl font-bold text-[#0F172A] text-center mb-3"
-          >
-            Explore DomiClear by workflow
-          </h2>
-          <p className="text-[#4B5563] text-center max-w-2xl mx-auto mb-10 text-sm md:text-base">
-            Short guides for the topics teams evaluate most—alongside the full story on the{' '}
-            <a href="/platform" className="text-[#4370B7] font-semibold hover:underline">
-              Platform
-            </a>{' '}
-            and{' '}
-            <a href="/" className="text-[#4370B7] font-semibold hover:underline">
-              Homepage
-            </a>
-            .
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {/* A practical next step rather than repeating the product feature blocks above. */}
+      <section className="border-t border-slate-200 bg-[#f7f9fc] py-14 md:py-20" aria-labelledby="explore-next-heading">
+        <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto mb-10 max-w-3xl text-center">
+            <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-[#345e9c]">
+              Explore DomiClear
+            </p>
+            <h2 id="explore-next-heading" className="mb-4 text-3xl font-bold tracking-tight text-[#0F172A] md:text-4xl">
+              See the product. Understand the cost. Make an informed choice.
+            </h2>
+            <p className="text-base leading-relaxed text-[#475569] md:text-lg">
+              You've seen how the workflows connect. Now explore real product tutorials,
+              review the published pricing and look at our security and registration information.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
             {[
               {
-                href: '/home-care-scheduling-software',
-                title: 'Scheduling software',
-                blurb: 'Rotas, visit changes, and coordinator visibility in one place.',
+                href: '/tutorials',
+                number: '01',
+                heading: 'Watch product tutorials',
+                description: 'Follow recorded walkthroughs of the care app, scheduling and medication workflows.',
+                action: 'Browse tutorials',
               },
               {
-                href: '/care-planning-software',
-                title: 'Care planning software',
-                blurb: 'Digital plans, updates, and access for field and office teams.',
+                href: '/pricing',
+                number: '02',
+                heading: 'Review the pricing',
+                description: 'See DomiClear’s published plans and pricing information for your agency.',
+                action: 'Explore pricing',
               },
               {
-                href: '/emar-software',
-                title: 'eMAR software',
-                blurb: 'Structured medication workflows with clearer handovers.',
+                href: '/credentials',
+                number: '03',
+                heading: 'Check our credentials',
+                description: 'Read the current status and scope of our published security assessments and registrations.',
+                action: 'View credentials',
               },
-              {
-                href: '/care-management-app',
-                title: 'Home care app',
-                blurb: 'Practical mobile use for carers with office coordination.',
-              },
-              {
-                href: '/platform',
-                title: 'Platform',
-                blurb: 'How scheduling, planning, eMAR, and records connect.',
-              },
-            ].map((card) => (
+            ].map((item) => (
               <a
-                key={card.href}
-                href={card.href}
-                className="group rounded-2xl border border-[rgba(20,30,60,0.08)] bg-[#FAFBFC] p-6 hover:border-[#4370B7]/30 hover:shadow-sm transition-all"
+                key={item.href}
+                href={item.href}
+                className="group flex h-full flex-col rounded-2xl border border-[#dce4f0] bg-white p-6 transition-all hover:-translate-y-0.5 hover:border-[#8ea9d4] hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#345e9c]"
               >
-                <h3 className="text-lg font-bold text-[#0F172A] mb-2 group-hover:text-[#4370B7] transition-colors">
-                  {card.title}
+                <span className="mb-5 text-xs font-bold tracking-[0.14em] text-[#4370B7]" aria-hidden="true">
+                  {item.number}
+                </span>
+                <h3 className="mb-3 text-lg font-bold text-[#0F172A] group-hover:text-[#345e9c]">
+                  {item.heading}
                 </h3>
-                <p className="text-sm text-[#4B5563] leading-relaxed">{card.blurb}</p>
+                <p className="mb-6 text-sm leading-relaxed text-[#475569]">{item.description}</p>
+                <span className="mt-auto inline-flex items-center gap-2 text-sm font-bold text-[#345e9c]">
+                  {item.action}
+                  <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </span>
               </a>
             ))}
           </div>
-          <p className="text-center text-sm text-[#64748B] mt-8">
-            Comparing care software?{' '}
-            <a href="/birdie-alternative" className="text-[#4370B7] font-semibold hover:underline">
-              How DomiClear fits when you review alternatives
+
+          <div className="mt-10 border-t border-[#dde4ee] pt-7" role="group" aria-label="Explore individual DomiClear features">
+            <p className="mb-4 text-center text-sm font-semibold text-[#334155]">
+              Looking for a specific workflow?
+            </p>
+            <div className="flex flex-wrap justify-center gap-2">
+              {[
+                { href: '/home-care-scheduling-software', label: 'Scheduling & rotas' },
+                { href: '/care-planning-software', label: 'Care planning' },
+                { href: '/emar-software', label: 'Medication & eMAR' },
+                { href: '/care-management-app', label: 'Carer mobile app' },
+                { href: '/platform', label: 'Explore the full platform' },
+              ].map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="inline-flex min-h-11 items-center rounded-full border border-[#d5dfed] bg-white px-4 py-2 text-sm font-semibold text-[#345e9c] transition-colors hover:border-[#90a9d0] hover:bg-[#eaf2ff] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#345e9c]"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <p className="mt-6 text-center text-sm text-[#64748b]">
+            Comparing care software options?{' '}
+            <a href="/birdie-alternative" className="font-semibold text-[#345e9c] underline underline-offset-4 hover:text-[#233f6c]">
+              Explore our comparison guide
             </a>
             .
           </p>
         </div>
       </section>
-
-      <section className="py-20 bg-[#F8FAFC]" aria-labelledby="why-switch-heading">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            id="why-switch-heading"
-            className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-4"
-          >
-            {homepageWhySwitchContent.title}
-          </h2>
-          <p className="text-lg text-[#4B5563] text-center max-w-3xl mx-auto mb-12">
-            {homepageWhySwitchContent.subtitle}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {homepageWhySwitchContent.items.map((item, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl p-6 border border-[rgba(20,30,60,0.08)] shadow-sm"
-              >
-                <p className="text-sm font-semibold text-[#64748B] uppercase tracking-wide mb-2">
-                  The friction
-                </p>
-                <p className="text-[#0F172A] font-medium mb-4">{item.pain}</p>
-                <p className="text-sm font-semibold text-[#4370B7] uppercase tracking-wide mb-2">
-                  With DomiClear
-                </p>
-                <p className="text-[#4B5563]">{item.outcome}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-gradient-to-br from-[#e6f7ff] to-[#FAFBFC]">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-2 bg-white rounded-full text-xs font-bold text-[#4370B7] uppercase tracking-wider mb-4 border border-[rgba(20,30,60,0.08)]">
-              Proven Outcomes
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Results That Matter to Care Managers
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            {outcomes.map((stat, index) => (
-              <StatCard key={index} stat={stat} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CQCOutcomes />
 
       <section className="py-20 bg-[#FAFBFC]">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
