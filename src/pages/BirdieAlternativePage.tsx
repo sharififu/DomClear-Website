@@ -15,7 +15,7 @@ const birdieAlternativeFaqItems = [
   {
     question: 'What makes DomiClear a Birdie alternative?',
     answer:
-      'DomiClear offers published pricing and connected workflows for scheduling, care planning, online eMAR and records. Compare what matters to your agency against each supplier's current features and terms.',
+      'DomiClear offers published pricing and connected workflows for scheduling, care planning, online eMAR and records. Compare what matters to your agency against each supplier’s current features and terms.',
   },
   {
     question: 'Is DomiClear suitable for domiciliary care agencies?',
