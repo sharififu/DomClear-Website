@@ -77,15 +77,11 @@ export const Hero: React.FC = () => {
 
                 {/* Trust badges directly below CTAs */}
                 <div className="mt-6 flex flex-wrap justify-center lg:justify-start gap-x-4 gap-y-2 text-white/90 text-sm">
-                  <span className="font-semibold">Built for CQC &amp; Ofsted</span>
+                  <span className="font-semibold">Built for UK domiciliary care teams</span>
                   <span className="text-white/60">•</span>
-                  <span>Web, iOS & Android</span>
+                  <span>Web and mobile</span>
                   <span className="text-white/60">•</span>
-                  <span>Clear audit trails</span>
-                  <span className="text-white/60">•</span>
-                  <span>UK-focused</span>
-                  <span className="text-white/60">•</span>
-                  <span>Transparent, usage-based pricing</span>
+                  <span>Clear, auditable records</span>
                 </div>
               </div>
             </div>
