@@ -9,6 +9,7 @@ export const navigation: NavItem[] = [
       { label: 'Form Templates', href: '/platform#form-templates' },
       { label: 'Scheduling & Rotas', href: '/platform#scheduling' },
       { label: 'Carer Mobile App', href: '/platform#carer-app' },
+      { label: 'Medication & eMAR', href: '/platform#emar' },
       { label: 'Quality & Compliance', href: '/platform#compliance' },
       { label: 'Team Management', href: '/platform#team' },
       { label: 'Finance', href: '/platform#finance' },
@@ -203,144 +204,125 @@ export const testimonials: Testimonial[] = [
 
 export const platformFeatures = {
   carePlanning: {
-    id: 'care-planning',
-    title: 'Care Planning',
-    description:
-      'Comprehensive patient care plans capture everything carers need to deliver person-centred care. Track medical conditions, allergies, health tags, and emergency contacts. Configure meal schedules, dietary requirements, and personal care routines. Set up monitoring alerts for vital signs with threshold notifications. Document risk assessments, MUST and Waterlow scores, and mental capacity evaluations. Manage stoma care, catheter care, and positioning schedules. Each care plan is specific to the individual, with version tracking for accountability.',
-    features: [
-      'Medical conditions and allergies tracking',
-      'Emergency contacts and next of kin',
-      'Meal schedules and dietary requirements',
-      'Personal care and bathing plans',
-      'Monitoring alerts with thresholds',
-      'Risk and capacity assessments',
-    ],
+    "id": "care-planning",
+    "title": "Person-centred care planning",
+    "description": "Record assessed needs and preferences, connect outcomes with goals and supporting care tasks, then submit revisions for independent manager review. Previously approved content remains active until a replacement is approved. Managers choose which approved tasks are relevant to a scheduled visit.",
+    "features": [
+      "Assessed needs, outcomes and linked goals",
+      "Supporting care tasks selected for visits",
+      "Independent approval of care-plan revisions",
+      "Relevant specialist planning and risk records"
+    ]
   },
   formTemplates: {
-    id: 'form-templates',
-    title: 'Form Templates',
-    description:
-      'Create reusable form templates for assessments, reviews, and compliance documentation. The visual drag-and-drop builder lets you design Risk Assessment forms, Service Review forms, Mental Capacity assessments, Staff Supervision forms, and more. Add conditional logic to show or hide fields based on answers. Apply field validations to ensure data quality. Templates can be organisation-wide or global, and every template tracks version numbers for audit purposes.',
-    features: [
-      'Visual drag-and-drop form builder',
-      'Pre-built assessment templates',
-      'Conditional logic and field rules',
-      'Field-level validations',
-      'Version tracking with audit trails',
-      'Risk, Review, and Supervision forms',
-    ],
+    "id": "form-templates",
+    "title": "Forms & assessments",
+    "description": "Create and reuse forms for care assessments, service reviews and staff records. The form builder supports configurable fields, selected conditional rules and validation. Available forms and permissions depend on the organisation's setup.",
+    "features": [
+      "Reusable assessment and review templates",
+      "Form fields and supported conditional rules",
+      "Saved responses and signature workflows",
+      "Review and permission controls"
+    ]
   },
   scheduling: {
-    id: 'scheduling',
-    title: 'Scheduling & Rotas',
-    description:
-      'Plan rotas with confidence using intelligent conflict detection. The system alerts you to double-bookings, missing qualifications, or travel-time issues before you publish. Travel time between visits is calculated automatically using Google Maps integration, and visit confirmations capture GPS location and timestamps. Integrated with the carer app, schedule changes sync via real-time notifications so your team stays informed. Reduce administrative overhead, improve punctuality, and give managers a real-time view of service delivery across the agency.',
-    features: [
-      'Visual rota planning calendar',
-      'Real-time conflict alerts',
-      'Automatic travel time calculations',
-      'GPS visit confirmation',
-      'Absence request management',
-      'Real-time schedule notifications',
-    ],
+    "id": "scheduling",
+    "title": "Scheduling & Improve Rota",
+    "description": "Review visits, carer allocation and staff availability in a shared rota. Improve Rota can identify travel and timing gaps and display possible changes beside the current schedule for a coordinator to assess. Changes are not silently applied.",
+    "features": [
+      "Visual daily visits and staff allocation",
+      "Travel, gap and scheduling issue review",
+      "Compare current and proposed rota arrangements",
+      "Availability, absence and care constraints"
+    ]
   },
   carerApp: {
-    id: 'carer-app',
-    title: 'Carer Mobile App',
-    description:
-      'Designed for carers on the move, the mobile app supports offline capability so poor signal doesn\'t stop care delivery. Task lists guide carers through each visit step-by-step. eMAR logging records medication administration with photos and timestamps. Notes, attachments, and incident forms capture observations in the moment. GPS verification confirms visit location and time, providing evidence for billing and compliance. Secure in-app messaging keeps carers connected to the office without sharing personal phone numbers. All data syncs to the central platform when connectivity returns, ensuring managers have up-to-date visibility.',
-    features: [
-      'Offline-capable attendance tracking',
-      'eMAR with photo evidence',
-      'Rich text notes and attachments',
-      'Incident and observation capture',
-      'GPS visit verification',
-      'Secure team messaging',
-    ],
+    "id": "carer-app",
+    "title": "Carer mobile app",
+    "description": "Carers can view assigned visits, record attendance, work through selected tasks and capture visit notes. Previously cached visit information may remain available without a signal, but medication administration must be recorded online.",
+    "features": [
+      "Assigned visits and relevant care tasks",
+      "Visit check-in, check-out and notes",
+      "Cached visit information for limited offline reading",
+      "Online-only medication administration records"
+    ]
+  },
+  emar: {
+    "id": "emar",
+    "title": "Medication management & eMAR",
+    "description": "Manage an organisation medication library and person-specific schedules, including as-needed (PRN) medicines. During assigned visits, carers record actual administration outcomes while connected; managers can review MAR history. A scheduled dose is not proof it was administered.",
+    "features": [
+      "Medication library and person-specific schedules",
+      "Scheduled and PRN administration details",
+      "Online recording with performer and outcome",
+      "MAR history, filters and exports"
+    ]
   },
   compliance: {
-    id: 'compliance',
-    title: 'Quality & Compliance',
-    description:
-      'Stay audit-ready with purpose-built compliance tools. Generate CQC-ready reports covering safe, effective, caring, responsive, and well-led domains. The audit dashboard helps supervisors track quality metrics and identify areas needing attention. Incident workflows route issues to the right people, track resolution, and maintain evidence trails. Document management stores policies, procedures, and risk assessments with version control and scheduled review cycles. When the regulator arrives, you\'ll have everything organized and accessible in minutes, not hours.',
-    features: [
-      'CQC-ready domain reports',
-      'Audit dashboard and tracking',
-      'Incident reporting workflows',
-      'Document version control',
-      'Policy review cycles',
-      'Evidence trails for inspections',
-    ],
+    "id": "compliance",
+    "title": "Incidents & quality oversight",
+    "description": "Capture incidents, connect relevant follow-up actions and record manager investigations and decisions. CQC-aligned internal measures and saved self-assessments can support quality review. These are not official CQC ratings or evidence of regulatory approval.",
+    "features": [
+      "Incident records and relevant follow-up actions",
+      "Manager review and recorded sign-off",
+      "Internal CQC-aligned indicative measures",
+      "Self-assessments and supporting evidence"
+    ]
   },
   team: {
-    id: 'team',
-    title: 'Team Management',
-    description:
-      'Onboard new carers with structured workflows that track progress through induction stages. Manage training records, qualifications, and mandatory refreshers with automatic expiry alerts. Partial profile saves mean carers can complete onboarding in stages, with clear status tracking visible to managers. Availability calendars show who\'s free for shifts. Performance insights highlight top performers and flag areas needing support. Role-based access ensures carers see only what they need in the mobile app, while managers control full data and settings in the desktop CMS.',
-    features: [
-      'Structured onboarding workflows',
-      'Training and qualifications tracking',
-      'Partial profile saves with status',
-      'Availability and shift preferences',
-      'Performance insights dashboard',
-      'Role-based access controls',
-    ],
+    "id": "team",
+    "title": "Team management",
+    "description": "Manage staff profiles, invitations, availability and training or qualification records. Managers can review the information needed to allocate care and keep staff details organised, with role-based access to relevant records.",
+    "features": [
+      "Staff profiles and onboarding invitations",
+      "Training and qualifications records",
+      "Availability, absences and shift preferences",
+      "Role-based access to staff records"
+    ]
   },
   finance: {
-    id: 'finance',
-    title: 'Finance',
-    description:
-      'Automate timesheet generation from completed visits, with GPS-verified start and end times. Configure billable rules per client, service type, or time of day. Export payroll-ready data to your accounting software with a single click. Generate invoices based on actual service delivery, with line-item breakdowns for families and commissioners. Track unpaid invoices and payment status in real-time. Financial reporting gives agency owners visibility into revenue, outstanding payments, and cost per care hour, helping you make informed business decisions.',
-    features: [
-      'Automated timesheet generation',
-      'Configurable billable rules',
-      'Payroll-ready exports',
-      'Client invoicing with breakdowns',
-      'Payment tracking',
-      'Financial reporting dashboard',
-    ],
+    "id": "finance",
+    "title": "Finance & payroll review",
+    "description": "Review visit-linked attendance, timesheet and payroll information alongside invoices and financial reports. Export available records for further checks. Payroll figures require management review and are not a substitute for statutory payroll processing.",
+    "features": [
+      "Attendance and timesheet review",
+      "Payroll cost reporting and export",
+      "Invoice records and payment status",
+      "Manager review of financial figures"
+    ]
   },
   family: {
-    id: 'family',
-    title: 'Family Portal',
-    description:
-      'Keep families informed and connected with a secure portal. They see upcoming visit schedules, access permissioned care notes (you control what\'s visible), and view care plan summaries. Families can message the care team securely and view visit reports in the portal. Transparency builds trust and reduces the admin burden of phone call updates. The portal is mobile-friendly, so family members can stay connected wherever they are. All access is logged for audit purposes, and permissions are granular per family member.',
-    features: [
-      'Visit schedules visible in portal',
-      'Permissioned care note access',
-      'Secure family messaging',
-      'Care plan summaries',
-      'View visit reports in portal',
-      'Granular access controls',
-    ],
+    "id": "family",
+    "title": "Family portal",
+    "description": "Where family access is configured and authorised, linked relatives can use a dedicated portal to view permitted care and visit information. Organisations control which information a family account may access; availability depends on permissions.",
+    "features": [
+      "Linked family account access",
+      "Permissioned visit and care information",
+      "Care updates within the allowed scope",
+      "Organisation-controlled family permissions"
+    ]
   },
   analytics: {
-    id: 'analytics',
-    title: 'Analytics & Reporting',
-    description:
-      'Turn care data into actionable insights. Pre-built dashboards track KPIs like visit punctuality, carer utilisation, medication adherence, and incident trends. Filter by service type, location, or time period. Export reports to CSV for deeper analysis in Excel or your BI tools. Schedule reports to be generated on a recurring basis. Whether you need a high-level executive summary or granular operational detail, the analytics module surfaces the metrics that matter to your agency.',
-    features: [
-      'Pre-built KPI dashboards',
-      'Custom date range filtering',
-      'CSV export for external analysis',
-      'Report scheduling',
-      'Visit and carer utilisation metrics',
-      'Incident and compliance trends',
-    ],
+    "id": "analytics",
+    "title": "Reports & analytics",
+    "description": "Explore recorded activity across visits, workforce, medication, incidents and finance. Use available date filters, saved reports and exports to support internal management reviews. Reports reflect the data entered and are not automatic compliance verdicts.",
+    "features": [
+      "Care delivery and attendance dashboards",
+      "Medication, incident and workforce views",
+      "Date-filtered reports and CSV exports",
+      "Saved reports for internal follow-up"
+    ]
   },
   security: {
-    id: 'security',
-    title: 'Security & Privacy',
-    description:
-      'DomiClear is built on enterprise-grade infrastructure with UK/EU data residency. Row-level security (RLS) segregates agency data so no organisation can see another\'s records. Audit logs capture every data access and modification, providing a complete trail for GDPR and FOI requests. Role-based access ensures carers interact only via the mobile app, with no CMS access, while managers control settings and sensitive data. All data in transit is encrypted, and at-rest encryption protects databases. Regular third-party security audits and penetration testing validate our commitment to data protection.',
-    features: [
-      'UK/EU data residency',
-      'Row-level security (RLS) segregation',
-      'Comprehensive audit logs',
-      'Role-based access (no carer CMS access)',
-      'Encryption in transit and at rest',
-      'Regular security audits',
-    ],
+    "id": "security",
+    "title": "Security, access & accountability",
+    "description": "DomiClear uses authenticated roles and database access policies to restrict records by organisation and permitted user. Supported workflows retain audit and review information. Security assessment and certification status should be checked on the credentials page; no blanket assurance is implied.",
+    "features": [
+      "Role-based access to care and staff records",
+      "Organisation-scoped data access controls",
+      "Recorded audit and approval history",
+      "Published credentials and assessment scope"
+    ]
   },
 };
 
