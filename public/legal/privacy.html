@@ -26,7 +26,7 @@
 </head>
 <body><div class="doc-actions"><button type="button" class="print-btn" onclick="window.print()">Print / Save as PDF</button></div><p class="back"><a href="/legal" target="_parent">← Legal &amp; compliance</a></p>
 <h1>Privacy Notice – DomiClear Ltd</h1>
-<p>Last updated: 13 August 2026</p>
+<p>Last updated: 10 November 2026</p>
 <p>This Privacy Notice explains how DomiClear Ltd (&quot;DomiClear&quot;, &quot;we&quot;, &quot;us&quot;, &quot;our&quot;) uses personal information when you visit our website, create or use a DomiClear account, buy a subscription, contact us, or otherwise interact with us.</p>
 <p>It also explains our role when a care provider uses DomiClear to manage information about its service users and staff.</p>
 <h2>1. Who we are</h2>
@@ -36,7 +36,7 @@
 <p>Website: <a href="https://www.domi-clear.com/">https://www.domi-clear.com/</a></p>
 <p>DomiClear platform: <a href="https://domiclear.app/">https://domiclear.app/</a></p>
 <p>Data protection enquiries: <a href="mailto:info@domi-clear.com">info@domi-clear.com</a></p>
-<p>We do not currently have a formally appointed Data Protection Officer. Data protection matters are overseen through our Information Governance function.</p>
+<p>Our Director acts as DomiClear&#39;s Data Protection Officer (DPO). You can contact the DPO about data protection matters at <a href="mailto:info@domi-clear.com">info@domi-clear.com</a>.</p>
 <h2>2. When DomiClear is a controller and when we are a processor</h2>
 <p>DomiClear is a <strong>data controller</strong> when we decide why and how personal information is used for our own business activities. This includes activities such as:</p>
 <ul>
@@ -99,7 +99,7 @@
 </ul>
 <p>A push-notification device token is an identifier issued by the Expo push service for a specific installation of the app. We store it against your user account so that the platform can send you operational notifications (for example a new message, a missed visit or a medication alert). You can stop this at any time by turning notifications off for DomiClear in your device settings.</p>
 <h3>Website and app analytics information</h3>
-<p>On the web version of DomiClear we load Google tags (Google Analytics 4 and Google Ads). These set cookies or similar identifiers in your browser and send Google information about your visit, including page paths, approximate location derived from IP address, and device and browser information. Please see our Cookie Policy for more information.</p>
+<p>On the web version of the DomiClear app (<code>domiclear.app</code>), Google Analytics 4 and Google Ads tags are loaded where configured. These may set cookies or similar identifiers and transmit information about the visit, including page paths, device and browser information, and approximate location derived from IP address. The DomiClear marketing website (<code>domi-clear.com</code>) uses Vercel Analytics for website-traffic measurement. Please see our Cookie Policy for further information. Consent controls for non-essential app tags are still being addressed; please do not treat these tags as essential to providing care.</p>
 <h3>Website information</h3>
 <p>We may process information generated when you use our website, including essential cookie or local-storage information, security information and technical request data. Please see our Cookie Policy for more information.</p>
 <h2>5. Customer-controlled care and workforce information</h2>
@@ -202,7 +202,8 @@
 <li>any contractual instructions that apply where DomiClear acts as a processor.</li>
 </ul>
 <p>Where DomiClear processes care-provider data as a processor, retention and deletion are governed by the customer&#39;s instructions and our data-processing terms. At the end of the service, information is deleted or returned in accordance with those instructions, subject to applicable legal requirements and agreed backup arrangements.</p>
-<p>We are continuing to formalise our detailed records-retention schedule. This notice will be updated if our retention practices materially change.</p>
+<p>DomiClear approved a records-retention schedule on 9 November 2026. Its operational adoption is still in progress. For care-provider-controlled records, the provider determines retention and instructs DomiClear as processor; the approved schedule does not give DomiClear an independent fixed retention period for those care records. Customer-directed return, archiving and deletion processes may require manual handling rather than automatic disposal.</p>
+<p>Our current production database backups run daily, with approximately seven days retained. Uploaded photographs and documents in file storage are not included in those database backups. Backup and disposal arrangements may change and are reviewed through our records-management process.</p>
 <h2>12. How we protect information</h2>
 <p>We use technical and organisational measures designed to protect personal information. These include, as appropriate:</p>
 <ul>
@@ -217,10 +218,10 @@
 </ul>
 <p>No system can guarantee absolute security. We review and improve our controls as DomiClear develops.</p>
 <h3>Uploaded files and document links</h3>
-<p>Files uploaded to DomiClear — including care documents, wound and incident photographs, receipts and attachments — are held in private storage. They cannot be opened by anyone who is not signed in.</p>
-<p>When an authorised user opens a file, the platform issues a link that works only for a short period and then stops working. A link is only issued to someone whose role and organisation entitle them to that particular file, and that entitlement is checked at the moment the link is requested — so a person outside the relevant care provider cannot obtain a link at all.</p>
-<p>Because these links expire, one that is copied or forwarded cannot be used to give someone lasting access. It would still work for the short time before it expires, so links to care records should not be shared.</p>
-<p>The only files we publish openly are organisation logos, which do not contain personal information.</p>
+<p>Care documents, wound and incident photographs, receipts and other sensitive attachments are stored in private file buckets. An authorised user must pass role and organisation access checks to request a short-lived link, but anyone who obtains that link may be able to use it until it expires, even without signing in. Links to care records must not be shared.</p>
+<p>When an authorised user opens a file, the platform issues a time-limited signed link. Access to request a link depends on the user&#39;s permissions and the relevant organisation or assignment rules. A person should never share a signed link with anyone who is not authorised to view the file.</p>
+<p>These links expire automatically. Expiry limits the duration of access but does not prevent a copied link being used during its validity period.</p>
+<p>Organisation logos are stored in a public bucket separately from private care attachments. Organisations should avoid placing personal or confidential information in a logo.</p>
 <h2>13. Your data protection rights</h2>
 <p>Depending on the circumstances and the lawful basis we rely on, you may have rights including:</p>
 <ul>
