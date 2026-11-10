@@ -1,16 +1,15 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
-import { FeatureOverview } from '../components/FeatureOverview';
+import { PromoShowcase } from '../components/PromoShowcase';
 import { ComprehensiveFeatures } from '../components/ComprehensiveFeatures';
 import { StatCard } from '../components/StatCard';
 import { Button } from '../components/Button';
 import { CQCOutcomes } from '../components/CQCOutcomes';
 import {
   outcomes,
-  homepageTrustContent,
   homepageWhySwitchContent,
 } from '../data/content';
-import { ArrowRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { EXTERNAL_SIGNUP_URL } from '../constants/links';
 
 export const HomePage: React.FC = () => {
@@ -18,35 +17,7 @@ export const HomePage: React.FC = () => {
     <div>
       <Hero />
 
-      <section
-        className="py-16 bg-white border-b border-[rgba(20,30,60,0.08)]"
-        aria-labelledby="trust-heading"
-      >
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <h2
-            id="trust-heading"
-            className="text-3xl md:text-4xl font-bold text-[#0F172A] text-center mb-4"
-          >
-            {homepageTrustContent.title}
-          </h2>
-          <p className="text-lg text-[#4B5563] text-center max-w-3xl mx-auto mb-10">
-            {homepageTrustContent.subtitle}
-          </p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
-            {homepageTrustContent.bullets.map((bullet, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 bg-[#FAFBFC] rounded-xl p-4 border border-[rgba(20,30,60,0.08)]"
-              >
-                <CheckCircleIcon className="w-6 h-6 text-[#4370B7] flex-shrink-0 mt-0.5" />
-                <span className="text-[#374151]">{bullet}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <FeatureOverview />
+      <PromoShowcase />
 
       <ComprehensiveFeatures />
 
