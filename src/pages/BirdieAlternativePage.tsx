@@ -255,7 +255,7 @@ export const BirdieAlternativePage: React.FC = () => {
             {[
               {
                 before: 'Before: Pricing or setup feels hard to justify at the stage your agency is in',
-                after: 'After: A lower cost of entry that may make evaluation and rollout easier to approach',
+                after: 'After: Compare plan prices and practical workflow coverage before making a switch',
               },
               {
                 before: 'Before: Users need too much training to stay confident in the workflow',
