@@ -163,7 +163,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="flex items-center gap-3">
                   <ShieldCheckIcon className="w-5 h-5 text-[#4370B7]" />
-                  <span className="text-sm text-[#4B5563]">UK/EU data residency</span>
+                  <span className="text-sm text-[#4B5563]">London-hosted primary care database</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <LockClosedIcon className="w-5 h-5 text-[#4370B7]" />
@@ -171,7 +171,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckIcon className="w-5 h-5 text-[#14B8A6]" />
-                  <span className="text-sm text-[#4B5563]">GDPR compliant</span>
+                  <span className="text-sm text-[#4B5563]">Role-based record permissions</span>
                 </div>
               </div>
             </div>
@@ -339,16 +339,16 @@ export const LoginPage: React.FC<LoginPageProps> = ({ initialMode }) => {
             <div className="mt-12 bg-gradient-to-br from-[#4370B7] to-[#7c6df0] rounded-3xl p-12 text-white">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold mb-8 text-center">
-                  All subscriptions include
+                  DomiClear platform features
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {[
                     { icon: DevicePhoneMobileIcon, text: 'iOS & Android carer apps' },
-                    { icon: ShieldCheckIcon, text: 'UK/EU data residency' },
-                    { icon: CheckIcon, text: 'CQC-ready compliance' },
+                    { icon: ShieldCheckIcon, text: 'London-hosted primary care database' },
+                    { icon: CheckIcon, text: 'CQC-aligned internal quality reports' },
                     { icon: CreditCardIcon, text: 'No credit card required for trial' },
-                    { icon: LockClosedIcon, text: 'Enterprise-grade security' },
-                    { icon: EnvelopeIcon, text: 'Priority support' },
+                    { icon: LockClosedIcon, text: 'Role-based care record access' },
+                    { icon: EnvelopeIcon, text: 'Published security credentials' },
                   ].map((item, index) => (
                     <div key={index} className="flex items-center gap-3">
                       <item.icon className="w-5 h-5 flex-shrink-0" />

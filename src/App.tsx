@@ -25,17 +25,17 @@ const CANONICAL_ORIGIN = 'https://www.domi-clear.com';
 
 const DEFAULT_TITLE = 'Home Care Management App for UK Care Agencies | DomiClear';
 const DEFAULT_DESCRIPTION =
-  'All-in-one home care app for UK agencies. Manage visits, eMAR and care records with clearer day-to-day workflows. Start a free trial — no card required.';
+  'DomiClear connects rotas, care planning, online eMAR and incident follow-up for UK home care agencies. Explore a 14-day free trial without a payment card.';
 
 const PAGE_META: Record<string, { title: string; description: string }> = {
   '/': { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION },
   '/platform': {
     title: 'Home Care Software & Platform Features | DomiClear',
-    description: 'Care planning, scheduling, eMAR, compliance and family portal in one home care management platform. Built for UK care agencies. Start a free trial.',
+    description: 'Explore Improve Rota scheduling, person-centred care plans, online eMAR, incident follow-up and permissioned family access in DomiClear.',
   },
   '/pricing': {
     title: 'Home Care Software Pricing for UK Agencies | DomiClear',
-    description: 'Transparent pricing for home care management software. Pay per service user, unlimited staff, all features included. UK support, no hidden costs. Start a free trial.',
+    description: 'Compare DomiClear’s published monthly and annual care-software plans, based on active service users. Start a 14-day trial without a payment card.',
   },
   '/solutions': {
     title: 'Home Care Solutions for UK Agencies | DomiClear',
@@ -60,11 +60,11 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
   },
   '/contact': {
     title: 'Contact DomiClear | Home Care Software for UK Agencies',
-    description: 'Get in touch about the home care management app. Questions, demo requests or pricing—our UK team is here to help. We respond within one business day.',
+    description: 'Contact DomiClear with questions about UK home care software, product workflows, published pricing and demo requests.',
   },
   '/credentials': {
     title: 'Security Credentials & Compliance | DomiClear',
-    description: 'View DomiClear’s current NHS DSPT Standards Met assessment, MODS compliance and ICO registration.',
+    description: 'Review DomiClear Ltd’s published NHS DSPT Standards Met organisational self-assessment, ICO registration and own MODS compliance assessment. Not NHS product endorsement.',
   },
   '/company-information': {
     title: 'Company Information | DomiClear',
@@ -72,32 +72,32 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
   },
   '/book-demo': {
     title: 'Book a Demo | Home Care Software for UK Agencies | DomiClear',
-    description: 'Schedule a personalised demo of the home care management app. Our UK team will walk you through scheduling, eMAR, compliance and more. No obligation. Book a time or request a call.',
+    description: 'Request a guided DomiClear demonstration of rota scheduling, care plans, online eMAR, incident follow-up and reporting. Or explore a free trial.',
   },
   '/home-care-scheduling-software': {
     title: 'Home Care Scheduling Software for UK Domiciliary Care Agencies | DomiClear',
     description:
-      'Home care scheduling software for UK agencies. Plan rotas, manage visit changes, improve carer allocation, and keep daily operations visible with DomiClear.',
+      'Plan home care rotas and review staff availability, travel gaps and proposed Improve Rota changes with DomiClear. Coordinators keep control of decisions.',
   },
   '/emar-software': {
     title: 'eMAR Software for UK Domiciliary Care Agencies | DomiClear',
     description:
-      'eMAR software for UK agencies. Manage medication administration records with clearer workflows, better visibility, and less paperwork across care teams.',
+      'Manage medication libraries, schedules, PRN entries and MAR history with DomiClear eMAR. Recording administration requires an internet connection.',
   },
   '/care-planning-software': {
     title: 'Care Planning Software for UK Domiciliary Care Agencies | DomiClear',
     description:
-      'Care planning software for UK agencies. Digital care plans, clearer updates, organised workflows, and easier team access with DomiClear.',
+      'Link assessed needs, outcomes, goals and care tasks in DomiClear, with independent manager approval before care-plan revisions become active.',
   },
   '/care-management-app': {
-    title: 'Care Management App & Healthcare Case Management Software | DomiClear',
+    title: 'Home Care & Carer Management App for UK Agencies | DomiClear',
     description:
-      'Care management app for UK domiciliary care agencies. Connect schedules, care notes, eMAR, incidents and healthcare case management actions in one chronological care record.',
+      'Carer app for assigned visits, care tasks, notes and online medication recording, with limited cached visit information available without connectivity.',
   },
   '/birdie-alternative': {
     title: 'Birdie Alternative for UK Domiciliary Care Agencies | DomiClear',
     description:
-      'Looking for a Birdie alternative? DomiClear may be a better fit for UK agencies looking for a more affordable care software option, a lower cost of entry, and clearer day-to-day workflows.',
+      'Comparing DomiClear with Birdie? Review published DomiClear pricing, scheduling, care plans and eMAR workflows and assess the differences against your care service’s needs.',
   },
 
 };

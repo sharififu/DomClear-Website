@@ -15,7 +15,7 @@ const birdieAlternativeFaqItems = [
   {
     question: 'What makes DomiClear a Birdie alternative?',
     answer:
-      'DomiClear may be a better fit for agencies looking for a more affordable care software option, a lower cost of entry, and practical day-to-day workflows across scheduling, care planning, eMAR, and records.',
+      'DomiClear offers published pricing and connected workflows for scheduling, care planning, online eMAR and records. Compare what matters to your agency against each supplier’s current features and terms.',
   },
   {
     question: 'Is DomiClear suitable for domiciliary care agencies?',
@@ -51,9 +51,9 @@ export const BirdieAlternativePage: React.FC = () => {
             Birdie alternative for UK domiciliary care agencies
           </h1>
           <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-10">
-            If you&apos;re comparing care software options, DomiClear may be a better fit for agencies looking for a
-            more affordable care software option, a lower cost of entry, clearer day-to-day workflows, and a practical
-            platform carers and office teams can use with less friction.
+            If you&apos;re comparing care software options, review DomiClear's published pricing,
+            scheduling, care planning, online eMAR and visit workflows. Evaluate those alongside each
+            supplier's current plans, service commitments and the needs of your team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Button
@@ -76,7 +76,7 @@ export const BirdieAlternativePage: React.FC = () => {
               Book a demo
             </Button>
           </div>
-          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
+          <p className="text-sm text-white/80">14-day trial · No payment card required</p>
         </div>
       </section>
 
@@ -93,8 +93,8 @@ export const BirdieAlternativePage: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              'A more affordable care software option that feels viable for growing agencies',
-              'A lower cost of entry without losing the core workflows teams rely on day to day',
+              'Published prices and service-user limits that you can compare',
+              'Scheduling, care planning and medication workflows to evaluate in a demo',
               'A clearer user experience for carers, coordinators, and managers',
               'Less friction across records, schedules, handovers, and office visibility',
             ].map((item) => (
@@ -112,13 +112,13 @@ export const BirdieAlternativePage: React.FC = () => {
             When DomiClear may be the better fit
           </h2>
           <p className="text-lg text-[#4B5563] mb-8">
-            DomiClear may be a better fit if your agency wants a practical option for teams that want modern care
-            software without the cost or complexity that can come with larger platforms.
+            Consider DomiClear if your team wants to test joined-up care workflows against its own needs,
+            training requirements and available budget.
           </p>
           <ul className="space-y-4">
             {[
-              'For agencies looking for a lower cost of entry while still covering day-to-day operational essentials',
-              'For teams that want modern, clearer UX rather than clunky or hard-to-train workflows',
+              'For agencies comparing published plan prices against required workflows',
+              'For teams that want to evaluate the mobile and manager interfaces firsthand',
               'For coordinators and managers who need joined-up visibility across scheduling, care planning, eMAR, and records',
               'For agency owners who want a platform that feels practical to trial, evaluate, and roll out',
             ].map((point) => (
@@ -138,16 +138,16 @@ export const BirdieAlternativePage: React.FC = () => {
               A practical comparison angle for agencies evaluating options
             </h2>
             <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              This page is not about attacking another platform. It is about showing where DomiClear may offer the kind
-              of affordability, usability, and operational clarity some agencies are actively looking for.
+              Use the product examples below to evaluate DomiClear’s interface and workflow design. For a fair comparison,
+              verify other suppliers’ current offerings, prices and contractual terms directly.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 icon: CurrencyPoundIcon,
-                title: 'More affordable starting point',
-                text: 'A practical option for teams that want a lower cost of entry when comparing care software options.',
+                title: 'Review published pricing',
+                text: 'Compare DomiClear’s listed plans and active-service-user limits against your needs.'
               },
               {
                 icon: DevicePhoneMobileIcon,
@@ -255,7 +255,7 @@ export const BirdieAlternativePage: React.FC = () => {
             {[
               {
                 before: 'Before: Pricing or setup feels hard to justify at the stage your agency is in',
-                after: 'After: A lower cost of entry that may make evaluation and rollout easier to approach',
+                after: 'After: Compare plan prices and practical workflow coverage before making a switch',
               },
               {
                 before: 'Before: Users need too much training to stay confident in the workflow',

@@ -1,4 +1,4 @@
-import { NavItem, Feature, Testimonial, Stat, PricingTier } from '../types';
+import { NavItem, Feature, PricingTier } from '../types';
 
 export const navigation: NavItem[] = [
   {
@@ -162,43 +162,6 @@ export const featureHighlights: Feature[] = [
     title: 'Analytics & reporting',
     description:
       'Pre-built KPI dashboards with CSV export for deeper analysis—turn care data into decisions.',
-  },
-];
-
-export const outcomes: Stat[] = [
-  { metric: 'Up to 42%', label: 'less admin time', icon: 'TrendingDown' },
-  { metric: '3+ hrs', label: 'Save 3+ hours per manager per week', icon: 'Clock' },
-  { metric: '98%+', label: 'visit & care record accuracy', icon: 'TrendingUp' },
-  { metric: 'One', label: 'system for office & doorstep', icon: 'MapPin' },
-];
-
-export const testimonials: Testimonial[] = [
-  {
-    name: 'Sarah Mitchell',
-    role: 'Care Manager',
-    organisation: 'BrightCare Services',
-    content:
-      'DomiClear transformed our rostering chaos into clarity. The carer app is intuitive, and our families love the transparency.',
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: 'James O\'Connor',
-    role: 'Agency Director',
-    organisation: 'CompassCare Ltd',
-    content:
-      'We were drowning in paperwork. Now evidence for supervision and audits is in one place, and the team spends less time chasing documents.',
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: 'Eleanor Davies',
-    role: 'Operations Manager',
-    organisation: 'Heritage Home Support',
-    content:
-      'The form builder alone was worth it. We built custom assessment forms in days, not weeks, and incident logging is finally streamlined.',
-    rating: 5,
-    verified: true,
   },
 ];
 
@@ -420,23 +383,19 @@ export const pricingTiers: PricingTier[] = [
 ];
 
 export const featureOverviewContent = {
-  stats: [
-    { metric: 'Up to 42%', label: 'less admin time' },
-    { metric: '3+ hrs', label: 'Save 3+ hours per manager per week' },
-    { metric: '98%+', label: 'visit & care record accuracy' },
-  ],
+  stats: [] as Array<{ metric: string; label: string }>,
   features: [
     {
       icon: 'Calendar',
       title: 'Home care scheduling software',
       description:
-        'Build rotas, spot clashes early, and give coordinators a live view of who is where. GPS-backed clock-in ties visits to real attendance so timesheets and billing start from facts, not guesswork.',
+        'Review rota allocations, scheduling clashes and carer availability together. Explore Improve Rota proposals before choosing how to adjust the day.',
     },
     {
       icon: 'Smartphone',
       title: 'Home care app with eMAR',
       description:
-        'Carers run tasks, log eMAR with photos, and capture notes on the mobile app — including offline when signal drops. Everything syncs when they are back online.',
+        'Carers review assigned visits, complete selected tasks and record care notes. Previously cached visit information may remain readable offline, but medication administration records must be saved online.',
     },
     {
       icon: 'CheckCircle',
@@ -453,7 +412,7 @@ export const comprehensiveFeaturesContent = {
     {
       icon: 'Calendar',
       title: 'Intelligent Scheduling',
-      description: 'Rota planning with conflict alerts, travel time calculations, and GPS visit confirmation to reduce missed visits.',
+      description: 'Plan and review care visits, staffing availability and scheduling gaps, with Improve Rota proposals for a coordinator to assess.',
     },
     {
       icon: 'Users',
@@ -479,7 +438,7 @@ export const faqItems = [
   {
     question: 'How does DomiClear pricing work?',
     answer:
-      'Plans are usage-based: you pay per active service user each month, with unlimited staff on every tier. That keeps costs predictable for growing agencies. You can start with a 14-day free trial (no card required), see full numbers on the pricing page, or book a demo if you want a walkthrough first.',
+      'Plans are based on active service users, with published monthly and annual tiers and unlimited staff accounts. DomiClear offers a 14-day trial without a payment card. Review the pricing page for current plan limits and charges, or book a demo to see the workflows.',
   },
   {
     question: 'Does DomiClear work offline?',
@@ -489,26 +448,26 @@ export const faqItems = [
   {
     question: 'Is DomiClear CQC-compliant?',
     answer:
-      'DomiClear provides CQC-ready reports, audit trails, and documentation management to support your compliance. Ultimate responsibility for meeting CQC standards rests with your agency, but our platform makes evidence gathering straightforward.',
+      'DomiClear provides incident records, follow-up actions, audit history and CQC-aligned indicative measures to support internal quality reviews. These are not official CQC inspection ratings or proof that a care provider meets its regulatory duties; the provider remains responsible for its own compliance.',
   },
   {
     question: 'Where is our data stored?',
     answer:
-      'All data is stored in UK/EU data centres with row-level security segregation. We comply with UK GDPR and maintain ISO 27001-aligned security practices.',
+      'DomiClear’s primary care database and file storage use Supabase in London, UK. Other service providers support functions such as email, notifications and payments, so we do not claim every processing activity stays in the UK. See our Privacy Notice or contact us for processing and supplier information. Our published assurance status is on the Credentials page.',
   },
   {
     question: 'Can carers access the desktop CMS?',
     answer:
-      'No. Carers use the mobile app only. The desktop CMS is reserved for managers, coordinators, and administrators, ensuring role-based access and data protection.',
+      'Carers use the carer app for their assigned visits and relevant care information. The manager CMS uses role-based permissions, and access to individual records depends on the staff member’s role and assignment.',
   },
   {
     question: 'How long does onboarding take?',
     answer:
-      'Typical onboarding takes 2–4 weeks, including data migration, staff training, and customisation of form templates. Enterprise clients receive dedicated onboarding support.',
+      'Onboarding depends on your team, the records you need to prepare and the setup you choose. Ask us about organisation setup, supported data imports and training options before agreeing a timetable.',
   },
   {
     question: 'Do you integrate with payroll or accounting software?',
     answer:
-      'Yes. We provide CSV exports compatible with most payroll systems. Enterprise plans include API access for custom integrations with your accounting software.',
+      'DomiClear supports exports of selected attendance, payroll and report data for review and use in other tools. A direct accounting integration or custom API connection is not included as a standard feature. Contact us about your workflow before relying on a particular integration.',
   },
 ];

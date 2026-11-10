@@ -29,7 +29,7 @@ export const PricingPage: React.FC = () => {
             Home care software pricing for UK agencies
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            Transparent pricing for your care management app: pay per active client (service user), unlimited staff on every plan, all features included. DomiClear is designed as a more affordable home care software option for UK agencies that want a lower cost of entry — strong day-to-day workflows without the cost or complexity of larger platforms. Scale up or down anytime. No hidden costs.
+            Compare DomiClear’s published plans by active service user, with unlimited staff accounts and monthly or annual billing options. Explore the listed features and service-user limits before choosing a plan.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Button
@@ -125,12 +125,11 @@ export const PricingPage: React.FC = () => {
                 'Unlimited family portal logins',
                 'Usage-based billing — costs track active clients',
                 'iOS & Android carer apps',
-                'UK/EU data residency',
+                'London-hosted primary care database',
                 'Regular platform updates',
                 'Data export (CSV)',
                 'Role-based access controls',
                 'Audit logs and compliance trails',
-                '99.9% uptime SLA',
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#e6f7ff] flex items-center justify-center mt-0.5">
