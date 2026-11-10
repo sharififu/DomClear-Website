@@ -75,7 +75,7 @@ export const HomePage: React.FC = () => {
             ))}
           </div>
 
-          <nav className="mt-10 border-t border-[#dde4ee] pt-7" aria-label="Explore individual DomiClear features">
+          <div className="mt-10 border-t border-[#dde4ee] pt-7" role="group" aria-label="Explore individual DomiClear features">
             <p className="mb-4 text-center text-sm font-semibold text-[#334155]">
               Looking for a specific workflow?
             </p>
@@ -96,7 +96,7 @@ export const HomePage: React.FC = () => {
                 </a>
               ))}
             </div>
-          </nav>
+          </div>
 
           <p className="mt-6 text-center text-sm text-[#64748b]">
             Comparing care software options?{' '}
