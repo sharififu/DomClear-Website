@@ -22,6 +22,11 @@ const featureDemoMap: {
     deepLink: '/tutorials',
     deepLinkText: 'Tutorial videos →',
   },
+  'emar': {
+    video: '/demo-media/demo-emar-medication-management.mp4',
+    deepLink: '/emar-software',
+    deepLinkText: 'Explore eMAR features',
+  },
   'form-templates': {
     image: '/demo-media/demo-form-templates.png',
     deepLink: '/tutorials',
@@ -68,8 +73,8 @@ const featureDemoMap: {
   'security': {
     video: '/demo-media/demo-audit-dashboard.mp4',
     videoAriaLabel: 'Audit and reporting dashboard in DomiClear',
-    deepLink: '/tutorials',
-    deepLinkText: 'Tutorial videos →',
+    deepLink: '/credentials',
+    deepLinkText: 'View security credentials',
   },
 };
 
@@ -87,9 +92,9 @@ export const PlatformPage: React.FC = () => {
             Home care management platform for UK agencies
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            One home care software for care planning, scheduling, eMAR, compliance evidence and family portal.
-            Built for UK care agencies — unified in one platform, with transparent usage-based pricing and a lower
-            cost of entry than many larger systems.
+            See how DomiClear connects scheduling, person-centred care plans, medication records,
+            visits, incident follow-up and management reporting. Explore the workflows as they work
+            together, with clear explanations of the tools and their limits.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Button
@@ -112,7 +117,7 @@ export const PlatformPage: React.FC = () => {
               Book a demo
             </Button>
           </div>
-          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
+          <p className="text-sm text-white/80">Explore with a free trial or a guided demo</p>
         </div>
       </section>
 
@@ -128,7 +133,7 @@ export const PlatformPage: React.FC = () => {
             >
               <div className="flex-1">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">{feature.title}</h2>
-                {/* Show only first 3 features as bullets */}
+                <p className="text-base text-[#4B5563] leading-relaxed mb-5">{feature.description}</p>
                 <ul className="space-y-3 mb-6">
                   {feature.features.slice(0, 3).map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
@@ -166,6 +171,7 @@ export const PlatformPage: React.FC = () => {
                         loop
                         muted
                         playsInline
+                        preload="metadata"
                         poster={featureDemoMap[feature.id].videoPoster}
                         className="w-full h-auto object-cover block"
                         aria-label={
@@ -261,7 +267,8 @@ export const PlatformPage: React.FC = () => {
             See how it all works together
           </h2>
           <p className="text-xl text-[#4B5563] max-w-2xl mx-auto mb-10">
-            Book a personalised demo and we'll show you how DomiClear can transform your agency's operations.
+            Explore DomiClear with a free trial or book a guided look at scheduling, care planning,
+            medication, incident follow-up and reporting.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Button 
@@ -282,7 +289,7 @@ export const PlatformPage: React.FC = () => {
               Book a demo
             </Button>
           </div>
-          <p className="text-sm text-[#4B5563]">No card required · UK support · Cancel anytime</p>
+          <p className="text-sm text-[#4B5563]">Explore with a free trial or a guided demo</p>
         </div>
       </section>
     </div>
