@@ -1,4 +1,4 @@
-import { NavItem, Feature, Testimonial, Stat, PricingTier } from '../types';
+import { NavItem, Feature, PricingTier } from '../types';
 
 export const navigation: NavItem[] = [
   {
@@ -162,43 +162,6 @@ export const featureHighlights: Feature[] = [
     title: 'Analytics & reporting',
     description:
       'Pre-built KPI dashboards with CSV export for deeper analysis—turn care data into decisions.',
-  },
-];
-
-export const outcomes: Stat[] = [
-  { metric: 'Up to 42%', label: 'less admin time', icon: 'TrendingDown' },
-  { metric: '3+ hrs', label: 'Save 3+ hours per manager per week', icon: 'Clock' },
-  { metric: '98%+', label: 'visit & care record accuracy', icon: 'TrendingUp' },
-  { metric: 'One', label: 'system for office & doorstep', icon: 'MapPin' },
-];
-
-export const testimonials: Testimonial[] = [
-  {
-    name: 'Sarah Mitchell',
-    role: 'Care Manager',
-    organisation: 'BrightCare Services',
-    content:
-      'DomiClear transformed our rostering chaos into clarity. The carer app is intuitive, and our families love the transparency.',
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: 'James O\'Connor',
-    role: 'Agency Director',
-    organisation: 'CompassCare Ltd',
-    content:
-      'We were drowning in paperwork. Now evidence for supervision and audits is in one place, and the team spends less time chasing documents.',
-    rating: 5,
-    verified: true,
-  },
-  {
-    name: 'Eleanor Davies',
-    role: 'Operations Manager',
-    organisation: 'Heritage Home Support',
-    content:
-      'The form builder alone was worth it. We built custom assessment forms in days, not weeks, and incident logging is finally streamlined.',
-    rating: 5,
-    verified: true,
   },
 ];
 
