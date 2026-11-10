@@ -34,7 +34,7 @@ const followUpActions = [
   'Updated risk assessments or care plans',
   'Communication with relatives or professionals',
   'Additional staff guidance and monitoring',
-  'Evidence that every required action was completed',
+  'Review which follow-up actions are complete and which remain open',
 ];
 
 const enterpriseCapabilities = [
@@ -47,12 +47,12 @@ const enterpriseCapabilities = [
     description: 'See outstanding reviews, approvals, concerns and follow-up actions before they are forgotten.',
   },
   {
-    title: 'Compliance in everyday work',
-    description: 'Build evidence through normal care delivery instead of preparing everything shortly before inspection.',
+    title: 'Evidence from everyday work',
+    description: 'Keep care records and actions available for internal quality review, without presenting indicative measures as official CQC ratings.',
   },
   {
-    title: 'Reliable accountability',
-    description: 'Record what happened, which decisions were made, who approved them and what happened next.',
+    title: 'Documented accountability',
+    description: 'Record investigation steps, decisions, approvals and follow-up outcomes in supported workflows.',
   },
   {
     title: 'Technology people can use',
@@ -87,8 +87,8 @@ export const AboutPage: React.FC = () => {
             </h1>
             <p className="mb-6 max-w-2xl text-base leading-7 text-white/90 sm:mb-8 sm:text-lg sm:leading-8">
               DomiClear is building enterprise-grade home care software for small, growing and ambitious UK providers.
-              Connect staff, visits, care plans, eMAR, compliance and finances without traditional enterprise cost or
-              complexity.
+              Bring staff, visits, person-centred care plans, eMAR, incident follow-up and management
+              records together in one platform, with pricing you can review before deciding.
             </p>
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:gap-4">
               <Button
@@ -115,7 +115,7 @@ export const AboutPage: React.FC = () => {
               </Button>
             </div>
             <p className="mt-4 text-sm text-white/75 sm:mt-5">
-              Built for UK home care teams, with CQC-ready workflows for services in England.
+              Built for UK home care teams, with CQC-aligned internal quality-review tools for services in England.
             </p>
           </div>
         </div>
@@ -189,8 +189,8 @@ export const AboutPage: React.FC = () => {
               Care records should lead to action
             </h2>
             <p className="mb-7 text-lg leading-8 text-[#4B5563]">
-              When an incident is reported, it should not remain an isolated form. DomiClear is being built to connect
-              the record with the reviews, decisions and follow-up work it requires.
+              When an incident is reported, it should not remain an isolated form. DomiClear connects
+              relevant reported incidents with follow-up actions for managers to review, document and resolve.
             </p>
             <ul className="space-y-3">
               {followUpActions.map((action) => (
@@ -212,7 +212,7 @@ export const AboutPage: React.FC = () => {
               />
             </div>
             <figcaption className="mt-4 text-sm leading-6 text-[#64748B]">
-              A clear chronology helps managers see what happened, who took responsibility and whether every action was completed.
+              Incident and action records help managers see what happened, who reviewed it and which follow-up work remains open or has been completed.
             </figcaption>
           </figure>
         </div>
@@ -279,8 +279,8 @@ export const AboutPage: React.FC = () => {
           </h2>
           <p className="text-lg leading-8 text-[#4B5563]">
             We want every provider, regardless of its current size, to have the tools to operate safely, learn from
-            concerns and continuously improve. The goal is not simply to complete more tasks. It is to build services
-            that are well managed, inspection-ready and trusted by the people receiving care, their families and staff.
+            concerns and continuously improve. The goal is not simply to complete more tasks. It is to support services
+            that are well managed, transparent about their records and prepared to discuss evidence during quality reviews.
           </p>
         </div>
       </section>
@@ -290,7 +290,7 @@ export const AboutPage: React.FC = () => {
           <div className="max-w-2xl">
             <h2 id="credentials-heading" className="mb-2 text-2xl font-bold">Security &amp; credentials</h2>
             <p className="leading-7 text-[#4B5563]">
-              Find information about DomiClear's security approach, data protection and current assurance status.
+              DomiClear Ltd published a 2026–27 NHS DSPT Standards Met organisational self-assessment and is registered with the ICO. Our credentials page also explains DomiClear's own MODS compliance assessment and its scope. None of these represents NHS product endorsement or an official CQC rating.
             </p>
           </div>
           <a
@@ -311,7 +311,7 @@ export const AboutPage: React.FC = () => {
               See how DomiClear can support your next stage of growth
             </h2>
             <p className="mb-8 max-w-2xl text-lg leading-8 text-[#4B5563]">
-              Reduce administration, improve oversight and maintain higher standards as your service grows.
+              Explore how connected visits, care plans, medication records and follow-up actions can support your team's everyday work.
             </p>
             <div className="flex flex-col items-start gap-4 sm:flex-row">
               <Button
@@ -337,7 +337,7 @@ export const AboutPage: React.FC = () => {
                 Book a demo
               </Button>
             </div>
-            <p className="mt-5 text-sm text-[#64748B]">No card required · UK support · Cancel anytime</p>
+            <p className="mt-5 text-sm text-[#64748B]">Explore with a free trial or a guided demo</p>
           </div>
           <div className="flex justify-center lg:justify-end">
             <img

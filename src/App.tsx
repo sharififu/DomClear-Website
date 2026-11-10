@@ -39,12 +39,12 @@ const PAGE_META: Record<string, { title: string; description: string }> = {
   },
   '/solutions': {
     title: 'Home Care Solutions for UK Agencies | DomiClear',
-    description: 'Care management solutions for care managers, agency owners and families. One home care app for rotas, eMAR, compliance and family portal. UK-focused. Start a free trial.',
+    description: 'DomiClear connects scheduling, care plans, reporting and permitted family access for UK care managers, agency owners and authorised relatives. Explore the workflows.',
   },
   '/about': {
     title: 'About DomiClear | Home Care Software for UK Agencies',
     description:
-      'Discover DomiClear\'s mission to make enterprise-grade home care technology accessible to UK providers, with connected workflows and CQC-ready oversight for services in England.',
+      'Discover DomiClear\'s care-industry roots and mission to connect UK home care teams, with incident follow-up and CQC-aligned internal quality-review tools.',
   },
   '/tutorials': {
     title: 'DomiClear Tutorial Videos | Home Care Software',
