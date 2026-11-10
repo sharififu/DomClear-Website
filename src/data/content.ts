@@ -420,15 +420,13 @@ export const pricingTiers: PricingTier[] = [
 ];
 
 export const featureOverviewContent = {
-  stats: [
-    
-  ],
+  stats: [] as Array<{ metric: string; label: string }>,
   features: [
     {
       icon: 'Calendar',
       title: 'Home care scheduling software',
       description:
-        'Build rotas, spot clashes early, and give coordinators a live view of who is where. GPS-backed clock-in ties visits to real attendance so timesheets and billing start from facts, not guesswork.',
+        'Review rota allocations, scheduling clashes and carer availability together. Explore Improve Rota proposals before choosing how to adjust the day.',
     },
     {
       icon: 'Smartphone',
