@@ -222,7 +222,7 @@ export const ComprehensiveFeatures: React.FC = () => {
                   ))}
                 </ol>
                 <p className="mt-5 border-t border-white/15 pt-4 text-xs leading-relaxed text-[#a9c5e9]">
-                  The team chooses what to record and link; DomiClear does not generate clinical instructions or automatically approve a care plan.
+                  Your team chooses how outcomes, goals and tasks connect. An independent manager reviews revisions before they replace the active plan.
                 </p>
               </div>
             </div>
