@@ -505,7 +505,7 @@ export const faqItems = [
   {
     question: 'Does DomiClear work offline?',
     answer:
-      'Yes. The carer mobile app supports offline capability for attendance tracking, medication logging, and note capture. Data syncs to the platform when connectivity returns.',
+      'The carer app can display previously cached information offline, but medication administration must be recorded with an internet connection. Carers need to reconnect before recording a dose.',
   },
   {
     question: 'Is DomiClear CQC-compliant?',
