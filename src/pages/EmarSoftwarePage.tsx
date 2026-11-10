@@ -25,12 +25,17 @@ const emarFaqItems = [
   {
     question: 'Can it replace paper MAR charts?',
     answer:
-      'DomiClear can replace paper-based MAR tracking with a digital eMAR workflow, helping agencies reduce paperwork and keep records easier to follow.',
+      'DomiClear provides digital medication administration records and MAR history. Your organisation should assess its own medicines policy, procedures and record-retention requirements before replacing paper processes.',
   },
   {
     question: 'Does it help carers and managers keep medication records clearer?',
     answer:
       'Yes. Teams can record administration activity in one place, giving managers better visibility and helping carers avoid fragmented documentation.',
+  },
+  {
+    question: 'Can carers record medication while offline?',
+    answer:
+      'No. DomiClear requires an internet connection to save medication administration records. Carers must reconnect before recording a dose; offline cached visits are not an offline MAR.',
   },
   {
     question: 'Can I try it before booking a full demo?',
@@ -51,8 +56,9 @@ export const EmarSoftwarePage: React.FC = () => {
             eMAR software for UK domiciliary care agencies
           </h1>
           <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-10">
-            Move medication administration records out of paper folders and into a clear digital workflow. DomiClear is
-            eMAR for home care agencies that want cleaner records, better team visibility, and less admin friction.
+            Manage an organisation medication library, build person-specific schedules and record actual
+            administration outcomes through the carer app. DomiClear supports scheduled and as-needed
+            (PRN) doses with MAR history for manager review.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-4">
             <Button
@@ -75,7 +81,7 @@ export const EmarSoftwarePage: React.FC = () => {
               Book a demo
             </Button>
           </div>
-          <p className="text-sm text-white/80">No card required · UK support · Cancel anytime</p>
+          <p className="text-sm text-white/80">Explore with a free trial or a guided demo</p>
         </div>
       </section>
 
@@ -109,34 +115,33 @@ export const EmarSoftwarePage: React.FC = () => {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 id="emar-benefits-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Core eMAR software benefits for day-to-day operations
+              Medication records from setup to review
             </h2>
             <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              DomiClear helps agencies run a more organised medication management software workflow without making the
-              process heavier for frontline teams.
+              The medication library, person-specific schedules and administration history serve different purposes. DomiClear keeps those steps connected without treating a scheduled dose as evidence that it was given.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               {
                 icon: ClipboardDocumentListIcon,
-                title: 'Clearer medication administration records',
-                text: 'Document administration activity in one structured workflow rather than fragmented paper trails.',
+                title: 'Organisation medication library',
+                text: 'Find medication reference entries and distinguish them from a person’s actual schedule.',
               },
               {
                 icon: EyeIcon,
-                title: 'Better visibility for carers and managers',
-                text: 'Give office teams and care delivery staff a shared, easier-to-follow view of medication records.',
+                title: 'Scheduled and PRN medication',
+                text: 'Work with individual scheduled doses and as-needed items, with recorded PRN dose and reason.',
               },
               {
                 icon: ClockIcon,
-                title: 'Easier tracking and review',
-                text: 'Spend less time reconciling scattered notes and more time acting on clear information.',
+                title: 'Record what actually happened',
+                text: 'Capture administration outcomes, dates and performer details through an online visit workflow.',
               },
               {
                 icon: UserGroupIcon,
-                title: 'More organised team workflows',
-                text: 'Support cleaner handovers and everyday coordination around medication tasks.',
+                title: 'MAR history for manager review',
+                text: 'Review recorded outcomes and use available date, status and medication filters.',
               },
             ].map((item) => {
               const Icon = item.icon;
@@ -158,18 +163,17 @@ export const EmarSoftwarePage: React.FC = () => {
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <h2 id="team-control-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              How DomiClear helps teams stay clear and organised
+              Make the difference between scheduled and given clear
             </h2>
             <p className="text-lg text-[#4B5563] mb-8">
-              Care medication software should simplify medication documentation and visibility across the agency. DomiClear
-              keeps the medication process practical, consistent, and easier to manage at scale.
+              A medication schedule shows what is planned, not what a carer has actually recorded. DomiClear’s eMAR connects the assigned visit with saved administration outcomes and the manager’s MAR view.
             </p>
             <ul className="space-y-4">
               {[
-                'A clearer shared record of medication administration activity',
-                'Less duplicated admin caused by disconnected tools',
-                'More confident day-to-day review for coordinators and managers',
-                'Medication workflows that are easier to follow across teams',
+                'Use separate organisation medication library and personal schedules',
+                'Record regular and as-needed (PRN) outcomes with the required detail',
+                'Review historic MAR entries rather than assuming a scheduled dose was administered',
+                'Record medication administration online only — reconnect before entering a dose',
               ].map((point) => (
                 <li key={point} className="flex items-start gap-3">
                   <CheckCircleIcon className="w-6 h-6 text-[#4370B7] flex-shrink-0 mt-0.5" />
@@ -206,47 +210,6 @@ export const EmarSoftwarePage: React.FC = () => {
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-[#F8FAFC]" aria-labelledby="switch-heading">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 id="switch-heading" className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6">
-              Why agencies switch from paper MAR charts and fragmented systems
-            </h2>
-            <p className="text-lg text-[#4B5563] max-w-3xl mx-auto">
-              When medication records are scattered, routine administration work becomes harder to coordinate. A focused
-              electronic medication administration record software workflow keeps teams more organised.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              {
-                before: 'Before: Paper records that are difficult to review quickly',
-                after: 'After: Digital records that are easier to track and understand',
-              },
-              {
-                before: 'Before: Medication updates across disconnected channels',
-                after: 'After: One structured eMAR workflow for team visibility',
-              },
-              {
-                before: 'Before: Time lost reconciling unclear administration notes',
-                after: 'After: Cleaner records with less day-to-day admin friction',
-              },
-              {
-                before: 'Before: Limited oversight across carers and office teams',
-                after: 'After: Shared operational clarity for medication workflows',
-              },
-            ].map((item) => (
-              <div key={item.before} className="bg-white rounded-2xl border border-[rgba(20,30,60,0.08)] p-6">
-                <p className="text-sm uppercase tracking-wide text-[#64748B] font-semibold mb-2">Before</p>
-                <p className="text-[#0F172A] font-medium mb-4">{item.before.replace('Before: ', '')}</p>
-                <p className="text-sm uppercase tracking-wide text-[#4370B7] font-semibold mb-2">After</p>
-                <p className="text-[#4B5563]">{item.after.replace('After: ', '')}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
