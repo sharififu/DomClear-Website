@@ -383,37 +383,89 @@ export const ComprehensiveFeatures: React.FC = () => {
           </div>
         </section>
 
-        {/* Records & compliance tooling */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
-          <div>
-            <div className="w-16 h-16 rounded-full bg-slate-600 flex items-center justify-center mb-6">
-              {ShieldIcon && <ShieldIcon className="w-8 h-8 text-white" />}
+        {/* Incident follow-up and evidence-led quality oversight */}
+        <section aria-labelledby="home-quality-heading" className="mb-8 overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-[0_22px_70px_-52px_rgba(17,35,64,0.28)]">
+          <div className="h-1.5 bg-gradient-to-r from-[#17345b] via-[#4370B7] to-[#10bfa3]" aria-hidden="true" />
+          <div className="px-6 py-10 sm:px-10 lg:px-14 lg:py-14">
+            <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_1fr] lg:gap-14">
+              <div>
+                <p className="mb-5 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[0.16em] text-[#345e9c]">
+                  <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#eaf2ff]" aria-hidden="true">
+                    {ShieldIcon && <ShieldIcon className="h-5 w-5 text-[#345e9c]" />}
+                  </span>
+                  Incidents &amp; quality oversight
+                </p>
+                <h2 id="home-quality-heading" className="mb-6 text-3xl font-bold leading-[1.14] tracking-tight text-[#0F172A] sm:text-4xl lg:text-[2.75rem]">
+                  Record the concern. Follow through on what matters.
+                </h2>
+                <p className="text-lg leading-relaxed text-[#475569]">
+                  An incident report is only the beginning. DomiClear links reported concerns
+                  with relevant follow-up actions, giving managers a clearer way to review
+                  what happened, see what is outstanding and record their decisions.
+                </p>
+                <p className="mt-4 text-base leading-relaxed text-[#475569]">
+                  Bring investigations, action tracking and audit history into the same
+                  care-management workspace — without chasing disconnected paperwork.
+                </p>
+                <a href="/platform#compliance" className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#17345b] px-5 py-3 font-semibold text-white transition-colors hover:bg-[#2a5484] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#17345b]">
+                  Explore quality and reporting
+                  <span aria-hidden="true">→</span>
+                </a>
+              </div>
+              <div className="rounded-2xl border border-[#d7e0ee] bg-[#f7faff] p-5 sm:p-7">
+                <h3 className="mb-5 text-xs font-bold uppercase tracking-[0.14em] text-[#345e9c]">
+                  A connected path from concern to review
+                </h3>
+                <ol>
+                  {[
+                    { number: '01', title: 'Capture the incident', detail: 'Record what happened, its severity and relevant safety concerns.' },
+                    { number: '02', title: 'Follow up', detail: 'Track relevant manager, risk-assessment or care-plan review actions when raised.' },
+                    { number: '03', title: 'Review and sign off', detail: 'Managers record investigation notes, decisions and sign-off where applicable.' },
+                    { number: '04', title: 'Keep the trail', detail: 'Return to action status, incident history and recorded review evidence.' },
+                  ].map((step, i, steps) => (
+                    <li key={step.number} className="relative flex gap-4 pb-5 last:pb-0">
+                      {i < steps.length - 1 && <span className="absolute bottom-0 left-[17px] top-9 w-px bg-[#c4d2e7]" aria-hidden="true" />}
+                      <span className="relative z-10 grid h-9 w-9 flex-none place-items-center rounded-full border border-[#b4cbec] bg-white text-xs font-bold text-[#345e9c]">{step.number}</span>
+                      <div className="min-w-0 pt-0.5">
+                        <h4 className="font-semibold text-[#0F172A]">{step.title}</h4>
+                        <p className="mt-1 text-sm leading-relaxed text-[#51637a]">{step.detail}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              Records, incidents, and audit-friendly reporting
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Keep incidents, governance views, and exports organised so you can answer supervision and regulatory questions with less last-minute scrambling.
-            </p>
-            <p className="mt-4">
-              <a href="/platform" className="text-[#4370B7] font-semibold text-sm hover:underline">
-                Platform
-              </a>
-            </p>
+            <div className="mt-10 grid grid-cols-1 items-center gap-8 border-t border-[#e2e8f0] pt-9 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-[0_16px_40px_-27px_rgba(15,23,42,0.4)]">
+                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 bg-[#fafcff] px-5 py-4">
+                  <h3 className="text-sm font-bold text-[#17223c] sm:text-base">Audit history in DomiClear</h3>
+                  <span className="text-xs text-[#64748b]">Existing dashboard demo</span>
+                </div>
+                <video autoPlay loop muted playsInline preload="metadata" className="block h-auto w-full" aria-label="DomiClear audit dashboard demonstration">
+                  <source src="/demo-media/demo-audit-dashboard.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <div>
+                <p className="mb-4 text-xs font-bold uppercase tracking-[0.16em] text-[#345e9c]">Quality monitoring</p>
+                <h3 className="mb-4 text-2xl font-bold tracking-tight text-[#0F172A] sm:text-3xl">
+                  See what your records are telling you.
+                </h3>
+                <p className="text-base leading-relaxed text-[#475569]">
+                  Review CQC-aligned indicative measures across the five key questions,
+                  save self-assessments with findings and action plans, and export
+                  supporting information for your internal quality reviews.
+                </p>
+                <div className="mt-6 border-l-4 border-[#10bfa3] bg-[#f0fbf7] px-5 py-4">
+                  <p className="text-sm font-semibold text-[#15433c]">Built to support quality reviews, not replace them.</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[#355b53]">
+                    These internal indicators come from recorded data. They are not official
+                    CQC inspection ratings or proof of regulatory compliance.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="relative">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="rounded-2xl shadow-lg border border-gray-100 w-full h-auto block"
-              aria-label="Audit and reporting dashboard in DomiClear"
-            >
-              <source src="/demo-media/demo-audit-dashboard.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </div>
+        </section>
       </div>
     </section>
   );
