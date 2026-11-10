@@ -328,43 +328,40 @@ export const platformFeatures = {
 
 export const solutionsContent = {
   careManagers: {
-    id: 'care-managers',
-    title: 'For Care Managers',
-    description:
-      'Spend less time on admin and more time supporting your team. The desktop-first CMS gives you full control over rotas, care plans, and compliance tasks. Intelligent alerts flag issues before they escalate, and one-click reports give you the evidence you need for supervision and audits. Stay connected to carers via secure messaging, and see real-time visit updates so you always know what\'s happening on the ground.',
-    benefits: [
-      'Streamlined rota planning with conflict detection',
-      'Faster access to reports for supervision and audits',
-      'Real-time visibility of visits in progress',
-      'Secure team messaging',
-      'Automated compliance reminders',
-    ],
+    "id": "care-managers",
+    "title": "For Care Managers",
+    "description": "Plan visits, check staff availability and keep care-plan tasks connected to day-to-day work. Managers can review incidents, follow relevant actions and use CQC-aligned indicative self-assessments for internal quality oversight. These are working tools, not automatic clinical or regulatory decisions.",
+    "benefits": [
+      "Review visits, allocations and rota proposals before changing them",
+      "Select appropriate approved care-plan tasks for scheduled visits",
+      "Record incident investigations and follow-up actions",
+      "Review internal quality measures and saved self-assessments",
+      "Use reports and audit history to support team discussions"
+    ]
   },
   owners: {
-    id: 'owners',
-    title: 'For Agency Owners',
-    description:
-      'Run your agency with confidence and clarity. Track operational performance, financial KPIs, and compliance status from a single dashboard. Make data-driven decisions about capacity, recruitment, and service expansion. RLS-backed data segregation protects client confidentiality and meets regulatory standards. Scale your business without scaling admin overhead—DomiClear grows with you.',
-    benefits: [
-      'Executive dashboards for performance and finance',
-      'Data-driven capacity planning',
-      'Secure, auditable platform',
-      'Scalable infrastructure',
-      'Reduced admin overhead',
-    ],
+    "id": "owners",
+    "title": "For Agency Owners",
+    "description": "Bring service delivery, workforce, invoice and payroll reporting into one management view. Review recorded activity and outstanding quality actions when planning staffing, budgets and service development. The tools support management decisions; they do not promise savings or replace statutory payroll and regulatory checks.",
+    "benefits": [
+      "Monitor attendance, care delivery and operational reporting",
+      "Review invoices, payroll-cost information and exports",
+      "Explore workforce availability and staffing records",
+      "Track internal quality findings and follow-up decisions",
+      "Keep access to sensitive records role- and organisation-scoped"
+    ]
   },
   families: {
-    id: 'families',
-    title: 'For Families',
-    description:
-      'Stay connected to your loved one\'s care with transparency and peace of mind. See visit schedules, read care notes (subject to permissions set by the agency), and view care plan summaries. Message the care team securely, and view visit reports in the portal. DomiClear helps families feel informed, involved, and reassured.',
-    benefits: [
-      'Visit schedules visible in portal',
-      'Secure access to permissioned care notes',
-      'Direct messaging with care team',
-      'View visit reports in portal',
-      'Mobile-friendly portal',
-    ],
+    "id": "families",
+    "title": "For Families",
+    "description": "When a care provider invites and authorises a family member, DomiClear's family portal can show permitted information about their relative's care. The provider controls which visits, notes and plan details are shared, and can change or revoke access. Not every family account sees the same information.",
+    "benefits": [
+      "Secure access linked to the correct relative",
+      "View visits and updates where sharing is permitted",
+      "Read care notes only when the provider allows access",
+      "See care-plan information within assigned permissions",
+      "Organisation-controlled sharing and access revocation"
+    ]
   },
 };
 
